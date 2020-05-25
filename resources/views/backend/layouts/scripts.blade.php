@@ -1,36 +1,36 @@
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 
-{!! Html::script('js/core/popper.min.js') !!}
-{!! Html::script('js/core/bootstrap.min.js ') !!}
-{!! Html::script('js/plugins/perfect-scrollbar.jquery.min.js') !!}
-{!! Html::script('js/plugins/moment.min.js') !!}
+<script src=" js/core/popper.min.js"></script>
+<script src=" js/core/bootstrap.min.js "></script>
+<script src=" js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<script src=" js/plugins/moment.min.js"></script>
 <!-- Bootstrap Switch -->
-{!! Html::script('js/plugins/bootstrap-switch.js') !!}
+<script src=" js/plugins/bootstrap-switch.js"></script>
 <!-- Sweet Alert -->
-{!! Html::script('js/plugins/sweetalert2.min.js') !!}
+<script src=" js/plugins/sweetalert2.min.js"></script>
 <!-- Bootstrap tagsinput -->
-{!! Html::script('js/plugins/bootstrap-tagsinput.js') !!}
+<script src=" js/plugins/bootstrap-tagsinput.js"></script>
 <!-- Bootstrap tagsinput -->
-{!! Html::script('js/plugins/bootstrap-tagsinput.js') !!}
+<script src=" js/plugins/bootstrap-tagsinput.js"></script>
 <!-- Bootstrap selectpicker -->
-{!! Html::script('js/plugins/bootstrap-selectpicker.js') !!}
+<script src=" js/plugins/bootstrap-selectpicker.js"></script>
 <!-- Bootstrapdatetimepicker -->
-{!! Html::script('js/plugins/bootstrap-datetimepicker.min.js') !!}
+<script src=" js/plugins/bootstrap-datetimepicker.min.js"></script>
 <!-- Bootstrap dataTable -->
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 <!-- Bootstrap jasny --><!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-{!! Html::script('js/plugins/jasny-bootstrap.min.js') !!}
+<script src=" js/plugins/jasny-bootstrap.min.js"></script>
 <!-- Plugin for full calendar -->
-{!! Html::script('js/plugins/fullcalendar.min.js') !!}
+<script src=" js/plugins/fullcalendar.min.js"></script>
 <!-- Plugin for sliders -->
-{!! Html::script('js/plugins/nouislider.min.js') !!}
+<script src=" js/plugins/nouislider.min.js"></script>
 <!-- Plugin for full calendar -->
-{!! Html::script('js/plugins/buttons.js') !!}
+<script src=" js/plugins/buttons.js"></script>
 <!-- Sharre -->
-{!! Html::script('js/presentation-page/jquery.sharrre.js') !!}
+<script src=" js/presentation-page/jquery.sharrre.js"></script>
 <!-- Dashboard -->
-{!! Html::script('js/now-ui-dashboard.min.js') !!}
+<script src=" js/now-ui-dashboard.min.js"></script>
 <!-- TinyMCE -->
 <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
 

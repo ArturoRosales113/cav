@@ -5,8 +5,9 @@
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 <!-- Now UI -->
-{!! Html::style('css/bicefalo_dashboard.css') !!}
+<link rel="stylesheet" type="text/css" href="./css/bicefalo_dashboard.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap-imageupload.min.css">
+<link rel="stylesheet" type="text/css" href="./css/style_9_8_2018.css">
 
-{!! Html::style('css/bootstrap-imageupload.min.css') !!}
-<!-- FDS -->
-{!! Html::style('css/style_9_8_2018.css') !!}
+
+

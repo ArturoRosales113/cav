@@ -11,10 +11,10 @@
           </div>
           <div class="col-lg-6">
             <div class="row justify-content-start justify-content-lg-end py-3">
-              <a href="{{ route('app.navsettings') }}" class="btn btn-lg btn-link-secondary">                  
+              <a href="{{ route('app.navsettings') }}" class="btn btn-lg btn-link-secondary">
                 <i class="fas fa-object-group"></i>&nbsp;Menu
               </a>
-              <a href="{{ route('app.settings') }}" class="btn btn-lg btn-link-secondary">            
+              <a href="{{ route('app.settings') }}" class="btn btn-lg btn-link-secondary">
                 <i class="fas fa-cogs"></i>&nbsp;Ajustes
               </a>
             </div>
@@ -32,7 +32,7 @@
                   </div>
                   <div class="col-lg-12 text-lg-center">
                     <a href="{{ route('mensaje.index') }}">
-                  
+
                       <h4 class="bold"><i class="fa fa-envelope"></i>&nbsp;Mensajes</h4>
                     </a>
                   </div>
@@ -51,12 +51,12 @@
                   </div>
                   <div class="col-lg-12 text-lg-center">
                     <a href="{{ route('cita.index') }}">
-                  
+
                       <h4 class="bold"><i class="fa fa-calendar-alt"></i>&nbsp;Citas</h4>
                     </a>
                   </div>
                 </div>
-      
+
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@
                     <img src="{{ asset('img/dashboard/suscripciones.jpg') }}" alt="">
                   </div>
                   <div class="col-lg-12 text-lg-center">
-                    <a href="{{ route('mensaje.index') }}">                  
+                    <a href="{{ route('mensaje.index') }}">
                       <h4 class="bold"><i class="fa fa-users"></i>&nbsp;Suscripciones</h4>
                     </a>
                   </div>

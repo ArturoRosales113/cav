@@ -9,7 +9,7 @@
 
         <div class="user">
             <div class="photo">
-              <img src="{{ Session::get('appSettings')->logoB }}" alt="">
+              <img src="" alt="">
             </div>
             <div class="info">
                 <a data-toggle="collapse" href="#collapseExample" class="collapsed">
@@ -26,7 +26,7 @@
                                 <span class="sidebar-mini-icon"><i class="fa fa-cog"></i></span>
                                 <span class="sidebar-normal">Preferencias</span>
                             </a>
-                        </li> 
+                        </li>
                         <li>
                           <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                               <span class="sidebar-mini-icon"><i class="fa fa-times"></i></span>

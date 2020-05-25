@@ -8,7 +8,7 @@
 					<span class="navbar-toggler-bar bar3"></span>
 				</button>
 			</div>
-			<a class="navbar-brand" href="{{route('dashboard.index')}}">{{ Session::get('appSettings')->direccion->sucursal }}</a>
+			<a class="navbar-brand" href="{{route('dashboard.index')}}"></a>
 		</div>
 
 	   <!--  <div class="collapse navbar-collapse justify-content-end" id="navigation">
