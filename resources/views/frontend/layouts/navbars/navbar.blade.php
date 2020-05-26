@@ -4,7 +4,7 @@
 <div class="row justify-content-end align-items-center top-bar">
   <div class="container text-right">
   </div>
- </div> 
+ </div>
 
  <!-- Barra de navegación -->
  <nav class="navbar navbar-expand-lg d-none d-lg-flex justify-content-center" id="menu_navbar">
@@ -15,30 +15,16 @@
         <li class="nav-item {{ Request::url() == route('front.index') ? 'active' :'' }}">
           <a class="nav-link menu-link" href="{{ route('front.index') }}">Home</a>
         </li>
-
+{{--
         <li class="nav-item dropdown" id="btn_vestidos">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{ route('front.vestidos') }}" role="button" aria-haspopup="true" aria-expanded="false">VESTIDOS</a>
           <div class="dropdown-menu shadow border-0 p-0 py-2 m-0">
 
           </div>
         </li>
+ --}}
 
-        <li class="nav-item {{ Request::url() == route('front.nosotros') ? 'active' :'' }}">
-          <a class="nav-link" href="{{ route('front.nosotros') }}">NOSOTROS</a>
-        </li>
 
-        <li class="nav-item">
-          <a href="{{route('front.index')}}"><img src="{{asset('img/logos/6.png')}}" id="nav-logo" alt=""></a>
-         </li>
-  
-
-        <li class="nav-item {{ Request::url() == route('front.contacto') ? 'active' :'' }}">
-          <a class="nav-link" href="{{ route('front.contacto') }}">ÚBICANOS</a>
-        </li>
-
-        <li class="nav-item {{ Request::url() == route('front.agenda') ? 'active' :'' }}">
-          <a class="nav-link" href="{{ route('front.agenda') }}">¡AGENDA TU CITA!</a>
-        </li>
 
         {{-- <li class="nav-item dropdown" id="btn_vestidos">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></a>
@@ -62,7 +48,7 @@
   </div>
  </nav>
  <nav class="navbar navbar-expand-lg w-100 d-flex d-lg-none px-5 justify-content-between">
-    
+
     <a href="{{route('front.index')}}">
       <img src="{{asset('img/logos/6.png')}}" id="nav-logo" alt="" height="50px">
     </a>
@@ -71,11 +57,11 @@
 
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
 
-   
+
 
     </div>
 
 
  </nav>
- @include('frontend.layouts.navbars.sidebar')
+ {{-- @include('frontend.layouts.navbars.sidebar') --}}
 </div>

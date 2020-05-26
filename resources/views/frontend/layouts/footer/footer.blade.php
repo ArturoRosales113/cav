@@ -5,13 +5,13 @@
     <h4 class="font2">Síguenos en</h4>
     <div class="row justify-content-center py-3">
 
-      @foreach ($settings->rss as $r)
+      {{-- @foreach ($settings->rss as $r)
         @if($r->url != '')
         <a class="btn btn-link text-white" href="{{ $r->url }}" target="_blank">
           <i class="{{ $r->icon }}"></i>
-        </a>    
+        </a>
         @endif
-      @endforeach
+      @endforeach --}}
 
     </div>
    </div>
@@ -27,7 +27,7 @@
    </div> --}}
    <div class="w-100"></div>
    <div class="col-lg-6">
-    <ul class="nav justify-content-center">
+    {{-- <ul class="nav justify-content-center">
       <li class="nav-item">
         <a class="nav-link text-white" href="{{ route('front.index') }}">Home</a>
       </li>
@@ -40,7 +40,7 @@
       <li class="nav-item">
         <a class="nav-link text-white" href="{{ route('front.contacto') }}">Ubicación</a>
       </li>
-    </ul>
+    </ul> --}}
    </div>
  </div>
 </footer>
