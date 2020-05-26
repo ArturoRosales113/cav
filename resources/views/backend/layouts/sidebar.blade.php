@@ -1,190 +1,75 @@
-<div class="sidebar" data-color="blue">
-    <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-    -->
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Dashboard <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+            Orders
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            Products
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            Customers
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            Reports
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Integrations
+          </a>
+        </li>
+      </ul>
 
-
-
-    <div class="sidebar-wrapper">
-
-        <div class="user">
-            <div class="photo">
-              <img src="" alt="">
-            </div>
-            <div class="info">
-                <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                    <span>
-                        {{ Auth::user()->name }}
-                        <b class="caret"></b>
-                    </span>
-                </a>
-                <div class="clearfix"></div>
-                <div class="collapse" id="collapseExample">
-                    <ul class="nav">
-                        <li>
-                            <a href="{{ route('app.settings') }}">
-                                <span class="sidebar-mini-icon"><i class="fa fa-cog"></i></span>
-                                <span class="sidebar-normal">Preferencias</span>
-                            </a>
-                        </li>
-                        <li>
-                          <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                              <span class="sidebar-mini-icon"><i class="fa fa-times"></i></span>
-                              <span class="sidebar-normal">Cerrar sesion</span>
-                          </a>
-                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              {{ csrf_field() }}
-                          </form>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <ul class="nav">
-              <li class="">
-                    <a href="{{ route('dashboard.index') }}">
-
-                        <i class="fa fa-tachometer-alt"></i>
-
-                      <p>Dashboard</p>
-                    </a>
-              </li>
-              <li class="">
-                    <a href="{{ url('/') }}">
-
-                        <i class="fa fa-globe"></i>
-
-                      <p>Ir a Sitio</p>
-                    </a>
-              </li>
-              <!-- Artículos -->
-               <li>
-                 <a data-toggle="collapse" href="#articles">
-                  <i class="fas fa-boxes"></i>
-                  <p class="sidebar-normal"> Artículos <b class="caret"></b>
-                  </p>
-                 </a>
-                <div class="collapse " id="articles">
-                 <ul class="nav">
-                  <li>
-                    <a href="{{ route('article.create') }}" class="">
-                        <i class="fas fa-plus"></i>
-                        <span class="sidebar-normal">Crear Artículo</span>
-                    </a>
-                  </li>
-                   <li class="pl-3">
-                     <a href="{{ route('article.index') }}">
-                         <i class="fas fa-box"></i>
-                         <small class="sidebar-normal"> Todos los Artículos</small>
-                     </a>
-                   </li>
-                   {{-- <li class="pl-3">
-                     <a href="{{ route('article.tendencias.index') }}">
-                      <i class="fas fa-chart-bar"></i>
-                         <small class="sidebar-normal"> Artículos destacados </small>
-                     </a>
-                   </li> --}}
-                   {{-- <li class="pl-3">
-                     <a href="{{ route('store.index') }}">
-                         <i class="fas fa-store"></i>
-                         <small class="sidebar-normal">Por Sucursal</small>
-                     </a>
-                   </li> --}}
-                   <li class="pl-3">
-                     <a href="{{ route('concept.index') }}">
-                         <i class="fas fa-th-large"></i>
-                         <small class="sidebar-normal">Por Conceptos</small>
-                     </a>
-                   </li>
-                   <li class="pl-3">
-                     <a href="{{ route('clasification.index') }}">
-                         <i class="fas fa-th"></i>
-                         <small class="sidebar-normal">Por Clasificaciones</small>
-                     </a>
-                   </li>
-                   {{-- <li class="pl-3">
-                     <a href="{{ route('marca.index') }}">
-                         <i class="fas fa-tags"></i>
-                         <small class="sidebar-normal">Por Marcas</small>
-                     </a>
-                   </li>
-                   <li class="pl-3">
-                     <a href="{{ route('acabado.index') }}">
-                         <i class="fas fa-tshirt"></i>
-                         <small class="sidebar-normal">Por Acabado</small>
-                     </a>
-                   </li>
-                   <li class="pl-3">
-                     <a href="{{ route('linea.index') }}">
-                         <i class="fab fa-linode"></i>
-                         <small class="sidebar-normal">Por Línea</small>
-                     </a>
-                   </li> --}}
-                  </ul>
-                </div>
-               </li>
-               <!-- Pedidos -->
-               {{-- <li>
-                 <a href="{{ route('pedido.index') }}">
-                      <i class="fas fa-truck"></i>
-                     <p class="sidebar-normal"> Pedidos </p>
-                 </a>
-               </li> --}}
-               <!-- Citas -->
-               <li>
-                 <a href="{{ route('cita.index') }}">
-                     <i class="far fa-calendar-alt"></i>
-                     <p class="sidebar-normal"> Citas </p>
-                 </a>
-               </li>
-               <!-- Mensajes -->
-               <li>
-                 <a href="{{ route('mensaje.index') }}">
-                     <i class="fas fa-envelope"></i>
-                     <p class="sidebar-normal"> Mensajes </p>
-                 </a>
-               </li>
-               <!-- Testimonios -->
-               <li>
-                 <a href="{{ route('testimonio.index') }}">
-                  <i class="fas fa-comments"></i>
-                     <p class="sidebar-normal"> Testimonios </p>
-                 </a>
-               </li>
-               <!-- Banners -->
-               <li>
-                 <a href="{{ route('banner.index') }}">
-                     <i class="fas fa-file-image"></i>
-                     <p class="sidebar-normal">Banners</p>
-                 </a>
-               </li>
-              @role('admin')
-              <li>
-                <a data-toggle="collapse" href="#users">
-                 <i class="fas fa-users-cog"></i>
-                 <p class="sidebar-normal"> Usuarios <b class="caret"></b>
-                 </p>
-                </a>
-               <div class="collapse " id="users">
-                <ul class="nav">
-                 <li>
-                   <a href="{{ route('user.create') }}">
-                       <i class="fas fa-user"></i>
-                       <span class="sidebar-normal">Crear Usuario</span>
-                   </a>
-                 </li>
-                  <li>
-                    <a href="{{ route('user.index') }}">
-                        <i class="fas fa-users"></i>
-                        <span class="sidebar-normal"> Todos los Usuarios</span>
-                    </a>
-                  </li>
-                 </ul>
-               </div>
-              </li>
-              @endrole
-
-        </ul>
+      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <span>Saved reports</span>
+        <a class="d-flex align-items-center text-muted" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        </a>
+      </h6>
+      <ul class="nav flex-column mb-2">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Current month
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Last quarter
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Social engagement
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Year-end sale
+          </a>
+        </li>
+      </ul>
     </div>
-</div>
+  </nav>

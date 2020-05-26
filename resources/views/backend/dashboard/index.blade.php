@@ -24,60 +24,6 @@
         <div class="row justify-content-center">
 
 
-          <div class="col-lg-4">
-            <div class="card">
-              <div class="card-body p-0">
-                <div class="row">
-                  <div class="col">
-                    <img src="{{ asset('img/dashboard/mensajes.jpg') }}" alt="">
-                  </div>
-                  <div class="col-lg-12 text-lg-center">
-                    <a href="{{ route('mensaje.index') }}">
-
-                      <h4 class="bold"><i class="fa fa-envelope"></i>&nbsp;Mensajes</h4>
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="card ">
-              <div class="card-body p-0">
-                <div class="row">
-                  <div class="col">
-                    <img src="{{ asset('img/dashboard/citas.jpg') }}" alt="">
-                  </div>
-                  <div class="col-lg-12 text-lg-center">
-                    <a href="{{ route('cita.index') }}">
-
-                      <h4 class="bold"><i class="fa fa-calendar-alt"></i>&nbsp;Citas</h4>
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="card p-0">
-              <div class="card-body p-0">
-                <div class="row">
-                  <div class="col">
-                    <img src="{{ asset('img/dashboard/suscripciones.jpg') }}" alt="">
-                  </div>
-                  <div class="col-lg-12 text-lg-center">
-                    <a href="{{ route('mensaje.index') }}">
-                      <h4 class="bold"><i class="fa fa-users"></i>&nbsp;Suscripciones</h4>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

@@ -1,20 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
+<nav class="navbar navbar-expand-lg navbar-absolute bg-primary fixed-top">
 	<div class="container-fluid d-flex align-items-center">
-    <div class="navbar-wrapper">
-			<div class="navbar-toggle">
-				<button type="button" class="navbar-toggler">
-					<span class="navbar-toggler-bar bar1"></span>
-					<span class="navbar-toggler-bar bar2"></span>
-					<span class="navbar-toggler-bar bar3"></span>
-				</button>
-			</div>
-			<a class="navbar-brand" href="{{route('dashboard.index')}}"></a>
-		</div>
 
-	   <!--  <div class="collapse navbar-collapse justify-content-end" id="navigation">
+ <div class="collapse navbar-collapse justify-content-end" id="navigation">
 
-
-	       {{-- <form class="m-0">
+{{--
+	  <form class="m-0">
 	       <div class="input-group no-border">
 	           <input type="text" value="" class="form-control" placeholder="Search...">
 	           <div class="input-group-append">
@@ -23,10 +13,10 @@
 	            </div>
 	          </div>
 	       </div>
-	   </form>--}}
+	   </form> --}}
 
 	   <ul class="navbar-nav">
-	     {{--<li class="nav-item dropdown">
+	    <li class="nav-item dropdown">
 	       <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	         <i class="fa fa-bars"></i>
 	         <p>
@@ -47,13 +37,8 @@
 	           <span class="d-lg-none d-md-block">Account</span>
 	         </p>
 	       </a>
-	     </li>--}}
+	     </li>
 	   </ul>
-
-
-
-
-
-	   </div> -->
+	   </div>
 	</div>
 </nav>

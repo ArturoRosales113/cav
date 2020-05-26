@@ -8,6 +8,12 @@
     //Productos
     Route::get('/productos', ['uses' => 'FrontController@productos', 'as' => 'front.productos']);
 
+    Route::get('/productos/categorias/', ['uses' => 'FrontController@categorias', 'as' => 'front.productos']);
+    Route::get('/productos/categorias/{$categoryName}', ['uses' => 'FrontController@categorias', 'as' => 'front.productos']);
+    Route::get('/productos/categorias/{$categoryName}/{$productName}', ['uses' => 'FrontController@categorias', 'as' => 'front.productos']);
+
+    Route::get('/productos', ['uses' => 'FrontController@productos', 'as' => 'front.productos']);
+
 
 #########################  Panel de adiministrador #########################
 Route::prefix('admin')->group(function () {
