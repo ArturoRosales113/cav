@@ -1,8 +1,8 @@
 <footer class="text-white">
- <div class="row align-items-center py-5 justify-content-center bg2">
+ <div class="row align-items-center py-5 justify-content-center">
    <div class="col-md-6 col-lg-4 text-center">
     <img src="{{ asset('img/logos/logob.png') }}" alt="" class="img-fluid my-4">
-    <h4 class="font2">Síguenos en</h4>
+    <h4 class="">Síguenos en</h4>
     <div class="row justify-content-center py-3">
 
       {{-- @foreach ($settings->rss as $r)
