@@ -7,7 +7,7 @@
     //Productos
     Route::get('/productos', ['uses' => 'FrontController@productos', 'as' => 'front.productos']);
 
-    Route::get('/productos/categorias/', ['uses' => 'FrontController@categorias', 'as' => 'front.productos']);
+    Route::get('/productos/categorias/', ['uses' => 'FrontController@categorias', 'as' => 'front.categorias']);
 
     Route::get('/productos/categorias/{$categoryName}', ['uses' => 'FrontController@categoria', 'as' => 'front.productos.categoria']);
 
@@ -46,16 +46,12 @@ Route::prefix('admin')->group(function () {
             'article' => 'ArticleController',
             'banner' => 'BannerController',
             'cita' => 'CitaController',
-            'clasification' => 'ClasificationController',
             'concept' => 'ConceptController',
             'linea' => 'LineaController',
             'marca' => 'MarcaController',
             'mensaje' => 'MensajeController',
-            'nota' => 'NotaController',
-            'pedido' => 'PedidoController',
             'pic' => 'PicController',
             'store' => 'StoreController',
-            'testimonio' => 'TestimonioController',
             'user' => 'UserController'
         ]);
     });

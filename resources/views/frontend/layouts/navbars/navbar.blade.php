@@ -15,24 +15,24 @@
         <li class="nav-item {{ Request::url() == route('front.index') ? 'active' :'' }}">
           <a class="nav-link menu-link" href="{{ route('front.index') }}">Home</a>
         </li>
-        <li class="nav-item {{ Request::url() == route('front.index') ? 'active' :'' }}">
-            <a class="nav-link menu-link" href="{{ route('front.productos') }}">Productos</a>
-          </li>
-          <li class="nav-item {{ Request::url() == route('front.index') ? 'active' :'' }}">
-            <a class="nav-link menu-link" href="{{ route('front.aplicaciones') }}">Aplicaciones</a>
-          </li>
-          <li class="nav-item {{ Request::url() == route('front.index') ? 'active' :'' }}">
-            <a class="nav-link menu-link" href="{{ route('front.servicios') }}">Servicio</a>
-          </li>
-          <li class="nav-item {{ Request::url() == route('front.index') ? 'active' :'' }}">
-            <a class="nav-link menu-link" href="{{ route('front.proyectos') }}">Proyectos</a>
-          </li>
-          <li class="nav-item {{ Request::url() == route('front.index') ? 'active' :'' }}">
-            <a class="nav-link menu-link" href="{{ route('front.distribuidores') }}">Distribuidores</a>
-          </li>
-          <li class="nav-item {{ Request::url() == route('front.index') ? 'active' :'' }}">
-            <a class="nav-link menu-link" href="{{ route('front.contacto') }}">Contacto</a>
-          </li>
+        <li class="nav-item {{ Request::url() == route('front.productos') ? 'active' :'' }}">
+          <a class="nav-link menu-link" href="{{ route('front.productos') }}">Productos</a>
+        </li>
+        <li class="nav-item {{ Request::url() == route('front.aplicaciones') ? 'active' :'' }}">
+         <a class="nav-link menu-link" href="{{ route('front.aplicaciones') }}">Aplicaciones</a>
+        </li>
+        <li class="nav-item {{ Request::url() == route('front.servicios') ? 'active' :'' }}">
+         <a class="nav-link menu-link" href="{{ route('front.servicios') }}">Servicio</a>
+        </li>
+        <li class="nav-item {{ Request::url() == route('front.proyectos') ? 'active' :'' }}">
+          <a class="nav-link menu-link" href="{{ route('front.proyectos') }}">Proyectos</a>
+        </li>
+        <li class="nav-item {{ Request::url() == route('front.distribuidores') ? 'active' :'' }}">
+          <a class="nav-link menu-link" href="{{ route('front.distribuidores') }}">Distribuidores</a>
+        </li>
+        <li class="nav-item {{ Request::url() == route('front.contacto') ? 'active' :'' }}">
+          <a class="nav-link menu-link" href="{{ route('front.contacto') }}">Contacto</a>
+        </li>
 {{--
         <li class="nav-item dropdown" id="btn_vestidos">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{ route('front.vestidos') }}" role="button" aria-haspopup="true" aria-expanded="false">VESTIDOS</a>
