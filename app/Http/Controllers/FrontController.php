@@ -33,7 +33,7 @@ class FrontController extends Controller
 
     public function servicios()
     {
-        return view('frontend.sericios');
+        return view('frontend.servicios');
     }
 
     public function proyectos()
