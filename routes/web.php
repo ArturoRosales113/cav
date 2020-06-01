@@ -42,7 +42,6 @@ Route::prefix('admin')->group(function () {
 
         //#########################  Resources #########################
         Route::resources([
-            'acabado' => 'AcabadoController',
             'article' => 'ArticleController',
             'banner' => 'BannerController',
             'cita' => 'CitaController',
