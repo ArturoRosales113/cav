@@ -15,8 +15,9 @@ class CreateDownloadsTable extends Migration
     {
         Schema::create('downloads', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('file_url');
-            $table->integer('downloadable_id');
+            $table->string('url');
+            $table->integer('is_video');
+            $table->integer('downloradable_id');
             $table->string('downloadable_type');
             $table->timestamps();
         });

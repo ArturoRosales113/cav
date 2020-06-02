@@ -9,38 +9,26 @@ class Article extends Model
 {
 
     protected $fillable = [
-        'titulo','marca_id','codigo','estilo','acabado_id',
-        'suela','linea_id','precio','is_rebaja','is_trend',
-        'description','precio_descuento','concept_id','clasification_id','slug'
+        'name',
+        'slug',
+        'code',
+        'is_trend',
+        'description',
+        'brand_id',
+        'category-id',
+        'family_id'
     ];
+
     //Concepto del producto
-    public function concept()
+    public function family()
     {
-        return $this->belongsTo('App\Concept');
+        return $this->belongsTo('App\Family');
     }
     // Clasificación de los productos
-    public function clasification() 
+    public function category()
     {
-        return $this->belongsTo('App\Clasification');
+        return $this->belongsTo('App\Category');
     }
-    
-    // public function marca()
-    // {
-    //     return $this->belongsTo('App\Marca');
-    // }
-    // public function linea()
-    // {
-    //     return $this->belongsTo('App\Linea');
-    // }
-    // public function acabado()
-    // {
-    //     return $this->belongsTo('App\Acabado');
-    // }
-    // //Inventario
-    // public function stock()
-    // {
-    //     return $this->hasMany('App\Stock');
-    // }
 
     // Fotos
     public function pics()
@@ -51,19 +39,19 @@ class Article extends Model
     {
         return $this->pics(1);
     }
+
+
    //Scopes de búsqueda
 
-
-
     // Buscar Por Concepto
-    public function scopeConcepto($query, $concepto)
+    public function scopeFamily($query, $family_id)
     {
-        return $query->where('con_id', $concepto);
+        return $query->where('family_id', $family_id);
     }
-    // Buscar Por Categoria
-    public function scopeClasificacion($query, $clasificacion)
+
+    public function scopeCategory($query, $category_id)
     {
-        return $query->where('clas_id', $clasificacion);
+        return $query->where('category_id', $category_id);
     }
 
     public function scopeTendencia($query)
@@ -75,28 +63,11 @@ class Article extends Model
     {
        return $query->where("codigo", "like", "%$input%");
     }
+
     public function scopeSlugSearch($query, $input)
     {
        return $query->where("slug", "like", "%$input%");
     }
 
-    
-    // // Buscar Por Marca
-    // public function scopeMarca($query, $marca)
-    // {
-    //     return $query->where('marca', $marca);
-    // }
 
-    // public function scopeEstiloSearch($query, $input)
-    // {
-    //     return $query->where("estilo", "like", "%$input%");
-    // }
-    // public function scopeAcabadoSearch($query, $input)
-    // {
-    //     return $query->where("acabado", "like", "%$input%");
-    // }
-    // public function scopeMarcaSearch($query, $input)
-    // {
-    //     return $query->where("marca", "like", "%$input%");
-    // }
 }

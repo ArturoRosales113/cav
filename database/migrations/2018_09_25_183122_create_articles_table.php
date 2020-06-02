@@ -14,7 +14,7 @@ class CreateArticlesTable extends Migration
     public function up()
     {
 
-        Schema::create('concepts', function (Blueprint $table) {
+        Schema::create('families', function (Blueprint $table) {
 
             $table->increments('id');
 
@@ -38,7 +38,7 @@ class CreateArticlesTable extends Migration
         });
 
 
-        Schema::create('clasifications', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
 
             $table->increments('id');
 
@@ -57,17 +57,17 @@ class CreateArticlesTable extends Migration
             $table->string('icon_path')
                   ->nullable();
 
-            $table->integer('concept_id')->unsigned()
+            $table->integer('family_id')->unsigned()
                   ->nullable();
 
-            $table->foreign('concept_id')->references('id')->on('concepts')->onDelete('cascade');
+            $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade');
 
             $table->timestamps();
 
         });
 
 
-        Schema::create('marcas', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
 
             $table->increments('id');
 
@@ -95,64 +95,49 @@ class CreateArticlesTable extends Migration
 
             $table->increments('id');
 
-            $table->string('titulo')
+            $table->string('name')
                   ->nullable();
 
             $table->string('slug')
                   ->nullable();
 
-            $table->string('codigo')
-                  ->nullable();
-
-            $table->string('estilo')
-                  ->nullable();
-
-            $table->integer('is_rebaja')
+            $table->string('code')
                   ->nullable();
 
             $table->integer('is_trend')
                   ->nullable();
 
-            $table->float('precio_descuento')
-                  ->nullable();
-
             $table->text('description')
                   ->nullable();
 
-            $table->float('precio')
-                  ->nullable();
-
-
-            $table->integer('marca_id')
+            $table->integer('brand_id')
                   ->unsigned()
                   ->nullable();
 
-
-            $table->foreign('marca_id')
+            $table->foreign('brand_id')
                   ->references('id')
-                  ->on('marcas')
+                  ->on('brands')
                   ->onDelete('cascade');
 
-
-            $table->integer('concept_id')
+            $table->integer('category_id')
                    ->unsigned()
                    ->nullable();
 
 
-            $table->foreign('concept_id')
+            $table->foreign('category_id')
                   ->references('id')
-                  ->on('concepts')
+                  ->on('categories')
                   ->onDelete('cascade');
 
 
-            $table->integer('clasification_id')
+            $table->integer('family_id')
                   ->unsigned()
                   ->nullable();
 
 
-            $table->foreign('clasification_id')
+            $table->foreign('family_id')
                   ->references('id')
-                  ->on('clasifications')
+                  ->on('families')
                   ->onDelete('cascade');
 
 
@@ -224,11 +209,11 @@ class CreateArticlesTable extends Migration
 
         Schema::dropIfExists('articles');
 
-        Schema::dropIfExists('marcas');
+        Schema::dropIfExists('brands');
 
-        Schema::dropIfExists('clasifications');
+        Schema::dropIfExists('categories');
 
-        Schema::dropIfExists('concepts');
+        Schema::dropIfExists('families');
 
     }
 }

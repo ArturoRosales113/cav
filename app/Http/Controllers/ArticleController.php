@@ -5,17 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
-
-use App\Article;
-use App\Inventroy;
-use App\Clasification;
-use App\Concept;
-use App\Stock;
-use App\Store;
-use App\Marca;
-use App\Linea;
-use App\Acabado;
-
+//Librerias
 use Auth;
 use Validator;
 use Image;
@@ -23,6 +13,15 @@ use File;
 use View;
 use Session;
 use Config;
+
+//Modelos
+use App\Article;
+use App\Brand;
+use App\Category;
+use App\Download;
+use App\Family;
+
+
 
 class ArticleController extends Controller
 
@@ -49,17 +48,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-       $con = Concept::all();
-       $marca = Marca::all();
-       $linea = Linea::all();
-       $acabado = Acabado::all();
-       $clas = Clasification::all();
        return view('backend.article.create',[
-        'marca' => $marca,
-        'linea' => $linea,
-        'acabado' => $acabado,
-        'con' => $con,
-        'clas' => $clas
+        'brands' => Brand::all(),
+        'families' => Family::all()
        ]);
     }
 
@@ -69,7 +60,7 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    
+
     public function store(Request $request)
     {
        $input = $request->all();
@@ -77,7 +68,7 @@ class ArticleController extends Controller
        $rules = [
         'titulo' => 'required',
         'estilo' => 'required',
-        'concept_id' => 'required|not_in:0',      
+        'concept_id' => 'required|not_in:0',
        ];
        $messages = [
         'titulo.required' => 'El campo título es obligatorio',
@@ -105,7 +96,7 @@ class ArticleController extends Controller
          'concept_id' => $input['concept_id'],
          'description' => $input['description'],
         ]);
-        
+
         if ($input['clasification_id'] !=0 ) {
           $art->clasification_id = $input['clasification_id'];
         }else{

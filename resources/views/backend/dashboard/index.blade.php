@@ -1,7 +1,16 @@
 @extends('backend.layouts.app')
+
+@section('page_title')
+Dashboard
+@endsection
+
+@section('dashboard_buttons')
+<button class="btn btn-sm btn-outline-secondary">Share</button>
+<button class="btn btn-sm btn-outline-secondary">Export</button>
+@endsection
+
 @section('content')
-@include('backend.layouts.navbars.nav_expand')
-<div class="row justify-content-center align-items-center" style="height:100vh;">
+<div class="row justify-content-center min-vh-100">
   <div class="col-md-12">
     <div class="row justify-content-center align-items-center py-5">
       <div class="col-lg-11">
