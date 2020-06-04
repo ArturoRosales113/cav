@@ -1,6 +1,9 @@
 <?php
 // Rutas del front end
 // Index
+
+use App\Http\Controllers\CategoryController;
+
 Route::get('/', ['uses' => 'FrontController@index', 'as' => 'front.index']);
 //Aplicaciones
 Route::get('/aplicaciones', ['uses' => 'FrontController@aplicaciones', 'as' => 'front.aplicaciones']);
@@ -47,9 +50,10 @@ Route::prefix('admin')->group(function () {
         Route::resources([
             'article' => 'ArticleController',
             'banner' => 'BannerController',
-            'clasification' => 'ClasificationController',
-            'concept' => 'ConceptController',
+            'brand' => 'BrandController',
+            'category' => 'CategoryController',
             'downlad' => 'DownloadsController',
+            'family' => 'FamilyController',
             'linea' => 'LineaController',
             'marca' => 'MarcaController',
             'mensaje' => 'MensajeController',

@@ -32,18 +32,6 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('article.index') }}">
-            <i class="fas fa-boxes feather"></i>
-            Todos las categorias
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('article.index') }}">
-            <i class="fas fa-tags feather"></i>
-            Todos las marcas
-          </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="fas fa-toolbox feather"></i>
               Aplicaciones
