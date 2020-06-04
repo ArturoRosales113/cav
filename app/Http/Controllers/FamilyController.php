@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Family;
 
 use Validator;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class FamilyController extends Controller
 {
@@ -56,14 +58,20 @@ class FamilyController extends Controller
            'display_name' => ucwords($input['name']),
            'description' => $input['description']
           ]);
-
-          if(array_key_exists('file', $input)){
-            $file = Input::file('file');
+            //dd($input);
+          if(array_key_exists('photo', $input) && $input['photo'] != null ){
+            $file = Input::file('photo');
             $file_name = $fam->name.'.'.$file->getClientOriginalExtension();
             $file->move('img/brand/', $file_name);
             $fam->img_path = 'img/brand/'.$file_name;
-            $fam->save();
         }
+          if(array_key_exists('logo', $input) && $input['logo'] != null){
+            $file = Input::file('logo');
+            $file_name = $fam->name.'.'.$file->getClientOriginalExtension();
+            $file->move('img/brand/', $file_name);
+            $fam->img_path = 'img/brand/'.$file_name;
+        }
+        $fam->save();
           return redirect()->route('family.index');
     }
     }

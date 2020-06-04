@@ -15,11 +15,16 @@ Familias
     <div class="row p-5">
         @foreach ($families as $f)
         <div class="col-10 col-lg-4 mb-4">
-            <div class="card bg-dark text-white">
-                <img class="card-img" src="{{ $f->img_path =! null ? asset('img/brand/no_img_found.png') : $f->img_path  }}" alt="Card image">
+            <div class="card text-white {{ $f->img_path =! null ? 'bg-white' : 'bg-dark'  }}">
+                <img class="card-img " src="{{ $f->img_path =! null ? asset('img/brand/no_img_found.png') : $f->img_path  }}" alt=" {{ $f->display_name }} " style="opacity:{{ $f->img_path =! null ? '.2' : '1'  }};">
                 <div class="card-img-overlay">
-                    <h5 class="card-title">{{  $f->display_name}}</h5>
-                    <p class="card-text">{{ $f->description }}</p>
+                    <div class="row h-100 align-items-center">
+                        <div class="col-3"></div>
+                        <div class="col-9">
+                            <h5 class="card-title {{ $f->img_path =! null ? 'text-dark' : ''  }}">{{  $f->display_name}}</h5>
+                            <p class="card-text {{ $f->img_path =! null ? 'text-dark' : ''  }}">{{ $f->description }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
