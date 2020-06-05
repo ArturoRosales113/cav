@@ -27,8 +27,8 @@ Crear Familia
                     @endif
                 @endforeach
             @endif
-            <form action="{{ route('family.store') }}" method="POST">
-                <div class="row justify-content-start">
+            <form action="{{ route('family.store') }}" method="POST" enctype="multipart/form-data">
+                <div class="row justify-content-center">
                     {{ csrf_field() }}
                     <div class="form-group col-12">
                         <label for="name">Nombre*</label>
@@ -47,16 +47,23 @@ Crear Familia
                                 <small class="text-danger">{{ $errors->first('description') }}</small>
                             </span>
                         @endif
-                    </div><div class="w-100"></div>
-                    <div class="col-6"></div>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col-4">
+                        <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="familyFormLogoPreview">
+                    </div>
                     <div class="form-group col-6">
                         <h6>Icono</h6>
                         <hr>
                         <label for="exampleFormControlFile1">Subir png</label>
-                        <input type="file" class="form-control-file" id="logo" name="logo">
+                        <input type="file" class="form-control-file" name="logo">
                       </div>
-                    <div class="w-100"></div>
-                    <div class="col-6"></div>
+                    <div class="w-100 py-3"></div>
+                    <div class="col-4">
+                        <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="familyFormPhotoPreview">
+                    </div>
                     <div class="form-group col-6">
                         <h6>Imagen</h6>
                         <hr>
