@@ -7,7 +7,7 @@
   <title> {{ config('APP_NAME') }} | @yield('page_title')  </title>
 
    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Playfair+Display:700i" rel="stylesheet">
-   
+
 
 
   <!-- Estilos -->
@@ -21,9 +21,10 @@
  </head>
  <body>
   @include('frontend.layouts.navbars.navbar')
-  <div class="container-fluid main-panel">
-    @yield('page_banner')
-   @yield('content')
+  <!--main-panel-->
+  <div class="container-fluid ">
+   @yield('page_banner')
+    @yield('content')
    @include('frontend.layouts.footer.footer')
   </div>
 
