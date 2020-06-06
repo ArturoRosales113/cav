@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+
+
+use Validator;
+use SweetAlert;
+use File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class CategoryController extends Controller
 {

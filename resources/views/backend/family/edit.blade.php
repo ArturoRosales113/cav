@@ -18,14 +18,6 @@ Editar {{$family->display_name}}
 @section('content')
 <div class="row justify-content-center pt-5">
     <div class="col-12 col-lg-8">
-        @if($errors)
-            @foreach ($errors->all() as $message)
-                <span>{{$message}}</span>
-                @if(!$loop->last)
-                    <br>
-                @endif
-            @endforeach
-        @endif
         <form action="{{route('family.update', $family->id) }}" method="POST" enctype="multipart/form-data">
             <div class="row justify-content-center">
                 {{ csrf_field() }}
