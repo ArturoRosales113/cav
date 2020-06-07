@@ -1,29 +1,29 @@
-$('#familyDestroyModal').on('show.bs.modal', function (event) {
+$('#destroyModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget)
     var route = button.data('route')
     var title = button.data('title')
     var id = button.data('id')
     var modal = $(this)
-    modal.find('#familyDestroyModalForm').attr('action', route)
-    modal.find('#familyDestroyModalLabel').text('Eliminar ' + title)
-    modal.find('#FamilyDestroyTitle').text(title)
-    modal.find('#familyDestroyModalFormSelect option[value="' + id + '"]').attr("disabled", true)
+    modal.find('#destroyModalForm').attr('action', route)
+    modal.find('#destroyModalLabel').text('Eliminar ' + title)
+    modal.find('#destroyTitle').text(title)
+    modal.find('#destroyModalFormSelect option[value="' + id + '"]').attr("disabled", true)
 })
-$('#familyDestroyModal').on('hidden.bs.modal', function (event) {
+$('#destroyModal').on('hidden.bs.modal', function (event) {
     var modal = $(this)
-    modal.find('#familyDestroyModalForm').attr('action', '')
-    modal.find('#familyDestroyModalLabel').text('Eliminar ')
-    modal.find('#FamilyDestroyTitle').text('')
-    modal.find('#familyDestroyModalFormSelect option').prop('selected', false).attr('disabled', false)
+    modal.find('#destroyModalForm').attr('action', '')
+    modal.find('#destroyModalLabel').text('Eliminar ')
+    modal.find('#destroyTitle').text('')
+    modal.find('#destroyModalFormSelect option').prop('selected', false).attr('disabled', false)
 })
-$('#familyDestroyModal input[name="transfer"]').on('click', function () {
+$('#destroyModal input[name="transfer"]').on('click', function () {
     var radio = $(this)
     if (radio.prop('value') == 'false') {
         console.log('falso')
-        $('#familyDestroyModalFormSelect').attr('disabled', true)
+        $('#destroyModalFormSelect').attr('disabled', true)
 
     } else {
-        $('#familyDestroyModalFormSelect').attr('disabled', false)
+        $('#destroyModalFormSelect').attr('disabled', false)
         console.log('verdadero')
     }
 })
@@ -33,7 +33,7 @@ $('input[name="logo"]').change(function (e) {
     var reader = new FileReader();
     reader.onload = function (e) {
 
-        $('#familyFormLogoPreview').prop('src', e.target.result)
+        $('#formLogoPreview').prop('src', e.target.result)
     };
     // read the image file as a data URL.
     reader.readAsDataURL(this.files[0]);
@@ -45,7 +45,7 @@ $('input[name="photo"]').change(function (e) {
     var reader = new FileReader();
     reader.onload = function (e) {
 
-        $('#familyFormPhotoPreview').prop('src', e.target.result)
+        $('#formPhotoPreview').prop('src', e.target.result)
     };
     // read the image file as a data URL.
     reader.readAsDataURL(this.files[0]);

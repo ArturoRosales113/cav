@@ -56,24 +56,28 @@ class CategoryController extends Controller
            ->withInput();
         } else {
           $cat = Category::create([
-           'name' => str_replace(' ', '', strtolower($input['name'])),
-           'display_name' => ucwords($input['name']),
-           'concept_id' => $input['concept_id'],
-          ]);
-          if($input['description'] != null){
-            $cat->description = $input['description'];
-
-          }
-          if($input['file']){
-            $file = Input::file('file');
-            $file_name = $cat->name.'.'.$file->getClientOriginalExtension();
+            'name' => str_replace(' ', '', strtolower($input['name'])),
+            'display_name' => ucwords($input['name']),
+            'description' => $input['description']
+        ]);
+        if (array_key_exists('photo', $input) && $input['photo'] != null) {
+            $file = Input::file('photo');
+            $file_name = $cat->name . '-banner' . '.' . $file->getClientOriginalExtension();
             $file->move('img/brand/', $file_name);
-            $cat->img_path = 'img/brand/'.$file_name;
-            $cat->save();
+            $cat->img_path = 'img/brand/' . $file_name;
         }
-          return redirect()->route('family.index');
+        if (array_key_exists('logo', $input) && $input['logo'] != null) {
+            $file = Input::file('logo');
+            $file_name = $cat->name . '-icon' . '.' . $file->getClientOriginalExtension();
+            $file->move('img/brand/', $file_name);
+            $cat->icon_path = 'img/brand/' . $file_name;
+        }
+        $cat->save();
+        return redirect()->route('category.index')->with('success', 'Información almacenada');
+          
     }
-    }
+    }   
+    
 
     /**
      * Display the specified resource.
@@ -83,7 +87,10 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('backend.category.show', ['category' => $category]);
+        return view('backend.category.show', [
+            'category' => $category,
+            'categories' => Category::all()
+            ]);
     }
 
     /**
@@ -125,26 +132,39 @@ class CategoryController extends Controller
             ->withErrors($validator)
             ->withInput();
         } else {
-            if($input['file']){
+            
+            if (array_key_exists('photo', $input) && $input['photo'] != null) {
                 //Borrar Archivo
-                if($$category->img_path != null){
-                    $dfile = $$category->img_path;
+                if ($category->img_path != null) {
+                    $dfile = $category->img_path;
                     $filename = public_path($dfile);
                     File::delete($filename);
                 }
-                //Actualizar Archivo
-                $file = Input::file('file');
-                $file_name = $$category->name.'.'.$file->getClientOriginalExtension();
+                $file = Input::file('photo');
+                $file_name = $category->name . '-banner' . '.' . $file->getClientOriginalExtension();
                 $file->move('img/brand/', $file_name);
-                $$category->img_path = 'img/families/'.$file_name;
+                $category->img_path = 'img/brand/' . $file_name;
             }
-            $$category->name = str_replace(' ', '', strtolower($input['name']));
-            $$category->display_name = ucwords($input['name']);
+            if (array_key_exists('logo', $input) && $input['logo'] != null) {
+                //Borrar Archivo
+                if ($category->icon_path != null) {
+                    $dfile = $category->icon_path;
+                    $filename = public_path($dfile);
+                    File::delete($filename);
+                }
+                $file = Input::file('logo');
+                $file_name = $category->name . '-icon' . '.' . $file->getClientOriginalExtension();
+                $file->move('img/brand/', $file_name);
+                $category->icon_path = 'img/brand/' . $file_name;
+            }
+
+            $category->name = str_replace(' ', '', strtolower($input['name']));
+            $category->display_name = ucwords($input['name']);
             if ($input['description'] != null) {
-                $$category->description = $input['description'];
+                $category->description = $input['description'];
             }
-            $$category->save();
-            return redirect()->route('family.index');
+            $category->save();
+            return redirect()->route('category.index')->with('success', 'Información actualizada');
         }
     }
 
@@ -154,8 +174,50 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Request $request, Category $category)
     {
-        //
+        if($request->transfer == 'true')
+        {
+         if($category->articles()->count() > 0){
+             foreach($category->articles() as $fa){
+                 $fa->category_id = $request->category_id;
+                 $fa->save();
+             }
+         }
+        }
+     //En caso de tener banner eliminarlo
+     if ($category->img_path != null) {
+        $dfile = $category->img_path;
+        $filename = public_path($dfile);
+        File::delete($filename);
+     }
+     //En caso de tener icono eliminarlo
+     if ($category->icon_path != null) {
+         $dfile = $category->icon_path;
+         $filename = public_path($dfile);
+         File::delete($filename);
+     }
+     //Borrar modelo
+     $category->delete();
+     return redirect()->route('category.index')->with('success', 'Elimiinado');
+    }
+
+    public function photoDelete(Category $category)
+    {
+        $dfile = $category->img_path;
+        $filename = public_path($dfile);
+        File::delete($filename);
+        $category->img_path = null;
+        $category->save();
+        return redirect()->back()->with('success', 'Imagen Eliminada');
+    }
+    public function iconDelete(Category $category)
+    {
+        $dfile = $category->icon_path;
+        $filename = public_path($dfile);
+        File::delete($filename);
+        $category->icon_path = null;
+        $category->save();
+        return redirect()->back()->with('success', 'Icono Eliminado');
     }
 }

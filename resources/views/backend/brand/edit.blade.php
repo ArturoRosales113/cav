@@ -39,22 +39,25 @@ Editar {{$family->display_name}}
                             <small class="text-danger">{{ $errors->first('description') }}</small>
                         </span>
                     @endif
+                </div><div class="w-100"></div>
+                <div class="col-4 text-center bg-light">
+                    <img src="{{ $family->icon_path == null ? asset('img/brand/no_img_found.png') : asset($family->icon_path) }}" class="img-fluid" id="familyFormLogoPreview" alt="">
+                    @if ( $family->icon_path != null)
+                    <a class="btn btn-danger" href="{{ route('family.icon.delete', $family->id) }}" ><i class="fas fa-trash"></i></a>
+                    @endif
                 </div>
-                
-                <div class="w-100"></div>
-                <div class="col-4">
-                    <img src="{{ $family
-                    ->icon_path == null ? asset('img/brand/no_img_found.png') : asset($category->icon_path) }}" alt="" class="img-fluid" id="formLogoPreview">
-                </div>
-                <div class="form-group col-6">
+                <div class="form-group col-6 ">
                     <h6>Icono</h6>
                     <hr>
                     <label for="exampleFormControlFile1">Subir png</label>
-                    <input type="file" class="form-control-file" name="logo">
+                    <input type="file" class="form-control-file" id="logo" name="logo">
                   </div>
                 <div class="w-100 py-3"></div>
-                <div class="col-4">
-                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formPhotoPreview">
+                <div class="col-4 text-center bg-light">
+                    <img src="{{ $family->img_path == null ? asset('img/brand/no_img_found.png') : asset($family->img_path) }}" class="img-fluid mb-2" id="familyFormPhotoPreview" alt="">
+                    @if ( $family->img_path != null)
+                    <a class="btn btn-danger" href="{{ route('family.photo.delete', $family->id) }}" ><i class="fas fa-trash"></i></a>
+                    @endif
                 </div>
                 <div class="form-group col-6">
                     <h6>Imagen</h6>

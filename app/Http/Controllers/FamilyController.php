@@ -111,23 +111,25 @@ class FamilyController extends Controller
      */
     public function update(Request $request, Family $family)
     {
-        //dd('hola');
         $input = $request->all();
         //dd($input);
         $rules = [
-            'name' => 'max:55',
-            'description' => 'max:256',
-            'photo' => 'image|max:150',
-            'logo' => 'image|max:100'
+         'name' => 'required',
+         'file' => 'image|mimes:jpg,jpeg,bmp,png|max:400'
         ];
-        $validator = Validator::make($input, $rules);
+        $messages = [
+         'name.required' => 'El campo "Nombre" es obligatorio',
+         'file.image' => 'El archivo no es una imagen',
+         'file.mimes' => 'El formato de la imagen no es válido',
+         'file.size' => 'El tamaño del archivo debe ser menor a 400kb',
+        ];
+        $validator = Validator::make($input, $rules, $messages);
         if ($validator->fails()) {
             //dd($validator);
             return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
+            ->withErrors($validator)
+            ->withInput();
         } else {
-
 
             if (array_key_exists('photo', $input) && $input['photo'] != null) {
                 //Borrar Archivo
