@@ -2,14 +2,14 @@
 
 
 @section('page_title')
-Crear Familia
+Crear Marca
 @endsection
 
 
 
 @section('dashboard_buttons')
-<a class="btn btn-sm btn-secondary" href="{{ route('family.index') }}">
- <i class="fas fa-arrow-left"></i>&nbsp;Volver a listado de familias
+<a class="btn btn-sm btn-secondary" href="{{ route('brand.index') }}">
+ <i class="fas fa-arrow-left"></i>&nbsp;Volver a listado de marcas
 </a>
 @endsection
 
@@ -19,7 +19,7 @@ Crear Familia
 
     <div class="row justify-content-center pt-5">
         <div class="col-12 col-lg-8">
-            <form action="{{ route('family.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('brand.store') }}" method="POST" enctype="multipart/form-data">
                 <div class="row justify-content-center">
                     {{ csrf_field() }}
                     <div class="form-group col-12">

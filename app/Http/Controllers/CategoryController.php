@@ -42,42 +42,44 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        //dd($input);
         $rules = [
-         'name' => 'required',
+            'name' => 'required',
+            'description' => 'max:256',
+            'photo' => 'image|max:150',
+            'logo' => 'image|max:100'
         ];
-        $messages = [
-         'name.required' => 'El campo "Nombre" es obligatorio',
-        ];
-        $validator = Validator::make($input, $rules, $messages);
+        $validator = Validator::make($input, $rules);
         if ($validator->fails()) {
             //dd($validator);
             return redirect()->back()
-           ->withErrors($validator)
-           ->withInput();
+                ->withErrors($validator)
+                ->withInput();
         } else {
-          $cat = Category::create([
-            'name' => str_replace(' ', '', strtolower($input['name'])),
-            'display_name' => ucwords($input['name']),
-            'description' => $input['description']
-        ]);
-        if (array_key_exists('photo', $input) && $input['photo'] != null) {
-            $file = Input::file('photo');
-            $file_name = $cat->name . '-banner' . '.' . $file->getClientOriginalExtension();
-            $file->move('img/brand/', $file_name);
-            $cat->img_path = 'img/brand/' . $file_name;
+            $cat = Category::create([
+                'name' => str_replace(' ', '', strtolower($input['name'])),
+                'display_name' => ucwords($input['name']),
+                'description' => $input['description']
+            ]);
+
+
+            if (array_key_exists('photo', $input) && $input['photo'] != null) {
+                $file = Input::file('photo');
+                $file_name = $cat->name . '-banner' . '.' . $file->getClientOriginalExtension();
+                $file->move('img/brand/', $file_name);
+                $cat->img_path = 'img/brand/' . $file_name;
+            }
+            if (array_key_exists('logo', $input) && $input['logo'] != null) {
+                $file = Input::file('logo');
+                $file_name = $cat->name . '-icon' . '.' . $file->getClientOriginalExtension();
+                $file->move('img/brand/', $file_name);
+                $cat->icon_path = 'img/brand/' . $file_name;
+            }
+            $cat->save();
+            return redirect()->route('family.index')->with('success', 'Información almacenada');
         }
-        if (array_key_exists('logo', $input) && $input['logo'] != null) {
-            $file = Input::file('logo');
-            $file_name = $cat->name . '-icon' . '.' . $file->getClientOriginalExtension();
-            $file->move('img/brand/', $file_name);
-            $cat->icon_path = 'img/brand/' . $file_name;
-        }
-        $cat->save();
-        return redirect()->route('category.index')->with('success', 'Información almacenada');
-          
     }
-    }   
-    
+
 
     /**
      * Display the specified resource.
@@ -90,7 +92,7 @@ class CategoryController extends Controller
         return view('backend.category.show', [
             'category' => $category,
             'categories' => Category::all()
-            ]);
+        ]);
     }
 
     /**
@@ -116,23 +118,23 @@ class CategoryController extends Controller
         $input = $request->all();
         //dd($input);
         $rules = [
-         'name' => 'required',
-         'file' => 'image|mimes:jpg,jpeg,bmp,png|max:400'
+            'name' => 'required',
+            'file' => 'image|mimes:jpg,jpeg,bmp,png|max:400'
         ];
         $messages = [
-         'name.required' => 'El campo "Nombre" es obligatorio',
-         'file.image' => 'El archivo no es una imagen',
-         'file.mimes' => 'El formato de la imagen no es válido',
-         'file.size' => 'El tamaño del archivo debe ser menor a 400kb',
+            'name.required' => 'El campo "Nombre" es obligatorio',
+            'file.image' => 'El archivo no es una imagen',
+            'file.mimes' => 'El formato de la imagen no es válido',
+            'file.size' => 'El tamaño del archivo debe ser menor a 400kb',
         ];
         $validator = Validator::make($input, $rules, $messages);
         if ($validator->fails()) {
             //dd($validator);
             return redirect()->back()
-            ->withErrors($validator)
-            ->withInput();
+                ->withErrors($validator)
+                ->withInput();
         } else {
-            
+
             if (array_key_exists('photo', $input) && $input['photo'] != null) {
                 //Borrar Archivo
                 if ($category->img_path != null) {
@@ -176,30 +178,29 @@ class CategoryController extends Controller
      */
     public function destroy(Request $request, Category $category)
     {
-        if($request->transfer == 'true')
-        {
-         if($category->articles()->count() > 0){
-             foreach($category->articles() as $fa){
-                 $fa->category_id = $request->category_id;
-                 $fa->save();
-             }
-         }
+        if ($request->transfer == 'true') {
+            if ($category->articles()->count() > 0) {
+                foreach ($category->articles() as $fa) {
+                    $fa->category_id = $request->category_id;
+                    $fa->save();
+                }
+            }
         }
-     //En caso de tener banner eliminarlo
-     if ($category->img_path != null) {
-        $dfile = $category->img_path;
-        $filename = public_path($dfile);
-        File::delete($filename);
-     }
-     //En caso de tener icono eliminarlo
-     if ($category->icon_path != null) {
-         $dfile = $category->icon_path;
-         $filename = public_path($dfile);
-         File::delete($filename);
-     }
-     //Borrar modelo
-     $category->delete();
-     return redirect()->route('category.index')->with('success', 'Elimiinado');
+        //En caso de tener banner eliminarlo
+        if ($category->img_path != null) {
+            $dfile = $category->img_path;
+            $filename = public_path($dfile);
+            File::delete($filename);
+        }
+        //En caso de tener icono eliminarlo
+        if ($category->icon_path != null) {
+            $dfile = $category->icon_path;
+            $filename = public_path($dfile);
+            File::delete($filename);
+        }
+        //Borrar modelo
+        $category->delete();
+        return redirect()->route('category.index')->with('success', 'Elimiinado');
     }
 
     public function photoDelete(Category $category)

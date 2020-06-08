@@ -34,10 +34,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
-        //dd($articles);
         return view('backend.article.index', [
-         'articles' => $articles,
+         'articles' => Article::all(),
+         'families' => Family::all(),
+         'categories'=> Category::all()
          ]);
     }
 

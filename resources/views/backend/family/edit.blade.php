@@ -24,7 +24,7 @@ Editar {{$family->display_name}}
                 <input type="hidden" name="_method" value="put" />
                 <div class="form-group col-12">
                     <label for="name">Nombre*</label>
-                    <input type="text" name="name" value="{{ old('name',$family->display_name ) }}" placeholder="Nombre" class="form-control">
+                    <input type="text" name="name" value="{{ old('name', $family->display_name ) }}" placeholder="Nombre" class="form-control">
                     @if ($errors->has('name'))
                     <span class="help-block">
                             <small class="text-danger">{{ $errors->first('name') }}</small>
@@ -33,35 +33,41 @@ Editar {{$family->display_name}}
                 </div>
                 <div class="form-group col-12">
                     <label for="description">Descripción*</label>
-                    <textarea name="description" id="" class="form-control" cols="10" placeholder="Descripción" rows="10">{{ old('description',$family->description ) }}</textarea>
+                    <textarea name="description" id="" class="form-control" cols="10" placeholder="Descripción" rows="10">{{ old('description', $family->description ) }}</textarea>
                     @if ($errors->has('description'))
                     <span class="help-block">
                             <small class="text-danger">{{ $errors->first('description') }}</small>
                         </span>
                     @endif
                 </div>
-                
                 <div class="w-100"></div>
-                <div class="col-4">
-                    <img src="{{ $family
-                    ->icon_path == null ? asset('img/brand/no_img_found.png') : asset($category->icon_path) }}" alt="" class="img-fluid" id="formLogoPreview">
+                <div class="col-4 text-center bg-light">
+                    <img src="{{ $brand->icon_path == null ? asset('img/brand/no_img_found.png') : asset($brand->icon_path) }}" class="img-fluid" id="formLogoPreview" alt="">
+                    @if ( $brand->icon_path != null)
+                    <a class="btn btn-danger" href="{{ route('brand.icon.delete', $brand->id) }}" ><i class="fas fa-trash"></i></a>
+                    @endif
                 </div>
-                <div class="form-group col-6">
+                <div class="form-group col-6 ">
                     <h6>Icono</h6>
                     <hr>
                     <label for="exampleFormControlFile1">Subir png</label>
-                    <input type="file" class="form-control-file" name="logo">
+                    <input type="file" class="form-control-file" id="logo" name="logo">
                   </div>
                 <div class="w-100 py-3"></div>
-                <div class="col-4">
-                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formPhotoPreview">
+
+                <div class="col-4 text-center bg-light">
+                    <img src="{{ $brand->img_path == null ? asset('img/brand/no_img_found.png') : asset($brand->img_path) }}" class="img-fluid mb-2" id="formPhotoPreview" alt="">
+                    @if ( $brand->img_path != null)
+                    <a class="btn btn-danger" href="{{ route('brand.photo.delete', $brand->id) }}" ><i class="fas fa-trash"></i></a>
+                    @endif
                 </div>
                 <div class="form-group col-6">
                     <h6>Imagen</h6>
                     <hr>
                     <label for="exampleFormControlFile1">Subir fotografia 16:9</label>
                     <input type="file" class="form-control-file" id="photo" name="photo">
-                  </div>
+                </div>
+
                 <div class="form-group py-3 col-12 text-right">
                     <button role="submit" class="btn btn-lg btn-secondary">Guardar Cambios</button>
                 </div>
