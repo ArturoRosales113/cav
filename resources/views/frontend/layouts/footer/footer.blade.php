@@ -103,4 +103,20 @@ Veracruz, Mexico C.P. 94294
           </ul>
     </div>
  </div>
+ <div class="row justify-content-around align-items-center py-5">
+    <a href="#" class="btn btn-link text-dark">
+        <small>Afiliaciones y certificaciones</small>
+    </a>
+    <img src="{{ asset('img/front/Logos.png') }}" width="40px">
+    <img src="{{ asset('img/front/Logos_1.png') }}" width="40px">
+    <img src="{{ asset('img/front/Logos_2.png') }}" width="40px">
+    <img src="{{ asset('img/front/Logos_3.png') }}" width="40px">
+    <img src="{{ asset('img/front/Logos_4.png') }}" width="40px">
+    <img src="{{ asset('img/front/Logos_5.png') }}" width="40px">
+    <img src="{{ asset('img/front/Logos_6.png') }}" width="40px">
+    <img src="{{ asset('img/front/Logos_8.png') }}" width="40px">
+    <a href="" class="btn btn-link text-dark">
+        <small>Politica de privacidad</small>
+    </a>
+ </div>
 </footer>

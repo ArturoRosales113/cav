@@ -2,36 +2,31 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,900&display=swap');
 
-/*
-.font1{
-  font-family: 'Playfair Display', serif;
-} */
-
-.f300{
-  font-weight: 300;
+.bold{
+    font-weight: 400;
 }
-.f400{
-  font-weight: 400;
-}
-.f500{
-  font-weight: 500;
-}
-
 /* Colores */
 .bg1{
-  background-color: #FED8DD !important;
+  background-color: #AD272D !important;
 }
 
 .bg2{
-  background-color: #FF0A65 !important;
+  background-color: #333333 !important;
+}
+
+.bg3{
+  background-color: #D7DADB !important;
 }
 
 
 .color1{
-  color:#FF0A65;
+  color:#AD272D;
 }
 .color2{
-  color: #FED8DD;
+  color: #333;
+}
+.color3{
+    color: #D7DADB;
 }
 /* Personalizacion */
 
@@ -100,6 +95,7 @@ footer .list-group .list-group-item{
     border: none;
     padding: .2rem 1.25rem;
 }
+
 
 
 
