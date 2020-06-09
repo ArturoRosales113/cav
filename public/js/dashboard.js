@@ -50,3 +50,10 @@ $('input[name="photo"]').change(function (e) {
     // read the image file as a data URL.
     reader.readAsDataURL(this.files[0]);
 })
+
+
+$('input[type="file"]').change(function (e) {
+    var fileName = $(this).val();
+    //replace the "Choose a file" label
+    $(this).next('.custom-file-label').html(fileName);
+})

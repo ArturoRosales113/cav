@@ -19,7 +19,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('app.pages') }}">
             <i class="fas fa-file-alt feather"></i>
-            Contenido de las páginas
+            Páginas
           </a>
         </li>
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -28,7 +28,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('article.index') }}">
             <i class="fas fa-store feather"></i>
-            Todos los productos
+            Productos
           </a>
         </li>
         <li class="nav-item">
@@ -50,7 +50,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="fas fa-users feather"></i>
-            Todos Usuarios
+            Usuarios
           </a>
         </li>
 
