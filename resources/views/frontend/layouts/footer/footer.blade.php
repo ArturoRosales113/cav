@@ -1,46 +1,106 @@
 <footer class="text-white">
- <div class="row align-items-center py-5 justify-content-center">
-   <div class="col-md-6 col-lg-4 text-center">
-    <img src="{{ asset('img/logos/logob.png') }}" alt="" class="img-fluid my-4">
-    <h4 class="">Síguenos en</h4>
-    <div class="row justify-content-center py-3">
+ <div class="row align-items-start py-5 justify-content-center menu">
+    <div class="col-10 col-lg-5">
+        <h5>Contacto</h5>
+        <small>Tenemos servicio en toda la republica mexicana</small>
+        <div class="row py-3">
+            <div class="col">
+                <div class="row">
+                    <div class="col-1">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <div class="col">
+                        <span>Zona sur</span> <br>
+                        <small>01 800 215 260601</small>
 
-      {{-- @foreach ($settings->rss as $r)
-        @if($r->url != '')
-        <a class="btn btn-link text-white" href="{{ $r->url }}" target="_blank">
-          <i class="{{ $r->icon }}"></i>
-        </a>
-        @endif
-      @endforeach --}}
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-1">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <div class="col">
+                        <span>Zona centro</span> <br>
+                        <small>01 222 404 6616</small>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-1">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <div class="col">
+                        <span>Zona Norte</span> <br>
+                        <small>01 81 83559411</small>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row py-5">
+            <div class="col">
+                <span><strong>EMAIL:</strong>Contacto@puertasveracruz.com</span>
+            </div>
+        </div>
+        <div class="row py-5">
+            <div class="col">
+                <h5>Direccion matriz:</h5>
+                <p>
+Calzada Ruiz Cortines No.505-B Entre Calle 11 y Jesus
+Reyes Heroles Fracc. Costa Verde Boca del Rio,
+Veracruz, Mexico C.P. 94294
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="row justify-content-around">
+           <a href="#" class="btn btn-sm text-white"> <i class="fab fa-whatsapp"></i> </a>
+            <a href="#" class="btn btn-sm text-white"><i class="fab fa-linkedin-in"></i> </a>
+           <a href="#" class="btn btn-sm text-white"> <i class="fab fa-instagram"></i> </a>
+           <a href="#" class="btn btn-sm text-white"> <i class="fab fa-facebook-f"></i> </a>
+            <a href="#" class="btn btn-sm text-white"><i class="fab fa-youtube"></i> </a>
+        </div>
+
 
     </div>
-   </div>
-   <div class="w-100"></div>
-   {{-- <div class="col-lg-4 text-center">
-     <h6 class="text-white">Av. Araucarias #252 Col. Sahop Xalapa, Veracruz.</h6>
-     <a href="tel:2286036651" class="text-white btn btn-link">
-       <h5 class="text-white">
-         <small><i class="fa fa-phone"></i></small>
-         &nbsp;228&nbsp;603&nbsp;6651
-       </h5>
-    </a>
-   </div> --}}
-   <div class="w-100"></div>
-   <div class="col-lg-6">
-    {{-- <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link text-white" href="{{ route('front.index') }}">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="{{ route('front.agenda') }}">¡Agenda Tu Cita!</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="{{ route('front.nosotros') }}">Nosotros</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="{{ route('front.contacto') }}">Ubicación</a>
-      </li>
-    </ul> --}}
-   </div>
+    <div class="col-10 col-lg-4">
+        <h5>Productos</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+    </div>
+    <div class="col-10 col-lg-3">
+        <h5>Aplicaciones</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        <br>
+        <h5>Servicios</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+    </div>
  </div>
 </footer>

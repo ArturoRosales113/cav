@@ -13,13 +13,4 @@
 <!-- Green Sock -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
 
-<script src="{{asset('js/rsvp-scripts.js')}}" type="text/javascript"></script>
-<script type="text/javascript">
-function openNav() {
-   document.getElementById("mySidenav").style.width = "250px";
-}
 
-function closeNav() {
-   document.getElementById("mySidenav").style.width = "0";
-}
-</script>
