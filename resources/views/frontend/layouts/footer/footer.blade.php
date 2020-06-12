@@ -1,6 +1,6 @@
 <footer class="text-white">
  <div class="row align-items-start py-5 justify-content-center menu">
-    <div class="col-10 col-lg-5">
+    <div class="col-10 col-md-6 col-lg-5">
         <h5>Contacto</h5>
         <small>Tenemos servicio en toda la republica mexicana</small>
         <div class="row py-3">
@@ -51,9 +51,9 @@
             <div class="col">
                 <h5>Direccion matriz:</h5>
                 <p>
-Calzada Ruiz Cortines No.505-B Entre Calle 11 y Jesus
-Reyes Heroles Fracc. Costa Verde Boca del Rio,
-Veracruz, Mexico C.P. 94294
+                    Calzada Ruiz Cortines No.505-B Entre Calle 11 y Jesus
+                    Reyes Heroles Fracc. Costa Verde Boca del Rio,
+                    Veracruz, Mexico C.P. 94294
                 </p>
             </div>
         </div>

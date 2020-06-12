@@ -8,7 +8,7 @@ Crear Artículo
 
 
 @section('dashboard_buttons')
-<a class="btn btn-sm btn-secondary" href="{{ route('article.update', $article->id) }}">
+<a class="btn btn-sm btn-secondary" href="{{ route('article.index') }}">
  <i class="fas fa-arrow-left"></i>&nbsp;Volver a listado de articulos
 </a>
 @endsection
@@ -95,11 +95,11 @@ Crear Artículo
                         @endif
                     </div>
                     <div class="custom-control custom-checkbox form-group col-6">
-                        <input type="checkbox" class="custom-control-input" id="is_trend" name="is_trend">
+                        <input type="checkbox" class="custom-control-input" id="is_trend" name="is_trend" {{ $article->is_trend ? 'checked' : '' }}>
                         <label class="custom-control-label" for="is_trend">Marcar como destacado</label>
                       </div>
                     <div class="form-group col-12">
-                        <button class="btn btn-lg btn-secondary">Crear</button>
+                        <button class="btn btn-lg btn-secondary">Guardar cambios</button>
                     </div>
                 </div>
 

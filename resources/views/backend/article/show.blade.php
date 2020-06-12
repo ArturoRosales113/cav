@@ -12,6 +12,15 @@
 
 @section('content')
 <div class="row justify-content-center">
-    <div class="col-10"></div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+
+    </div>
 </div>
 @endsection
