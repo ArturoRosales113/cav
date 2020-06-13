@@ -16,7 +16,6 @@ use Config;
 
 //Modelos
 use App\Article;
-use App\Brand;
 use App\Category;
 use App\Download;
 use App\Family;
@@ -47,7 +46,6 @@ class ArticleController extends Controller
     public function create()
     {
        return view('backend.article.create',[
-        'brands' => Brand::all(),
         'categories' => Category::all(),
         'families' => Family::all()
        ]);
@@ -66,10 +64,12 @@ class ArticleController extends Controller
        //dd($input);
        $rules = [
            'name' => 'required',
-           'description' => 'max:150'
+           'description' => 'max:150',
+           'family_id' => 'required|not_in:0'
+
        ];
        $messages = [
-        'titulo.required' => 'El campo título es obligatorio',
+        'name.required' => 'El campo nombre es obligatorio',
        ];
        $validator = Validator::make($input, $rules, $messages);
        if ($validator->fails()) {
@@ -86,8 +86,7 @@ class ArticleController extends Controller
          'description' => $input['description'],
          'code' => $input['code'],
          'family_id' => $input['family_id'],
-         'category_id' => $input['category_id'],
-         'brand_id' => $input['brand_id'],
+         'category_id' => $input['category_id']
         ]);
         if ($input['is_trend'] == 'on'){
            $art->is_trend = true ;
@@ -120,7 +119,6 @@ class ArticleController extends Controller
     {
         return view('backend.article.edit',[
          'article' => $article,
-         'brands' => Brand::all(),
          'categories' => Category::all(),
          'families' => Family::all()
         ]);
@@ -193,80 +191,7 @@ class ArticleController extends Controller
        return redirect()->route('article.index');
     }
 
-    public function searchResults(Request $request)
-    {
-        $input = $request->title;
-        $codigo = Article::codigoSearch($input)->get();
-        $estilo = Article::estiloSearch($input)->get();
-        $collection = $codigo->concat($estilo);
-        $resultados = $collection->unique()->values()->all();
-        //dd($resultados);
-        return view('backend.article.search', [
-         'input' => $input,
-         'resultados' => $resultados
-        ]);
-    }
 
-    public function articleStock(Request $request,$id)
-    {
-       $art = Article::find($id);
-       $input = $request->all();
-       //dd($input);
-       $rules = [
-        'cantidad' => 'required',
-        'talla' => 'required',
-        'color' => 'required',
-        'color_hex' => 'required',
-        'store_id' => 'required|not_in:0'
-       ];
-       $messages = [
-        'cantidad.required' => 'El campo "cantidad" es obligatorio',
-        'talla.required' => 'El campo "talla" es obligatorio',
-        'color.required' => 'El campo "color" es obligatorio',
-        'color_hex.required' => 'El campo "color" es obligatorio',
-       ];
-       $validator = Validator::make($input, $rules, $messages);
-       if ($validator->fails()) {
-           //dd($validator);
-           return redirect()->back()
-          ->withErrors($validator)
-          ->withInput();
-       } else {
-       //dd($input,$art);
-       $stock = Stock::create([
-        'article_id' => $art->id,
-        'cantidad' => $input['cantidad'],
-        'talla' => $input['talla'],
-        'color' => $input['color'],
-        'color_hex' => $input['color_hex'],
-        'store_id' => $input['store_id'],
-       ]);
-       return redirect()->back();
-    }
-   }
-
-   public function addStock($id)
-   {
-      $stock = Stock::find($id);
-      $stock->cantidad ++;
-      $stock->save();
-      return redirect()->back();
-   }
-
-   public function reduceStock($id)
-   {
-      $stock = Stock::find($id);
-      $stock->cantidad --;
-      $stock->save();
-      return redirect()->back();
-   }
-
-   public function removeStock($id)
-   {
-      $stock = Stock::find($id);
-      $stock->delete();
-      return redirect()->back();
-   }
 
 
 }

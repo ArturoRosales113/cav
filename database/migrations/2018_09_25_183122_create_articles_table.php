@@ -67,28 +67,28 @@ class CreateArticlesTable extends Migration
         });
 
 
-        Schema::create('brands', function (Blueprint $table) {
+        // Schema::create('brands', function (Blueprint $table) {
 
-            $table->increments('id');
+        //     $table->increments('id');
 
-            $table->string('name')
-                  ->nullable();
+        //     $table->string('name')
+        //           ->nullable();
 
-            $table->string('display_name')
-                  ->nullable();
+        //     $table->string('display_name')
+        //           ->nullable();
 
-            $table->string('description')
-                  ->nullable();
+        //     $table->string('description')
+        //           ->nullable();
 
-            $table->string('img_path')
-                  ->nullable();
+        //     $table->string('img_path')
+        //           ->nullable();
 
-            $table->string('icon_path')
-                  ->nullable();
+        //     $table->string('icon_path')
+        //           ->nullable();
 
-            $table->timestamps();
+        //     $table->timestamps();
 
-        });
+        // });
 
 
         Schema::create('articles', function (Blueprint $table) {
@@ -110,36 +110,32 @@ class CreateArticlesTable extends Migration
             $table->text('description')
                   ->nullable();
 
-            $table->integer('brand_id')
-                  ->unsigned()
-                  ->nullable();
+            // $table->integer('brand_id')
+            //       ->nullable()
+            //       ->unsigned();
 
-            $table->foreign('brand_id')
-                  ->references('id')
-                  ->on('brands')
-                  ->onDelete('cascade');
+            // $table->foreign('brand_id')
+            //       ->references('id')
+            //       ->on('brands')
+            //       ->onDelete('cascade');
 
             $table->integer('category_id')
-                   ->unsigned()
-                   ->nullable();
-
+                   ->nullable()
+                   ->unsigned();
 
             $table->foreign('category_id')
                   ->references('id')
                   ->on('categories')
                   ->onDelete('cascade');
 
-
             $table->integer('family_id')
-                  ->unsigned()
-                  ->nullable();
-
+                  ->nullable()
+                  ->unsigned();
 
             $table->foreign('family_id')
                   ->references('id')
                   ->on('families')
                   ->onDelete('cascade');
-
 
             $table->timestamps();
 

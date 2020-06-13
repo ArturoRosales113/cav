@@ -76,7 +76,7 @@ class CategoryController extends Controller
                 $cat->icon_path = 'img/brand/' . $file_name;
             }
             $cat->save();
-            return redirect()->route('family.index')->with('success', 'Información almacenada');
+            return redirect()->route('category.index')->with('success', 'Información almacenada');
         }
     }
 

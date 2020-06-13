@@ -14,7 +14,6 @@ class Article extends Model
         'code',
         'is_trend',
         'description',
-        'brand_id',
         'category-id',
         'family_id'
     ];
@@ -41,7 +40,7 @@ class Article extends Model
     }
 
 
-   //Scopes de búsqueda
+ //Scopes de búsqueda
 
     // Buscar Por Concepto
     public function scopeFamily($query, $family_id)
