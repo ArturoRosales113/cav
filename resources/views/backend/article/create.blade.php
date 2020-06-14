@@ -18,7 +18,7 @@ Crear Artículo
 @section('content')
     <div class="row justify-content-center pt-5">
         <div class="col-12 col-lg-10">
-            <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('article.store') }}" class="form" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     {{ csrf_field() }}
                     <div class="form-group col-6">
@@ -83,8 +83,8 @@ Crear Artículo
                         <input type="checkbox" class="custom-control-input" id="is_trend" name="is_trend">
                         <label class="custom-control-label" for="is_trend">Marcar como destacado</label>
                       </div>
-                    <div class="form-group col-12">
-                        <button class="btn btn-lg btn-secondary">Crear</button>
+                    <div class="form-group col-12 text-center">
+                        <button class="btn btn-lg btn-secondary">Crear y pasar a subir imágenes</button>
                     </div>
                 </div>
 

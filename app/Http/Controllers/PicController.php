@@ -40,23 +40,41 @@ class PicController extends Controller
      */
     public function store(Request $request)
     {
-         //  Crear Imagen
-         //dd($request->all());
-          $file = Input::file('file');
-         //dd($image);
-          $ar= Article::find($request->id);
-          $name = str_replace(' ', '', strtolower($ar->Estilo));
-          for ($i=0; $i < count($file); $i++) {
-          $file_name =$name.str_random(6).'.'.$file[$i]->getClientOriginalExtension();
-          $pic = new Pic;
-          $pic->path = 'article_pictures/'.$file_name;
-          $file[$i]->move('article_pictures/', $file_name);
-          $pic->article_id = $ar->id;
-          $pic->save();
+
+        $input = $request->all();
+        //dd($input);
+        $rules = [
+            'photos' => 'required',
+            'photos.*' => 'mimes:jpg,jpeg,png,gif|max:500'
+        ];
+        $messages = [
+
+        ];
+        $validator = Validator::make($input, $rules, $messages);
+        if ($validator->fails()) {
+            //dd($validator);
+            return redirect()->back()
+           ->withErrors($validator)
+           ->withInput();
+        } else {
+            $file = Input::file('photos');
+            //dd($image);
+             $ar= Article::find($request->id);
+             $name = str_replace(' ', '', strtolower($ar->name));
+             $total =count($file);
+             for ($i=0; $i < $total; $i++) {
+                $file_name =$name.str_random(6).'.'.$file[$i]->getClientOriginalExtension();
+                $pic = new Pic;
+                $pic->path = 'article_pictures/'.$file_name;
+                $file[$i]->move('article_pictures/', $file_name);
+                $pic->article_id = $ar->id;
+                $pic->save();
+             }
+
+             return redirect()->back()->with('success', 'Imágenes almacenadas');
+
          }
-     return response()->json([
-         'message' => 'Image saved Successfully'
-     ], 200);
+
     }
 
     /**
@@ -101,6 +119,7 @@ class PicController extends Controller
      */
     public function destroy($id)
     {
+        dd('todo funciona bien');
       $p = Pic::find($id);
       $file = $p->path;
       $filename = public_path($file);
@@ -109,11 +128,12 @@ class PicController extends Controller
       return redirect()->back();
     }
 
-    public function articlePics($id)
+    public function delete(Pic $pic)
     {
-      $a = Article::find($id);
-      return view('backend.pics.create', [
-       'article' => $a,
-      ]);
+        $dfile = $pic->path;
+        $filename = public_path($dfile);
+        File::delete($filename);
+        $pic->delete();
+        return redirect()->back()->with('success', 'Imagen Eliminada');
     }
 }

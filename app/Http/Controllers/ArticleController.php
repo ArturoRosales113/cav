@@ -65,12 +65,15 @@ class ArticleController extends Controller
        $rules = [
            'name' => 'required',
            'description' => 'max:150',
-           'family_id' => 'required|not_in:0'
-
+           'family_id' => 'required|not_in:0',
+           'category_id' => 'required|not_in:0'
        ];
        $messages = [
         'name.required' => 'El campo nombre es obligatorio',
+        'family_id.not_in' => 'La selección no válida para el campo "familia"' ,
+        'category_id.not_in' => 'La selección no válida para el campo "categoría"'
        ];
+
        $validator = Validator::make($input, $rules, $messages);
        if ($validator->fails()) {
            //dd($validator);
@@ -88,13 +91,13 @@ class ArticleController extends Controller
          'family_id' => $input['family_id'],
          'category_id' => $input['category_id']
         ]);
-        if ($input['is_trend'] == 'on'){
+        if (array_key_exists('is_trend', $input) && $input['is_trend'] != on){
            $art->is_trend = true ;
         }
 
         $art->save();
         }
-        return redirect()->route('article.show',$art->id)->with('success', 'Información almacenada');;
+        return redirect()->route('article.show',$art->id)->with('success', 'Información almacenada');
 
     }
 
@@ -150,21 +153,12 @@ class ArticleController extends Controller
           ->withInput();
        } else {
         dd($input);
-       $art->titulo = $input['titulo'];
-       $art->estilo = $input['estilo'];
-       $art->description = $input['description'];
-       $art->concept_id = $input['concept_id'];
-       $art->clasification_id = $input['clasification_id'];
-       $art->slug =str_replace(' ','-', $input['titulo']);
 
-       if (isset($input['is_trend'])) {
-         $art->is_trend = 1;
-       }else{
-         $art->is_trend = 0;
-       }
+        $slug = str_replace(' ', '-', strtolower($input['name']));
+        
 
        $art->save();
-       return redirect()->route('article.show',$art->id);
+       return redirect()->back()->with('success', 'Información actualizada');
 
       }
     }

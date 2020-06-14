@@ -11,16 +11,61 @@
 @endsection
 
 @section('content')
-<div class="row justify-content-center">
-    <div class="col-6">
+<div class="row justify-content-center py-5">
+    <div class="col-10">
         <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">
+                    {{ $article->name }}
+                </h2>
+            </div>
             <div class="card-body">
-                
+                <hr>
+                @include('backend.article.edit',['article' => $article])
             </div>
         </div>
     </div>
-    <div class="col-6">
+</div>
+<div class="row justify-content-center">
+    <div class="col-10">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    Imágenes del producto
+                </h3>
+              </div>
+            <div class="card-body bg-light">
+                <div class="row">
+                    <div class="col-12 ">
+                        <form action="{{ route('pic.store') }}" method="POST" enctype="multipart/form-data" id="article-pictures-create">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $article->id }}">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFileLang" name="photos[]" lang="es" multiple>
+                                <label class="custom-file-label" for="customFileLang">Seleccionar Archivos</label>
+                              </div>
+                              <div class="form-group py-3">
+                                  <button type="submit" class="btn btn-primary">Subir imagenes</button>
+                              </div>
+                        </form>
+                        <hr>
+                    </div>
 
+                    <div class="col-12">
+                        <div class="card-columns">
+                            @foreach ($article->pics as $ap)
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset($ap->path) }}" alt="">
+                                <div class="card-body text-center">
+                                    <a href="{{ route('pic.delete', $ap->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Borrar </a>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

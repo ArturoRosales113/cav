@@ -57,3 +57,5 @@ $('input[type="file"]').change(function (e) {
     //replace the "Choose a file" label
     $(this).next('.custom-file-label').html(fileName);
 })
+
+

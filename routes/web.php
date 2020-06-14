@@ -65,12 +65,11 @@ Route::prefix('admin')->group(function () {
         Route::prefix('/delete/photo')->group(function () {
             Route::get('/family/{family}', ['uses' => 'FamilyController@photoDelete', 'as' => 'family.photo.delete']);
             Route::get('/category/{category}', ['uses' => 'CategoryController@photoDelete', 'as' => 'category.photo.delete']);
-            Route::get('/brand/{brand}', ['uses' => 'BrandController@photoDelete', 'as' => 'brand.photo.delete']);
+            Route::get('/picture/{pic}', ['uses' => 'picController@delete', 'as' => 'pic.delete']);
         });
         Route::prefix('/delete/icon')->group(function () {
             Route::get('/family/{family}', ['uses' => 'FamilyController@iconDelete', 'as' => 'family.icon.delete']);
             Route::get('/category/{category}', ['uses' => 'CategoryController@iconDelete', 'as' => 'category.icon.delete']);
-            Route::get('/brand/{brand}', ['uses' => 'BrandController@iconDelete', 'as' => 'brand.icon.delete']);
         });
     });
 
