@@ -8,7 +8,7 @@ class Pic extends Model
 {
   protected $fillable = ['article_id','path'];
 
-  public function articles()
+  public function article()
   {
    return $this->belongsTo('App\Article');
   }

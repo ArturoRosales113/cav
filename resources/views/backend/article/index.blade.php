@@ -27,7 +27,7 @@ Productos
                 <li class="list-group-item d-block justify-content-between align-items-center">
                     <div class="row align-items-center">
                         <div class="col">
-                            <img src="{{ $a->pics()->count() > 0 ? 'pinchifoto': asset('img/brand/no_img_found.png') }}" class="img-fluid" alt="">
+                            <img src="{{ $a->pics()->count() > 0 ? asset($a->pics()->first()->path) : asset('img/brand/no_img_found.png') }}" class="img-fluid" alt="">
                         </div>
                         <div class="col-9">
                             <h5>
@@ -35,9 +35,6 @@ Productos
                             </h5>
                             <p>{{ $a -> description }}</p>
                             <div class="row">
-                                <a class="btn btn-info ml-2" href="{{route('article.edit',$a -> id)}}">
-                                    <i class="fa fa-edit"></i>
-                                   </a>
 
                                    <a class="btn btn-warning ml-2" href="{{route('article.show',$a -> id)}}">
                                     <i class="fas fa-eye"></i>

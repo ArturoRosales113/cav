@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateArticlesTable extends Migration
 {
-    /** 
+    /**
      * Run the migrations.
      *
      * @return void
@@ -27,11 +27,6 @@ class CreateArticlesTable extends Migration
             $table->string('description')
                   ->nullable();
 
-            $table->string('img_path')
-                  ->nullable();
-
-            $table->string('icon_path')
-                  ->nullable();
 
             $table->timestamps();
 
@@ -110,14 +105,8 @@ class CreateArticlesTable extends Migration
             $table->text('description')
                   ->nullable();
 
-            // $table->integer('brand_id')
-            //       ->nullable()
-            //       ->unsigned();
-
-            // $table->foreign('brand_id')
-            //       ->references('id')
-            //       ->on('brands')
-            //       ->onDelete('cascade');
+            $table->text('specs')
+                  ->nullable();
 
             $table->integer('category_id')
                    ->nullable()

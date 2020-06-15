@@ -39,8 +39,8 @@
           </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-              <i class="fas fa-file-download feather"></i>
-              Descargas
+                <i class="fas fa-clipboard-list feater"></i>
+              Proyectos
             </a>
           </li>
 

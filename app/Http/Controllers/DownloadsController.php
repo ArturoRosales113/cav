@@ -2,8 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Downloads;
+
+
+//Librerias
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use File;
+use Validator;
+
+
+
+
+use App\Download;
+use App\Article;
 
 class DownloadsController extends Controller
 {
@@ -35,7 +46,41 @@ class DownloadsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        //dd($input);
+        $rules = [
+            'files' => 'required',
+            'files.*' => 'mimes:pdf'
+        ];
+        $messages = [
+            'files.*.mimes' => 'El archivo no es un PDF'
+        ];
+        $validator = Validator::make($input, $rules, $messages);
+        if ($validator->fails()) {
+            //dd($validator);
+            return redirect()->back()
+           ->withErrors($validator)
+           ->withInput();
+        } else {
+            $file = Input::file('files');
+            //dd($image);
+             $ar= Article::find($request->id);
+             $name = str_replace(' ', '', strtolower($ar->name));
+             $total =count($file);
+             for ($i=0; $i < $total; $i++) {
+                $file_name =$name.str_random(6).'.'.$file[$i]->getClientOriginalExtension();
+                $newFile = Download::create([
+                    'path' => 'article_downloads/'.$file_name,
+                    'article_id' => $input['id'],
+                    'is_video' => false
+                ]);
+
+                $file[$i]->move('article_downloads/', $file_name);
+             }
+
+             return redirect()->back()->with('success', 'Archivos almacenados');
+
+         }
     }
 
     /**
@@ -81,5 +126,14 @@ class DownloadsController extends Controller
     public function destroy(Downloads $downloads)
     {
         //
+    }
+
+    public function delete(Download $download)
+    {
+        $dfile = $download->path;
+        $filename = public_path($dfile);
+        File::delete($filename);
+        $download->delete();
+        return redirect()->back()->with('success', 'Archivo Eliminado');
     }
 }

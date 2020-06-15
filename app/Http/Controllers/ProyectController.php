@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Aplications;
+use App\Proyect;
 use Illuminate\Http\Request;
 
-class AplicationsController extends Controller
+class ProyectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class AplicationsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Aplications  $aplications
+     * @param  \App\Proyect  $proyect
      * @return \Illuminate\Http\Response
      */
-    public function show(Aplications $aplications)
+    public function show(Proyect $proyect)
     {
         //
     }
@@ -52,10 +52,10 @@ class AplicationsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Aplications  $aplications
+     * @param  \App\Proyect  $proyect
      * @return \Illuminate\Http\Response
      */
-    public function edit(Aplications $aplications)
+    public function edit(Proyect $proyect)
     {
         //
     }
@@ -64,10 +64,10 @@ class AplicationsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Aplications  $aplications
+     * @param  \App\Proyect  $proyect
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Aplications $aplications)
+    public function update(Request $request, Proyect $proyect)
     {
         //
     }
@@ -75,10 +75,10 @@ class AplicationsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Aplications  $aplications
+     * @param  \App\Proyect  $proyect
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Aplications $aplications)
+    public function destroy(Proyect $proyect)
     {
         //
     }

@@ -3,21 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 
 //Librerias
-use Auth;
 use Validator;
-use Image;
 use File;
-use View;
-use Session;
-use Config;
+
 
 //Modelos
 use App\Article;
 use App\Category;
-use App\Download;
 use App\Family;
 
 
@@ -91,7 +85,7 @@ class ArticleController extends Controller
          'family_id' => $input['family_id'],
          'category_id' => $input['category_id']
         ]);
-        if (array_key_exists('is_trend', $input) && $input['is_trend'] != on){
+        if (array_key_exists('is_trend', $input) && $input['is_trend'] != 'on'){
            $art->is_trend = true ;
         }
 
@@ -140,10 +134,14 @@ class ArticleController extends Controller
        //dd($input);
        $rules = [
         'name' => 'required',
-        'description' => 'max:150'
+        'description' => 'max:150',
+        'family_id' => 'required|not_in:0',
+        'category_id' => 'required|not_in:0'
        ];
        $messages = [
-
+        'name.required' => 'El campo nombre es obligatorio',
+        'family_id.not_in' => 'La selección no válida para el campo "familia"' ,
+        'category_id.not_in' => 'La selección no válida para el campo "categoría"'
        ];
        $validator = Validator::make($input, $rules, $messages);
        if ($validator->fails()) {
@@ -152,12 +150,17 @@ class ArticleController extends Controller
           ->withErrors($validator)
           ->withInput();
        } else {
-        dd($input);
+       //dd($input);
 
         $slug = str_replace(' ', '-', strtolower($input['name']));
-        
+        $article->name = $input['name'];
+        $article->slug = $slug;
+        $article->description = $input['description'];
+        $article->code = $input['code'];
+        $article->family_id = $input['family_id'];
+        $article->category_id = $input['category_id'];
 
-       $art->save();
+       $article->save();
        return redirect()->back()->with('success', 'Información actualizada');
 
       }
@@ -169,9 +172,8 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Article $article)
     {
-       $article = Article::find($id);
        if ($article->pics()->count() > 0) {
          foreach ($article->pics() as $ap) {
            $p = Pic::find($ap->id);

@@ -35,9 +35,9 @@
     <div class="form-group col-6">
         <label for="family_id">Familia</label>
         <select class="custom-select" name="family_id">
-            <option value="null">Ninguna</option>
+
             @foreach ($families as $fam)
-                <option value="{{ $fam->id }}" {{ old('family_id', $article->family_id) == $fam->id ? 'selected' : ''}}>{{ $fam->display_name }}</option>
+                <option value="{{ $fam->id }}" {{ $article->family_id == $fam->id ? 'selected' : ''}}>{{ $fam->display_name }}</option>
             @endforeach
         </select>
         @if ($errors->has('family'))
@@ -49,9 +49,9 @@
     <div class="form-group col-6">
         <label for="family_id">Categoría</label>
         <select class="custom-select" name="category_id">
-        <option value="null">Ninguna</option>
+
         @foreach ($categories as $cat)
-            <option value="{{ $cat->id }}" {{ old('category_id', $article->category_id) == $cat->id ? 'selected' : ''}}>{{ $cat->display_name }}</option>
+            <option value="{{ $cat->id }}" {{  $article->category_id == $cat->id ? 'selected' : ''}}>{{ $cat->display_name }}</option>
         @endforeach
     </select>
         @if ($errors->has('category'))

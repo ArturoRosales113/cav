@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Poryects;
+use App\Aplication;
 use Illuminate\Http\Request;
 
-class PoryectsController extends Controller
+class AplicationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PoryectsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Poryects  $poryects
+     * @param  \App\Aplication  $aplication
      * @return \Illuminate\Http\Response
      */
-    public function show(Poryects $poryects)
+    public function show(Aplication $aplication)
     {
         //
     }
@@ -52,10 +52,10 @@ class PoryectsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Poryects  $poryects
+     * @param  \App\Aplication  $aplication
      * @return \Illuminate\Http\Response
      */
-    public function edit(Poryects $poryects)
+    public function edit(Aplication $aplication)
     {
         //
     }
@@ -64,10 +64,10 @@ class PoryectsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Poryects  $poryects
+     * @param  \App\Aplication  $aplication
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Poryects $poryects)
+    public function update(Request $request, Aplication $aplication)
     {
         //
     }
@@ -75,10 +75,10 @@ class PoryectsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Poryects  $poryects
+     * @param  \App\Aplication  $aplication
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Poryects $poryects)
+    public function destroy(Aplication $aplication)
     {
         //
     }

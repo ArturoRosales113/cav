@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateDownloadsTable extends Migration
 {
-    /**
+/**
      * Run the migrations.
      *
      * @return void
@@ -15,10 +15,16 @@ class CreateDownloadsTable extends Migration
     {
         Schema::create('downloads', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('url');
-            $table->integer('is_video');
-            $table->integer('downloradable_id');
-            $table->string('downloadable_type');
+            $table->string('path');
+            $table->integer('is_video')->nullable();
+
+            $table->integer('article_id')
+                  ->unsigned();
+
+            $table->foreign('article_id')
+                  ->references('id')
+                  ->on('articles')
+                  ->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -52,7 +52,7 @@ Route::prefix('admin')->group(function () {
             'banner' => 'BannerController',
             'brand' => 'BrandController',
             'category' => 'CategoryController',
-            'downlad' => 'DownloadsController',
+            'download' => 'DownloadsController',
             'family' => 'FamilyController',
             'linea' => 'LineaController',
             'marca' => 'MarcaController',
@@ -66,6 +66,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/family/{family}', ['uses' => 'FamilyController@photoDelete', 'as' => 'family.photo.delete']);
             Route::get('/category/{category}', ['uses' => 'CategoryController@photoDelete', 'as' => 'category.photo.delete']);
             Route::get('/picture/{pic}', ['uses' => 'picController@delete', 'as' => 'pic.delete']);
+            Route::get('/download/{download}', ['uses' => 'DownloadsController@delete', 'as' => 'download.delete']);
         });
         Route::prefix('/delete/icon')->group(function () {
             Route::get('/family/{family}', ['uses' => 'FamilyController@iconDelete', 'as' => 'family.icon.delete']);

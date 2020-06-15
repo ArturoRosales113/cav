@@ -14,7 +14,8 @@ class Article extends Model
         'code',
         'is_trend',
         'description',
-        'category-id',
+        'specs',
+        'category_id',
         'family_id'
     ];
 
@@ -36,7 +37,14 @@ class Article extends Model
     }
     public function one_pic()
     {
-        return $this->pics(1);
+        return $this->pics()->take(1);
+    }
+
+    //Descargas
+
+    public function downloads()
+    {
+        return $this->hasMany('App\Download');
     }
 
 

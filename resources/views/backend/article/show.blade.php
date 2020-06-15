@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-<div class="row justify-content-center py-5">
+<div class="row justify-content-center py-3">
     <div class="col-10">
         <div class="card">
             <div class="card-header">
@@ -26,7 +26,7 @@
         </div>
     </div>
 </div>
-<div class="row justify-content-center">
+<div class="row justify-content-center py-3">
     <div class="col-10">
         <div class="card">
             <div class="card-header">
@@ -42,7 +42,7 @@
                             <input type="hidden" name="id" value="{{ $article->id }}">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFileLang" name="photos[]" lang="es" multiple>
-                                <label class="custom-file-label" for="customFileLang">Seleccionar Archivos</label>
+                                <label class="custom-file-label" for="customFileLang">Seleccionar Imágenes</label>
                               </div>
                               <div class="form-group py-3">
                                   <button type="submit" class="btn btn-primary">Subir imagenes</button>
@@ -58,6 +58,49 @@
                                 <img class="card-img-top" src="{{ asset($ap->path) }}" alt="">
                                 <div class="card-body text-center">
                                     <a href="{{ route('pic.delete', $ap->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Borrar </a>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center py-3">
+    <div class="col-10">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    Descargas del producto
+                </h3>
+              </div>
+            <div class="card-body bg-light">
+                <div class="row">
+                    <div class="col-12 ">
+                        <form action="{{ route('download.store') }}" method="POST" enctype="multipart/form-data" id="article-pictures-create">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $article->id }}">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFileLang" name="files[]" lang="es" multiple>
+                                <label class="custom-file-label" for="customFileLang">Seleccionar Archivos</label>
+                              </div>
+                              <div class="form-group py-3">
+                                  <button type="submit" class="btn btn-primary">Subir Documentos</button>
+                              </div>
+                        </form>
+                        <hr>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="card-columns">
+                            @foreach ($article->downloads as $ad)
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <a href="{{ asset($ad->path) }}" target="_blank" class="btn btn-lg"><i class="far fa-file-pdf fa-5x"></i></a>
+                                    <br>
+                                    <a href="{{ route('download.delete', $ad->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Borrar </a>
                                 </div>
                             </div>
                             @endforeach
