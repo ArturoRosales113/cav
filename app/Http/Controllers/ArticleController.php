@@ -59,13 +59,15 @@ class ArticleController extends Controller
        $rules = [
            'name' => 'required',
            'description' => 'max:150',
+           'specs' => 'required',
            'family_id' => 'required|not_in:0',
            'category_id' => 'required|not_in:0'
        ];
        $messages = [
-        'name.required' => 'El campo nombre es obligatorio',
-        'family_id.not_in' => 'La selección no válida para el campo "familia"' ,
-        'category_id.not_in' => 'La selección no válida para el campo "categoría"'
+        'name.required' => 'El campo "Nombre" es obligatorio',
+        'family_id.not_in' => 'La selección no válida para el campo "Familia"',
+        'specs.required' => 'El campo "Especificaciones" es obligatorio.',
+        'category_id.not_in' => 'La selección no válida para el campo "Categoría"'
        ];
 
        $validator = Validator::make($input, $rules, $messages);
@@ -81,7 +83,7 @@ class ArticleController extends Controller
          'name' => $input['name'],
          'slug' => $slug,
          'description' => $input['description'],
-         'code' => $input['code'],
+         'specs' => $input['specs'],
          'family_id' => $input['family_id'],
          'category_id' => $input['category_id']
         ]);
@@ -156,6 +158,7 @@ class ArticleController extends Controller
         $article->name = $input['name'];
         $article->slug = $slug;
         $article->description = $input['description'];
+        $article->specs = $input['specs'];
         $article->code = $input['code'];
         $article->family_id = $input['family_id'];
         $article->category_id = $input['category_id'];

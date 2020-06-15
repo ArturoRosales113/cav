@@ -49,6 +49,7 @@ Route::prefix('admin')->group(function () {
         //#########################  Resources #########################
         Route::resources([
             'article' => 'ArticleController',
+            'aplication' => 'AplicationController',
             'banner' => 'BannerController',
             'brand' => 'BrandController',
             'category' => 'CategoryController',
@@ -58,6 +59,7 @@ Route::prefix('admin')->group(function () {
             'marca' => 'MarcaController',
             'mensaje' => 'MensajeController',
             'pic' => 'PicController',
+            'proyect' => 'ProyectController',
             'store' => 'StoreController',
             'user' => 'UserController'
         ]);

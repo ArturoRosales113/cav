@@ -32,14 +32,14 @@
           </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('aplication.index') }}">
               <i class="fas fa-toolbox feather"></i>
               Aplicaciones
             </a>
           </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fas fa-clipboard-list feater"></i>
+            <a class="nav-link" href="{{ route('proyect.index') }}">
+                <i class="fas fa-clipboard-list feather"></i>
               Proyectos
             </a>
           </li>

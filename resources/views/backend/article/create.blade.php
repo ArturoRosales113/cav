@@ -48,6 +48,15 @@ Crear Artículo
                          </span>
                         @endif
                     </div>
+                    <div class="form-group col-12">
+                        <label for="description">Especificaciones</label>
+                        <textarea name="specs" id="" class="form-control" cols="30" placeholder="Especificiones (separadas por coma)" rows="2">{{ old('specs') }}</textarea>
+                        @if ($errors->has('specs'))
+                        <span class="help-block">
+                             <small class="text-danger">{{ $errors->first('specs') }}</small>
+                         </span>
+                        @endif
+                    </div>
                 </div>
                 <div class="row align-items-center">
                     <div class="form-group col-6">
