@@ -43,9 +43,9 @@ Editar {{$category->display_name}}
 
                 <div class="w-100"></div>
                 <div class="col-4 text-center bg-light">
-                    <img src="{{ $brand->icon_path == null ? asset('img/brand/no_img_found.png') : asset($brand->icon_path) }}" class="img-fluid" id="formLogoPreview" alt="">
-                    @if ( $brand->icon_path != null)
-                    <a class="btn btn-danger" href="{{ route('brand.icon.delete', $brand->id) }}" ><i class="fas fa-trash"></i></a>
+                    <img src="{{ $category->icon_path == null ? asset('img/brand/no_img_found.png') : asset($category->icon_path) }}" class="img-fluid" id="formLogoPreview" alt="">
+                    @if ( $category->icon_path != null)
+                    <a class="btn btn-danger" href="{{ route('brand.icon.delete', $category->id) }}" ><i class="fas fa-trash"></i></a>
                     @endif
                 </div>
                 <div class="form-group col-6 ">
@@ -57,9 +57,9 @@ Editar {{$category->display_name}}
                 <div class="w-100 py-3"></div>
 
                 <div class="col-4 text-center bg-light">
-                    <img src="{{ $brand->img_path == null ? asset('img/brand/no_img_found.png') : asset($brand->img_path) }}" class="img-fluid mb-2" id="formPhotoPreview" alt="">
-                    @if ( $brand->img_path != null)
-                    <a class="btn btn-danger" href="{{ route('brand.photo.delete', $brand->id) }}" ><i class="fas fa-trash"></i></a>
+                    <img src="{{ $category->img_path == null ? asset('img/brand/no_img_found.png') : asset($category->img_path) }}" class="img-fluid mb-2" id="formPhotoPreview" alt="">
+                    @if ( $category->img_path != null)
+                    <a class="btn btn-danger" href="{{ route('brand.photo.delete', $category->id) }}" ><i class="fas fa-trash"></i></a>
                     @endif
                 </div>
                 <div class="form-group col-6">

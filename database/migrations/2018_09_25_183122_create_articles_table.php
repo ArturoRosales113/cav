@@ -62,30 +62,6 @@ class CreateArticlesTable extends Migration
         });
 
 
-        // Schema::create('brands', function (Blueprint $table) {
-
-        //     $table->increments('id');
-
-        //     $table->string('name')
-        //           ->nullable();
-
-        //     $table->string('display_name')
-        //           ->nullable();
-
-        //     $table->string('description')
-        //           ->nullable();
-
-        //     $table->string('img_path')
-        //           ->nullable();
-
-        //     $table->string('icon_path')
-        //           ->nullable();
-
-        //     $table->timestamps();
-
-        // });
-
-
         Schema::create('articles', function (Blueprint $table) {
 
             $table->increments('id');
@@ -141,13 +117,13 @@ class CreateArticlesTable extends Migration
             $table->string('display_name')
                   ->nullable();
 
-            $table->string('description')
+            $table->longText('description')
                   ->nullable();
 
             $table->string('img_path')
                   ->nullable();
 
-            $table->string('icon_path')
+            $table->string('pdf_path')
                   ->nullable();
 
             $table->string('svg_path')

@@ -87,8 +87,8 @@ class ArticleController extends Controller
          'family_id' => $input['family_id'],
          'category_id' => $input['category_id']
         ]);
-        if (array_key_exists('is_trend', $input) && $input['is_trend'] != 'on'){
-           $art->is_trend = true ;
+        if (array_key_exists('is_trend', $input) && $input['is_trend'] != 'off'){
+           $art->is_trend = 1;
         }
 
         $art->save();
@@ -163,7 +163,13 @@ class ArticleController extends Controller
         $article->family_id = $input['family_id'];
         $article->category_id = $input['category_id'];
 
-       $article->save();
+        if (array_key_exists('is_trend', $input) && $input['is_trend'] != 'off'){
+            $article->is_trend = 1;
+         } else {
+            $article->is_trend = 0;
+         }
+
+    $article->save();
        return redirect()->back()->with('success', 'Información actualizada');
 
       }

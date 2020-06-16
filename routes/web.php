@@ -68,11 +68,15 @@ Route::prefix('admin')->group(function () {
             Route::get('/family/{family}', ['uses' => 'FamilyController@photoDelete', 'as' => 'family.photo.delete']);
             Route::get('/category/{category}', ['uses' => 'CategoryController@photoDelete', 'as' => 'category.photo.delete']);
             Route::get('/picture/{pic}', ['uses' => 'picController@delete', 'as' => 'pic.delete']);
-            Route::get('/download/{download}', ['uses' => 'DownloadsController@delete', 'as' => 'download.delete']);
+            Route::get('/aplication/{aplication}', ['uses' => 'AplicationController@delete', 'as' => 'aplication.delete']);
         });
         Route::prefix('/delete/icon')->group(function () {
             Route::get('/family/{family}', ['uses' => 'FamilyController@iconDelete', 'as' => 'family.icon.delete']);
             Route::get('/category/{category}', ['uses' => 'CategoryController@iconDelete', 'as' => 'category.icon.delete']);
+        });
+        Route::prefix('/delete/pdf')->group(function () {
+            Route::get('/download/{download}', ['uses' => 'DownloadsController@delete', 'as' => 'download.delete']);
+            Route::get('/aplication/{aplication}', ['uses' => 'DownloadsController@pdfDelete', 'as' => 'aplication.pdf.delete']);
         });
     });
 

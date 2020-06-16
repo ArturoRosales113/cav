@@ -2,8 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Aplication;
+
+//Librerias
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use File;
+use SweetAlert;
+use Validator;
+
+//Modelos
+use App\Aplication;
+
+
+
 
 class AplicationController extends Controller
 {
@@ -14,7 +25,7 @@ class AplicationController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.aplication.index', ['aplications' => Aplication::all()]);
     }
 
     /**
@@ -24,7 +35,7 @@ class AplicationController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.aplication.create');
     }
 
     /**
@@ -35,8 +46,43 @@ class AplicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        //dd($input);
+        $rules = [
+            'name' => 'required',
+            'description' => 'required',
+            'img_path' => 'mimes:jpg,jpeg,png|max:150',
+            'pdf_path' => 'mimes:pdf'
+        ];
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {
+            //dd($validator);
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            $aplication = Aplication::create([
+                'name' => str_replace(' ', '', strtolower($input['name'])),
+                'display_name' => ucwords($input['name']),
+                'description' => $input['description']
+            ]);
+
+            if (array_key_exists('img_path', $input) && $input['img_path'] != null) {
+                $file = Input::file('img_path');
+                $file_name = $aplication->name . '-aplication' . '.' . $file->getClientOriginalExtension();
+                $file->move('img/brand/', $file_name);
+                $aplication->img_path = 'img/brand/' . $file_name;
+            }
+            if (array_key_exists('pdf_path', $input) && $input['pdf_path'] != null) {
+                $file = Input::file('pdf_path');
+                $file_name = $aplication->name . '-aplication' . '.' . $file->getClientOriginalExtension();
+                $file->move('img/brand/', $file_name);
+                $aplication->pdf_path = 'img/brand/' . $file_name;
+            }
+            $aplication->save();
+            return redirect()->route('aplication.index')->with('success', 'Información almacenada');
     }
+}
 
     /**
      * Display the specified resource.
@@ -46,7 +92,7 @@ class AplicationController extends Controller
      */
     public function show(Aplication $aplication)
     {
-        //
+        return view('backend.aplication.show', ['aplication' => $aplication]);
     }
 
     /**
@@ -57,7 +103,7 @@ class AplicationController extends Controller
      */
     public function edit(Aplication $aplication)
     {
-        //
+        return view('backend.aplication.edit', ['aplication' => $aplication]);
     }
 
     /**
@@ -69,7 +115,61 @@ class AplicationController extends Controller
      */
     public function update(Request $request, Aplication $aplication)
     {
-        //
+        $input = $request->all();
+        //dd($input);
+        $rules = [
+            'name' => 'required',
+            'description' => 'required',
+            'img_path' => 'mimes:jpg,jpeg,png|max:150',
+            'icon_path' => 'mimes:pdf'
+        ];
+        $messages = [
+            'name.required' => 'El campo "Nombre" es obligatorio',
+            'file.image' => 'El archivo no es una imagen',
+            'file.mimes' => 'El formato de la imagen no es válido',
+            'file.size' => 'El tamaño del archivo debe ser menor a 400kb',
+        ];
+        $validator = Validator::make($input, $rules, $messages);
+        if ($validator->fails()) {
+            //dd($validator);
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+
+            if (array_key_exists('img_path', $input) && $input['img_path'] != null) {
+                //Borrar Archivo
+                if ($aplication->img_path != null) {
+                    $dfile = $aplication->img_path;
+                    $filename = public_path($dfile);
+                    File::delete($filename);
+                }
+                $file = Input::file('img_path');
+                $file_name = $aplication->name . '-aplication' . '.' . $file->getClientOriginalExtension();
+                $file->move('img/brand/', $file_name);
+                $aplication->img_path = 'img/brand/' . $file_name;
+            }
+            if (array_key_exists('pdf_path', $input) && $input['pdf_path'] != null) {
+                //Borrar Archivo
+                if ($aplication->icon_path != null) {
+                    $dfile = $aplication->icon_path;
+                    $filename = public_path($dfile);
+                    File::delete($filename);
+                }
+                $file = Input::file('pdf_path');
+                $file_name = $aplication->name . '-aplication' . '.' . $file->getClientOriginalExtension();
+                $file->move('img/brand/', $file_name);
+                $aplication->pdf_path = 'img/brand/' . $file_name;
+            }
+
+            $aplication->name = str_replace(' ', '', strtolower($input['name']));
+            $aplication->display_name = ucwords($input['name']);
+            if ($input['description'] != null) {
+                $aplication->description = $input['description'];
+            }
+            $aplication->save();
+            return redirect()->route('aplication.index')->with('success', 'Información actualizada');
+        }
     }
 
     /**
@@ -79,6 +179,14 @@ class AplicationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Aplication $aplication)
+    {
+        //
+    }
+    public function delete(Aplication $aplication)
+    {
+        //
+    }
+    public function pdfDelete(Aplication $aplication)
     {
         //
     }
