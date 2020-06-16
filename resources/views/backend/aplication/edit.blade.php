@@ -42,10 +42,10 @@ Editar {{$aplication->display_name}}
                 </div>
             </div>
             <div class="row">
-                <div class="col-4">
+                <div class="col-4 text-center">
                     <img src="{{ $aplication->img_path == null ? asset('img/brand/no_img_found.png') : asset($aplication->img_path) }}" class="img-fluid" id="formLogoPreview" alt="">
                     @if ( $aplication->img_path != null)
-                    <a class="btn btn-danger" href="{{ route('aplication.delete', $aplication->id) }}" ><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-danger m-2" href="{{ route('aplication.delete', $aplication->id) }}" ><i class="fas fa-trash"></i></a>
                     @endif
                 </div>
                 <div class="form-group col-6">

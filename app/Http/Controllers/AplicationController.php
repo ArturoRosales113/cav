@@ -81,8 +81,8 @@ class AplicationController extends Controller
             }
             $aplication->save();
             return redirect()->route('aplication.index')->with('success', 'Información almacenada');
+        }
     }
-}
 
     /**
      * Display the specified resource.
@@ -184,10 +184,18 @@ class AplicationController extends Controller
     }
     public function delete(Aplication $aplication)
     {
-        //
+        $dfile = $download->path;
+        $filename = public_path($dfile);
+        File::delete($filename);
+        $download->delete();
+        return redirect()->back()->with('success', 'Archivo Eliminado');
     }
     public function pdfDelete(Aplication $aplication)
     {
-        //
+        $dfile = $download->path;
+        $filename = public_path($dfile);
+        File::delete($filename);
+        $download->delete();
+        return redirect()->back()->with('success', 'Archivo Eliminado');
     }
 }
