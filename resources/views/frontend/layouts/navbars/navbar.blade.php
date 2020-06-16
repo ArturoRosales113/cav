@@ -12,10 +12,10 @@
        </div>
     </div>
     <div class="col p-3" id="top-search">
-        <a href="" class="text-white">
+        <a href="" class="text-white px-3">
             <small>Certificados</small>
         </a>
-        <a href="" class="text-white">
+        <a href="" class="text-white px-3">
             <small>Noticias</small>
         </a>
     </div>

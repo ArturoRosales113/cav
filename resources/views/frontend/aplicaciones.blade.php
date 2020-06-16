@@ -2,9 +2,9 @@
 
 
 @section('page_banner')
-    <div class="row">
-        <div class="col p-0">
-            <img src="http://lorempixel.com/1920/1080/technics/" class="img-fluid"  alt="">
+    <div class="row aplications align-items-center">
+        <div class="col text-center text-white">
+            <h4 class="bold">Aplicaciones</h4>
         </div>
     </div>
 @endsection

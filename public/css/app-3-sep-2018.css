@@ -89,6 +89,10 @@ body{
 
 footer .menu{
     background-color: #333333;
+    background-image: url('../img/mid_background.jpg');
+    background-position: center;
+    background-blend-mode: multiply;
+    background-size: cover;
     color: #fff;
 }
 
@@ -109,6 +113,14 @@ footer .list-group .list-group-item{
 .row.proyects{
     background-image: url('../img/proyecto.jpg');
     background-position: center;
+    height: 50vh;
+}
+
+.row.aplications{
+    background-image: url('../img/aplicaciones.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 50vh;
 }
 
