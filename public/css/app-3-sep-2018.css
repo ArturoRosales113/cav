@@ -53,14 +53,16 @@ body{
 }
 
 #menu_navbar .nav-link{
-  font-size: 13px;
-  color: #919191;
+  font-size: 12pt;
+  font-weight: 900;
+  color: #000;
   border-bottom: none;
   transition: all .5s ease;
-  padding: 13px;
+  padding:5px 10px 5px 10px;
   height: 30px;
   cursor: default;
-  margin:0 5px;
+  margin:0 10px;
+  text-transform: uppercase;
 }
 
 #nav-logo{
@@ -96,8 +98,39 @@ footer .list-group .list-group-item{
     padding: .2rem 1.25rem;
 }
 
+.row.subtitle{
+    background-color: #AD272D;
+    background-image: url('../img/mid_background.jpg');
+    background-blend-mode: multiply;
+    background-position: center;
+    height: 20vh;
+}
+
+.row.proyects{
+    background-image: url('../img/proyecto.jpg');
+    background-position: center;
+    height: 50vh;
+}
+
+/* home */
 
 
+#v-proyects-tab{
+    background-color: #fff;
+    padding: 0;
+}
+
+#v-proyects-tab .nav-link{
+    background-color: #D7DADB;
+    color: black;
+    font-size: 13pt;
+    font-weight: 900;
+    border: 1pt 0pt;
+    border-style: solid;
+    border-color: #fff;
+    width: 100%;
+    margin: .1em 0em;
+}
 
 /* Media Queries */
 @media only screen and (min-width: 764px) {

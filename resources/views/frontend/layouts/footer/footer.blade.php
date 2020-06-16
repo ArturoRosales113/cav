@@ -4,7 +4,7 @@
         <h5>Contacto</h5>
         <small>Tenemos servicio en toda la republica mexicana</small>
         <div class="row py-3">
-            <div class="col">
+            <div class="col pr-0">
                 <div class="row">
                     <div class="col-1">
                         <i class="fas fa-phone-volume"></i>
@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col p-0">
                 <div class="row">
                     <div class="col-1">
                         <i class="fas fa-phone-volume"></i>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col p-0">
                 <div class="row">
                     <div class="col-1">
                         <i class="fas fa-phone-volume"></i>
