@@ -1,8 +1,8 @@
 <div class="fixed-top" id="top-navbar">
 
  <!-- barra superior -->
-<div class="row justify-content-end align-items-center top-bar py-2">
-    <div class="col-8 p-0">
+<div class="row justify-content-end align-items-center top-bar">
+    <div class="col-9 p-3">
        <div class="row justify-content-end">
         <i class="fab fa-whatsapp"></i>
         <i class="fab fa-linkedin-in"></i>
@@ -11,7 +11,7 @@
         <i class="fab fa-youtube"></i>
        </div>
     </div>
-    <div class="col p-0" id="top-search">
+    <div class="col p-3" id="top-search">
         <a href="" class="text-white">
             <small>Certificados</small>
         </a>
