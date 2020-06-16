@@ -113,6 +113,8 @@ footer .list-group .list-group-item{
 .row.proyects{
     background-image: url('../img/proyecto.jpg');
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 50vh;
 }
 
