@@ -110,6 +110,13 @@ footer .list-group .list-group-item{
     height: 20vh;
 }
 
+.row.productos-text{
+    background-color: #D7DADB;
+    background-image: url('../img/mid_background.jpg');
+    background-blend-mode: multiply;
+    background-position: bottom center;
+}
+
 .row.proyects{
     background-image: url('../img/proyecto.jpg');
     background-position: center;
