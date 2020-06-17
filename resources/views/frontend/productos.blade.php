@@ -3,73 +3,7 @@
 
 
 @section('content')
-<div class="row justify-content-center justify-content-center bg3 py-5 mt-5">
-    <div class="col-10">
-        <div class="row py-5">
-            <div class="col-2">
-                <img src="{{ asset('img/icons/Puertas automaticas.svg') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                Puertas Automaticas
-            </div>
-            <div class="col-2">
-                <img src="{{ asset('img/icons/Rampas mecanicas.svg') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                Rampas Mecanicas
-            </div>
-            <div class="col-2">
-                <img src="{{ asset('img/icons/sellos.svg') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                Sellos
-            </div>
-            <div class="col-2">
-                <img src="{{ asset('img/icons/Puertas rapidas.svg') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                Puertas rapidas
-            </div>
-            <div class="col-2">
-                <img src="{{ asset('img/icons/Puertas de quirofano.svg') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                puertas de quirofano
-            </div>
-            <div class="col-2">
-                <img src="{{ asset('img/icons/Control de acceso.svg') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                Control de acceso
-            </div>
-            <div class="col-2">
-                <img src="{{ asset('img/icons/Control de acceso.svg') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                Cortinas de acero
-            </div>
-            <div class="col-2">
-                <img src="{{ asset('img/icons/seleccional.svg') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                Puerta seccional
-            </div>
-            <div class="col-2">
-                <img src="{{ asset('img/icons/Puera acero.svg') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                Puertas de acero
-            </div>
-            <div class="col-2">
-                <img src="{{ asset('img/icons/Barreras vehiculares.svg') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                Barreras vehiculares
-            </div>
-            <div class="col-2">
-                <img src="{{ asset('img/icons/Motores industiales.svg') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                Motores industriales
-            </div>
-            <div class="col-2">
-                <img src="{{ asset('img/icons/') }}" class="img-fluid" width="50px" alt="">
-                <br>
-                Ver mas
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
+<div class="row mt-5 pt-5">
     <div class="col-12 p-0">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
