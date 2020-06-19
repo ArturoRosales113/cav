@@ -8,47 +8,6 @@ class FrontController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        return view('frontend.welcome');
     }
-
-    public function productos()
-    {
-        return view('frontend.productos');
-    }
-
-    public function categorias()
-    {
-        return view('frontend.categorias');
-    }
-
-    public function categoria()
-    {
-        return view('frontend.categoria');
-    }
-
-    public function aplicaciones()
-    {
-        return view('frontend.aplicaciones');
-    }
-
-    public function servicios()
-    {
-        return view('frontend.servicios');
-    }
-
-    public function proyectos()
-    {
-        return view('frontend.proyectos');
-    }
-
-    public function distribuidores()
-    {
-        return view('frontend.distribuidores');
-    }
-
-    public function contacto()
-    {
-        return view('frontend.contacto');
-    }
-
 }

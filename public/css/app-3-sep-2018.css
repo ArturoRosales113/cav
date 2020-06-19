@@ -1,6 +1,6 @@
 /* Fuentes */
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;900&display=swap');
 
 .bold{
     font-weight: 900;
@@ -134,7 +134,47 @@ footer .list-group .list-group-item{
 }
 
 /* home */
+#pav-welcome{
+    background-image: url('../img/as.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 115px );
+}
+#pav-welcome h1{
+    font-size: 1.2em;
+    color: #000;
+    margin-top: 1em;
+}
 
+#pav-welcome a.btn{
+    color: #fff;
+    padding: .3em 2em;
+    border-radius: 0;
+    font-size: .8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+#pav-welcome ul li{
+    text-decoration: none;
+    text-align: left;
+    padding: .5em 0em .5em 5em;
+    border: 0;
+}
+#pav-welcome ul li::before{
+    content: '>';
+    color: red;
+    display: inline-block;
+    margin-right: .5rem;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+img.logo-grupo{
+    height: 1.7em;
+    margin: 0em .5em;
+}
 
 #v-proyects-tab{
     background-color: #fff;
@@ -166,6 +206,14 @@ footer .list-group .list-group-item{
     -o-background-size: cover;
     background-size: cover;
   }
+
+  #pav-welcome{
+    background-image: url('../img/home_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 113px );
+}
 
 
 

@@ -4,31 +4,65 @@
 
 use App\Http\Controllers\CategoryController;
 
-Route::get('/', ['uses' => 'FrontController@index', 'as' => 'front.index']);
-//Aplicaciones
-Route::get('/aplicaciones', ['uses' => 'FrontController@aplicaciones', 'as' => 'front.aplicaciones']);
-//Productos
-Route::get('/productos', ['uses' => 'FrontController@productos', 'as' => 'front.productos']);
+Route::get('/', ['uses' => 'FrontController@index', 'as' => 'welcome']);
 
-Route::get('/productos/categorias/', ['uses' => 'FrontController@categorias', 'as' => 'front.categorias']);
 
-Route::get('/productos/categorias/{$categoryName}', ['uses' => 'FrontController@categoria', 'as' => 'front.productos.categoria']);
+Route::prefix('industrial')->group(function(){
+    //Aplicaciones
+    Route::get('/', ['uses' => 'IndustrialController@index', 'as' => 'front.industrial.index']);
 
-Route::get('/productos/categorias/{$categoryName}/{$productName}', ['uses' => 'FrontController@producto', 'as' => 'front.productos.categopria.producto']);
+    Route::get('/aplicaciones', ['uses' => 'IndustrialController@aplicaciones', 'as' => 'front.industrial.aplicaciones']);
+    //Productos
+    Route::get('/productos', ['uses' => 'IndustrialController@productos', 'as' => 'front.industrial.productos']);
 
-Route::get('/productos/{$productName}', ['uses' => 'FrontController@producto', 'as' => 'front.productos.producto']);
+    Route::get('/productos/categorias/', ['uses' => 'IndustrialController@categorias', 'as' => 'front.industrial.categorias']);
 
-Route::get('/aplicaciones', ['uses' => 'FrontController@aplicaciones', 'as' => 'front.aplicaciones']);
+    Route::get('/productos/categorias/{$categoryName}', ['uses' => 'IndustrialController@categoria', 'as' => 'front.industrial.productos.categoria']);
 
-Route::get('/servicios', ['uses' => 'FrontController@servicios', 'as' => 'front.servicios']);
+    Route::get('/productos/categorias/{$categoryName}/{$productName}', ['uses' => 'IndustrialController@producto', 'as' => 'front.industrial.productos.categopria.producto']);
 
-Route::get('/proyectos', ['uses' => 'FrontController@proyectos', 'as' => 'front.proyectos']);
+    Route::get('/productos/{$productName}', ['uses' => 'IndustrialController@producto', 'as' => 'front.industrial.productos.producto']);
 
-Route::get('/distribuidores', ['uses' => 'FrontController@distribuidores', 'as' => 'front.distribuidores']);
+    Route::get('/aplicaciones', ['uses' => 'IndustrialController@aplicaciones', 'as' => 'front.industrial.aplicaciones']);
 
-Route::get('/contacto', ['uses' => 'FrontController@contacto', 'as' => 'front.contacto']);
+    Route::get('/servicios', ['uses' => 'IndustrialController@servicios', 'as' => 'front.industrial.servicios']);
 
-Route::get('/certificados', ['uses' => 'FrontController@certificados', 'as' => 'front.certificados']);
+    Route::get('/proyectos', ['uses' => 'IndustrialController@proyectos', 'as' => 'front.industrial.proyectos']);
+
+    Route::get('/distribuidores', ['uses' => 'IndustrialController@distribuidores', 'as' => 'front.industrial.distribuidores']);
+
+    Route::get('/contacto', ['uses' => 'IndustrialController@contacto', 'as' => 'front.industrial.contacto']);
+
+    Route::get('/certificados', ['uses' => 'IndustrialController@certificados', 'as' => 'front.industrial.certificados']);
+});
+Route::prefix('residencial')->group(function(){
+
+    Route::get('/', ['uses' => 'ResidencialController@index', 'as' => 'front.residencial.index']);
+    //Aplicaciones
+    Route::get('/aplicaciones', ['uses' => 'ResidencialController@aplicaciones', 'as' => 'front.residencial.aplicaciones']);
+    //Productos
+    Route::get('/productos', ['uses' => 'ResidencialController@productos', 'as' => 'front.residencial.productos']);
+
+    Route::get('/productos/categorias/', ['uses' => 'ResidencialController@categorias', 'as' => 'front.residencial.categorias']);
+
+    Route::get('/productos/categorias/{$categoryName}', ['uses' => 'ResidencialController@categoria', 'as' => 'front.residencial.productos.categoria']);
+
+    Route::get('/productos/categorias/{$categoryName}/{$productName}', ['uses' => 'ResidencialController@producto', 'as' => 'front.residencial.productos.categopria.producto']);
+
+    Route::get('/productos/{$productName}', ['uses' => 'ResidencialController@producto', 'as' => 'front.residencial.productos.producto']);
+
+    Route::get('/aplicaciones', ['uses' => 'ResidencialController@aplicaciones', 'as' => 'front.residencial.aplicaciones']);
+
+    Route::get('/servicios', ['uses' => 'ResidencialController@servicios', 'as' => 'front.residencial.servicios']);
+
+    Route::get('/proyectos', ['uses' => 'ResidencialController@proyectos', 'as' => 'front.residencial.proyectos']);
+
+    Route::get('/distribuidores', ['uses' => 'ResidencialController@distribuidores', 'as' => 'front.residencial.distribuidores']);
+
+    Route::get('/contacto', ['uses' => 'ResidencialController@contacto', 'as' => 'front.residencial.contacto']);
+
+    Route::get('/certificados', ['uses' => 'ResidencialController@certificados', 'as' => 'front.residencial.certificados']);
+});
 
 #########################  Panel de adiministrador #########################
 Route::prefix('admin')->group(function () {
