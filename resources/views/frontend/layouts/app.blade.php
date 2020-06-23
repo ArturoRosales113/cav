@@ -22,7 +22,7 @@
  <body>
   @include('frontend.layouts.navbars.navbar')
   <!--main-panel-->
-  <div class="container-fluid pt-5">
+  <div class="container-fluid mt-5 pt-5">
    @yield('page_banner')
     @yield('content')
    @include('frontend.layouts.footer.footer')

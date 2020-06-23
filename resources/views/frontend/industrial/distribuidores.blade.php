@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row mt-5 py-5 justify-content-center subtitle">
-    <div class="col col-lg-10 text-center text-white py-3">
+    <div class="col col-lg-10 text-center text-white py-5">
         <h5 class="bold text-uppercase">Distribuidores</h5>
     </div>
 </div>

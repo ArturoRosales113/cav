@@ -37,28 +37,52 @@ body{
 }
 
 
+
 #top-navbar .top-bar{
     background-color: #AD272D;
 }
 #top-navbar .top-bar i{
     color: #fff;
-    margin-right: .5em;
+    margin-right: 1.3em;
 }
 #top-navbar #top-search{
     background-color: #333333;
     color: #fff;
 }
+
+#top-search form input{
+    background-color: #444444;
+    border: none;
+    border-radius: 1em 0em 0em 1em;
+    color: #fff;
+}
+#top-search form .input-group-append button{
+    background-color: #444444;
+    border: none;
+    border-radius: 0em 1em 1em 0em;
+    color: #fff;
+}
+#top-search form .input-group-append button::hover,
+#top-search form .input-group-append button::active,
+#top-search form .input-group-append button::focus
+{
+    background-color: #444444;
+    border: none;
+    border-radius: 0em 1em 1em 0em;
+    color: #fff;
+}
+
 #menu_navbar{
   background-color:#fff;
 }
 
 #menu_navbar .nav-link{
-  font-size: 12pt;
+  font-size: .75rem;
   font-weight: 900;
   color: #000;
   border-bottom: none;
   transition: all .5s ease;
-  padding:5px 10px 5px 10px;
+  padding:10px 10px 5px 10px;
   height: 30px;
   cursor: default;
   margin:0 10px;
@@ -88,18 +112,21 @@ body{
 
 
 footer .menu{
-    background-color: #333333;
+    background-color:rgba(0,0,0,.95);
     background-image: url('../img/mid_background.jpg');
     background-position: center;
     background-blend-mode: multiply;
     background-size: cover;
     color: #fff;
 }
+footer{
+    font-size: .85em;
+}
 
 footer .list-group .list-group-item{
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    padding: .2rem 1.25rem;
+    padding: .3rem 1.25rem;
 }
 
 .row.subtitle{
@@ -107,7 +134,7 @@ footer .list-group .list-group-item{
     background-image: url('../img/mid_background.jpg');
     background-blend-mode: multiply;
     background-position: center;
-    height: 20vh;
+    height: 30vh;
 }
 
 .row.productos-text{
@@ -162,7 +189,13 @@ footer .list-group .list-group-item{
     padding: .5em 0em .5em 5em;
     border: 0;
 }
-#pav-welcome ul li::before{
+#pav-welcome ul li::before,
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before{
     content: '>';
     color: red;
     display: inline-block;

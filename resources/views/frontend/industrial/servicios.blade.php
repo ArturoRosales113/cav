@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 @section('content')
 <div class="row mt-5 py-5 justify-content-center subtitle">
-    <div class="col col-lg-10 text-center text-white py-3">
+    <div class="col col-lg-10 text-center text-white py-5">
         <h5 class="bold text-uppercase">Nuestros servicios</h5>
         <h6>OFRECEMOS AYUDA CON EXPERIENCIA INTEGRAL PARA UNA AMPLIA GAA DE NECESIDADES DE NEGOCIO</h6>
     </div>
@@ -19,9 +19,9 @@
                         <h6 class="bold">ESPECIFICACIÓN</h6>
                         <small>
                             Ofrecemos apoyo de la mano de profesionales, quienes
-están capacitados por plantas a nivel mundial para ayudar
-a ofrecer soluciones para todo tipo de proyecto, cumpliendo
-con lo más altos estándares: americanos, y europeos
+                            están capacitados por plantas a nivel mundial para ayudar
+                            a ofrecer soluciones para todo tipo de proyecto, cumpliendo
+                            con lo más altos estándares: americanos, y europeos
                         </small>
                     </div>
                 </div>
@@ -52,9 +52,9 @@ con lo más altos estándares: americanos, y europeos
                         <h6 class="bold">VENTA</h6>
                         <small>
                             Proveemos de soluciones que se adecuan a cada cliente y
-cada tipo de acceso del cual requieran, no importando si
-es una: residencia, hotel, hospital, hotel, industria, con
-todo lo necesario para su correcta solución
+                            cada tipo de acceso del cual requieran, no importando si
+                            es una: residencia, hotel, hospital, hotel, industria, con
+                            todo lo necesario para su correcta solución
                         </small>
                     </div>
                 </div>
