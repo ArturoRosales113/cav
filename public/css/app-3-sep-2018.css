@@ -151,6 +151,13 @@ footer .list-group .list-group-item{
     background-repeat: no-repeat;
     height: 50vh;
 }
+.row.products{
+    background-image: url('../img/productos_banner.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+}
 
 .row.aplications{
     background-image: url('../img/aplicaciones.jpg');

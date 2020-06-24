@@ -8,41 +8,73 @@ class CategorySeeder extends Seeder
 {
     public function run()
     {
+
         DB::table('categories')->insert([
-            'name' => 'categoria_1',
-            'display_name' => 'Categoría 1',
+            'name' => 'puertas_rapidas',
+            'display_name' => 'puertas rápidas',
             'description' =>Str::random(20),
         ]);
+
         DB::table('categories')->insert([
-            'name' => 'categoria_2',
-            'display_name' => 'Categoría 2',
+            'name' => 'puertas_automaticas',
+            'display_name' => 'puertas automáticas',
             'description' =>Str::random(20),
         ]);
+
+
         DB::table('categories')->insert([
-            'name' => 'categoria_3',
-            'display_name' => 'Categoría 3',
+            'name' => 'motores_industriales',
+            'display_name' => 'motores industriales',
             'description' =>Str::random(20),
         ]);
+
         DB::table('categories')->insert([
-            'name' => 'categoria_4',
-            'display_name' => 'Categoría 4',
+            'name' => 'sellos',
+            'display_name' => 'sellos',
             'description' =>Str::random(20),
         ]);
+
         DB::table('categories')->insert([
-            'name' => 'categoria_5',
-            'display_name' => 'Categoría 5',
+            'name' => 'puertas_de_acero',
+            'display_name' => 'puertas de acero',
             'description' =>Str::random(20),
         ]);
+
         DB::table('categories')->insert([
-            'name' => 'categoria_6',
-            'display_name' => 'Categoría 6',
+            'name' => 'control_de_acceso',
+            'display_name' => 'control de acceso',
             'description' =>Str::random(20),
         ]);
+
         DB::table('categories')->insert([
-            'name' => 'categoria_6',
-            'display_name' => 'Categoría 6',
+            'name' => 'puertas_de_quirofano',
+            'display_name' => 'puertas de quiirofano',
             'description' =>Str::random(20),
         ]);
-    }
+
+        DB::table('categories')->insert([
+            'name' => 'rampas',
+            'display_name' => 'rampas',
+            'description' =>Str::random(20),
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'cortinas_de_acero',
+            'display_name' => 'cortinas de acero',
+            'description' =>Str::random(20),
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'herrajes',
+            'display_name' => 'herrajes',
+            'description' =>Str::random(20),
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'paneles',
+            'display_name' => 'paneles',
+            'description' =>Str::random(20),
+        ]);
+      }
 }
 
