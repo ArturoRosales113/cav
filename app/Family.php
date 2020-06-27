@@ -18,4 +18,8 @@ class Family extends Model
        {
         return $this->hasMany('App\Article');
        }
+       public function categories()
+       {
+        return $this->hasMany('App\Category');
+       }
 }

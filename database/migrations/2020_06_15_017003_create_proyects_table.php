@@ -15,18 +15,30 @@ class CreateProyectsTable extends Migration
     {
         Schema::create('proyects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->unique();
+
+            $table->string('title')
+                  ->unique();
+
             $table->string('slug');
-            $table->text('description')->nullable();
+
+            $table->text('description')
+                  ->nullable();
+                  
             $table->string('img_path')
-            ->nullable();
+                  ->nullable();
 
             $table->string('banner_path')
             ->nullable();
 
-            $table->integer('aplication_id')->unsigned()
-            ->nullable();
-            $table->foreign('aplication_id')->references('id')->on('aplications')->onDelete('cascade');
+            $table->integer('aplication_id')
+                  ->unsigned()
+                  ->nullable();
+
+            $table->foreign('aplication_id')
+                  ->references('id')
+                  ->on('aplications')
+                  ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

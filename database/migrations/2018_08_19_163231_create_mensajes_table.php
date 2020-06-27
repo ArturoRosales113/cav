@@ -14,11 +14,13 @@ class CreateMensajesTable extends Migration
     public function up()
     {
         Schema::create('mensajes', function (Blueprint $table) {
+
             $table->increments('id');
             $table->string('nombre');
             $table->string('correo');
             $table->text('mensaje');
             $table->timestamps();
+            
         });
     }
 

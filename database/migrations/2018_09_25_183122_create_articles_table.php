@@ -52,10 +52,14 @@ class CreateArticlesTable extends Migration
             $table->string('icon_path')
                   ->nullable();
 
-            $table->integer('family_id')->unsigned()
+            $table->integer('family_id')
+                  ->unsigned()
                   ->nullable();
 
-            $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade');
+            $table->foreign('family_id')
+                  ->references('id')
+                  ->on('families')
+                  ->onDelete('cascade');
 
             $table->timestamps();
 
@@ -129,6 +133,15 @@ class CreateArticlesTable extends Migration
             $table->string('svg_path')
                   ->nullable();
 
+            $table->integer('family_id')
+                  ->unsigned()
+                  ->nullable();
+
+            $table->foreign('family_id')
+                  ->references('id')
+                  ->on('families')
+                  ->onDelete('cascade');
+
             $table->timestamps();
 
         });
@@ -153,7 +166,35 @@ class CreateArticlesTable extends Migration
                    ->on('aplications')
                    ->onDelete('cascade');
 
+            $table->string('img_path')
+            ->nullable();
+
             $table->timestamps();
+        });
+
+        Schema::create('article_mensaje', function (Blueprint $table) {
+
+            $table->increments('id');
+
+            $table->integer('article_id')
+                  ->unsigned();
+
+            $table->foreign('article_id')
+                  ->references('id')
+                  ->on('articles')
+                  ->onDelete('cascade');
+
+            $table->integer('mensaje_id')
+                  ->unsigned();
+
+            $table->foreign('mensaje_id')
+                   ->references('id')
+                   ->on('mensajes')
+                   ->onDelete('cascade');
+
+
+            $table->timestamps();
+
         });
 
     }
@@ -164,6 +205,8 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('article_mensaje');
+
         Schema::dropIfExists('article_aplication');
 
         Schema::dropIfExists('aplications');

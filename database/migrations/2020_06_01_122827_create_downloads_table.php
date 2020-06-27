@@ -16,7 +16,9 @@ class CreateDownloadsTable extends Migration
         Schema::create('downloads', function (Blueprint $table) {
             $table->increments('id');
             $table->string('path');
-            $table->integer('is_video')->nullable();
+
+            $table->integer('is_video')
+                  ->nullable();
 
             $table->integer('article_id')
                   ->unsigned();
@@ -25,6 +27,7 @@ class CreateDownloadsTable extends Migration
                   ->references('id')
                   ->on('articles')
                   ->onDelete('cascade');
+                  
             $table->timestamps();
         });
     }
