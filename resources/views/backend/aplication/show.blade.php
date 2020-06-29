@@ -19,6 +19,9 @@
                     {{ $aplication->name }}
                 </h2>
             </div>
+            <div class="card-body">
+                @include('backend.aplication.edit', ['families' => $families])
+            </div>
 
         </div>
     </div>

@@ -12,6 +12,7 @@ use Validator;
 
 //Modelos
 use App\Aplication;
+use App\Family;
 
 
 
@@ -35,7 +36,7 @@ class AplicationController extends Controller
      */
     public function create()
     {
-        return view('backend.aplication.create');
+        return view('backend.aplication.create', ['families' => Family::all()]);
     }
 
     /**
@@ -52,6 +53,7 @@ class AplicationController extends Controller
             'name' => 'required',
             'description' => 'required',
             'img_path' => 'mimes:jpg,jpeg,png|max:150',
+            'family_id' => 'required|not_in:0',
             'pdf_path' => 'mimes:pdf'
         ];
         $validator = Validator::make($input, $rules);
@@ -64,6 +66,7 @@ class AplicationController extends Controller
             $aplication = Aplication::create([
                 'name' => str_replace(' ', '', strtolower($input['name'])),
                 'display_name' => ucwords($input['name']),
+                'family_id' => $input['family_id'],
                 'description' => $input['description']
             ]);
 
@@ -92,7 +95,10 @@ class AplicationController extends Controller
      */
     public function show(Aplication $aplication)
     {
-        return view('backend.aplication.show', ['aplication' => $aplication]);
+        return view('backend.aplication.show', [
+            'aplication' => $aplication,
+            'families' => Family::all()
+            ]);
     }
 
     /**
@@ -103,7 +109,10 @@ class AplicationController extends Controller
      */
     public function edit(Aplication $aplication)
     {
-        return view('backend.aplication.edit', ['aplication' => $aplication]);
+        return view('backend.aplication.edit', [
+            'aplication' => $aplication,
+            'families' => Family::all()
+            ]);
     }
 
     /**

@@ -12,6 +12,7 @@ class Aplication extends Model
         'description',
         'img_path',
         'pdf_path',
+        'family_id',
         'svg_path'
        ];
 
