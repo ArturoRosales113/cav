@@ -1,4 +1,4 @@
-<form action="{{ route('aplication.update', $aplication->id) }}" class="form" method="PUT" enctype="multipart/form-data">
+<form action="{{ route('aplication.update', $aplication->id) }}" class="form" method="POST" enctype="multipart/form-data">
     <div class="row">
         {{ csrf_field() }}
         <input type="hidden" name="_method" value="put" />
@@ -28,7 +28,7 @@
             <select class="custom-select" name="family_id">
                 <option value="0">Ninguna</option>
                 @foreach ($families as $fam)
-                    <option value="{{ $fam->id }}" {{ old('family_id') == $fam->id ? 'selected' : ''}}>{{ $fam->display_name }}</option>
+                    <option value="{{ $fam->id }}" {{ old('family_id',$aplication->family_id) == $fam->id ? 'selected' : ''}}>{{ ucfirst($fam->display_name) }}</option>
                 @endforeach
             </select>
             @if ($errors->has('family'))
@@ -38,9 +38,15 @@
             @endif
         </div>
     </div>
-    <div class="row">
-        <div class="col-4">
-            <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formLogoPreview">
+    <div class="row align-items-center">
+        <div class="col-4 text-center">
+           @if( $aplication->img_path != null )
+           <img src="{{ asset($aplication->img_path) }}" alt="" class="img-fluid" id="formLogoPreview">
+           <hr>
+           <a class="btn btn-danger" href="{{ route('aplication.delete', $aplication->id) }}" ><i class="fas fa-trash"></i></a>
+           @else
+           <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formLogoPreview">
+           @endif
         </div>
         <div class="form-group col-6">
             <h6>Foto</h6>
@@ -49,8 +55,16 @@
             <input type="file" class="form-control-file" name="img_path">
           </div>
         <div class="w-100 py-3"></div>
-        <div class="col-4">
-            <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formPhotoPreview">
+        <div class="col-4 text-center">
+            @if ( $aplication->pdf_path != null)
+            <a href="{{ asset($aplication->pdf_path) }}" class="btn btn-outline-dark">
+                <i class="far fa-file-pdf fa-3x"></i>
+            </a>
+            <hr>
+            <a class="btn btn-danger" href="{{ route('aplication.pdf.delete', $aplication->id) }}" ><i class="fas fa-trash"></i></a>
+            @else
+            <img src="{{asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formLogoPreview">
+            @endif
         </div>
         <div class="form-group col-6">
             <h6>PDF</h6>

@@ -35,33 +35,34 @@ Route::prefix('industrial')->group(function(){
 
     Route::get('/certificados', ['uses' => 'IndustrialController@certificados', 'as' => 'front.industrial.certificados']);
 });
+
 Route::prefix('residencial')->group(function(){
 
-    Route::get('/', ['uses' => 'ResidencialController@index', 'as' => 'front.residencial.index']);
+    Route::get('/', ['uses' => 'ResidecialController@index', 'as' => 'front.residencial.index']);
     //Aplicaciones
-    Route::get('/aplicaciones', ['uses' => 'ResidencialController@aplicaciones', 'as' => 'front.residencial.aplicaciones']);
+    Route::get('/aplicaciones', ['uses' => 'ResidecialController@aplicaciones', 'as' => 'front.residencial.aplicaciones']);
     //Productos
-    Route::get('/productos', ['uses' => 'ResidencialController@productos', 'as' => 'front.residencial.productos']);
+    Route::get('/productos', ['uses' => 'ResidecialController@productos', 'as' => 'front.residencial.productos']);
 
-    Route::get('/productos/categorias/', ['uses' => 'ResidencialController@categorias', 'as' => 'front.residencial.categorias']);
+    Route::get('/productos/categorias/', ['uses' => 'ResidecialController@categorias', 'as' => 'front.residencial.categorias']);
 
-    Route::get('/productos/categorias/{$categoryName}', ['uses' => 'ResidencialController@categoria', 'as' => 'front.residencial.productos.categoria']);
+    Route::get('/productos/categorias/{$categoryName}', ['uses' => 'ResidecialController@categoria', 'as' => 'front.residencial.productos.categoria']);
 
-    Route::get('/productos/categorias/{$categoryName}/{$productName}', ['uses' => 'ResidencialController@producto', 'as' => 'front.residencial.productos.categopria.producto']);
+    Route::get('/productos/categorias/{$categoryName}/{$productName}', ['uses' => 'ResidecialController@producto', 'as' => 'front.residencial.productos.categopria.producto']);
 
-    Route::get('/productos/{$productName}', ['uses' => 'ResidencialController@producto', 'as' => 'front.residencial.productos.producto']);
+    Route::get('/productos/{$productName}', ['uses' => 'ResidecialController@producto', 'as' => 'front.residencial.productos.producto']);
 
-    Route::get('/aplicaciones', ['uses' => 'ResidencialController@aplicaciones', 'as' => 'front.residencial.aplicaciones']);
+    Route::get('/aplicaciones', ['uses' => 'ResidecialController@aplicaciones', 'as' => 'front.residencial.aplicaciones']);
 
-    Route::get('/servicios', ['uses' => 'ResidencialController@servicios', 'as' => 'front.residencial.servicios']);
+    Route::get('/servicios', ['uses' => 'ResidecialController@servicios', 'as' => 'front.residencial.servicios']);
 
-    Route::get('/proyectos', ['uses' => 'ResidencialController@proyectos', 'as' => 'front.residencial.proyectos']);
+    Route::get('/proyectos', ['uses' => 'ResidecialController@proyectos', 'as' => 'front.residencial.proyectos']);
 
-    Route::get('/distribuidores', ['uses' => 'ResidencialController@distribuidores', 'as' => 'front.residencial.distribuidores']);
+    Route::get('/distribuidores', ['uses' => 'ResidecialController@distribuidores', 'as' => 'front.residencial.distribuidores']);
 
-    Route::get('/contacto', ['uses' => 'ResidencialController@contacto', 'as' => 'front.residencial.contacto']);
+    Route::get('/contacto', ['uses' => 'ResidecialController@contacto', 'as' => 'front.residencial.contacto']);
 
-    Route::get('/certificados', ['uses' => 'ResidencialController@certificados', 'as' => 'front.residencial.certificados']);
+    Route::get('/certificados', ['uses' => 'ResidecialController@certificados', 'as' => 'front.residencial.certificados']);
 });
 
 #########################  Panel de adiministrador #########################
@@ -110,7 +111,7 @@ Route::prefix('admin')->group(function () {
         });
         Route::prefix('/delete/pdf')->group(function () {
             Route::get('/download/{download}', ['uses' => 'DownloadsController@delete', 'as' => 'download.delete']);
-            Route::get('/aplication/{aplication}', ['uses' => 'DownloadsController@pdfDelete', 'as' => 'aplication.pdf.delete']);
+            Route::get('/aplication/{aplication}', ['uses' => 'AplicationController@pdfDelete', 'as' => 'aplication.pdf.delete']);
         });
     });
 

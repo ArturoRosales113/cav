@@ -8,10 +8,70 @@ class CategorySeeder extends Seeder
 {
     public function run()
     {
+        //Residenciales
+
+        DB::table('categories')->insert([
+            'name' => 'motore_de_cortina',
+            'display_name' => 'motores de cortina',
+            'family_id' => 1,
+            'description' =>Str::random(20),
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'barreras_de_acero',
+            'display_name' => 'barreras de acero',
+            'family_id' => 1,
+            'description' =>Str::random(20),
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'motores_corredizos',
+            'display_name' => 'motores corredizos',
+            'family_id' => 1,
+            'description' =>Str::random(20),
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'motores_ascendentes',
+            'display_name' => 'motores ascendentes',
+            'family_id' => 1,
+            'description' =>Str::random(20),
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'puertas_seccionales',
+            'display_name' => 'puertas seccionales',
+            'family_id' => 1,
+            'description' =>Str::random(20),
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'motores_tubulares',
+            'display_name' => 'motores tubulares',
+            'family_id' => 1,
+            'description' =>Str::random(20),
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'herrajes',
+            'display_name' => 'herrajes',
+            'family_id' => 1,
+            'description' =>Str::random(20),
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'cortinas_anti_huracan',
+            'display_name' => 'cortinas anti-huracán',
+            'family_id' => 1,
+            'description' =>Str::random(20),
+        ]);
+
+
+        //Industriales
 
         DB::table('categories')->insert([
             'name' => 'puertas_rapidas',
-            'display_name' => 'puertas rápidas',ºº
+            'display_name' => 'puertas rápidas',
             'family_id' => 2,
             'description' =>Str::random(20),
         ]);

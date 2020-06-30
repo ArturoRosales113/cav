@@ -44,15 +44,7 @@
             </a>
           </li>
 
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Usuarios</span>
-          </h6>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fas fa-users feather"></i>
-            Usuarios
-          </a>
-        </li>
+
 
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
             <span>Sucursales</span>

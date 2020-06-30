@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layoutsR.app')
 
 @section('content')
 <div class="row mt-5 py-5 justify-content-center subtitle">
@@ -71,32 +71,4 @@
         </ul>
     </div>
 </div>
-
-<div class="row justify-content-center py-5 bg1">
-    <div class="col-10 col-lg-5 text-center py-5">
-        <h6 class="bold text-white text-uppercase py-3">
-            ¿Quieres ser distribuidor?
-        </h6>
-        <form action="">
-            <div class="form-row">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col">
-                    <select id="inputState" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                      </select>
-                </div>
-                <div class="col">
-                    <button class="btn bg-dark text-white w-100" type="submit">Enviar</button>
-                </div>
-              </div>
-        </form>
-    </div>
-</div>
-
 @endsection

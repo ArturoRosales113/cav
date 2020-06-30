@@ -26,25 +26,22 @@ Aplicaciones
                                 {{$a->description}}
                             </p>
                             <div class="row align-items-stretch justify-content-end">
-                                <a class="btn btn-info ml-2" href="{{route('aplication.edit',$a -> id)}}">
-                                    <i class="fa fa-edit"></i>
-                                   </a>
 
-                                   <a class="btn btn-warning ml-2" href="{{route('aplication.show',$a -> id)}}">
-                                    <i class="fas fa-eye"></i>
-                                   </a>
+                                <a class="btn btn-warning ml-2" href="{{route('aplication.show',$a -> id)}}">
+                                <i class="fas fa-eye"></i>
+                                </a>
 
-                                    <button
-                                        type="button"
-                                        class="btn btn-danger ml-2"
-                                        data-toggle="modal"
-                                        data-target="#destroyModal"
-                                        data-route="{{ route('category.destroy',$a -> id ) }}"
-                                        data-title="{{ $a->display_name }}"
-                                        data-id="{{ $a->id }}"
-                                        >
-                                        <i class="fas fa-times"></i>
-                                    </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-danger ml-2"
+                                    data-toggle="modal"
+                                    data-target="#destroyModal"
+                                    data-route="{{ route('category.destroy',$a -> id ) }}"
+                                    data-title="{{ $a->display_name }}"
+                                    data-id="{{ $a->id }}"
+                                    >
+                                    <i class="fas fa-times"></i>
+                                </button>
 
 
                             </div>

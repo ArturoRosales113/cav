@@ -52,13 +52,13 @@
     <button class="navbar-toggler d-flex d-lg-none" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         menu
       </button>
-      <a class="navbar-brand" href="{{ route('front.industrial.index') }}">
+      <a class="navbar-brand" href="{{ route('front.residencial.index') }}">
             <img src="{{ asset('img/logos/logo1.png') }}" height="60px" alt="">
       </a>
    <div class="navbar-collapse d-flex justify-content-center pl-5">
     <ul class="navbar-nav d-none d-lg-flex flex-row justify-content-center align-items-center w-100">
 
-        <li class="nav-item dropdown {{ Request::url() == route('front.industrial.productos') ? 'active' :'' }}">
+        <li class="nav-item dropdown {{ Request::url() == route('front.residencial.productos') ? 'active' :'' }}">
             <a class="nav-link dropdown-toggle" href="#" id="product-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Productos
             </a>
@@ -68,20 +68,20 @@
                 </div>
             </div>
           </li>
-        <li class="nav-item {{ Request::url() == route('front.industrial.aplicaciones') ? 'active' :'' }}">
-         <a class="nav-link menu-link" href="{{ route('front.industrial.aplicaciones') }}">Aplicaciones</a>
+        <li class="nav-item {{ Request::url() == route('front.residencial.aplicaciones') ? 'active' :'' }}">
+         <a class="nav-link menu-link" href="{{ route('front.residencial.aplicaciones') }}">Aplicaciones</a>
         </li>
-        <li class="nav-item {{ Request::url() == route('front.industrial.servicios') ? 'active' :'' }}">
-         <a class="nav-link menu-link" href="{{ route('front.industrial.servicios') }}">Servicio</a>
+        <li class="nav-item {{ Request::url() == route('front.residencial.servicios') ? 'active' :'' }}">
+         <a class="nav-link menu-link" href="{{ route('front.residencial.servicios') }}">Servicio</a>
         </li>
-        <li class="nav-item {{ Request::url() == route('front.industrial.proyectos') ? 'active' :'' }}">
-          <a class="nav-link menu-link" href="{{ route('front.industrial.proyectos') }}">Proyectos</a>
+        <li class="nav-item {{ Request::url() == route('front.residencial.proyectos') ? 'active' :'' }}">
+          <a class="nav-link menu-link" href="{{ route('front.residencial.proyectos') }}">Proyectos</a>
         </li>
-        <li class="nav-item {{ Request::url() == route('front.industrial.distribuidores') ? 'active' :'' }}">
-          <a class="nav-link menu-link" href="{{ route('front.industrial.distribuidores') }}">Distribuidores</a>
+        <li class="nav-item {{ Request::url() == route('front.residencial.distribuidores') ? 'active' :'' }}">
+          <a class="nav-link menu-link" href="{{ route('front.residencial.distribuidores') }}">Distribuidores</a>
         </li>
-        <li class="nav-item {{ Request::url() == route('front.industrial.contacto') ? 'active' :'' }}">
-          <a class="nav-link menu-link" href="{{ route('front.industrial.contacto') }}">Contacto</a>
+        <li class="nav-item {{ Request::url() == route('front.residencial.contacto') ? 'active' :'' }}">
+          <a class="nav-link menu-link" href="{{ route('front.residencial.contacto') }}">Contacto</a>
         </li>
 
       </ul>

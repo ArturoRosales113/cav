@@ -13,7 +13,7 @@ use Validator;
 //Modelos
 use App\Aplication;
 use App\Family;
-
+use App\Article;
 
 
 
@@ -97,6 +97,7 @@ class AplicationController extends Controller
     {
         return view('backend.aplication.show', [
             'aplication' => $aplication,
+            'articles' => Article::all(),
             'families' => Family::all()
             ]);
     }
@@ -125,19 +126,22 @@ class AplicationController extends Controller
     public function update(Request $request, Aplication $aplication)
     {
         $input = $request->all();
-        //dd($input);
+       //dd($input);
         $rules = [
             'name' => 'required',
             'description' => 'required',
             'img_path' => 'mimes:jpg,jpeg,png|max:150',
-            'icon_path' => 'mimes:pdf'
+            'family_id' => 'required|not_in:0',
+            'pdf_path' => 'mimes:pdf'
         ];
+
         $messages = [
             'name.required' => 'El campo "Nombre" es obligatorio',
             'file.image' => 'El archivo no es una imagen',
             'file.mimes' => 'El formato de la imagen no es válido',
             'file.size' => 'El tamaño del archivo debe ser menor a 400kb',
         ];
+
         $validator = Validator::make($input, $rules, $messages);
         if ($validator->fails()) {
             //dd($validator);
@@ -158,6 +162,7 @@ class AplicationController extends Controller
                 $file->move('img/brand/', $file_name);
                 $aplication->img_path = 'img/brand/' . $file_name;
             }
+
             if (array_key_exists('pdf_path', $input) && $input['pdf_path'] != null) {
                 //Borrar Archivo
                 if ($aplication->icon_path != null) {
@@ -173,11 +178,10 @@ class AplicationController extends Controller
 
             $aplication->name = str_replace(' ', '', strtolower($input['name']));
             $aplication->display_name = ucwords($input['name']);
-            if ($input['description'] != null) {
-                $aplication->description = $input['description'];
-            }
+            $aplication->description = $input['description'];
+            $aplication->family_id = $input['family_id'];
             $aplication->save();
-            return redirect()->route('aplication.index')->with('success', 'Información actualizada');
+            return redirect()->back()->with('success', 'Información actualizada');
         }
     }
 
@@ -189,22 +193,26 @@ class AplicationController extends Controller
      */
     public function destroy(Aplication $aplication)
     {
-        //
+
     }
+
     public function delete(Aplication $aplication)
     {
-        $dfile = $download->path;
+        $dfile = $aplication->img_path;
         $filename = public_path($dfile);
         File::delete($filename);
-        $download->delete();
+        $aplication->img_path = null;
+        $aplication->save();
         return redirect()->back()->with('success', 'Archivo Eliminado');
     }
+
     public function pdfDelete(Aplication $aplication)
     {
-        $dfile = $download->path;
+        $dfile = $aplication->pdf_path;
         $filename = public_path($dfile);
         File::delete($filename);
-        $download->delete();
+        $aplication->pdf_path = null;
+        $aplication->save();
         return redirect()->back()->with('success', 'Archivo Eliminado');
     }
 }

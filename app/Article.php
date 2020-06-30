@@ -29,7 +29,11 @@ class Article extends Model
     {
         return $this->belongsTo('App\Category');
     }
-
+    // Aplicaciones
+    public function aplications()
+    {
+        return $this->belongsToMany('App\Aplication');
+    }
     // Fotos
     public function pics()
     {
@@ -37,11 +41,10 @@ class Article extends Model
     }
     public function one_pic()
     {
-        return $this->pics()->take(1);
+        return $this->pics()->first(1);
     }
 
     //Descargas
-
     public function downloads()
     {
         return $this->hasMany('App\Download');

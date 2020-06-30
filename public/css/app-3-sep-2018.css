@@ -197,12 +197,18 @@ footer .list-group .list-group-item{
     border: 0;
 }
 #pav-welcome ul li::before,
-h1::before,
-h2::before,
-h3::before,
-h4::before,
-h5::before,
-h6::before{
+h1.indicator::before,
+h2.indicator::before,
+h3.indicator::before,
+h4.indicator::before,
+h5.indicator::before,
+h6.indicator::before,
+footer h1::before,
+footer h2::before,
+footer h3::before,
+footer h4::before,
+footer h5::before,
+footer h6::before{
     content: '>';
     color: red;
     display: inline-block;
