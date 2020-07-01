@@ -110,6 +110,10 @@ body{
   padding-bottom: .5em;
 }
 
+#product-dropdown-area{
+    width: 100vw;
+}
+
 
 footer .menu{
     background-color:rgba(0,0,0,.95);
