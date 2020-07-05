@@ -28,7 +28,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('backend.article.index', [
-         'articles' => Article::all()
+         'articles' => Article::paginate(15)
          ]);
     }
 
@@ -55,28 +55,30 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
        $input = $request->all();
-       //dd($input);
+     
        $rules = [
            'name' => 'required',
            'description' => 'max:150',
            'specs' => 'required',
-           'family_id' => 'required|not_in:0',
            'category_id' => 'required|not_in:0'
        ];
+
        $messages = [
         'name.required' => 'El campo "Nombre" es obligatorio',
-        'family_id.not_in' => 'La selección no válida para el campo "Familia"',
         'specs.required' => 'El campo "Especificaciones" es obligatorio.',
         'category_id.not_in' => 'La selección no válida para el campo "Categoría"'
        ];
 
        $validator = Validator::make($input, $rules, $messages);
+
        if ($validator->fails()) {
-           //dd($validator);
-           return redirect()->back()
-          ->withErrors($validator)
-          ->withInput();
+          return redirect()
+               ->back()
+               ->withErrors($validator)
+               ->withInput();
+
        } else {
+
         $slug = str_replace(' ', '-', strtolower($input['name']));
         //dd($slug);
         $art = Article::create([
@@ -84,15 +86,16 @@ class ArticleController extends Controller
          'slug' => $slug,
          'description' => $input['description'],
          'specs' => $input['specs'],
-         'family_id' => $input['family_id'],
          'category_id' => $input['category_id']
         ]);
-        if (array_key_exists('is_trend', $input) && $input['is_trend'] != 'off'){
+
+        if (array_key_exists('is_trend', $input)){
            $art->is_trend = 1;
         }
 
         $art->save();
-        }
+
+      }
         return redirect()->route('article.show',$art->id)->with('success', 'Información almacenada');
 
     }
@@ -137,12 +140,10 @@ class ArticleController extends Controller
        $rules = [
         'name' => 'required',
         'description' => 'max:150',
-        'family_id' => 'required|not_in:0',
         'category_id' => 'required|not_in:0'
        ];
        $messages = [
         'name.required' => 'El campo nombre es obligatorio',
-        'family_id.not_in' => 'La selección no válida para el campo "familia"' ,
         'category_id.not_in' => 'La selección no válida para el campo "categoría"'
        ];
        $validator = Validator::make($input, $rules, $messages);
@@ -160,10 +161,9 @@ class ArticleController extends Controller
         $article->description = $input['description'];
         $article->specs = $input['specs'];
         $article->code = $input['code'];
-        $article->family_id = $input['family_id'];
         $article->category_id = $input['category_id'];
 
-        if (array_key_exists('is_trend', $input) && $input['is_trend'] != 'off'){
+        if (array_key_exists('is_trend', $input)){
             $article->is_trend = 1;
          } else {
             $article->is_trend = 0;

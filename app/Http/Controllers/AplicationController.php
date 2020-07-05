@@ -14,6 +14,7 @@ use Validator;
 use App\Aplication;
 use App\Family;
 use App\Article;
+use App\Category;
 
 
 
@@ -52,7 +53,7 @@ class AplicationController extends Controller
         $rules = [
             'name' => 'required',
             'description' => 'required',
-            'img_path' => 'mimes:jpg,jpeg,png|max:150',
+            'img_path' => 'mimes:jpg,jpeg,png|max:950',
             'family_id' => 'required|not_in:0',
             'pdf_path' => 'mimes:pdf'
         ];
@@ -97,7 +98,7 @@ class AplicationController extends Controller
     {
         return view('backend.aplication.show', [
             'aplication' => $aplication,
-            'articles' => Article::all(),
+            'categories' => Category::all(),
             'families' => Family::all()
             ]);
     }
@@ -130,7 +131,7 @@ class AplicationController extends Controller
         $rules = [
             'name' => 'required',
             'description' => 'required',
-            'img_path' => 'mimes:jpg,jpeg,png|max:150',
+            'img_path' => 'mimes:jpg,jpeg,png|max:950',
             'family_id' => 'required|not_in:0',
             'pdf_path' => 'mimes:pdf'
         ];
@@ -214,5 +215,58 @@ class AplicationController extends Controller
         $aplication->pdf_path = null;
         $aplication->save();
         return redirect()->back()->with('success', 'Archivo Eliminado');
+    }
+
+    public function addArticle(Request $request, Aplication $aplication)
+    {
+        $input = $request->all();
+        $rules = [
+             'article_id' => 'not_in:0',
+             'article_img_path' => 'mimes:jpg,jpeg,png|max:2048|required',
+        ];
+ 
+        $messages = [
+            'article_id.not_in' => 'Selecciona un producto',
+            'article_img_path.mimes' => 'El formato de la imagen no es válido. ( jpg, jpeg, png )',
+            'article_img_path.required' => 'Necesitas una imagen para enlazar un producto.'
+        ];
+ 
+        $validator = Validator::make($input, $rules, $messages);
+         if ($validator->fails()) {
+             
+             return redirect()->back()
+                 ->withErrors($validator)
+                 ->withInput();
+         } else {
+            $article = Article::find($input['article_id']);
+            $file = Input::file('article_img_path');
+            $file_name ='article_'. $article->id . '-aplication_' . $aplication->id . '.' . $file->getClientOriginalExtension();
+            $file_path = 'article_aplications/' . $file_name;
+            $file->move('article_aplications/', $file_name);
+            
+
+            $aplication->articles()->attach([$input['article_id'] => ['img_path' => $file_path]]);
+            if($input['article_description'] != null)
+            {
+                $aplication->articles()->updateExistingPivot($input['article_id'], ['description' => $input['article_description']]);
+
+            }
+
+        
+            return redirect()->route('aplication.show', $aplication->id)->with('success', 'El producto ahora esta relacionado con '.$aplication->display_name);
+
+         } 
+    }
+
+    public function removeArticle(Request $request, Aplication $aplication)
+    {
+
+        //dd($request);
+        $dfile = $request->delete_path;
+        $filename = public_path($dfile);
+        File::delete($filename);
+        $aplication->articles()->detach($request->article_id);
+        return redirect()->back()->with('success', 'Producto desviculado de manera correcta.');
+        
     }
 }

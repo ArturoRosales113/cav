@@ -18,7 +18,9 @@ class Aplication extends Model
 
        public function articles()
        {
-        return $this->hasMany('App\Article');
+        return $this->belongsToMany('App\Article')
+                    ->withPivot('description', 'img_path')
+                    ->withTimestamps();
        }
 
 }

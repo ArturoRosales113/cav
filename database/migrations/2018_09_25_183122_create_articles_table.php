@@ -27,6 +27,12 @@ class CreateArticlesTable extends Migration
             $table->string('description')
                   ->nullable();
 
+            $table->string('img_path')
+                  ->nullable();
+
+            $table->string('icon_path')
+                  ->nullable();
+
 
             $table->timestamps();
 
@@ -97,15 +103,6 @@ class CreateArticlesTable extends Migration
                   ->on('categories')
                   ->onDelete('cascade');
 
-            $table->integer('family_id')
-                  ->nullable()
-                  ->unsigned();
-
-            $table->foreign('family_id')
-                  ->references('id')
-                  ->on('families')
-                  ->onDelete('cascade');
-
             $table->timestamps();
 
         });
@@ -146,7 +143,7 @@ class CreateArticlesTable extends Migration
 
         });
 
-        Schema::create('article_aplication', function (Blueprint $table) {
+        Schema::create('aplication_article', function (Blueprint $table) {
 
             $table->increments('id');
 
@@ -167,7 +164,10 @@ class CreateArticlesTable extends Migration
                    ->onDelete('cascade');
 
             $table->string('img_path')
-            ->nullable();
+                  ->nullable();
+
+            $table->longText('description')
+                  ->nullable();
 
             $table->timestamps();
         });
@@ -207,7 +207,7 @@ class CreateArticlesTable extends Migration
     {
         Schema::dropIfExists('article_mensaje');
 
-        Schema::dropIfExists('article_aplication');
+        Schema::dropIfExists('aplication_article');
 
         Schema::dropIfExists('aplications');
 

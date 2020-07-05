@@ -72,14 +72,14 @@ Route::prefix('admin')->group(function () {
         //  Home del Dashboard
         Route::get('/', ['uses' => 'DashboardController@index', 'as' => 'dashboard.index']);
 
-        Route::get('/admin/pages', ['uses' => 'DashboardController@pages', 'as' => 'app.pages']);
-        Route::post('/admin/pages', ['uses' => 'DashboardController@updatePages', 'as' => 'pages.edit']);
+        Route::get('/pages', ['uses' => 'DashboardController@pages', 'as' => 'app.pages']);
+        Route::post('/pages', ['uses' => 'DashboardController@updatePages', 'as' => 'pages.edit']);
 
-        Route::get('/admin/settings', ['uses' => 'DashboardController@showSettings', 'as' => 'app.settings']);
-        Route::post('/admin/settings', ['uses' => 'DashboardController@updateSettings', 'as' => 'settings.edit']);
+        Route::get('/settings', ['uses' => 'DashboardController@showSettings', 'as' => 'app.settings']);
+        Route::post('/settings', ['uses' => 'DashboardController@updateSettings', 'as' => 'settings.edit']);
 
-        Route::get('/admin/navsettings', ['uses' => 'DashboardController@showNavSettings', 'as' => 'app.navsettings']);
-        Route::post('/admin/navsettings', ['uses' => 'DashboardController@updateNavSettings', 'as' => 'navsettings.edit']);
+        Route::get('/navsettings', ['uses' => 'DashboardController@showNavSettings', 'as' => 'app.navsettings']);
+        Route::post('/navsettings', ['uses' => 'DashboardController@updateNavSettings', 'as' => 'navsettings.edit']);
 
         //#########################  Resources #########################
         Route::resources([
@@ -94,10 +94,14 @@ Route::prefix('admin')->group(function () {
             'marca' => 'MarcaController',
             'mensaje' => 'MensajeController',
             'pic' => 'PicController',
+            'post' => 'PostController',
             'proyect' => 'ProyectController',
             'store' => 'StoreController',
             'user' => 'UserController'
         ]);
+
+        Route::post('/aplication/{aplication}/addArticle',['uses' => 'AplicationController@addArticle', 'as' => 'aplication.article.add']);
+        Route::post('/aplication/{aplication}/remove',['uses' => 'AplicationController@removeArticle', 'as' => 'aplication.article.remove']);
 
         Route::prefix('/delete/photo')->group(function () {
             Route::get('/family/{family}', ['uses' => 'FamilyController@photoDelete', 'as' => 'family.photo.delete']);

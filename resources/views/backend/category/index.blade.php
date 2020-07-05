@@ -7,60 +7,54 @@ Categorías
 
 
 @section('dashboard_buttons')
-<a class="btn btn-sm btn-success text-white" href="{{ route('category.create') }}"><i class="fas fa-plus-square"></i>&nbsp;Crear categoría</a>
+<a class="btn btn-sm btn-success text-white" href="{{ route('category.create') }}"><i
+        class="fas fa-plus-square"></i>&nbsp;Crear categoría</a>
 @endsection
 
 @section('content')
-    @include('backend.layouts.products_dashboard_menu')
-    <div class="row justify-content-center p-4">
-        <div class="col-10 col-lg-10">
-            <div class="list-group-flush">
-                @foreach ($categories as $c)
-                <li class="list-group-item d-block justify-content-between align-items-center">
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="{{ $c->img_path == null ? asset('img/brand/no_img_found.png') : asset($c->img_path) }}" class="img-fluid" alt="">
-                        </div>
-                        <div class="col-9">
-                            <h5>{{ $c->display_name }}</h5>
-                            <p>
-                                {{$c->description}}
-                            </p>
-                            <div class="row align-items-stretch justify-content-end">
-                                <a class="btn btn-info ml-2" href="{{route('category.edit',$c -> id)}}">
-                                    <i class="fa fa-edit"></i>
-                                   </a>
+@include('backend.layouts.products_dashboard_menu')
+<div class="row justify-content-center p-4">
+    <div class="col-10 col-lg-10">
+        <div class="list-group-flush">
+            @foreach ($categories as $c)
+            <li class="list-group-item d-block justify-content-between align-items-center">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="{{ $c->img_path == null ? asset('img/brand/no_img_found.png') : asset($c->img_path) }}"
+                            class="img-fluid" alt="">
+                    </div>
+                    <div class="col-9">
+                        <h5>{{ $c->display_name }}</h5>
+                        <p>
+                            {{$c->description}}
+                        </p>
+                        <div class="row align-items-stretch justify-content-end">
+                            <a class="btn btn-info ml-2" href="{{route('category.edit',$c -> id)}}">
+                                <i class="fa fa-edit"></i>
+                            </a>
 
-                                   <a class="btn btn-warning ml-2" href="{{route('category.show',$c -> id)}}">
-                                    <i class="fas fa-eye"></i>
-                                   </a>
+                            <a class="btn btn-warning ml-2" href="{{route('category.show',$c -> id)}}">
+                                <i class="fas fa-eye"></i>
+                            </a>
 
-                                    <button
-                                        type="button"
-                                        class="btn btn-danger ml-2"
-                                        data-toggle="modal"
-                                        data-target="#destroyModal"
-                                        data-route="{{ route('category.destroy',$c -> id ) }}"
-                                        data-title="{{ $c->display_name }}"
-                                        data-id="{{ $c->id }}"
-                                        >
-                                        <i class="fas fa-times"></i>
-                                    </button>
+                            <button type="button" class="btn btn-danger ml-2" data-toggle="modal"
+                                data-target="#destroyModal" data-route="{{ route('category.destroy',$c -> id ) }}"
+                                data-title="{{ $c->display_name }}" data-id="{{ $c->id }}">
+                                <i class="fas fa-times"></i>
+                            </button>
 
 
-                            </div>
                         </div>
                     </div>
-                </li>
-                @endforeach
-              </div>
+                </div>
+            </li>
+            @endforeach
         </div>
-      </div>
+    </div>
+</div>
 
 @endsection
 
 @section('modals')
-    @include('backend.layouts.slices.destroyModal', ['model' => $categories])
+@include('backend.layouts.slices.destroyModal', ['model' => $categories])
 @endsection
-
-

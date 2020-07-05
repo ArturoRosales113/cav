@@ -76,6 +76,9 @@ class CreateStoresTable extends Migration
             $table->string('lng')
                   ->nullable();
 
+            $table->longText('iframe')
+                  ->nullable();
+
 
             $table->integer('zone_id')
             ->unsigned()

@@ -11,8 +11,7 @@ class Family extends Model
         'display_name',
         'description',
         'img_path',
-        'icon_path',
-        'concept_id'
+        'icon_path'
        ];
        public function articles()
        {

@@ -6,7 +6,7 @@
 
 @section('dashboard_buttons')
 <a class="btn btn-sm btn-secondary" href="{{ route('article.index') }}">
- <i class="fas fa-arrow-left"></i>&nbsp;Volver a listado de articulos
+    <i class="fas fa-arrow-left"></i>&nbsp;Volver a listado de articulos
 </a>
 @endsection
 
@@ -33,20 +33,22 @@
                 <h3 class="card-title">
                     Imágenes del producto
                 </h3>
-              </div>
+            </div>
             <div class="card-body bg-light">
                 <div class="row">
                     <div class="col-12 ">
-                        <form action="{{ route('pic.store') }}" method="POST" enctype="multipart/form-data" id="article-pictures-create">
+                        <form action="{{ route('pic.store') }}" method="POST" enctype="multipart/form-data"
+                            id="article-pictures-create">
                             @csrf
                             <input type="hidden" name="id" value="{{ $article->id }}">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFileLang" name="photos[]" lang="es" multiple>
+                                <input type="file" class="custom-file-input" id="customFileLang" name="photos[]"
+                                    lang="es" multiple>
                                 <label class="custom-file-label" for="customFileLang">Seleccionar Imágenes</label>
-                              </div>
-                              <div class="form-group py-3">
-                                  <button type="submit" class="btn btn-primary">Subir imagenes</button>
-                              </div>
+                            </div>
+                            <div class="form-group py-3">
+                                <button type="submit" class="btn btn-primary">Subir imagenes</button>
+                            </div>
                         </form>
                         <hr>
                     </div>
@@ -57,7 +59,8 @@
                             <div class="card">
                                 <img class="card-img-top" src="{{ asset($ap->path) }}" alt="">
                                 <div class="card-body text-center">
-                                    <a href="{{ route('pic.delete', $ap->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Borrar </a>
+                                    <a href="{{ route('pic.delete', $ap->id) }}" class="btn btn-danger"><i
+                                            class="fa fa-trash"></i>&nbsp;Borrar </a>
                                 </div>
                             </div>
                             @endforeach
@@ -75,20 +78,22 @@
                 <h3 class="card-title">
                     Descargas del producto
                 </h3>
-              </div>
+            </div>
             <div class="card-body bg-light">
                 <div class="row">
                     <div class="col-12 ">
-                        <form action="{{ route('download.store') }}" method="POST" enctype="multipart/form-data" id="article-pictures-create">
+                        <form action="{{ route('download.store') }}" method="POST" enctype="multipart/form-data"
+                            id="article-pictures-create">
                             @csrf
                             <input type="hidden" name="id" value="{{ $article->id }}">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFileLang" name="files[]" lang="es" multiple>
+                                <input type="file" class="custom-file-input" id="customFileLang" name="files[]"
+                                    lang="es" multiple>
                                 <label class="custom-file-label" for="customFileLang">Seleccionar Archivos</label>
-                              </div>
-                              <div class="form-group py-3">
-                                  <button type="submit" class="btn btn-primary">Subir Documentos</button>
-                              </div>
+                            </div>
+                            <div class="form-group py-3">
+                                <button type="submit" class="btn btn-primary">Subir Documentos</button>
+                            </div>
                         </form>
                         <hr>
                     </div>
@@ -98,9 +103,11 @@
                             @foreach ($article->downloads as $ad)
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <a href="{{ asset($ad->path) }}" target="_blank" class="btn btn-lg"><i class="far fa-file-pdf fa-5x"></i></a>
+                                    <a href="{{ asset($ad->path) }}" target="_blank" class="btn btn-lg"><i
+                                            class="far fa-file-pdf fa-5x"></i></a>
                                     <br>
-                                    <a href="{{ route('download.delete', $ad->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Borrar </a>
+                                    <a href="{{ route('download.delete', $ad->id) }}" class="btn btn-danger"><i
+                                            class="fa fa-trash"></i>&nbsp;Borrar </a>
                                 </div>
                             </div>
                             @endforeach
