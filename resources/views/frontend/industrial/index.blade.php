@@ -14,7 +14,13 @@
                     </div>
                 </div>
             </div>
+
         </div>
+    </div>
+    <div class="row justify-content-center color1 py-4">
+        <a href=""><i class="far fa-dot-circle"></i></a>
+        <a href=""><i class="far fa-dot-circle"></i></a>
+        <a href=""><i class="far fa-dot-circle"></i></a>
     </div>
 
     <div class="row justify-content-center py-5">
@@ -22,23 +28,14 @@
             <h3 class="bold text-dark text-center">
                 Productos Destacados
             </h3>
-            <div class="row">
+            <div class="row py-2">
+                @foreach ($destacados->articles->take(4) as $aa)
                 <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
+                    <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
+                        class="img-fluid" alt="">
+                    <span>{{ $aa->name }}</span>
                 </div>
-                <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
-                </div>
-                <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
-                </div>
-                <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

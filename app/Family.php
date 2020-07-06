@@ -15,8 +15,9 @@ class Family extends Model
        ];
        public function articles()
        {
-        return $this->hasMany('App\Article');
+        return $this->hasManyThrough('App\Article', 'App\Category');
        }
+
        public function categories()
        {
         return $this->hasMany('App\Category');

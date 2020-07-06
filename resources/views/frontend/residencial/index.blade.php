@@ -9,36 +9,27 @@
         <div class="col-12 p-0">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{ asset('img/banner-residencial.jpg') }}" alt="First slide">
-                  </div>
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{{ asset('img/banner-residencial.jpg') }}" alt="First slide">
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
 
     <div class="row justify-content-center py-5">
         <div class="col-10">
-            <h4 class="bold text-dark text-center">
-                Productos Más Populares
-            </h4>
-            <div class="row py-3">
+            <h3 class="bold text-dark text-center">
+                Productos Destacados
+            </h3>
+            <div class="row py-2">
+                @foreach ($destacados->articles->take(4) as $aa)
                 <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
+                    <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
+                        class="img-fluid" alt="">
+                    <span>{{ $aa->name }}</span>
                 </div>
-                <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
-                </div>
-                <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
-                </div>
-                <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -51,21 +42,21 @@
             <form action="">
                 <div class="form-row">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="First name">
+                        <input type="text" class="form-control" placeholder="First name">
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Last name">
+                        <input type="text" class="form-control" placeholder="Last name">
                     </div>
                     <div class="col">
                         <select id="inputState" class="form-control">
                             <option selected>Choose...</option>
                             <option>...</option>
-                          </select>
+                        </select>
                     </div>
                     <div class="col">
                         <button class="btn bg-dark text-white w-100" type="submit">Enviar</button>
                     </div>
-                  </div>
+                </div>
             </form>
         </div>
     </div>
@@ -77,16 +68,23 @@
                     <h2 class="bold text-dark">
                         VENTAJAS <br> DE MOTORES <br> BATIENTES
                     </h2>
-                    <a href="{{ route('front.residencial.contacto') }}" class="btn btn-lg bg1 text-white">Contáctanos</a>
+                    <a href="{{ route('front.residencial.contacto') }}"
+                        class="btn btn-lg bg1 text-white">Contáctanos</a>
                 </div>
                 <div class="col">
                     <p class="text-dark">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam
+                        erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                        lobortis nisl ut aliquip ex ea commodo consequat.
+                        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+                        illum dolore eu feugiat nulla facilisis at
+                        vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue
+                        duis dolore te feugait nulla facilisi.
+                        Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam
+                        erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                        lobortis nisl ut aliquip ex ea commodo consequat.
                     </p>
                 </div>
             </div>

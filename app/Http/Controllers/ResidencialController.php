@@ -14,7 +14,7 @@ class ResidecialController extends Controller
 {
     public function index()
     {
-        return view('frontend.residencial.index');
+        return view('frontend.residencial.index', ['destacados' => Family::find(1)]);
     }
 
     public function productos()
@@ -30,6 +30,11 @@ class ResidecialController extends Controller
     public function categoria()
     {
         return view('frontend.residencial.categoria');
+    }
+
+    public function certificados()
+    {
+        return view('frontend.residencial.certificados');
     }
 
     public function aplicaciones()

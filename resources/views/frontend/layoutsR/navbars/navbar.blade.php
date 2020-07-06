@@ -21,7 +21,7 @@
     <div class="col col-lg-4 d-none d-md-flex" id="top-search">
       <div class="row align-items-center">
         <div class="col-6 col-md-3 text-center">
-          <a href="" class="btn btn-link text-white">
+          <a href="{{ route('front.residencial.certificados') }}" class="btn btn-link text-white">
             <small>Certificados</small>
           </a>
         </div>
