@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Proyect;
+use App\Family;
+
+use Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class ProyectController extends Controller
 {
@@ -14,7 +18,7 @@ class ProyectController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.proyect.index', ['proyects' => Proyect::all()]);
     }
 
     /**
@@ -24,7 +28,7 @@ class ProyectController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.proyect.create', ['families' => Family::all()]);
     }
 
     /**
@@ -35,7 +39,50 @@ class ProyectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $rules = [
+            'name' => 'required',
+            'description' => 'required',
+            'img_path' => 'mimes:jpg,jpeg,png|max:950',
+            'pdf_path' => 'mimes:pdf'
+        ];
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {
+            //dd($validator);
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            $proyect = Proyect::create([
+                'name' => $input['name'],
+                'slug' => str_replace(' ', '-', strtolower($input['name'])),
+                'description' => $input['description']
+            ]);
+
+            if (array_key_exists('img_path', $input) && $input['img_path'] != null) {
+                $file = Input::file('img_path');
+                $file_name = $proyect->name . '-proyect-photo' . '.' . $file->getClientOriginalExtension();
+                $file->move('proyects/', $file_name);
+                $proyect->img_path = 'proyects/' . $file_name;
+            }
+
+            if (array_key_exists('pdf_path', $input) && $input['pdf_path'] != null) {
+                $file = Input::file('pdf_path');
+                $file_name = $proyect->name . '-proyect' . '.' . $file->getClientOriginalExtension();
+                $file->move('proyects/', $file_name);
+                $proyect->pdf_path = 'proyects/' . $file_name;
+            }
+
+            if (array_key_exists('pdf_path', $input) && $input['pdf_path'] != null) {
+                $file = Input::file('pdf_path');
+                $file_name = $proyect->name . '-proyect-banner' . '.' . $file->getClientOriginalExtension();
+                $file->move('proyects/', $file_name);
+                $proyect->banner_path = 'proyects/' . $file_name;
+            }
+
+            $proyect->save();
+            return redirect()->route('proyect.index')->with('success', 'Proyecto almacenado');
+        }
     }
 
     /**
@@ -46,7 +93,7 @@ class ProyectController extends Controller
      */
     public function show(Proyect $proyect)
     {
-        //
+        return view ('backend.proyect.show', ['proyect' => $proyect]);
     }
 
     /**
@@ -57,7 +104,7 @@ class ProyectController extends Controller
      */
     public function edit(Proyect $proyect)
     {
-        //
+        return view('backend.proyect.edit', ['proyect' => $proyect]);
     }
 
     /**
@@ -69,7 +116,78 @@ class ProyectController extends Controller
      */
     public function update(Request $request, Proyect $proyect)
     {
-        //
+        $input = $request->all();
+        //dd($input);
+         $rules = [
+             'name' => 'required',
+             'description' => 'required',
+             'img_path' => 'mimes:jpg,jpeg,png|max:950',
+             'banner_path' => 'mimes:jpg,jpeg,png|max:950',
+             'pdf_path' => 'mimes:pdf'
+         ];
+ 
+         $messages = [
+             'name.required' => 'El campo "Nombre" es obligatorio',
+             'img_path.mimes' => 'El formato de la imagen no es válido',
+             'img_path.max' => 'El tamaño del archivo debe ser menor a 400kb',
+             'banner_path.mimes' => 'El formato de la imagen no es válido',
+             'banner_path.max' => 'El tamaño del archivo debe ser menor a 400kb',
+             'pdf_path.mimes' => 'El formato de la del archivo debe ser un PDF',
+         ];
+ 
+         $validator = Validator::make($input, $rules, $messages);
+         if ($validator->fails()) {
+             //dd($validator);
+             return redirect()->back()
+                 ->withErrors($validator)
+                 ->withInput();
+         } else {
+ 
+             if (array_key_exists('img_path', $input) && $input['img_path'] != null) {
+                 //Borrar Archivo
+                 if ($proyect->img_path != null) {
+                     $dfile = $proyect->img_path;
+                     $filename = public_path($dfile);
+                     File::delete($filename);
+                 }
+                 $file = Input::file('img_path');
+                 $file_name = $proyect->name . '-proyect' . '.' . $file->getClientOriginalExtension();
+                 $file->move('img/brand/', $file_name);
+                 $proyect->img_path = 'img/brand/' . $file_name;
+             }
+ 
+             if (array_key_exists('banner_path', $input) && $input['banner_path'] != null) {
+                 //Borrar Archivo
+                 if ($proyect->banner_path != null) {
+                     $dfile = $proyect->banner_path;
+                     $filename = public_path($dfile);
+                     File::delete($filename);
+                 }
+                 $file = Input::file('banner_path');
+                 $file_name = $proyect->name . '-proyect' . '.' . $file->getClientOriginalExtension();
+                 $file->move('img/brand/', $file_name);
+                 $proyect->banner_path = 'img/brand/' . $file_name;
+             }
+ 
+             if (array_key_exists('pdf_path', $input) && $input['pdf_path'] != null) {
+                 //Borrar Archivo
+                 if ($proyect->icon_path != null) {
+                     $dfile = $proyect->icon_path;
+                     $filename = public_path($dfile);
+                     File::delete($filename);
+                 }
+                 $file = Input::file('pdf_path');
+                 $file_name = $proyect->name . '-proyect' . '.' . $file->getClientOriginalExtension();
+                 $file->move('img/brand/', $file_name);
+                 $proyect->pdf_path = 'img/brand/' . $file_name;
+             }
+ 
+             $proyect->name = $input['name'];
+             $proyect->slug = str_replace(' ', '-', strtolower($input['name']));
+             $proyect->description = $input['description'];
+             $proyect->save();
+             return redirect()->back()->with('success', 'Información actualizada');
+         }
     }
 
     /**

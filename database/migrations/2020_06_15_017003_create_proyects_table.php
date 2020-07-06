@@ -13,10 +13,11 @@ class CreateProyectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('proyects', function (Blueprint $table) {
+
+      Schema::create('proyects', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('title')
+            $table->string('name')
                   ->unique();
 
             $table->string('slug');
@@ -28,20 +29,48 @@ class CreateProyectsTable extends Migration
                   ->nullable();
 
             $table->string('banner_path')
-            ->nullable();
-
-            $table->integer('aplication_id')
-                  ->unsigned()
+                  ->nullable();
+                  
+            $table->string('pdf_path')
                   ->nullable();
 
-            $table->foreign('aplication_id')
-                  ->references('id')
-                  ->on('aplications')
-                  ->onDelete('cascade');
+            $table->string('date')
+                  ->nullable();
 
             $table->timestamps();
-        });
-    }
+      });
+    
+
+      Schema::create('aplication_proyect', function (Blueprint $table) {
+
+            $table->increments('id');
+
+            $table->integer('aplication_id')
+                  ->unsigned();
+
+            $table->foreign('aplication_id')
+                        ->references('id')
+                        ->on('aplications')
+                        ->onDelete('cascade');
+                        
+            $table->integer('proyect_id')
+                  ->unsigned();
+
+            $table->foreign('proyect_id')
+                        ->references('id')
+                        ->on('proyects')
+                        ->onDelete('cascade');
+
+            $table->string('img_path')
+                  ->nullable();
+
+            $table->longText('description')
+                  ->nullable();
+
+            $table->timestamps();
+      });
+   }
+
 
     /**
      * Reverse the migrations.
@@ -50,6 +79,7 @@ class CreateProyectsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('aplication_proyect');
         Schema::dropIfExists('proyects');
     }
 }

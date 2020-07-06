@@ -2,7 +2,7 @@
 
 
 @section('page_title')
-Crear Aplicación
+Crear Proyecto
 @endsection
 
 
@@ -18,11 +18,11 @@ Crear Aplicación
 @section('content')
 <div class="row justify-content-center pt-5">
     <div class="col-12 col-lg-10">
-        <form action="{{ route('aplication.store') }}" class="form" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('proyect.store') }}" class="form" method="POST" enctype="multipart/form-data">
             <div class="row">
                 {{ csrf_field() }}
                 <div class="form-group col-12">
-                    <label for="name">Nombre de la aplicacion</label>
+                    <label for="name">Nombre del proyecto</label>
                     <input type="text" name="name" value="{{ old('name') }}" placeholder="Nombre" class="form-control">
                     @if ($errors->has('name'))
                     <span class="help-block">
@@ -44,22 +44,17 @@ Crear Aplicación
             </div>
             <div class="row">
                 <div class="form-group col-6">
-                    <label for="family_id">Familia</label>
-                    <select class="custom-select" name="family_id">
-                        <option value="0">Ninguna</option>
-                        @foreach ($families as $fam)
-                        <option value="{{ $fam->id }}" {{ old('family_id') == $fam->id ? 'selected' : ''}}>
-                            {{ ucfirst($fam->display_name) }}</option>
-                        @endforeach
-                    </select>
-                    @if ($errors->has('family'))
+                    <label for="family_id">Fecha</label>
+                    <input type="text" name="date" value="{{ old('date') }}" placeholder="Fecha (Junio 2019)"
+                        class="form-control">
+                    @if ($errors->has('date'))
                     <span class="help-block">
-                        <small class="text-danger">{{ $errors->first('family') }}</small>
+                        <small class="text-danger">{{ $errors->first('date') }}</small>
                     </span>
                     @endif
                 </div>
             </div>
-            <div class="row">
+            <div class="row py-2">
                 <div class="col-4">
                     <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formLogoPreview">
                 </div>
@@ -70,7 +65,20 @@ Crear Aplicación
                     <input type="file" class="form-control-file" name="img_path">
                 </div>
             </div>
-            <div class="row">
+
+            <div class="row py-2">
+                <div class="col-4">
+                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="bannerPreview">
+                </div>
+                <div class="form-group col-6">
+                    <h6>Foto</h6>
+                    <hr>
+                    <label for="exampleFormControlFile1">Subir banner</label>
+                    <input type="file" class="form-control-file" name="banner_path">
+                </div>
+            </div>
+
+            <div class="row py-2">
                 <div class="col-4">
                     <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formPhotoPreview">
                 </div>
@@ -81,6 +89,7 @@ Crear Aplicación
                     <input type="file" class="form-control-file" id="photo" name="pdf_path">
                 </div>
             </div>
+
             <div class="row">
                 <div class="form-group py-3 col-12 text-right">
                     <button class="btn btn-lg btn-secondary">Crear</button>

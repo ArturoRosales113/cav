@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Article;
+use App\Banner;
+use App\Family;
+use App\Post;
+
+
 class ResidecialController extends Controller
 {
     public function index()
@@ -49,6 +55,16 @@ class ResidecialController extends Controller
     public function contacto()
     {
         return view('frontend.residencial.contacto');
+    }
+
+    public function noticias()
+    {
+        return view('frontend.residencial.noticias', ['noticias' => Post::all()]);
+    }
+
+    public function noticia(Noticia $noticia)
+    {
+        return view('frontend.residencial.noticia' , ['noticia' => $noticia ]);
     }
 
 }

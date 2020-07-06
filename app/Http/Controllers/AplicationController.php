@@ -192,10 +192,39 @@ class AplicationController extends Controller
      * @param  \App\Aplication  $aplication
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Aplication $aplication)
+    public function destroy(Request $request, Aplication $aplication)
     {
+        foreach($aplication->articles as $aa)
+        {   
+            $dfile = $aa->pivot->img_path;
+            $filename = public_path($dfile);
+            File::delete($filename);
+        }
 
-    }
+        if($aplication->img_path != null){
+            
+            $dfile = $aplication->img_path;
+            $filename = public_path($dfile);
+            File::delete($filename);
+        }
+
+        if($aplication->pdf_path != null)
+        {
+            $dfile = $aplication->pdf_path;
+            $filename = public_path($dfile);
+            File::delete($filename);
+        }
+
+        $aplication->delete();
+
+        return redirect()->back()->with('success', 'Se ha eliminado de manera correcta');
+    }  
+    
+    /* Remover imagen del la aplicación
+    *
+    * @param  \App\Aplication  $aplication
+    * @return \Illuminate\Http\Response
+    */
 
     public function delete(Aplication $aplication)
     {
@@ -207,6 +236,12 @@ class AplicationController extends Controller
         return redirect()->back()->with('success', 'Archivo Eliminado');
     }
 
+        /* Remover pdf adjunto del la aplicación
+    *
+    * @param  \App\Aplication  $aplication
+    * @return \Illuminate\Http\Response
+    */
+
     public function pdfDelete(Aplication $aplication)
     {
         $dfile = $aplication->pdf_path;
@@ -216,6 +251,12 @@ class AplicationController extends Controller
         $aplication->save();
         return redirect()->back()->with('success', 'Archivo Eliminado');
     }
+
+    /* Relacionar productos con la aplicación
+    *
+    * @param  \App\Aplication  $aplication
+    * @return \Illuminate\Http\Response
+    */
 
     public function addArticle(Request $request, Aplication $aplication)
     {
@@ -257,6 +298,12 @@ class AplicationController extends Controller
 
          } 
     }
+
+   /* remover articulo de la aplicacion
+    *
+    * @param  \App\Aplication  $aplication
+    * @return \Illuminate\Http\Response
+    */
 
     public function removeArticle(Request $request, Aplication $aplication)
     {
