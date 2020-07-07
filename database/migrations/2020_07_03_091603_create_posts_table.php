@@ -15,11 +15,15 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+
             $table->string('title');
+
             $table->string('slug')
                   ->unique();
 
-            $table->string('img_path');
+            $table->string('img_path')
+                  ->nullable();
+
             $table->longText('body');
 
             $table->integer('family_id')
@@ -30,6 +34,8 @@ class CreatePostsTable extends Migration
                   ->references('id')
                   ->on('families')
                   ->onDelete('cascade');
+
+            $table->boolean('is_draft');
             
             $table->timestamps();
         });
@@ -46,6 +52,10 @@ class CreatePostsTable extends Migration
 
             $table->string('description')
                   ->nullable();
+
+            $table->string('img_path')
+                  ->nullable();
+
 
             $table->timestamps();
 

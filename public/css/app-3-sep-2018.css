@@ -1,62 +1,59 @@
 /* Fuentes */
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;900&display=swap");
 
-.bold{
+.bold {
     font-weight: 900;
 }
 /* Colores */
-.bg1{
-  background-color: #AD272D !important;
+.bg1 {
+    background-color: #ad272d !important;
 }
 
-.bg2{
-  background-color: #333333 !important;
+.bg2 {
+    background-color: #333333 !important;
 }
 
-.bg3{
-  background-color: #D7DADB !important;
+.bg3 {
+    background-color: #d7dadb !important;
 }
 
-
-.color1{
-  color:#AD272D;
+.color1 {
+    color: #ad272d;
 }
-.color2{
-  color: #333;
+.color2 {
+    color: #333;
 }
-.color3{
-    color: #D7DADB;
+.color3 {
+    color: #d7dadb;
 }
 /* Personalizacion */
 
-body{
-  font-family: 'Raleway', sans-serif;
-  color: #919191;
-  font-size: 1rem;
+body {
+    font-family: "Raleway", sans-serif;
+    color: #919191;
+    font-size: 1rem;
 }
 
-
-
-#top-navbar .top-bar{
-    background-color: #AD272D;
+#top-navbar .top-bar {
+    background-color: #ad272d;
 }
-#top-navbar .top-bar i{
+#top-navbar .top-bar i {
     color: #fff;
     margin-right: 1.3em;
 }
-#top-navbar #top-search{
+#top-navbar #top-search {
     background-color: #333333;
     color: #fff;
 }
 
-#top-search form input{
+#top-search form input {
     background-color: #444444;
     border: none;
     border-radius: 1em 0em 0em 1em;
     color: #fff;
 }
-#top-search form .input-group-append button{
+#top-search form .input-group-append button {
     background-color: #444444;
     border: none;
     border-radius: 0em 1em 1em 0em;
@@ -64,107 +61,108 @@ body{
 }
 #top-search form .input-group-append button::hover,
 #top-search form .input-group-append button::active,
-#top-search form .input-group-append button::focus
-{
+#top-search form .input-group-append button::focus {
     background-color: #444444;
     border: none;
     border-radius: 0em 1em 1em 0em;
     color: #fff;
 }
 
-#menu_navbar{
-  background-color:#fff;
+#menu_navbar {
+    background-color: #fff;
 }
 
-#menu_navbar .nav-link{
-  font-size: .75rem;
-  font-weight: 900;
-  color: #000;
-  border-bottom: none;
-  transition: all .5s ease;
-  padding:10px 10px 5px 10px;
-  height: 30px;
-  cursor: default;
-  margin:0 10px;
-  text-transform: uppercase;
+#menu_navbar .nav-link {
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: #000;
+    border-bottom: none;
+    transition: all 0.5s ease;
+    padding: 10px 10px 5px 10px;
+    height: 30px;
+    cursor: default;
+    margin: 0 10px;
+    text-transform: uppercase;
 }
 
-#nav-logo{
-  height: 45px;
+#nav-logo {
+    height: 45px;
 }
 
-.nav_contact{
-  font-size: 13px;
-  color:#808080;
+.nav_contact {
+    font-size: 13px;
+    color: #808080;
 }
 
 #menu_navbar .nav-item.active a,
-#menu_navbar .nav-item:hover a.nav-link{
-  color:#fff;
-
+#menu_navbar .nav-item:hover a.nav-link {
+    color: #fff;
 }
-#menu_navbar .nav-item.active ,
-#menu_navbar .nav-item:hover{
-  color:#fff;
-  background-color: #AD272D;
-  padding-bottom: .5em;
+#menu_navbar .nav-item.active,
+#menu_navbar .nav-item:hover {
+    color: #fff;
+    background-color: #ad272d;
+    padding-bottom: 0.5em;
 }
 
-#product-dropdown-area{
+#aplicaiones-menu {
+    border-top: #ad272d 1em;
+}
+
+#product-dropdown-area {
     width: 100vw;
 }
 
-
-footer .menu{
-    background-color:rgba(0,0,0,.95);
-    background-image: url('../img/mid_background.jpg');
+footer .menu {
+    background-color: rgba(0, 0, 0, 0.95);
+    background-image: url("../img/mid_background.jpg");
     background-position: center;
     background-blend-mode: multiply;
     background-size: cover;
     color: #fff;
 }
-footer{
-    font-size: .85em;
+footer {
+    font-size: 0.85em;
 }
 
-footer .list-group .list-group-item{
+footer .list-group .list-group-item {
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    padding: .3rem 1.25rem;
+    padding: 0.3rem 1.25rem;
 }
 
-.row.subtitle{
-    background-color: #AD272D;
-    background-image: url('../img/mid_background.jpg');
+.row.subtitle {
+    background-color: #ad272d;
+    background-image: url("../img/mid_background.jpg");
     background-blend-mode: multiply;
     background-position: center;
     height: 30vh;
 }
 
-.row.productos-text{
-    background-color: #D7DADB;
-    background-image: url('../img/mid_background.jpg');
+.row.productos-text {
+    background-color: #d7dadb;
+    background-image: url("../img/mid_background.jpg");
     background-blend-mode: multiply;
     background-position: bottom center;
 }
 
-.row.proyects{
-    background-image: url('../img/proyecto.jpg');
+.row.proyects {
+    background-image: url("../img/proyecto.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 50vh;
 }
-.row.products{
-    background-image: url('../img/productos_banner.jpg');
+.row.products {
+    background-image: url("../img/productos_banner.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 50vh;
 }
 
-.row.aplications{
-    background-image: url('../img/aplicaciones.jpg');
+.row.aplications {
+    background-image: url("../img/aplicaciones.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -172,32 +170,32 @@ footer .list-group .list-group-item{
 }
 
 /* home */
-#pav-welcome{
-    background-image: url('../img/as.jpg');
+#pav-welcome {
+    background-image: url("../img/as.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: calc(100vh - 115px );
+    height: calc(100vh - 115px);
 }
-#pav-welcome h1{
+#pav-welcome h1 {
     font-size: 1.2em;
     color: #000;
     margin-top: 1em;
 }
 
-#pav-welcome a.btn{
+#pav-welcome a.btn {
     color: #fff;
-    padding: .3em 2em;
+    padding: 0.3em 2em;
     border-radius: 0;
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 900;
     text-transform: uppercase;
 }
 
-#pav-welcome ul li{
+#pav-welcome ul li {
     text-decoration: none;
     text-align: left;
-    padding: .5em 0em .5em 5em;
+    padding: 0.5em 0em 0.5em 5em;
     border: 0;
 }
 #pav-welcome ul li::before,
@@ -212,27 +210,27 @@ footer h2::before,
 footer h3::before,
 footer h4::before,
 footer h5::before,
-footer h6::before{
-    content: '>';
+footer h6::before {
+    content: ">";
     color: red;
     display: inline-block;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     font-weight: 900;
     font-size: 1.2rem;
 }
 
-img.logo-grupo{
+img.logo-grupo {
     height: 1.7em;
-    margin: 0em .5em;
+    margin: 0em 0.5em;
 }
 
-#v-proyects-tab{
+#v-proyects-tab {
     background-color: #fff;
     padding: 0;
 }
 
-#v-proyects-tab .nav-link{
-    background-color: #D7DADB;
+#v-proyects-tab .nav-link {
+    background-color: #d7dadb;
     color: black;
     font-size: 13pt;
     font-weight: 900;
@@ -240,38 +238,32 @@ img.logo-grupo{
     border-style: solid;
     border-color: #fff;
     width: 100%;
-    margin: .1em 0em;
+    margin: 0.1em 0em;
 }
 
 /* Media Queries */
 @media only screen and (min-width: 764px) {
-  #index-carousel .carousel-item {
-    height:calc(100vh - 100px);
-    width: 100%;
-    margin: auto;
-    margin-top: 2em;
-    background: no-repeat top center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+    #index-carousel .carousel-item {
+        height: calc(100vh - 100px);
+        width: 100%;
+        margin: auto;
+        margin-top: 2em;
+        background: no-repeat top center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
 
-  #pav-welcome{
-    background-image: url('../img/home_background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: calc(100vh - 113px );
-}
-
-
-
+    #pav-welcome {
+        background-image: url("../img/home_background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: calc(100vh - 113px);
+    }
 }
 @media only screen and (min-width: 1024px) {
-
-
 }
 @media only screen and (min-width: 1440px) {
-
 }

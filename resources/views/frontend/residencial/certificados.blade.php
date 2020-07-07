@@ -10,38 +10,35 @@ Certificados
     <div class="row justify-content-center py-5">
         <div class="col-10 col-lg-8">
             <ul class="list-unstyled text-dark">
-                <li class="row  ">
+                <li class="row border border-dark my-3 py-4">
                     <div class="col">
                         <img src="{{ asset('img/front/afiliaciones.png') }}" class="img-fluid" alt="...">
                     </div>
                     <div class="col-10">
-                        <h5 class="mb-1 bold">AFILIACIONES PROPIAS</h5>
+                        <h6 class="mb-1 bold">AFILIACIONES PROPIAS</h6>
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                         tincidunt ut laoreet dolore magna aliquam erat
                         volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
                         nisl ut aliquip ex ea commodo consequat.
-                        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
-                        illum dolore eu feugiat nulla facilisis at vero eros
-                        et accumsan et iusto odio dignissim qui blandit
                     </div>
                 </li>
-                <li class="row  my-4">
+                <li class="row border border-dark my-3 py-4">
                     <div class="col">
                         <img src="{{ asset('img/front/certificadosamericanos.png') }}" class="img-fluid" alt="...">
                     </div>
                     <div class="col-10">
-                        <h5 class="mb-1 bold">CERTIFICADOSAMERICANOS SOBRE PRODUCTOS</h5>
+                        <h6 class="mb-1 bold">CERTIFICADOSAMERICANOS SOBRE PRODUCTOS</h6>
                         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
                         purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
                         vulputate fringilla. Donec lacinia congue felis in faucibus.
                     </div>
                 </li>
-                <li class="row ">
+                <li class="row border border-dark my-3 py-4">
                     <div class="col">
                         <img src="{{ asset('img/front/certificadoseuropeos.png') }}" class="img-fluid" alt="...">
                     </div>
                     <div class="col-10">
-                        <h5 class="mb-1 bold">CERTIFICADOS EUROPEOS SOBRE PRODUCTOS</h5>
+                        <h6 class="mb-1 bold">CERTIFICADOS EUROPEOS SOBRE PRODUCTOS</h6>
                         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
                         purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
                         vulputate fringilla. Donec lacinia congue felis in faucibus.

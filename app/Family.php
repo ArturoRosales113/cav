@@ -22,4 +22,9 @@ class Family extends Model
        {
         return $this->hasMany('App\Category');
        }
+
+       public function posts()
+       {
+           return $this->hasMany('App\Post');
+       }
 }

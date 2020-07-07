@@ -102,7 +102,8 @@ class CreateArticlesTable extends Migration
                   ->references('id')
                   ->on('categories')
                   ->onDelete('cascade');
-
+            $table->softDeletes();
+            
             $table->timestamps();
 
         });

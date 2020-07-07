@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             FamilySeeder::class,
             CategorySeeder::class,
             ArticleSeeder::class,
-            AplicationSeeder::class
+            AplicationSeeder::class,
+            PostSeeder::class
         ]);
     }
 }
