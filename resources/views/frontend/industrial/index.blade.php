@@ -31,9 +31,13 @@
             <div class="row py-2">
                 @foreach ($destacados->articles->take(4) as $aa)
                 <div class="col-6 col-lg-3 text-center">
-                    <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
-                        class="img-fluid" alt="">
-                    <span>{{ $aa->name }}</span>
+                    <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
+                        <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
+                            class="img-fluid" alt="">
+                    </a>
+                    <a href="{{ route('front.industrial.producto', $aa -> slug) }}" class="btn btn-sm">
+                        <small class="text-dark">{{ $aa->name }}</small>
+                    </a>
                 </div>
                 @endforeach
             </div>
