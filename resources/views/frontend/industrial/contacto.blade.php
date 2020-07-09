@@ -2,7 +2,7 @@
 
 
 @section('content')
-<div class="row pt-5 mt-5">
+<div class="row pt-5">
     <div class="col-4 p-0 bg3 text-dark">
         <div class="row justify-content-center py-3">
             <div class="col-10">
@@ -104,12 +104,49 @@
         </div>
     </div>
     <div class="col-8 p-0 text-center">
-        <img src="{{ asset('img/map.jpg') }}" alt="" class="img-fluid">
+        <img src="{{ asset('img/map.jpg') }}" alt="" class="img-fluid mb-5">
         <div class="row justify-content-center py-5">
             <div class="col-10">
                 <h4 class="bold">Contáctanos</h4>
+                <form action="">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Correo">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Interés">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <textarea name="mensaje" id="" cols="30" rows="6" class="form-control"
+                                placeholder="Mensaje"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-left">
+                            <button type="submit" class="btn bg1 text-white">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center py-3">
+            <div class="col-10">
+                <h4 class="text-dark bold">Síguenos en:</h4>
+                <div class="row justify-content-center justify-content-lg-around py-5">
+                    <a href="#" class="btn btn-sm color1"> <i class="fab fa-instagram fa-2x"></i> </a>
+                    <a href="#" class="btn btn-sm color1"><i class="fab fa-linkedin-in fa-2x"></i> </a>
+                    <a href="#" class="btn btn-sm color1"> <i class="fab fa-whatsapp fa-2x"></i> </a>
+                    <a href="#" class="btn btn-sm color1"> <i class="fab fa-facebook-f fa-2x"></i> </a>
+                    <a href="#" class="btn btn-sm color1"><i class="fab fa-youtube fa-2x"></i> </a>
+                </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

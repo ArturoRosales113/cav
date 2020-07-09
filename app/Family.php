@@ -13,9 +13,15 @@ class Family extends Model
         'img_path',
         'icon_path'
        ];
+
        public function articles()
        {
         return $this->hasManyThrough('App\Article', 'App\Category');
+       }
+
+       public function aplications()
+       {
+        return $this->hasMany('App\Aplication');
        }
 
        public function categories()

@@ -5,7 +5,7 @@
 @section('content')
 <section class="">
 
-    <div class="row pt-lg-5">
+    <div class="row">
         <div class="col-12 p-0">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">

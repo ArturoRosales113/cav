@@ -22,12 +22,12 @@
 </head>
 
 <body>
-  @include('frontend.layouts.navbars.navbar')
+  @include('frontend.layouts.navbars.navbar' , ['categories' => $mainFamily->categories])
   <!--main-panel-->
   <div class="container-fluid mt-5 pt-5">
     @yield('page_banner')
     @yield('content')
-    @include('frontend.layouts.footer.footer')
+    @include('frontend.layouts.footer.footer', ['mainFamily' => $mainFamily])
   </div>
 
   @include('frontend.layouts.slices.message')

@@ -12,6 +12,7 @@ use App\Article;
 use App\Aplication;
 use App\Proyect;
 use App\Category;
+use App\Post;
 
 class IndustrialController extends Controller
 {
@@ -24,13 +25,15 @@ class IndustrialController extends Controller
 
     public function aplicaciones()
     {
-        return view('frontend.industrial.aplicaciones',[ 'aplicaciones' => Aplication::all() ]);
+        return view('frontend.industrial.aplicaciones',[ 'aplicaciones' => $this->fam->aplications ]);
     }
 
-
-    public function categoria()
+    public function categoria($categoryName)
     {
-        return view('frontend.industrial.categoria');
+        return view('frontend.industrial.productos', [ 
+            'category' => Category::name($categoryName),
+            'articles' => Category::name($categoryName)->articles()->paginate(9)
+            ]);
     }
 
     public function categorias()
@@ -60,18 +63,22 @@ class IndustrialController extends Controller
 
     public function noticias()
     {
-        return view('frontend.industrial.noticias', ['noticias' => $this->fam->posts ]);
+        return view('frontend.industrial.noticias', ['noticias' => $this->fam->posts()->notDraft()->paginate(5)]);
     }
 
-    public function noticia(Noticia $noticia)
+    public function noticia($noticia)
     {
-        return view('frontend.industrial.noticia' , ['noticia' => $noticia ]);
+        return view('frontend.industrial.noticia' , ['noticia' => Post::slug($noticia)->first() ]);
     }
-
-    
+  
     public function proyectos()
     {
         return view('frontend.industrial.proyectos');
+    }
+
+    public function producto($slug)
+    {
+        return view('frontend.industrial.producto', ['article' => Article::slug($slug)]);
     }
 
     public function productos()
@@ -81,11 +88,15 @@ class IndustrialController extends Controller
             'categories' => $this->fam->categories
             ]);
     }
+    
+    public function recursos()
+    {
+        return view('frontend.industrial.recursos');
+    }
 
     public function servicios()
     {
         return view('frontend.industrial.servicios');
     }
-
 
 }

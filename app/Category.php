@@ -23,4 +23,9 @@ class Category extends Model
        public function family(){
         return $this->belongsTo('App\Family');
        }
+
+       public function scopeName($query, $input)
+       {
+          return $query->where("name", $input)->first();
+       }
 }

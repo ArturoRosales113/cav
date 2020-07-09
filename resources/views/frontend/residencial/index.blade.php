@@ -10,24 +10,37 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="{{ asset('img/banner-residencial.jpg') }}" alt="First slide">
+                        <a href="{{ route('front.residencial.productos') }}">
+                            <img class="d-block w-100" src="{{ asset('img/banner-residencial.jpg') }}"
+                                alt="First slide">
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="row justify-content-center color1 py-4">
+        <a href=""><i class="far fa-dot-circle"></i></a>
+        <a href=""><i class="far fa-dot-circle"></i></a>
+        <a href=""><i class="far fa-dot-circle"></i></a>
+    </div>
+
     <div class="row justify-content-center py-5">
         <div class="col-10">
-            <h3 class="bold text-dark text-center">
-                Productos Destacados
-            </h3>
+            <h5 class="bold text-dark text-center">
+                Productos Populares
+            </h5>
             <div class="row py-2">
                 @foreach ($destacados->articles->take(4) as $aa)
                 <div class="col-6 col-lg-3 text-center">
-                    <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
-                        class="img-fluid" alt="">
-                    <span>{{ $aa->name }}</span>
+                    <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
+                        <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
+                            class="img-fluid" alt="">
+                    </a>
+                    <a href="{{ route('front.industrial.producto', $aa -> slug) }}" class="btn btn-sm">
+                        <small class="text-dark">{{ $aa->name }}</small>
+                    </a>
                 </div>
                 @endforeach
             </div>
@@ -35,7 +48,7 @@
     </div>
 
     <div class="row justify-content-center py-5 bg1">
-        <div class="col-10 col-lg-5 text-center py-5">
+        <div class="col-10 col-lg-8 text-center py-5">
             <h6 class="bold text-white text-uppercase py-3">
                 ¿Quieres ser distribuidor?
             </h6>
@@ -92,23 +105,18 @@
     </div>
     <div class="row justify-content-center py-5">
         <div class="col-10">
-            <div class="row py-3">
+            <div class="row py-2">
+                @foreach ($destacados->articles->random(4) as $aa)
                 <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
+                    <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
+                        <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
+                            class="img-fluid" alt="">
+                    </a>
+                    <a href="{{ route('front.industrial.producto', $aa -> slug) }}" class="btn btn-sm">
+                        <small class="text-dark">{{ $aa->name }}</small>
+                    </a>
                 </div>
-                <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
-                </div>
-                <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
-                </div>
-                <div class="col-6 col-lg-3 text-center">
-                    <img src="http://lorempixel.com/600/600/technics/" alt="" class="img-fluid">
-                    <span>Lorem, ipsum dolor.</span>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

@@ -21,11 +21,13 @@ Route::prefix('industrial')->group(function(){
 
     Route::get('/noticias', ['uses' => 'IndustrialController@noticias', 'as' => 'front.industrial.noticias']);
 
+    Route::get('/noticias/{slug}', ['uses' => 'IndustrialController@noticia', 'as' => 'front.industrial.noticia']);
+
     Route::get('/productos', ['uses' => 'IndustrialController@productos', 'as' => 'front.industrial.productos']);
 
     Route::get('/productos/categorias/{categoryName}', ['uses' => 'IndustrialController@categoria', 'as' => 'front.industrial.productos.categoria']);
 
-    Route::get('/productos/{slug}', ['uses' => 'IndustrialController@producto', 'as' => 'front.industrial.productos.producto']);
+    Route::get('/productos/{slug}', ['uses' => 'IndustrialController@producto', 'as' => 'front.industrial.producto']);
 
     Route::get('/proyectos', ['uses' => 'IndustrialController@proyectos', 'as' => 'front.industrial.proyectos']);
 
@@ -48,6 +50,8 @@ Route::prefix('residencial')->group(function(){
     Route::get('/distribuidores', ['uses' => 'ResidecialController@distribuidores', 'as' => 'front.residencial.distribuidores']);
 
     Route::get('/noticias', ['uses' => 'ResidecialController@noticias', 'as' => 'front.residencial.noticias']);
+
+    Route::get('/noticia/{slug}', ['uses' => 'ResidecialController@noticia', 'as' => 'front.residencial.noticia']);
 
     Route::get('/productos', ['uses' => 'ResidecialController@productos', 'as' => 'front.residencial.productos']);
 

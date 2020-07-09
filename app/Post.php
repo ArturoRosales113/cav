@@ -27,4 +27,16 @@ class Post extends Model
     {
         return $this->belongsTo('App\Family');
     }
+
+    public function scopeNotDraft($query)
+    {
+        return $query->where('is_draft', false);
+    }
+
+    public function scopeSlug($query, $input)
+    {
+       return $query->where("slug", $input);
+    }
+
+
 }

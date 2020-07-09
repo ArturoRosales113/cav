@@ -40,7 +40,7 @@ body {
 }
 #top-navbar .top-bar i {
     color: #fff;
-    margin-right: 1.3em;
+    margin-right: 1em;
 }
 #top-navbar #top-search {
     background-color: #333333;
@@ -86,7 +86,7 @@ body {
 }
 
 #nav-logo {
-    height: 45px;
+    height: 25px;
 }
 
 .nav_contact {
@@ -103,6 +103,24 @@ body {
     color: #fff;
     background-color: #ad272d;
     padding-bottom: 0.5em;
+}
+
+#productsCollapse a.btnCategory {
+    background-color: #fff;
+    display: flex;
+}
+
+#productsCollapse .categoryIcon {
+    width: 60px;
+    display: block;
+    margin: auto;
+    padding-bottom: 2em;
+}
+#productsCollapse .categoryName {
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
 }
 
 #aplicaiones-menu {
@@ -264,6 +282,13 @@ img.logo-grupo {
     }
 }
 @media only screen and (min-width: 1024px) {
+    #top-navbar .top-bar i {
+        color: #fff;
+        margin-right: 1.25em;
+    }
+    #nav-logo {
+        height: 60px;
+    }
 }
 @media only screen and (min-width: 1440px) {
 }

@@ -10,43 +10,51 @@ class AplicationSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         
         DB::table('aplications')->insert([
             'name' => 'hospital',
             'display_name' => 'hospital',
-            'description' => str_random(10),
+            'description' =>  $faker->paragraph($nbSentences = 15, $variableNbSentences = true),
             'family_id' => 2
         ]);
 
         DB::table('aplications')->insert([
             'name' => 'hotel',
             'display_name' => 'hotel',
-            'description' => str_random(10),
+            'description' =>  $faker->paragraph($nbSentences = 15, $variableNbSentences = true),
             'family_id' => 2
         ]);
 
         DB::table('aplications')->insert([
             'name' => 'autoservicio',
             'display_name' => 'autoservicio',
-            'description' => str_random(10),
+            'description' =>  $faker->paragraph($nbSentences = 15, $variableNbSentences = true),
             'family_id' => 2
         ]);
 
         DB::table('aplications')->insert([
             'name' => 'industria',
             'display_name' => 'industria',
-            'description' => str_random(10),
+            'description' =>  $faker->paragraph($nbSentences = 15, $variableNbSentences = true),
             'family_id' => 2
         ]);
 
         DB::table('aplications')->insert([
             'name' => 'aeropuertos',
             'display_name' => 'aeropuertos',
-            'description' => str_random(10),
+            'description' =>  $faker->paragraph($nbSentences = 15, $variableNbSentences = true),
             'family_id' => 2
         ]);
+
+
+
+        // Poblar la tabla pivote
+        App\Aplication::all()->each(function ($aplication) { 
+            $articles = App\Family::find(2)->articles()->get()->random(mt_rand(1,12))->pluck('id')->toArray();
+            $aplication->articles()->attach( $articles); 
+        });
 
     }
 }

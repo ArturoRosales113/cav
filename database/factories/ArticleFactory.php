@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Article::class, function (Faker $faker) {
 
-    $name = $faker->catchPhrase;
+    $name = $faker->sentence($nbWords = 3, $variableNbWords = true);
     return [
         'name' => $name,
         'slug' => str_replace(' ', '-', strtolower($name)),

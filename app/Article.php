@@ -74,9 +74,9 @@ class Article extends Model
        return $query->where("codigo", "like", "%$input%");
     }
 
-    public function scopeSlugSearch($query, $input)
+    public function scopeSlug($query, $input)
     {
-       return $query->where("slug", "like", "%$input%");
+       return $query->where("slug", $input)->get();
     }
 
 

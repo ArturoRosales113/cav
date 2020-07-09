@@ -23,4 +23,9 @@ class Aplication extends Model
                     ->withTimestamps();
        }
 
+       public function family()
+       {
+         return $this->belongsTo('App\Family');
+       }
+
 }

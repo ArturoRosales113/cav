@@ -22,7 +22,7 @@ class ResidecialController extends Controller
 
     public function aplicaciones()
     {
-        return view('frontend.residencial.aplicaciones',[ 'aplicaciones' => Aplication::all() ]);
+        return view('frontend.residencial.aplicaciones',[ 'aplicaciones' => $this->fam->aplications ]);
     }
     public function categoria()
     {
@@ -64,18 +64,23 @@ class ResidecialController extends Controller
         return view('frontend.residencial.productos');
     }
 
+    public function recursos()
+    {
+        return view('frontend.residencial.recursos');
+    }
+
     public function servicios()
     {
         return view('frontend.residencial.servicios');
     }
     public function noticias()
     {
-        return view('frontend.residencial.noticias', ['noticias' => $this->fam->posts]);
+        return view('frontend.residencial.noticias', ['noticias' => $this->fam->posts()->notDraft()->paginate(5)]);
     }
 
-    public function noticia(Noticia $noticia)
+    public function noticia($noticia)
     {
-        return view('frontend.residencial.noticia' , ['noticia' => $noticia ]);
+        return view('frontend.residencial.noticia' , ['noticia' => Post::slug($noticia)->first() ]);
     }
 
 }
