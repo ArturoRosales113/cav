@@ -115,12 +115,12 @@
         @if($loop->last)
         <div class="card text-center bg3 border-0">
 
-          <a href="{{ route('front.industrial.productos', ) }}" class="">
+          <a href="{{ route('front.industrial.productos' ) }}" class="">
             <img src="{{ asset('img/brand/no_img_found.png') }}" class="card-img-top" alt="">
 
           </a>
           <div class="card-body p-0 py-2 text-center">
-            <a href="{{ route('front.industrial.productos', ) }}">
+            <a href="{{ route('front.industrial.productos' ) }}">
               <small class="categoryName">Ver mas</small>
             </a>
           </div>
