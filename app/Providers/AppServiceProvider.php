@@ -31,10 +31,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('frontend.industrial.productos', function ($view) {
-            $view->with('categories' , Category::all());
+            $view->with('categories' ,  Family::find(2)->categories);
           });
         view()->composer('frontend.residencial.productos', function ($view) {
-            $view->with('categories' , Category::all());
+            $view->with('categories' , Family::find(1)->categories);
           });
     }
 
