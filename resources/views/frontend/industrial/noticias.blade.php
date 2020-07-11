@@ -9,11 +9,32 @@ Noticias
     <div class="col-10">
         <div class="row py-3">
             <div class="col-3 text-center">
-                <ul class="list-group" id="aplicaciones-menu">
 
-                </ul>
-                <br>
-                <a href="" class="btn text-white bg1 w-100">Contactanos</a>
+                @foreach ($dates as $year=>$months)
+                <div class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0">{{ $year }}</h5>
+                        @foreach ($months as $month=>$posts)
+                        <div class="media mt-3">
+                            <div class="media-body">
+                                <h5 class="mt-0">{{ $month }}</h5>
+                                <ul>
+                                    @foreach ($posts as $p)
+                                    <li>{{ $p->title }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
+                </div>
+
+
+
+                @endforeach
+
+
             </div>
             <div class="col-9">
                 @foreach ($noticias as $n)
@@ -25,7 +46,7 @@ Noticias
                                 class="img-fluid" alt="">
                         </div>
                         <div class="col-9">
-                            <h4>{{ $n->title }}</h4>
+                            <h4>{{ preg_replace('/\s+?(\S+)?$/', '', substr($n->title, 0, 50)) }}</h4>
                             <p class="text-justify">{{ preg_replace('/\s+?(\S+)?$/', '', substr($n->body, 0, 201)) }}
                             </p>
                         </div>

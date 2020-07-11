@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Carbon;
+use Carbon\Carbon;
 use DB;
 
 use App\Family;
@@ -63,7 +63,26 @@ class IndustrialController extends Controller
 
     public function noticias()
     {
-        return view('frontend.industrial.noticias', ['noticias' => $this->fam->posts()->notDraft()->paginate(5)]);
+            $dates = $this->fam
+                    ->posts()
+                    ->notDraft()
+                    ->select('id', 'title', 'created_at')
+                    ->get()
+                    ->groupBy(function($year) {
+                        return Carbon::parse($year->created_at)->format('Y'); // Agrupar por año
+                    })
+                    ->map(function($month){
+                        return $month->groupBy(function($year){
+                        return Carbon::parse($year->created_at)->format('m'); // Agrupar por mes
+                        });
+                    });
+
+            //dd($dates);
+            return view('frontend.industrial.noticias', [
+            'noticias' => $this->fam->posts()->notDraft()->paginate(5),
+            'dates' => $dates 
+
+            ]);
     }
 
     public function noticia($noticia)
