@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Family;
 
 
 use Validator;
@@ -30,7 +31,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('backend.category.create');
+        return view('backend.category.create',['families' => Family::all() ]);
     }
 
     /**
@@ -59,7 +60,8 @@ class CategoryController extends Controller
             $cat = Category::create([
                 'name' => str_replace(' ', '', strtolower($input['name'])),
                 'display_name' => ucwords($input['name']),
-                'description' => $input['description']
+                'description' => $input['description'],
+                'family_id' => $input['family_id']
             ]);
 
 
@@ -91,7 +93,8 @@ class CategoryController extends Controller
     {
         return view('backend.category.show', [
             'category' => $category,
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'families' => Family::all() 
         ]);
     }
 
@@ -103,7 +106,10 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('backend.category.edit', ['category' => $category]);
+        return view('backend.category.edit', [
+            'category' => $category,
+            'families' => Family::all() 
+            ]);
     }
 
     /**
@@ -162,6 +168,7 @@ class CategoryController extends Controller
 
             $category->name = str_replace(' ', '', strtolower($input['name']));
             $category->display_name = ucwords($input['name']);
+            $category->family_id = ucwords($input['family_id']);
             if ($input['description'] != null) {
                 $category->description = $input['description'];
             }

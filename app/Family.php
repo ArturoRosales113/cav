@@ -14,14 +14,14 @@ class Family extends Model
         'icon_path'
        ];
 
-       public function articles()
-       {
-        return $this->hasManyThrough('App\Article', 'App\Category');
-       }
-
        public function aplications()
        {
         return $this->hasMany('App\Aplication');
+       }
+
+       public function articles()
+       {
+        return $this->hasManyThrough('App\Article', 'App\Category');
        }
 
        public function categories()
@@ -32,5 +32,10 @@ class Family extends Model
        public function posts()
        {
            return $this->hasMany('App\Post');
+       }
+
+       public function proyects()
+       {
+           return $this->hasMany('App\Proyect');
        }
 }

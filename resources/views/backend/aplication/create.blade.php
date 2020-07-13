@@ -18,7 +18,9 @@ Crear Aplicación
 @section('content')
 <div class="row justify-content-center pt-5">
     <div class="col-12 col-lg-10">
+
         <form action="{{ route('aplication.store') }}" class="form" method="POST" enctype="multipart/form-data">
+
             <div class="row">
                 {{ csrf_field() }}
                 <div class="form-group col-12">
@@ -42,6 +44,7 @@ Crear Aplicación
                     @endif
                 </div>
             </div>
+
             <div class="row">
                 <div class="form-group col-6">
                     <label for="family_id">Familia</label>
@@ -59,6 +62,7 @@ Crear Aplicación
                     @endif
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-4">
                     <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formLogoPreview">
@@ -70,6 +74,7 @@ Crear Aplicación
                     <input type="file" class="form-control-file" name="img_path">
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-4">
                     <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formPhotoPreview">
@@ -81,14 +86,15 @@ Crear Aplicación
                     <input type="file" class="form-control-file" id="photo" name="pdf_path">
                 </div>
             </div>
+
             <div class="row">
                 <div class="form-group py-3 col-12 text-right">
                     <button class="btn btn-lg btn-secondary">Crear</button>
                 </div>
             </div>
 
-
         </form>
+
     </div>
 </div>
 

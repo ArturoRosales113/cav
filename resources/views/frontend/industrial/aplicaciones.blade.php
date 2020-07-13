@@ -40,18 +40,21 @@
                         id="{{ 'tab-'.$at -> display_name }}" role="tabpanel"
                         aria-labelledby="{{ '#pill-'. $at -> display_name }}">
                         <div class="row">
-                            <div class="col-12 col-lg-7">
+
+                            <div class="col-12 col-lg-9">
                                 <h4 class="bold text-dark text-center text-lg-left">
                                     {{ ucFirst($at->name)}}
                                 </h4>
                                 <img class="img-fluid w-100"
                                     src="{{ $at->img_path == null ? asset('img/brand/no_img_found.png') : asset($at->img_path) }}"
-                                    alt="{{ $at->name }}">
+                                    alt="{{ $at->name }}" id="">
+                                <hr>
                                 <p class="p-3 text-justify">
                                     {{ $at->description }}
                                 </p>
                             </div>
-                            <div class="col-12 col-lg-5">
+
+                            <div class="col-12 col-lg-3">
                                 <ul class="list-unstyled">
                                     <li class="text-dark">
                                         <h5 class="bold text-dark">Productos</h5>

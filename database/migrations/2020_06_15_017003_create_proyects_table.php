@@ -24,6 +24,15 @@ class CreateProyectsTable extends Migration
 
             $table->text('description')
                   ->nullable();
+
+            $table->integer('family_id')
+                  ->unsigned()
+                  ->nullable();
+
+            $table->foreign('family_id')
+                  ->references('id')
+                  ->on('families')
+                  ->onDelete('cascade');
                   
             $table->string('img_path')
                   ->nullable();

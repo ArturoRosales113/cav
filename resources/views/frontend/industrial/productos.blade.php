@@ -59,7 +59,8 @@ Productos
                         </div>
                         <div class="col-9">
                             <h4>{{ $a->name }}</h4>
-                            <p>{{ $a->description }}</p>
+                            <p> {{ preg_replace('/\s+?(\S+)?$/', '', substr($a->description, 0, 100)) }}
+                            </p>
                         </div>
                     </div>
                 </a>

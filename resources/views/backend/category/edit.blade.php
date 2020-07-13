@@ -42,6 +42,22 @@ Editar {{$category->display_name}}
                     </span>
                     @endif
                 </div>
+                <div class="form-group col-12">
+                    <label for="family_id">Familia</label>
+                    <select class="custom-select" name="family_id">
+                        <option value="0">Ninguna</option>
+                        @foreach ($families as $fam)
+                        <option value="{{ $fam->id }}"
+                            {{ old('family_id',$category->family_id) == $fam->id ? 'selected' : ''}}>
+                            {{ ucfirst($fam->display_name) }}</option>
+                        @endforeach
+                    </select>
+                    @if ($errors->has('family'))
+                    <span class="help-block">
+                        <small class="text-danger">{{ $errors->first('family') }}</small>
+                    </span>
+                    @endif
+                </div>
 
                 <div class="w-100"></div>
                 <div class="col-4 text-center bg-light">

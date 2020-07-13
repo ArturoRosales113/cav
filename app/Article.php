@@ -76,7 +76,7 @@ class Article extends Model
 
     public function scopeSlug($query, $input)
     {
-       return $query->where("slug", $input)->get();
+       return $query->where("slug", $input)->first();
     }
 
 

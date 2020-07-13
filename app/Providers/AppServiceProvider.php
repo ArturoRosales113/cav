@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use Carbon;
+
 use App\Family;
 use App\Category;
 
@@ -16,6 +18,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+           // cambiar las fechas a español (ES)
+        Carbon::setLocale(LC_TIME,config('app.locale'));
         view()->composer('backend.article.edit', function ($view) {
             $view->with('families' , Family::all());
           });
@@ -45,6 +50,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+      Carbon::setLocale(LC_TIME, config('app.locale'));
     }
 }

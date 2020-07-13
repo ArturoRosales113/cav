@@ -4,36 +4,56 @@
 Noticias
 @endsection
 
+@section('page_banner')
+<div class="row noticias align-items-center">
+    <div class="col text-center text-white">
+        <h4 class="bold">Noticias</h4>
+    </div>
+</div>
+@endsection
+
 @section('content')
 <div class="row justify-content-center py-5">
-    <div class="col-10">
+    <div class="col-10 col-lg-9">
         <div class="row py-3">
             <div class="col-3 text-center">
 
-                @foreach ($dates as $year=>$months)
-                <div class="media">
-                    <div class="media-body">
-                        <h5 class="mt-0">{{ $year }}</h5>
-                        @foreach ($months as $month=>$posts)
-                        <div class="media mt-3">
-                            <div class="media-body">
-                                <h5 class="mt-0">{{ $month }}</h5>
-                                <ul>
-                                    @foreach ($posts as $p)
-                                    <li>{{ $p->title }}</li>
-                                    @endforeach
-                                </ul>
+                <div class="accordion" id="accordionExample">
+
+                    @foreach ($dates->sortkeysdesc() as $year=>$months)
+                    @foreach ($months->sortkeys() as $month=>$posts)
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link-dark w-100" type="button" data-toggle="collapse"
+                                    data-target="{{'#collapse'.str_replace(' ', '', $month)}}" aria-expanded="true"
+                                    aria-controls="{{'collapse'.str_replace(' ', '', $month) }}">
+                                    {{ $month }}
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="{{'collapse'.str_replace(' ', '', $month) }}" class="collapse"
+                            aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                @foreach ($posts as $p)
+                                <a href="{{ route('front.industrial.noticia', $p->slug) }}"
+                                    class="btn btn-link text-dark">
+                                    {{ $p->title }}
+                                </a>
+                                @endforeach
                             </div>
                         </div>
-                        @endforeach
-
                     </div>
+                    @endforeach
+
+                    @if(!$loop->last)
+                    <hr>
+                    @endif
+
+                    @endforeach
+
                 </div>
-
-
-
-                @endforeach
-
 
             </div>
             <div class="col-9">
@@ -47,7 +67,8 @@ Noticias
                         </div>
                         <div class="col-9">
                             <h4>{{ preg_replace('/\s+?(\S+)?$/', '', substr($n->title, 0, 50)) }}</h4>
-                            <p class="text-justify">{{ preg_replace('/\s+?(\S+)?$/', '', substr($n->body, 0, 201)) }}
+                            <p class="text-justify d-block">
+                                {{ preg_replace('/\s+?(\S+)?$/', '', substr($n->body, 0, 70)) }}
                             </p>
                         </div>
                     </div>
@@ -61,6 +82,5 @@ Noticias
             </div>
         </div>
     </div>
-</div>
 </div>
 @endsection

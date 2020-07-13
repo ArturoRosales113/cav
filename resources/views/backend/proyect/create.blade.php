@@ -54,6 +54,23 @@ Crear Proyecto
                     @endif
                 </div>
             </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="family_id">Familia</label>
+                    <select class="custom-select" name="family_id">
+                        <option value="0">Ninguna</option>
+                        @foreach ($families as $fam)
+                        <option value="{{ $fam->id }}" {{ old('family_id') == $fam->id ? 'selected' : ''}}>
+                            {{ ucfirst($fam->display_name) }}</option>
+                        @endforeach
+                    </select>
+                    @if ($errors->has('family'))
+                    <span class="help-block">
+                        <small class="text-danger">{{ $errors->first('family') }}</small>
+                    </span>
+                    @endif
+                </div>
+            </div>
             <div class="row py-2">
                 <div class="col-4">
                     <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formLogoPreview">
