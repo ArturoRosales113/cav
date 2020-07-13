@@ -19,7 +19,74 @@
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row justify-content-center py-5">
+    <div class="col-10">
+        <div class="accordion" id="accordionExample">
 
+            <div class="card">
+                <div class="card-header" id="headingaplicaciones">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
+                            data-target="#aplicaciones" aria-expanded="true" aria-controls="aplicaciones">
+                            <h5 class="bold text-uppercase">Aplicaciones</h5>
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="aplicaciones" class="collapse show" aria-labelledby="headingaplicaciones"
+                    data-parent="#accordionExample">
+                    <div class="card-body text-dark">
+                        @foreach ($article->aplications as $aa)
+                        <a href="" class="text-dark ">
+                            {{ ucFirst($aa->display_name) }}
+                        </a>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingaplicaciones">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
+                            data-target="#descargas" aria-expanded="true" aria-controls="descargas">
+                            <h5 class="bold text-uppercase">Descargas</h5>
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="descargas" class="collapse show" aria-labelledby="headingaplicaciones"
+                    data-parent="#accordionExample">
+                    <div class="card-body text-dark">
+                        @foreach ($article->aplications as $aa)
+                        <a href="" class="text-dark ">
+                            {{ ucFirst($aa->display_name) }}
+                        </a>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingaplicaciones">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#specs"
+                            aria-expanded="true" aria-controls="specs">
+                            <h5 class="bold text-uppercase">Especificaciones</h5>
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="specs" class="collapse show" aria-labelledby="headingaplicaciones"
+                    data-parent="#accordionExample">
+                    <div class="card-body text-dark">
+                        {{ $article -> specs }}
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 </div>
 @endsection

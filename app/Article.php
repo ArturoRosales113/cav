@@ -19,6 +19,11 @@ class Article extends Model
         'family_id'
     ];
 
+    // Aplicaciones
+     public function aplications()
+    {
+        return $this->belongsToMany('App\Aplication');
+    }
     //Concepto del producto
     public function family()
     {
@@ -29,11 +34,7 @@ class Article extends Model
     {
         return $this->belongsTo('App\Category');
     }
-    // Aplicaciones
-    public function aplications()
-    {
-        return $this->belongsToMany('App\Aplication');
-    }
+
     // Fotos
     public function pics()
     {
