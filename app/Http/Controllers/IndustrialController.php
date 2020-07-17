@@ -61,6 +61,12 @@ class IndustrialController extends Controller
         return view('frontend.industrial.index', ['destacados' => $this->fam]);
     }
 
+    public function noticia($noticia)
+    {
+        return view('frontend.industrial.noticia' , ['noticia' => Post::slug($noticia)->first() ]);
+    }
+
+    
     public function noticias()
     {
       
@@ -71,12 +77,6 @@ class IndustrialController extends Controller
                     ->get()
                     ->groupBy(function($year) {
                         return Carbon::parse($year->created_at)->format('Y'); // Agrupar por año
-                    })
-                    ->map(function($month){
-                        return $month->groupBy(function($month){
-                        Carbon::setlocale(LC_ALL, 'es_ES');
-                        return Carbon::parse($month->created_at)->formatLocalized('%m - %Y'); // Agrupar por mes
-                        });
                     });
 
             //dd($dates);
@@ -85,11 +85,6 @@ class IndustrialController extends Controller
             'dates' => $dates 
 
             ]);
-    }
-
-    public function noticia($noticia)
-    {
-        return view('frontend.industrial.noticia' , ['noticia' => Post::slug($noticia)->first() ]);
     }
   
     public function proyectos()

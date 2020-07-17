@@ -17,8 +17,7 @@
             <div class="col-12 col-lg-3 pt-lg-4">
                 <div class="nav flex-row flex-lg-column nav-pills" id="v-pills-tab" role="tablist"
                     aria-orientation="vertical">
-                    <div class="py2 bg1 w-100">
-                        <br>
+                    <div class="py-2 bg1 w-100">
                     </div>
                     @foreach ($aplicaciones as $ap)
                     <a class="nav-link bg3 text-dark px-lg-5 py-lg-3 flex-fill m-2 m-lg-0 {{ $loop -> first ? 'active' : '' }}"

@@ -31,15 +31,17 @@ Productos
                     <div id="{{ $c -> name.'-collapse' }}" class="collapse"
                         aria-labelledby="{{ '#'.$c -> name.'-heading' }}" data-parent="#products_collapse">
                         <div class="card-body">
-                            @foreach ($c->articles as $ca)
-                            <li>
-                                <a href="{{ route('front.industrial.producto', $ca -> slug) }}">
-                                    <small class="text-dark">
-                                        {{ $ca->name }}
-                                    </small>
-                                </a>
-                            </li>
-                            @endforeach
+                            <ul class="list-group list-group-flush">
+                                @foreach ($c->articles as $ca)
+                                <li class="list-group-item">
+                                    <a href="{{ route('front.industrial.producto', $ca -> slug) }}">
+                                        <small class="text-dark">
+                                            {{ $ca->name }}
+                                        </small>
+                                    </a>
+                                </li>
+                                @endforeach
+                            </ul>
                         </div>
                     </div>
 

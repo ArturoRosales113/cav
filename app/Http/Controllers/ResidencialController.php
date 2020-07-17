@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Carbon;
+use DB;
+
 use App\Article;
 use App\Banner;
 use App\Family;
@@ -54,6 +57,31 @@ class ResidecialController extends Controller
         return view('frontend.residencial.index', ['destacados' => Family::find(2)]);
     }
 
+    public function noticia($noticia)
+    {
+        return view('frontend.residencial.noticia' , ['noticia' => Post::slug($noticia)->first() ]);
+    }
+
+    public function noticias()
+    {
+      
+            $dates = $this->fam
+                    ->posts()
+                    ->notDraft()
+                    ->select('id', 'title', 'slug', 'created_at')
+                    ->get()
+                    ->groupBy(function($year) {
+                        return Carbon::parse($year->created_at)->format('Y'); // Agrupar por año
+                    });
+
+            //dd($dates);
+            return view('frontend.industrial.noticias', [
+            'noticias' => $this->fam->posts()->notDraft()->latest('created_at')->paginate(5),
+            'dates' => $dates 
+
+            ]);
+    }
+
     public function proyectos()
     {
         return view('frontend.residencial.proyectos');
@@ -72,15 +100,6 @@ class ResidecialController extends Controller
     public function servicios()
     {
         return view('frontend.residencial.servicios');
-    }
-    public function noticias()
-    {
-        return view('frontend.residencial.noticias', ['noticias' => $this->fam->posts()->notDraft()->paginate(5)]);
-    }
-
-    public function noticia($noticia)
-    {
-        return view('frontend.residencial.noticia' , ['noticia' => Post::slug($noticia)->first() ]);
     }
 
 }

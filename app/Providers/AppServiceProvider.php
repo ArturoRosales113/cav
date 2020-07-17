@@ -19,28 +19,29 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-           // cambiar las fechas a español (ES)
-        Carbon::setLocale(LC_TIME,config('app.locale'));
         view()->composer('backend.article.edit', function ($view) {
             $view->with('families' , Family::all());
-          });
+        });
+
         view()->composer('backend.article.edit', function ($view) {
             $view->with('categories' , Category::all());
-          });
+        });
 
         view()->composer('frontend.layouts.app', function ($view) {
           $view->with('mainFamily' , Family::find(2));
         });
+
         view()->composer('frontend.layoutsR.app', function ($view) {
           $view->with('mainFamily' , Family::find(1));
         });
 
         view()->composer('frontend.industrial.productos', function ($view) {
             $view->with('categories' ,  Family::find(2)->categories);
-          });
+        });
+
         view()->composer('frontend.residencial.productos', function ($view) {
             $view->with('categories' , Family::find(1)->categories);
-          });
+        });
     }
 
     /**
