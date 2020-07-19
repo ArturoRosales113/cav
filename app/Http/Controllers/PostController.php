@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Family;
+
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.post.index', ['posts' => Post::paginate(5) ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.post.create', ['families' => Family::all()]);
     }
 
     /**
@@ -46,7 +48,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('backend.post.show', ['post' => $post]);
     }
 
     /**
@@ -57,7 +59,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('backend.post.edit', [
+            'post' => $post,
+            'families' => Family::all()
+        ]);
     }
 
     /**
