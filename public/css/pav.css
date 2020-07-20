@@ -130,6 +130,16 @@ body {
 #product-dropdown-area {
     width: 100vw;
 }
+#contact_group {
+    position: fixed;
+    right: 0;
+    bottom: 30%;
+}
+
+#menuModal a.menu-link {
+    color: #000;
+    font-weight: 900;
+}
 
 footer .menu {
     background-color: rgba(0, 0, 0, 0.95);

@@ -27,6 +27,15 @@ class CreateBannersTable extends Migration
 
             $table->text('descripcion')
                   ->nullable();
+            
+            $table->integer('family_id')
+            ->unsigned()
+            ->nullable();
+
+            $table->foreign('family_id')
+                  ->references('id')
+                  ->on('families')
+                  ->onDelete('cascade');
 
             $table->timestamps();
             

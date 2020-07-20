@@ -106,50 +106,66 @@
             </ul>
             <h5>Servicios</h5>
             <ul class="list-group">
-                <li class="list-group-item text-uppercase">Cras justo odio</li>
-                <li class="list-group-item text-uppercase">Dapibus ac facilisis in</li>
-                <li class="list-group-item text-uppercase">Morbi leo risus</li>
-                <li class="list-group-item text-uppercase">Porta ac consectetur ac</li>
-                <li class="list-group-item text-uppercase">Vestibulum at eros</li>
+                <li class="list-group-item text-uppercase">
+                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Especificiación'</a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Instalación'</a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Venta'</a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Pólizas de Mantenimiento</a>
+                </li>
             </ul>
         </div>
     </div>
     <div class="row justify-content-around align-items-center py-3">
         <div class="col-12 col-md-6 col-lg-3 order-1 text-center">
-            <a href="#" class="btn btn-link text-dark">
+            <a href="{{ route('front.industrial.certificados') }}" class="btn btn-link text-dark">
                 <small>Afiliaciones y certificaciones</small>
             </a>
         </div>
         <div class="col col-md order-3 order-lg-2">
             <div class="row justify-content-center pt-3 pt-lgp-0 align-items-center">
-                <div class="col-5 col-md text-center">
-                    <img src="{{ asset('img/front/Logos.png') }}" class="img-fluid">
+                <div class="col text-center">
+                    <img src="{{ asset('img/iconos/afiliacion.png') }}" class="img-fluid">
                 </div>
-                <div class="col-5 col-md text-center">
-                    <img src="{{ asset('img/front/Logos_1.png') }}" class="img-fluid">
+                <div class="col text-center">
+                    <img src="{{ asset('img/iconos/afiliacion_1.png') }}" class="img-fluid">
                 </div>
-                <div class="col-5 col-md text-center">
-                    <img src="{{ asset('img/front/Logos_2.png') }}" class="img-fluid">
+                <div class="col text-center">
+                    <img src="{{ asset('img/iconos/afiliacion_2.png') }}" class="img-fluid">
                 </div>
-                <div class="col-5 col-md text-center">
-                    <img src="{{ asset('img/front/Logos_3.png') }}" class="img-fluid">
+                <div class="col text-center">
+                    <img src="{{ asset('img/iconos/afiliacion_3.png') }}" class="img-fluid">
                 </div>
-                <div class="col-5 col-md text-center">
-                    <img src="{{ asset('img/front/Logos_4.png') }}" class="img-fluid">
+                <div class="col text-center">
+                    <img src="{{ asset('img/iconos/afiliacion_4.png') }}" class="img-fluid">
                 </div>
-                <div class="col-5 col-md text-center">
-                    <img src="{{ asset('img/front/Logos_5.png') }}" class="img-fluid">
+                <div class="col text-center">
+                    <img src="{{ asset('img/iconos/afiliacion_5.png') }}" class="img-fluid">
                 </div>
-                <div class="col-5 col-md text-center">
-                    <img src="{{ asset('img/front/Logos_6.png') }}" class="img-fluid">
+                <div class="col text-center">
+                    <img src="{{ asset('img/iconos/afiliacion_6.png') }}" class="img-fluid">
                 </div>
-                <div class="col-5 col-md text-center">
-                    <img src="{{ asset('img/front/Logos_8.png') }}" class="img-fluid">
+                <div class="col text-center">
+                    <img src="{{ asset('img/iconos/afiliacion_7.png') }}" class="img-fluid">
+                </div>
+                <div class="col text-center">
+                    <img src="{{ asset('img/iconos/afiliacion_8.png') }}" class="img-fluid">
+                </div>
+                <div class="col text-center">
+                    <img src="{{ asset('img/iconos/afiliacion_9.png') }}" class="img-fluid">
+                </div>
+                <div class="col text-center">
+                    <img src="{{ asset('img/iconos/afiliacion_10.png') }}" class="img-fluid">
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-3 order-2 order-lg-3 text-center">
-            <a href="" class="btn btn-link text-dark">
+            <a href="{{ route('privacidad') }}" class="btn btn-link text-dark">
                 <small>Politica de privacidad</small>
             </a>
         </div>

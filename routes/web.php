@@ -5,6 +5,7 @@
 use App\Http\Controllers\CategoryController;
 
 Route::get('/', ['uses' => 'FrontController@index', 'as' => 'welcome']);
+Route::get('/politica-de-privacidad', ['uses' => 'FrontController@provacidad', 'as' => 'privacidad']);
 
 
 Route::prefix('industrial')->group(function(){
@@ -27,7 +28,7 @@ Route::prefix('industrial')->group(function(){
 
     Route::get('/productos/categorias/{categoryName}', ['uses' => 'IndustrialController@categoria', 'as' => 'front.industrial.productos.categoria']);
 
-    Route::get('/productos/{slug}', ['uses' => 'IndustrialController@producto', 'as' => 'front.industrial.producto']);
+    Route::get('/producto/{slug}', ['uses' => 'IndustrialController@producto', 'as' => 'front.industrial.producto']);
 
     Route::get('/proyectos', ['uses' => 'IndustrialController@proyectos', 'as' => 'front.industrial.proyectos']);
 
@@ -57,9 +58,9 @@ Route::prefix('residencial')->group(function(){
 
     Route::get('/productos', ['uses' => 'ResidecialController@productos', 'as' => 'front.residencial.productos']);
 
-    Route::get('/productos/categorias/{$categoryName}', ['uses' => 'ResidecialController@categoria', 'as' => 'front.residencial.productos.categoria']);
+    Route::get('/productos/categorias/{categoryName}', ['uses' => 'ResidecialController@categoria', 'as' => 'front.residencial.productos.categoria']);
 
-    Route::get('/productos/{$slug}', ['uses' => 'ResidecialController@producto', 'as' => 'front.residencial.producto']);
+    Route::get('/producto/{slug}', ['uses' => 'ResidecialController@producto', 'as' => 'front.residencial.producto']);
 
     Route::get('/proyectos', ['uses' => 'ResidecialController@proyectos', 'as' => 'front.residencial.proyectos']);
 
@@ -101,7 +102,8 @@ Route::prefix('admin')->group(function () {
             'post' => 'PostController',
             'proyect' => 'ProyectController',
             'store' => 'StoreController',
-            'user' => 'UserController'
+            'user' => 'UserController',
+            'zone' => 'ZoneController'
         ]);
 
         Route::post('/aplication/{aplication}/addArticle',['uses' => 'AplicationController@addArticle', 'as' => 'aplication.article.add']);

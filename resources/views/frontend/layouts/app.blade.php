@@ -31,6 +31,8 @@
   </div>
 
   @include('frontend.layouts.slices.message')
+  @include('frontend.layouts.slices.menu_modal' , ['categories' => $mainFamily->categories])
+
 
   <!-- Scripts Generales -->
   @include('frontend.layouts.scripts')

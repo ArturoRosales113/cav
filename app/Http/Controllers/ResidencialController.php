@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 use Carbon;
 use DB;
 
-use App\Article;
-use App\Banner;
 use App\Family;
+use App\Article;
+use App\Aplication;
+use App\Proyect;
+use App\Category;
 use App\Post;
 
 
@@ -27,14 +29,17 @@ class ResidecialController extends Controller
     {
         return view('frontend.residencial.aplicaciones',[ 'aplicaciones' => $this->fam->aplications ]);
     }
-    public function categoria()
-    {
-        return view('frontend.residencial.categoria');
+    public function categoria($categoryName)
+    {   
+        return view('frontend.residencial.productos', [ 
+            'category' => Category::name($categoryName),
+            'articles' => Category::name($categoryName)->articles()->paginate(9)
+            ]);
     }
 
     public function categorias()
     {
-        return view('frontend.residencial.categorias');
+        return view('frontend.residencial.categorias', ['categories' => $this->fam->categories]);
     }
 
     public function certificados()
@@ -54,7 +59,9 @@ class ResidecialController extends Controller
 
     public function index()
     {
-        return view('frontend.residencial.index', ['destacados' => Family::find(2)]);
+        return view('frontend.residencial.index', [
+            'destacados' => Family::find(2)
+            ]);
     }
 
     public function noticia($noticia)
@@ -84,7 +91,6 @@ class ResidecialController extends Controller
 
     public function producto($slug)
     {
-        dd($slug);
         return view('frontend.residencial.producto',  ['article' => Article::search($slug)->first() ]);
     }
 

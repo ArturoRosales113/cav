@@ -1,9 +1,17 @@
 <div class="btn-group-vertical" id="contact_group">
-    {{-- <a href="{{ route('front.agenda') }}" class="btn btn-lg bg2 text-white">
-        <i class="fa fa-calendar-alt fa-lg"></i>
+    <a href="" class="btn bg1 text-white">
+        <i class="fa fa-user"></i>
     </a>
-    <a href="{{ $settings->rss->whatsapp->url }}" class="btn btn-lg bg2 text-white">
-        <i class="{{$settings->rss->whatsapp->icon}} fa-lg"></i>
-    </a> --}}
-
+    <a href="" class="btn bg1 text-white">
+        <i class="fas fa-phone-volume"></i>
+    </a>
+    <a href="" class="btn bg1 text-white">
+        <i class="fas fa-map-marker-alt"></i>
+    </a>
+    <a href="" class="btn bg1 text-white">
+        <i class="fas fa-home"></i>
+    </a>
+    <a href="" class="btn bg1 text-white">
+        <i class="fas fa-envelope"></i>
+    </a>
 </div>

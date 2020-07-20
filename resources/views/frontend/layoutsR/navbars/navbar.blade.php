@@ -4,9 +4,9 @@
   <div class="row justify-content-end align-items-center top-bar">
     <div class="col-6 col-md-3 col-lg-3 order-2 order-md-1">
       <div class="row justify-content-center align-items-center">
-        <a href="{{ route('front.industrial.index') }}" class="text-white btn btn-sm btn-link col">Industrial</a>
+        <a href="{{ route('front.industrial.index') }}" class="text-white btn btn-sm btn-link">Industrial</a>
         |
-        <a href="{{ route('front.residencial.index') }}" class="text-white btn btn-sm btn-link col">Residencial</a>
+        <a href="{{ route('front.residencial.index') }}" class="text-white btn btn-sm btn-link">Residencial</a>
       </div>
     </div>
     <div class="col-6 col-md-3 col-lg-4 p-2 order-1 order-md-2">
@@ -45,9 +45,7 @@
   <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg d-md-flex justify-content-end" id="menu_navbar">
     <div class="container">
-      <button class="navbar-toggler d-flex d-lg-none" type="button" data-toggle="collapse"
-        data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler d-flex d-lg-none" type="button" data-toggle="modal" data-target="#menuModal">
         <i class="fas fa-bars"></i>
       </button>
       <a class="navbar-brand" href="{{ route('front.industrial.index') }}">

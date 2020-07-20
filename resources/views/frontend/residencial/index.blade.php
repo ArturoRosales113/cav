@@ -21,15 +21,21 @@
     </div>
 
     <div class="row justify-content-center color1 py-4">
-        <a href=""><i class="far fa-dot-circle"></i></a>
-        <a href=""><i class="far fa-dot-circle"></i></a>
-        <a href=""><i class="far fa-dot-circle"></i></a>
+        <a href="" class="btn btn-sm color3">
+            <i class="fas fa-circle fa-lg"></i>
+        </a>
+        <a href="" class="btn btn-sm color3">
+            <i class="fas fa-circle fa-lg"></i>
+        </a>
+        <a href="" class="btn btn-sm color3">
+            <i class="fas fa-circle fa-lg"></i>
+        </a>
     </div>
 
     <div class="row justify-content-center py-5">
         <div class="col-10">
-            <h5 class="bold text-dark text-center">
-                Productos Populares
+            <h5 class="text-dark text-center">
+                Productos Más Populares
             </h5>
             <div class="row py-2">
                 @foreach ($destacados->articles->take(4) as $aa)
@@ -50,15 +56,15 @@
     <div class="row justify-content-center py-5 bg1">
         <div class="col-10 col-lg-8 text-center py-5">
             <h6 class="bold text-white text-uppercase py-3">
-                ¿Quieres ser distribuidor?
+                ¿En qué producto estás interesado?
             </h6>
             <form action="">
                 <div class="form-row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="First name">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Last name">
+                        <input type="text" class="form-control" name="correo" placeholder="Correo">
                     </div>
                     <div class="col">
                         <select id="inputState" class="form-control">

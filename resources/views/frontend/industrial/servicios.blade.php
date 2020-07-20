@@ -11,7 +11,7 @@
 
 @section('content')
 <div class="row justify-content-center py-5">
-    <div class="col-11 col-lg-6 py-3">
+    <div class="col-11 col-lg-5 py-3">
         <div class="row py-2 align-items-stretch">
             <div class="col-3 p-0">
                 <img src="{{ asset('img/espec.png') }}" class="img-fluid" alt="">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="col-11 col-lg-6 py-3">
+    <div class="col-11 col-lg-5 py-3">
         <div class="row py-2 align-items-stretch">
             <div class="col-3 p-0">
                 <img src="{{ asset('img/insta.png') }}" class="img-fluid" alt="">
@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-    <div class="col-11 col-lg-6 py-3">
+    <div class="col-11 col-lg-5 py-3">
         <div class="row py-2 align-items-stretch">
             <div class="col-3 p-0">
                 <img src="{{ asset('img/venta.png') }}" class="img-fluid" alt="">
@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-    <div class="col-11 col-lg-6 py-3">
+    <div class="col-11 col-lg-5 py-3">
         <div class="row py-2 align-items-stretch">
             <div class="col-3 p-0">
                 <img src="{{ asset('img/poli.png') }}" class="img-fluid" alt="">
