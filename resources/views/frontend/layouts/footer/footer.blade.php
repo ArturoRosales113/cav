@@ -107,13 +107,13 @@
             <h5>Servicios</h5>
             <ul class="list-group">
                 <li class="list-group-item text-uppercase">
-                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Especificiación'</a>
+                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Especificiación</a>
                 </li>
                 <li class="list-group-item text-uppercase">
-                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Instalación'</a>
+                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Instalación</a>
                 </li>
                 <li class="list-group-item text-uppercase">
-                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Venta'</a>
+                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Venta</a>
                 </li>
                 <li class="list-group-item text-uppercase">
                     <a href="{{ route('front.industrial.servicios') }}" class="text-white">Pólizas de Mantenimiento</a>

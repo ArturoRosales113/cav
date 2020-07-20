@@ -26,12 +26,12 @@
           </a>
         </div>
         <div class="col px-4">
-          <form class="form  py-2">
+          <form class="form  py-2" action="{{ route('front.residencial.busqueda') }}" method="GET">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="" aria-label="Recipient's username"
+              <input type="text" class="form-control" name="busqueda" aria-label="Recipient's username"
                 aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
                   <i class="fas fa-search"></i>
                 </button>
               </div>

@@ -112,7 +112,7 @@
         @endforeach
 
         @if($loop->last)
-        <div class="card text-center bg3 border-0 p-4">
+        <div class="card text-center bg3 border-0 p-2">
 
           <a href="{{ route('front.industrial.productos' ) }}" class="">
             <img src="{{ asset('img/brand/no_img_found.png') }}" class="card-img-top" alt="">

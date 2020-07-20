@@ -29,6 +29,15 @@ class ResidecialController extends Controller
     {
         return view('frontend.residencial.aplicaciones',[ 'aplicaciones' => $this->fam->aplications ]);
     }
+
+    public function busqueda(Request $request)
+    {
+        return view('frontend.industrial.busqueda',[
+            'articles' => $this->fam->articles()->search($request->busqueda)->get(),
+            'posts' => $this->fam->posts()->search($request->busqueda)->get()
+        ]);
+    }
+
     public function categoria($categoryName)
     {   
         return view('frontend.residencial.productos', [ 
@@ -60,7 +69,8 @@ class ResidecialController extends Controller
     public function index()
     {
         return view('frontend.residencial.index', [
-            'destacados' => Family::find(2)
+            'destacados' => $this->fam,
+            'banners' => $this->fam->banners()->get()
             ]);
     }
 

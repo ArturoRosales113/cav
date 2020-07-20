@@ -106,11 +106,18 @@
             </ul>
             <h5>Servicios</h5>
             <ul class="list-group">
-                <li class="list-group-item text-uppercase">Cras justo odio</li>
-                <li class="list-group-item text-uppercase">Dapibus ac facilisis in</li>
-                <li class="list-group-item text-uppercase">Morbi leo risus</li>
-                <li class="list-group-item text-uppercase">Porta ac consectetur ac</li>
-                <li class="list-group-item text-uppercase">Vestibulum at eros</li>
+                <li class="list-group-item text-uppercase">
+                    <a href="{{ route('front.residencial.servicios') }}" class="text-white">Asesoría</a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a href="{{ route('front.residencial.servicios') }}" class="text-white">Asesoría Técnica</a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a href="{{ route('front.residencial.servicios') }}" class="text-white">Venta</a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a href="{{ route('front.residencial.servicios') }}" class="text-white">Cursos</a>
+                </li>
             </ul>
         </div>
     </div>

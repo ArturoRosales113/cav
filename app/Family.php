@@ -38,4 +38,9 @@ class Family extends Model
        {
            return $this->hasMany('App\Proyect');
        }
+
+       public function banners()
+       {
+           return $this->hasMany('App\Banner');
+       }
 }

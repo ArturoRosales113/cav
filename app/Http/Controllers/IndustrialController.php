@@ -66,7 +66,11 @@ class IndustrialController extends Controller
 
     public function index()
     {
-        return view('frontend.industrial.index', ['destacados' => $this->fam]);
+        return view('frontend.industrial.index', [
+            'destacados' => $this->fam,
+            'banners' => $this->fam->banners()->get()
+
+            ]);
     }
 
     public function noticia($noticia)

@@ -19,7 +19,17 @@ Crear Banner
 <div class="row justify-content-center pt-5">
     <div class="col-12 col-lg-10">
         <form action="{{ route('banner.store') }}" class="form" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
             <div class="row align-items-center">
+                <div class="form-group col-12">
+                    <input type="text" name="titulo" placeholder="Ttulo" class="form-control">
+                </div>
+                <div class="form-group col-12">
+                    <input type="text" name="url" placeholder="Link" class="form-control">
+                </div>
+                <div class="form-group col-12">
+                    <input type="text" name="descripcion" placeholder="Descripción" class="form-control">
+                </div>
                 <div class="form-group col-12">
                     <label for="family_id">Familia</label>
                     <select class="custom-select" name="family_id">
@@ -36,6 +46,24 @@ Crear Banner
                     @endif
                 </div>
 
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formPhotoPreview">
+                </div>
+                <div class="form-group col-6">
+                    <h6>Imagen</h6>
+                    <hr>
+                    <label for="exampleFormControlFile1">Subir fotografia 16:9</label>
+                    <input type="file" class="form-control-file" id="photo" name="img_path">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12 text-center">
+                    <button type="submit" class="btn btn-secondary">
+                        Crear Banner
+                    </button>
+                </div>
             </div>
 
         </form>

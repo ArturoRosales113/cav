@@ -2,27 +2,35 @@
 
 
 
-@section('content')
-<section class="">
-
-    <div class="row">
-        <div class="col-12 p-0">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="{{ asset('img/banner-1.jpg') }}" alt="First slide">
-                    </div>
+@section('page_banner')
+<div class="row mt-lg-5">
+    <div class="col-12 p-0">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                @foreach ($banners as $b)
+                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                    <a href="{{ $b->url }}">
+                        <img class="d-block w-100" src="{{ asset($b->img_path) }}" alt="First slide">
+                    </a>
                 </div>
+                @endforeach
             </div>
-
         </div>
     </div>
-    <div class="row justify-content-center color1 py-4">
-        <a href=""><i class="far fa-dot-circle"></i></a>
-        <a href=""><i class="far fa-dot-circle"></i></a>
-        <a href=""><i class="far fa-dot-circle"></i></a>
-    </div>
+</div>
 
+<div class="row justify-content-center color1 py-4">
+    @foreach ($banners as $b)
+    <a href="" class="btn btn-sm color3">
+        <i class="fas fa-circle fa-lg"></i>
+    </a>
+    @endforeach
+</div>
+@endsection
+
+
+@section('content')
+<section class="">
     <div class="row justify-content-center py-5">
         <div class="col-10">
             <h3 class="bold text-dark text-center">

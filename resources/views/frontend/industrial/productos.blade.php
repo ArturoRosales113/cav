@@ -21,7 +21,7 @@ Productos
             <div class="accordion" id="products_collapse">
                 @foreach ($categories as $c)
                 <div class="card">
-                    <div class="card-header" id="{{ $c -> name.'-heading' }}">
+                    <div class="card-header bg-white" id="{{ $c -> name.'-heading' }}">
                         <button class="btn btn-link text-left text-uppercase text-dark" type="button"
                             data-toggle="collapse" data-target="{{ '#'.$c -> name.'-collapse' }}"
                             aria-controls="{{ $c -> name.'-collapse' }}" aria-expanded="false">

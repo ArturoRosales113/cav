@@ -13,6 +13,8 @@ Route::prefix('industrial')->group(function(){
     Route::get('/', ['uses' => 'IndustrialController@index', 'as' => 'front.industrial.index']);
 
     Route::get('/aplicaciones', ['uses' => 'IndustrialController@aplicaciones', 'as' => 'front.industrial.aplicaciones']);
+
+    Route::get('/busqueda', ['uses' => 'IndustrialController@busqueda', 'as' => 'front.industrial.busqueda' ]);
     
     Route::get('/certificados', ['uses' => 'IndustrialController@certificados', 'as' => 'front.industrial.certificados']);
 
@@ -36,7 +38,7 @@ Route::prefix('industrial')->group(function(){
 
     Route::get('/servicios', ['uses' => 'IndustrialController@servicios', 'as' => 'front.industrial.servicios']);
 
-    Route::get('/busqueda', ['uses' => 'IndustrialController@busqueda', 'as' => 'front.industrial.busqueda' ]);
+
 
 });
 
@@ -45,6 +47,8 @@ Route::prefix('residencial')->group(function(){
     Route::get('/', ['uses' => 'ResidecialController@index', 'as' => 'front.residencial.index']);
     //Aplicaciones
     Route::get('/aplicaciones', ['uses' => 'ResidecialController@aplicaciones', 'as' => 'front.residencial.aplicaciones']);
+
+    Route::get('/busqueda', ['uses' => 'ResidecialController@busqueda', 'as' => 'front.residencial.busqueda' ]);
 
     Route::get('/certificados', ['uses' => 'ResidecialController@certificados', 'as' => 'front.residencial.certificados']);
     

@@ -34,6 +34,12 @@
           Páginas
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('banner.index') }}">
+          <i class="fas fa-images feather"></i>
+          Banners
+        </a>
+      </li>
       <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
         <span>Productos</span>
       </h6>

@@ -10,8 +10,15 @@ class Banner extends Model
    'titulo',
    'url',
    'img_path',
+   'family_id',
    'descripcion'
   ];
 
-  
+
+  public function family()
+  {
+    return $this->belongsTo('App\Family');
+  }
+
+
 }

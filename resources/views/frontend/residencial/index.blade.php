@@ -1,37 +1,33 @@
 @extends('frontend.layoutsR.app')
 
-
-
-@section('content')
-<section class="5">
-
-    <div class="row mt-lg-5">
-        <div class="col-12 p-0">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <a href="{{ route('front.residencial.productos') }}">
-                            <img class="d-block w-100" src="{{ asset('img/banner-residencial.jpg') }}"
-                                alt="First slide">
-                        </a>
-                    </div>
+@section('page_banner')
+<div class="row mt-lg-5">
+    <div class="col-12 p-0">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                @foreach ($banners as $b)
+                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                    <a href="{{ $b->url }}">
+                        <img class="d-block w-100" src="{{ asset($b->img_path) }}" alt="First slide">
+                    </a>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
+</div>
 
-    <div class="row justify-content-center color1 py-4">
-        <a href="" class="btn btn-sm color3">
-            <i class="fas fa-circle fa-lg"></i>
-        </a>
-        <a href="" class="btn btn-sm color3">
-            <i class="fas fa-circle fa-lg"></i>
-        </a>
-        <a href="" class="btn btn-sm color3">
-            <i class="fas fa-circle fa-lg"></i>
-        </a>
-    </div>
+<div class="row justify-content-center color1 py-4">
+    @foreach ($banners as $b)
+    <a href="" class="btn btn-sm color3">
+        <i class="fas fa-circle fa-lg"></i>
+    </a>
+    @endforeach
+</div>
+@endsection
 
+@section('content')
+<section class="">
     <div class="row justify-content-center py-5">
         <div class="col-10">
             <h5 class="text-dark text-center">
@@ -84,8 +80,8 @@
         <div class="col-10">
             <div class="row align-items-center py-lg-3">
                 <div class="col-3">
-                    <h2 class="bold text-dark">
-                        VENTAJAS <br> DE MOTORES <br> BATIENTES
+                    <h2 class="bold text-dark text-uppercase">
+                        ventajas <br> de nuestros <br> equipos
                     </h2>
                     <a href="{{ route('front.residencial.contacto') }}"
                         class="btn btn-lg bg1 text-white">Contáctanos</a>
