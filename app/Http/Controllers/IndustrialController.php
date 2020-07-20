@@ -103,7 +103,7 @@ class IndustrialController extends Controller
     {
         return view('frontend.industrial.proyectos', 
         [
-            'proyectos' => $this->fam->proyects
+            'aplications' => $this->fam->aplications
         ]);
     }
 

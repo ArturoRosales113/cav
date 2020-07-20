@@ -23,6 +23,13 @@ class Aplication extends Model
                     ->withTimestamps();
        }
 
+       public function proyects()
+       {
+        return $this->belongsToMany('App\Proyect')
+                    ->withPivot('description', 'img_path')
+                    ->withTimestamps();
+       }
+
        public function family()
        {
          return $this->belongsTo('App\Family');

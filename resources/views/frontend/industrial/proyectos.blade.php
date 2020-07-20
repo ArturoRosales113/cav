@@ -9,19 +9,31 @@
         </h4>
     </div>
 </div>
-<div class="row justify-content-center py-5">
+<div class="row justify-content-center py-5 bg3">
 
-    <div class="nav flex-column nav-pills col-10 col-lg-3 text-center" id="v-proyects-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Hospitales</a>
-        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Hotel</a>
-        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Autoservicio</a>
-        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Industria</a>
-      </div>
+    <div class="nav flex-column nav-pills col-10 col-lg-3 text-center bg3" id="v-proyects-tab" role="tablist"
+        aria-orientation="vertical">
+        @foreach ($aplications as $a)
+        <a class="nav-link {{ $loop->first ? 'active' : '' }} border-0" id="{{ 'v-pills-home-tab'.$a->name  }}"
+            data-toggle="pill" href="{{ '#v-pills-'.$a->name }}" role="tab" aria-controls="{{ 'v-pills-'. $a->name }}"
+            aria-selected="true">{{ ucFirst($a->display_name) }}</a>
+        @endforeach
+        <a href="{{ route('front.industrial.contacto') }}" class="btn btn-lg bg1 text-white">
+            Contactanos
+        </a>
 
-      <div class="tab-content col pt-5" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+    </div>
+
+    <div class="tab-content col pt-5 bg-white" id="v-pills-tabContent">
+        @foreach ($aplications as $a)
+        <div class="tab-pane fade show {{ $loop->first ? 'active' : '' }}" id="{{ 'v-pills-'.$a->name }}" role="
+            tabpanel" aria-labelledby="{{ 'v-pills-home-tab'.$a->name  }}">
             <div class="container">
+
+                @foreach ($a->proyects->chunk(2) as $c => $pt)
                 <div class="row">
+                    @foreach ($pt as $p)
+
                     <div class="col-10 col-lg-6">
                         <div class="row">
                             <div class="col-6">
@@ -29,7 +41,7 @@
                             </div>
                             <div class="col-6">
                                 <small>Junio 2018</small> <br>
-                                <h6>Aeropuerto de la ciudad de puebla</h6>
+                                <h6>{{ $p->name }}</h6>
                                 <button class="btn bg1 text-white">Ficha Técnica</button>
                             </div>
                         </div>
@@ -47,44 +59,15 @@
                         </div>
                     </div>
 
+
+                    @endforeach
+
                 </div>
-                <div class="row py-5">
-                    <div class="col-10 col-lg-6">
-                        <div class="row">
-                            <div class="col-6">
-                                <img src="{{ asset('img/as.jpg') }}" alt="" class="img-fluid">
-                            </div>
-                            <div class="col-6">
-                                <small>Junio 2018</small> <br>
-                                <h6>Aeropuerto de la ciudad de puebla</h6>
-                                <button class="btn bg1 text-white">Ficha Técnica</button>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="col-10 col-lg-6">
-                           <div class="row">
-                            <div class="col-6">
-                                <img src="{{ asset('img/as.jpg') }}" alt="" class="img-fluid">
-                            </div>
-                            <div class="col-6">
-                                <small>Junio 2018</small> <br>
-                                <h6>Aeropuerto de la ciudad de puebla</h6>
-                                <button class="btn bg1 text-white">Ficha Técnica</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-            
-        </div>
-        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-
-        </div>
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-
-        </div>
-      </div>
+        @endforeach
+    </div>
 </div>
+
 @endsection
