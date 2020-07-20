@@ -4,9 +4,9 @@
   <div class="row justify-content-end align-items-center top-bar">
     <div class="col-6 col-md-3 col-lg-3 order-2 order-md-1">
       <div class="row justify-content-center align-items-center">
-        <a href="{{ route('front.industrial.index') }}" class="text-white btn btn-sm btn-link col">Industrial</a>
+        <a href="{{ route('front.industrial.index') }}" class="text-white btn btn-sm btn-link">Industrial</a>
         |
-        <a href="{{ route('front.residencial.index') }}" class="text-white btn btn-sm btn-link col">Residencial</a>
+        <a href="{{ route('front.residencial.index') }}" class="text-white btn btn-sm btn-link">Residencial</a>
       </div>
     </div>
     <div class="col-6 col-md-3 col-lg-4 p-2 order-1 order-md-2">
@@ -31,12 +31,12 @@
           </a>
         </div>
         <div class="col px-4">
-          <form class="form  py-2">
+          <form class="form  py-2" action="{{ route('front.industrial.busqueda') }}" method="GET">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="" aria-label="Recipient's username"
+              <input type="text" class="form-control" name="busqueda" aria-label="Recipient's username"
                 aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
                   <i class="fas fa-search"></i>
                 </button>
               </div>
@@ -93,11 +93,11 @@
   </nav>
 
   <div class="collapse" id="productsCollapse">
-    <div class="bg3 p-4">
+    <div class="bg3 p-5">
       @foreach ($categories->chunk(6) as $chunk => $ch)
-      <div class="card-group">
+      <div class="card-deck">
         @foreach ($ch as $c)
-        <div class="card text-center bg3 border-0">
+        <div class="card text-center bg3 border-0 p-2">
 
           <a href="{{ route('front.industrial.productos.categoria', $c->name) }}" class="">
             <img src="{{ $c->icon_path == null ? asset('img/brand/no_img_found.png') : asset($c->icon_path) }}"
@@ -112,8 +112,9 @@
 
         </div>
         @endforeach
+
         @if($loop->last)
-        <div class="card text-center bg3 border-0">
+        <div class="card text-center bg3 border-0 p-4">
 
           <a href="{{ route('front.industrial.productos' ) }}" class="">
             <img src="{{ asset('img/brand/no_img_found.png') }}" class="card-img-top" alt="">
@@ -127,6 +128,7 @@
 
         </div>
         @endif
+
       </div>
       @endforeach
 

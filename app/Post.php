@@ -38,5 +38,10 @@ class Post extends Model
        return $query->where("slug", $input);
     }
 
+    public function scopeSearch($query, $input)
+    {
+        return $query->where("slug","like","%$input%");
+    }
+
 
 }

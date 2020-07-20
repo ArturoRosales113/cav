@@ -35,6 +35,8 @@ Route::prefix('industrial')->group(function(){
 
     Route::get('/servicios', ['uses' => 'IndustrialController@servicios', 'as' => 'front.industrial.servicios']);
 
+    Route::get('/busqueda', ['uses' => 'IndustrialController@busqueda', 'as' => 'front.industrial.busqueda' ]);
+
 });
 
 Route::prefix('residencial')->group(function(){
@@ -57,7 +59,7 @@ Route::prefix('residencial')->group(function(){
 
     Route::get('/productos/categorias/{$categoryName}', ['uses' => 'ResidecialController@categoria', 'as' => 'front.residencial.productos.categoria']);
 
-    Route::get('/productos/{$productName}', ['uses' => 'ResidecialController@producto', 'as' => 'front.residencial.productos.producto']);
+    Route::get('/productos/{$slug}', ['uses' => 'ResidecialController@producto', 'as' => 'front.residencial.producto']);
 
     Route::get('/proyectos', ['uses' => 'ResidecialController@proyectos', 'as' => 'front.residencial.proyectos']);
 

@@ -29,6 +29,7 @@ class Article extends Model
     {
         return $this->belongsTo('App\Family');
     }
+
     // Clasificación de los productos
     public function category()
     {
@@ -40,9 +41,10 @@ class Article extends Model
     {
         return $this->hasMany('App\Pic');
     }
+
     public function one_pic()
     {
-        return $this->pics()->first(1);
+        return $this->pics()->first();
     }
 
     //Descargas
@@ -77,7 +79,12 @@ class Article extends Model
 
     public function scopeSlug($query, $input)
     {
-       return $query->where("slug", $input)->first();
+       return $query->where("slug", "=", $input);
+    }
+
+    public function scopeSearch($query, $input)
+    {
+        return $query->where("slug","like","%$input%");
     }
 
 

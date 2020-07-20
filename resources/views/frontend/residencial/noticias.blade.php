@@ -43,7 +43,7 @@ Noticias
                                 <ul class="list-group list-group-flush">
                                     @foreach ($posts as $p)
                                     <li class="list-group-item text-left">
-                                        <a href="{{ route('front.industrial.noticia', $p->slug) }}"
+                                        <a href="{{ route('front.residencial.noticia', $p->slug) }}"
                                             class="btn btn-link text-dark text-left">
                                             {{ $p->title }}
                                         </a>
@@ -61,7 +61,7 @@ Noticias
             </div>
             <div class="col-12 col-lg-9 pt-5 pt-lg-0">
                 @foreach ($noticias as $n)
-                <a href="{{ route('front.industrial.noticia', $n -> slug) }}"
+                <a href="{{ route('front.residencial.noticia', $n -> slug) }}"
                     class="list-group-item list-group-item-action">
                     <div class="row">
                         <div class="col-12 col-lg-3 p-0 p-lg-2">

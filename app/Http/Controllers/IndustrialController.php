@@ -28,6 +28,14 @@ class IndustrialController extends Controller
         return view('frontend.industrial.aplicaciones',[ 'aplicaciones' => $this->fam->aplications ]);
     }
 
+    public function busqueda(Request $request)
+    {
+        return view('frontend.industrial.busqueda',[
+            'articles' => $this->fam->articles()->search($request->busqueda)->get(),
+            'posts' => $this->fam->posts()->search($request->busqueda)->get()
+        ]);
+    }
+
     public function categoria($categoryName)
     {
         return view('frontend.industrial.productos', [ 
@@ -97,7 +105,7 @@ class IndustrialController extends Controller
 
     public function producto($slug)
     {
-        return view('frontend.industrial.producto', ['article' => Article::slug($slug)]);
+        return view('frontend.industrial.producto', ['article' => Article::slug($slug)->first() ]);
     }
 
     public function productos()

@@ -12,7 +12,22 @@ class AplicationSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        
+        DB::table('aplications')->insert([
+            'name' => 'edificio',
+            'display_name' => 'edificio',
+            'description' =>  $faker->paragraph($nbSentences = 15, $variableNbSentences = true),
+            'family_id' => 1
+        ]);
+
+        DB::table('aplications')->insert([
+            'name' => 'residencia',
+            'display_name' => 'residencia',
+            'description' =>  $faker->paragraph($nbSentences = 15, $variableNbSentences = true),
+            'family_id' => 1
+        ]);
+
+
+
         DB::table('aplications')->insert([
             'name' => 'hospital',
             'display_name' => 'hospital',
@@ -51,7 +66,12 @@ class AplicationSeeder extends Seeder
 
 
         // Poblar la tabla pivote
-        App\Aplication::all()->each(function ($aplication) { 
+        App\Family::find(1)->aplications()->each(function ($aplication) { 
+            $articles = App\Family::find(1)->articles()->get()->random(mt_rand(1,12))->pluck('id')->toArray();
+            $aplication->articles()->attach( $articles); 
+        });
+        // Poblar la tabla pivote
+        App\Family::find(2)->aplications()->each(function ($aplication) { 
             $articles = App\Family::find(2)->articles()->get()->random(mt_rand(1,12))->pluck('id')->toArray();
             $aplication->articles()->attach( $articles); 
         });

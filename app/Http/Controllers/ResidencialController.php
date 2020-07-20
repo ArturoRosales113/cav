@@ -75,21 +75,30 @@ class ResidecialController extends Controller
                     });
 
             //dd($dates);
-            return view('frontend.industrial.noticias', [
+            return view('frontend.residencial.noticias', [
             'noticias' => $this->fam->posts()->notDraft()->latest('created_at')->paginate(5),
             'dates' => $dates 
 
             ]);
     }
 
-    public function proyectos()
+    public function producto($slug)
     {
-        return view('frontend.residencial.proyectos');
+        dd($slug);
+        return view('frontend.residencial.producto',  ['article' => Article::search($slug)->first() ]);
     }
 
     public function productos()
     {
-        return view('frontend.residencial.productos');
+        return view('frontend.residencial.productos' , [
+            'articles' => $this->fam->articles()->paginate(5),
+            'categories' => $this->fam->categories
+            ]);
+    }
+
+    public function proyectos()
+    {
+        return view('frontend.residencial.proyectos');
     }
 
     public function recursos()

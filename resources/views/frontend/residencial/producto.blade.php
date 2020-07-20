@@ -1,10 +1,10 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layoutsR.app')
 
 
 @section('content')
 <div class="row justify-content-center align-items-start py-5 mt-5">
     <div class="col-12 col-lg-5">
-        <img src=" {{ $article->pics()->count() > 0 ? asset($a->pics->first()->path) : asset('img/brand/no_img_found.png') }}"
+        <img src=" {{ $article->pics->count() > 0 ? asset($a->pics->first()->path) : asset('img/brand/no_img_found.png') }}"
             alt="" class="img-fluid w-100">
     </div>
     <div class="col-12 col-lg-5">

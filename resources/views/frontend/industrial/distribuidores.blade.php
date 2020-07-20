@@ -1,14 +1,18 @@
 @extends('frontend.layouts.app')
 
-@section('content')
-<div class="row mt-5 py-5 justify-content-center subtitle">
+@section('page_banner')
+<div class="row mt-lg-5 py-lg-5 justify-content-center align-items-center subtitle">
     <div class="col col-lg-10 text-center text-white py-5">
         <h5 class="bold text-uppercase">Distribuidores</h5>
     </div>
 </div>
+@endsection
+
+
+@section('content')
 <div class="row justify-content-center py-5">
-    <div class="col-10 col-lg-10">
-        <ul>
+    <div class="col-11 col-lg-10">
+        <ul class="list-group">
             <li>
                 <div class="row py-2 align-items-stretch">
                     <div class="flex-column bg2" style="width:2rem;">
@@ -86,13 +90,13 @@
         </h6>
         <form action="">
             <div class="form-row">
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="First name">
+                <div class="form-group col-12 col-lg">
+                    <input type="text" class="form-control" placeholder="Nombre">
                 </div>
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Last name">
+                <div class="form-group col-12 col-lg">
+                    <input type="email" class="form-control" placeholder="correo">
                 </div>
-                <div class="col">
+                <div class="form-group col-12 col-lg">
                     <select id="inputState" class="form-control">
                         <option selected>Choose...</option>
                         <option>...</option>

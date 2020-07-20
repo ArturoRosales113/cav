@@ -2,9 +2,9 @@
 
 
 @section('content')
-<div class="row pt-5">
-    <div class="col-4 p-0 bg3 text-dark">
-        <div class="row justify-content-center py-3">
+<div class="row pt-lg-5">
+    <div class="col-12 col-lg-4 p-0 bg3 text-dark order-2 order-lg-1">
+        <div class="row justify-content-center py-5">
             <div class="col-10">
                 <h4 class="bold">
                     Zona zur
@@ -103,7 +103,7 @@
             </div>
         </div>
     </div>
-    <div class="col-8 p-0 text-center">
+    <div class="col-12 col-lg-8 p-0 text-center order-1 order-lg-2">
         <img src="{{ asset('img/map.jpg') }}" alt="" class="img-fluid mb-5">
         <div class="row justify-content-center py-5">
             <div class="col-10">
@@ -126,7 +126,7 @@
                                 placeholder="Mensaje"></textarea>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row py-3">
                         <div class="col text-left">
                             <button type="submit" class="btn bg1 text-white">Enviar</button>
                         </div>
