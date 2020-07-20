@@ -122,7 +122,7 @@ class IndustrialController extends Controller
     
     public function recursos()
     {
-        return view('frontend.industrial.recursos');
+        return view('frontend.industrial.recursos', ['categories' => $this->fam->categories]);
     }
 
     public function servicios()

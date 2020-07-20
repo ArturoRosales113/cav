@@ -108,7 +108,7 @@
         <div class="row justify-content-center py-5">
             <div class="col-10">
                 <h4 class="bold">Contáctanos</h4>
-                <form action="">
+                <form action="" class="contact_form">
                     <div class="row">
                         <div class="col-12 col-lg-6">
                             <div class="form-group">
