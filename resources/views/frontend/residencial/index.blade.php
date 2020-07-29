@@ -30,9 +30,11 @@
 <section class="">
     <div class="row justify-content-center py-5">
         <div class="col-10">
+            
             <h5 class="text-dark text-center">
                 Productos Más Populares
             </h5>
+
             <div class="row py-2">
                 @foreach ($destacados->articles->take(4) as $aa)
                 <div class="col-6 col-lg-3 text-center">
@@ -46,6 +48,7 @@
                 </div>
                 @endforeach
             </div>
+
         </div>
     </div>
 
@@ -63,9 +66,15 @@
                         <input type="text" class="form-control" name="correo" placeholder="Correo">
                     </div>
                     <div class="col">
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>...</option>
+                        <select name="article" class="form-control">
+                            <option value="0">Seleccionar...</option>
+                            @foreach ($categories as $c)
+                            <optgroup label="{{ ucFirst($c->display_name) }}">
+                                @foreach ($c->articles as $a)
+                                <option value="{{ $a->name }}">{{ $a->name }}</option>
+                                @endforeach
+                            </optgroup>
+                            @endforeach
                         </select>
                     </div>
                     <div class="col">

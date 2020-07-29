@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <link rel="shortcut icon" href="{{asset('img/logos/fav.png')}}">
-    <title> {{ config('APP_NAME') }} | @yield('page_title') </title>
+    <title> Puertas automáticas de veracruz </title>
     <!-- Estilos -->
     @include('frontend.layouts.styles')
 </head>
@@ -16,7 +16,7 @@
             <img src="{{ asset('img/logos/logo_chevron.png') }}" height="40px" alt="">
         </div>
         <div class="row justify-content-center align-items-center" id="pav-welcome">
-            <div class="col-8 text-center">
+            <div class="col-8 text-center mt-5">
                 <img src="{{ asset('img/logos/logo1.png') }}" alt="">
                 <h1 class="bold">PARA ZONAS RECIDENCIALES <br>
                     E INDUSTRIALES</h1>
@@ -52,9 +52,9 @@
         </div>
         <div class="fixed-botom">
             <div class="row py-3 justify-content-center">
-                <img src="{{ asset('img/front/gh-logo.svg') }}" alt="" class="logo-grupo"">
-                <img src=" {{ asset('img/front/puertas-logo.svg') }}" alt="" class="logo-grupo"">
-                <img src=" {{ asset('img/front/gh-ventanas-logo.svg') }}" alt="" class="logo-grupo"">
+                <img src="{{ asset('img/front/gh-logo.svg') }}" alt="" class="logo-grupo">
+                <img src=" {{ asset('img/front/puertas-logo.svg') }}" alt="" class="logo-grupo">
+                {{-- <img src=" {{ asset('img/front/gh-ventanas-logo.svg') }}" alt="" class="logo-grupo"> --}}
             </div>
             <div class=" row bg1 py-2">
                 <div class="col text-center">

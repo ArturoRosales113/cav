@@ -33,6 +33,8 @@
   @include('frontend.layoutsR.slices.message')
   @include('frontend.layouts.slices.menu_modal' , ['categories' => $mainFamily->categories])
 
+
+
   <!-- Scripts Generales -->
   @include('frontend.layoutsR.scripts')
   <!-- Scripts personalizado de la página -->

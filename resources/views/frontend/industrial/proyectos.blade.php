@@ -9,7 +9,7 @@
         </h4>
     </div>
 </div>
-<div class="row justify-content-center py-5 bg3">
+<div class="row justify-content-center pt-5 bg3">
 
     <div class="nav flex-column nav-pills col-10 col-lg-3 text-center bg3" id="v-proyects-tab" role="tablist"
         aria-orientation="vertical">
@@ -69,5 +69,6 @@
         @endforeach
     </div>
 </div>
+<div class="row py-3"></div>
 
 @endsection

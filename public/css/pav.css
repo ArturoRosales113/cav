@@ -221,7 +221,7 @@ footer .list-group .list-group-item {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: calc(100vh - 115px);
+    min-height: calc(100vh - 115px);
 }
 #pav-welcome h1 {
     font-size: 1.2em;
@@ -306,7 +306,7 @@ img.logo-grupo {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        height: calc(100vh - 113px);
+        min-height: calc(100vh - 113px);
     }
 }
 @media only screen and (min-width: 1024px) {

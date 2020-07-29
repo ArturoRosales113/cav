@@ -70,7 +70,8 @@ class ResidecialController extends Controller
     {
         return view('frontend.residencial.index', [
             'destacados' => $this->fam,
-            'banners' => $this->fam->banners()->get()
+            'banners' => $this->fam->banners()->get(),
+            'categories' => $this->fam->categories
             ]);
     }
 
