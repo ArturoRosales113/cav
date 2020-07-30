@@ -14,9 +14,8 @@ class MensajeController extends Controller
      */
     public function index()
     {
-     $mensajes = Mensaje::all();
      return view('backend.mensajes.index', [
-      'mensajes' => $mensajes
+      'mensajes' => Mensaje::all();
       ]);
     }
 

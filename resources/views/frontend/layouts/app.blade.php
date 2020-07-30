@@ -22,22 +22,24 @@
 </head>
 
 <body>
-  @include('frontend.layouts.navbars.navbar' , ['categories' => $mainFamily->categories])
-  <!--main-panel-->
+    <!--main-panel-->
   <div class="container-fluid mt-5 pt-5">
+    @include('frontend.layouts.navbars.navbar' , ['categories' => $mainFamily->categories])
+
     @yield('page_banner')
     @yield('content')
     @include('frontend.layouts.footer.footer', ['mainFamily' => $mainFamily])
+
+
+    @include('frontend.layouts.slices.message')
+    @include('frontend.layouts.slices.menu_modal' , ['categories' => $mainFamily->categories])
+
   </div>
-
-  @include('frontend.layouts.slices.message')
-  @include('frontend.layouts.slices.menu_modal' , ['categories' => $mainFamily->categories])
-
-
   <!-- Scripts Generales -->
   @include('frontend.layouts.scripts')
   <!-- Scripts personalizado de la página -->
   @yield('page_scripts')
+  
 </body>
 
 </html>

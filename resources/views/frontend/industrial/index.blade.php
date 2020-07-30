@@ -67,32 +67,32 @@
             <h5 class="bold py-3 text-dark text-uppercase">
                 Nuestros Socios Comerciales
             </h5>
-            <div class="row justify-content-around align-items-center p-3">
-                <div class="col-5 col-lg">
-                    <img src="{{ asset('img/front/Logos.png') }}" class="img-fluid">
-                </div>
-                <div class="col-5 col-lg">
-                    <img src="{{ asset('img/front/Logos_1.png') }}" class="img-fluid">
-                </div>
-                <div class="col-5 col-lg">
-                    <img src="{{ asset('img/front/Logos_2.png') }}" class="img-fluid">
-                </div>
-                <div class="col-5 col-lg">
-                    <img src="{{ asset('img/front/Logos_3.png') }}" class="img-fluid">
-                </div>
-                <div class="col-5 col-lg">
-                    <img src="{{ asset('img/front/Logos_4.png') }}" class="img-fluid">
-                </div>
-                <div class="col-5 col-lg">
-                    <img src="{{ asset('img/front/Logos_5.png') }}" class="img-fluid">
-                </div>
-                <div class="col-5 col-lg">
-                    <img src="{{ asset('img/front/Logos_6.png') }}" class="img-fluid">
-                </div>
-                <div class="col-5 col-lg">
-                    <img src="{{ asset('img/front/Logos_8.png') }}" class="img-fluid">
-                </div>
-            </div>
+        </div>
+    </div>
+    <div class="row justify-content-around align-items-center py-lg-3">
+        <div class="col-5 col-lg">
+            <img src="{{ asset('img/front/Logos.png') }}" class="img-fluid">
+        </div>
+        <div class="col-5 col-lg">
+            <img src="{{ asset('img/front/Logos_1.png') }}" class="img-fluid">
+        </div>
+        <div class="col-5 col-lg">
+            <img src="{{ asset('img/front/Logos_2.png') }}" class="img-fluid">
+        </div>
+        <div class="col-5 col-lg">
+            <img src="{{ asset('img/front/Logos_3.png') }}" class="img-fluid">
+        </div>
+        <div class="col-5 col-lg">
+            <img src="{{ asset('img/front/Logos_4.png') }}" class="img-fluid">
+        </div>
+        <div class="col-5 col-lg">
+            <img src="{{ asset('img/front/Logos_5.png') }}" class="img-fluid">
+        </div>
+        <div class="col-5 col-lg">
+            <img src="{{ asset('img/front/Logos_6.png') }}" class="img-fluid">
+        </div>
+        <div class="col-5 col-lg">
+            <img src="{{ asset('img/front/Logos_7.png') }}" class="img-fluid">
         </div>
     </div>
 </section>

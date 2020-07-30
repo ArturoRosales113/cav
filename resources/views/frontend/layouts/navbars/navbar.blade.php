@@ -90,46 +90,43 @@
     </div>
   </nav>
 
-  <div class="collapse" id="productsCollapse">
-    <div class="bg3 p-5">
-      @foreach ($categories->chunk(6) as $chunk => $ch)
-      <div class="card-deck">
-        @foreach ($ch as $c)
+  <div class="collapse container-fluid" id="productsCollapse">
+    <div class="row row-cols-1 row-cols-md-6 bg3">
+      @foreach ($categories as $c)
+      <div class="col p-3">
+ 
         <div class="card text-center bg3 border-0 p-2">
-
+  
           <a href="{{ route('front.industrial.productos.categoria', $c->name) }}" class="">
             <img src="{{ $c->icon_path == null ? asset('img/brand/no_img_found.png') : asset($c->icon_path) }}"
               class="card-img-top" alt="">
-
+  
           </a>
           <div class="card-body p-0 py-2 text-center">
             <a href="{{ route('front.industrial.productos.categoria', $c->name) }}">
               <small class="categoryName">{{ ucfirst($c->display_name) }}</small>
             </a>
           </div>
-
+  
         </div>
-        @endforeach
-
-        @if($loop->last)
+ 
+      </div>
+      @endforeach
+      <div class="col p-3">
         <div class="card text-center bg3 border-0 p-2">
 
           <a href="{{ route('front.industrial.productos' ) }}" class="">
             <img src="{{ asset('img/brand/no_img_found.png') }}" class="card-img-top" alt="">
-
+  
           </a>
           <div class="card-body p-0 py-2 text-center">
             <a href="{{ route('front.industrial.productos' ) }}">
               <small class="categoryName">Ver mas</small>
             </a>
           </div>
-
+  
         </div>
-        @endif
-
       </div>
-      @endforeach
-
     </div>
   </div>
 
