@@ -108,22 +108,37 @@
         <div class="row justify-content-center py-5">
             <div class="col-10">
                 <h4 class="bold">Contáctanos</h4>
-                <form action="">
+                <form action="{{ route('front.mensaje.create') }}" method="POST" class="contact_form">
+                    @csrf
                     <div class="row">
                         <div class="col-12 col-lg-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre">
+                                <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{old('nombre')}}">
+                                @if ($errors->has('nombre'))
+                                <span class="help-block">
+                                        <small class="text-danger">{{ $errors->first('nombre') }}</small>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Correo">
+                                <input type="text" class="form-control" name="correo" placeholder="Correo" value="{{old('correo')}}">
+                                @if ($errors->has('correo'))
+                                <span class="help-block">
+                                        <small class="text-danger">{{ $errors->first('correo') }}</small>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Interés">
+                                <input type="text" class="form-control" name="interes" placeholder="Interés">
                             </div>
                         </div>
                         <div class="col-12 col-lg-6">
-                            <textarea name="mensaje" id="" cols="30" rows="6" class="form-control"
-                                placeholder="Mensaje"></textarea>
+                            <textarea name="mensaje" id="" cols="30" rows="5" class="form-control" placeholder="Mensaje">{{old('mensaje')}}</textarea>
+                            @if ($errors->has('mensaje'))
+                            <span class="help-block">
+                                    <small class="text-danger">{{ $errors->first('mensaje') }}</small>
+                                </span>
+                            @endif
                         </div>
                     </div>
                     <div class="row py-3">

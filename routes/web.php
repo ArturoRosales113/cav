@@ -7,6 +7,9 @@ use App\Http\Controllers\CategoryController;
 Route::get('/', ['uses' => 'FrontController@index', 'as' => 'welcome']);
 Route::get('/politica-de-privacidad', ['uses' => 'FrontController@provacidad', 'as' => 'privacidad']);
 
+Route::post('/crear-mensaje', ['uses' => 'FrontController@createMessage', 'as' => 'front.mensaje.create']);
+Route::post('/crear-cotizacion', ['uses' => 'FrontController@createCotizacion', 'as' => 'front.cotizacion.create']);
+
 
 Route::prefix('industrial')->group(function(){
     //Aplicaciones
@@ -37,8 +40,6 @@ Route::prefix('industrial')->group(function(){
     Route::get('/recursos', ['uses' => 'IndustrialController@recursos', 'as' => 'front.industrial.recursos']);
 
     Route::get('/servicios', ['uses' => 'IndustrialController@servicios', 'as' => 'front.industrial.servicios']);
-
-
 
 });
 

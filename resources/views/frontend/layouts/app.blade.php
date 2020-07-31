@@ -39,6 +39,7 @@
   @include('frontend.layouts.scripts')
   <!-- Scripts personalizado de la página -->
   @yield('page_scripts')
+  @include('sweet::alert')
   
 </body>
 
