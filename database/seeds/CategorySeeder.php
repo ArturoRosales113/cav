@@ -83,7 +83,6 @@ class CategorySeeder extends Seeder
             'description' =>Str::random(20),
         ]);
 
-
         DB::table('categories')->insert([
             'name' => 'motores_industriales',
             'display_name' => 'motores industriales',
@@ -114,7 +113,7 @@ class CategorySeeder extends Seeder
 
         DB::table('categories')->insert([
             'name' => 'puertas_de_quirofano',
-            'display_name' => 'puertas de quiirofano',
+            'display_name' => 'puertas de quirofano',
             'family_id' => 2,
             'description' =>Str::random(20),
         ]);

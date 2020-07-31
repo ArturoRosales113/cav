@@ -21,6 +21,11 @@ class FrontController extends Controller
             ]);
     }
 
+    public function privacidad()
+    {
+        return view('frontend.privacidad');
+    }
+
     public function createMessage(Request $request)
     {
        $input = $request->all();

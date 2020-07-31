@@ -5,7 +5,7 @@
 use App\Http\Controllers\CategoryController;
 
 Route::get('/', ['uses' => 'FrontController@index', 'as' => 'welcome']);
-Route::get('/politica-de-privacidad', ['uses' => 'FrontController@provacidad', 'as' => 'privacidad']);
+Route::get('/politica-de-privacidad', ['uses' => 'FrontController@privacidad', 'as' => 'privacidad']);
 
 Route::post('/crear-mensaje', ['uses' => 'FrontController@createMessage', 'as' => 'front.mensaje.create']);
 Route::post('/crear-cotizacion', ['uses' => 'FrontController@createCotizacion', 'as' => 'front.cotizacion.create']);
