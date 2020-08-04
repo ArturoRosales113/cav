@@ -33,7 +33,7 @@
   @include('frontend.layoutsR.slices.message')
   @include('frontend.layouts.slices.menu_modal' , ['categories' => $mainFamily->categories])
 
-
+  @include('frontend.susbscriber_modal')
 
   <!-- Scripts Generales -->
   @include('frontend.layoutsR.scripts')

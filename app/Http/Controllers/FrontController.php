@@ -55,46 +55,52 @@ class FrontController extends Controller
             'nombre' => $input['nombre'],
             'correo' => $input['correo'],
             'interes' => $input['interes'],
-            'mensaje' => $input['mensaje']
+ 
            ]);
 
-        return redirect()->back()->with('success', 'Mensaje Recibido');
+           if(array_key_exists('mensaje', $input)){
+               $msj->mensaje = $input['mensaje'];
+               $msj->save();
+           }
+
+        return redirect()->back()->with('success', 'Pronto un agente se podrá en contacto contigo');
     }
  }
 
  public function createCotizacion(Request $request)
- {
-    $input = $request->all();
+    {
+        $input = $request->all();
 
-    $rules = [
-        'nombre' => 'required',
-        'correo' => 'required|email',
-        'interes' => 'max:150'
-    ];
+        $rules = [
+            'nombre' => 'required',
+            'correo' => 'required|email',
+            'interes' => 'max:150'
+        ];
 
-    $messages = [
-     'nombre.required' => 'El campo "Nombre" es obligatorio',
-     'correo.required' => 'El campo "Coreo" es obligatorio.',
-     'correo.email' => 'El email no es válido'
-    ];
+        $messages = [
+        'nombre.required' => 'El campo "Nombre" es obligatorio',
+        'correo.required' => 'El campo "Coreo" es obligatorio.',
+        'correo.email' => 'El email no es válido'
+        ];
 
-    $validator = Validator::make($input, $rules, $messages);
+        $validator = Validator::make($input, $rules, $messages);
 
-    if ($validator->fails()) {
-       return redirect()
-            ->back()
-            ->withErrors($validator)
-            ->withInput();
+        if ($validator->fails()) {
+        return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
 
-    } else {
-     $msj = Mensaje::create([
-         'nombre' => $input['nombre'],
-         'correo' => $input['correo'],
-         'interes' => $input['interes'],
-         'mensaje' => $input['mensaje']
-        ]);
+        } else {
+        $msj = Mensaje::create([
+            'nombre' => $input['nombre'],
+            'correo' => $input['correo'],
+            'interes' => $input['interes'],
+            'mensaje' => $input['mensaje']
+            ]);
 
-     return redirect()->back()->with('success', 'Mensaje Recibido');
- }
-}
+        return redirect()->back()->with('success', 'Mensaje Recibido');
+        }      
+    }
+
 }

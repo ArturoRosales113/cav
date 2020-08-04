@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Proyect;
 use App\Family;
+use App\Aplication;
 
 use Validator;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class ProyectController extends Controller
      */
     public function create()
     {
-        return view('backend.proyect.create', ['families' => Family::all()]);
+        return view('backend.proyect.create', ['aplications' => Aplication::all()]);
     }
 
     /**
@@ -43,7 +44,9 @@ class ProyectController extends Controller
         $rules = [
             'name' => 'required',
             'description' => 'required',
+            'date' => 'required',
             'img_path' => 'mimes:jpg,jpeg,png|max:950',
+            'aplication_id' => 'not_in:0',
             'pdf_path' => 'mimes:pdf'
         ];
         $validator = Validator::make($input, $rules);
@@ -56,6 +59,8 @@ class ProyectController extends Controller
             $proyect = Proyect::create([
                 'name' => $input['name'],
                 'slug' => str_replace(' ', '-', strtolower($input['name'])),
+                'date' => $input['fecha'],
+                'aplication_id' => $input['aplication_id'],
                 'description' => $input['description']
             ]);
 
@@ -93,7 +98,10 @@ class ProyectController extends Controller
      */
     public function show(Proyect $proyect)
     {
-        return view ('backend.proyect.show', ['proyect' => $proyect]);
+        return view ('backend.proyect.show', [
+            'proyect' => $proyect,
+            'aplications' => Aplication::all()
+            ]);
     }
 
     /**
@@ -104,7 +112,10 @@ class ProyectController extends Controller
      */
     public function edit(Proyect $proyect)
     {
-        return view('backend.proyect.edit', ['proyect' => $proyect]);
+        return view('backend.proyect.edit', [
+            'proyect' => $proyect,
+            'aplications' => Aplication::all()
+            ]);
     }
 
     /**
@@ -185,6 +196,7 @@ class ProyectController extends Controller
              $proyect->name = $input['name'];
              $proyect->slug = str_replace(' ', '-', strtolower($input['name']));
              $proyect->description = $input['description'];
+             $proyect->aplication_id = $input['aplication_id'];
              $proyect->save();
              return redirect()->back()->with('success', 'Información actualizada');
          }
@@ -198,6 +210,24 @@ class ProyectController extends Controller
      */
     public function destroy(Proyect $proyect)
     {
-        //
+        if ($proyect->img_path != null) {
+            $dfile = $proyect->img_path;
+            $filename = public_path($dfile);
+            File::delete($filename);
+        }
+
+        if ($proyect->banner_path != null) {
+            $dfile = $proyect->banner_path;
+            $filename = public_path($dfile);
+            File::delete($filename);
+        }
+
+        if ($proyect->icon_path != null) {
+            $dfile = $proyect->icon_path;
+            $filename = public_path($dfile);
+            File::delete($filename);
+        }
+
+        $proyect->delete();
     }
 }

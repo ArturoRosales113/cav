@@ -6,7 +6,7 @@
     <div class="col-lg-6 order-1 order-lg-2">
         <div class="row justify-content-center py-5">
           <div class="col-10 col-lg-8">
-            <form class="rsvp-form" action="{{ route('front.create_message') }}" method="POST">
+            <form class="" action="{{ route('front.create_message') }}" method="POST">
               {{ csrf_field() }}
               <div class="form-group">
                 <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" placeholder="Nombre">

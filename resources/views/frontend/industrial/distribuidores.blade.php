@@ -88,19 +88,25 @@
         <h6 class="bold text-white text-uppercase py-3">
             ¿Quieres ser distribuidor?
         </h6>
-        <form action="">
+        <form action="{{ route('front.mensaje.create') }}" method="POST">
+            @csrf
+            <input type="hidden" name="interes" value="distribuidor">
             <div class="form-row">
                 <div class="form-group col-12 col-lg">
-                    <input type="text" class="form-control" placeholder="Nombre">
+                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" placeholder="Nombre">
+                    @if ($errors->has('nombre'))
+                    <span class="help-block">
+                            <small class="text-danger">{{ $errors->first('nombre') }}</small>
+                        </span>
+                    @endif
                 </div>
                 <div class="form-group col-12 col-lg">
-                    <input type="email" class="form-control" placeholder="correo">
-                </div>
-                <div class="form-group col-12 col-lg">
-                    <select id="inputState" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
+                    <input type="email" class="form-control" name="correo" value="{{ old('correo') }}" placeholder="correo">
+                    @if ($errors->has('correo'))
+                    <span class="help-block">
+                            <small class="text-danger">{{ $errors->first('correo') }}</small>
+                        </span>
+                    @endif
                 </div>
                 <div class="col">
                     <button class="btn bg-dark text-white w-100" type="submit">Enviar</button>

@@ -48,7 +48,7 @@
       <button class="navbar-toggler d-flex d-lg-none" type="button" data-toggle="modal" data-target="#menuModal">
         <i class="fas fa-bars"></i>
       </button>
-      <a class="navbar-brand" href="{{ route('front.industrial.index') }}">
+      <a class="navbar-brand" href="{{ route('front.residencial.index') }}">
         <img src="{{ asset('img/logos/logo1.png') }}" id="nav-logo" alt="">
       </a>
       <div class="navbar-collapse d-flex justify-content-center pl-5">
@@ -91,13 +91,13 @@
  
         <div class="card text-center bg3 border-0 p-2">
   
-          <a href="{{ route('front.industrial.productos.categoria', $c->name) }}" class="">
+          <a href="{{ route('front.residencial.productos.categoria', $c->name) }}" class="">
             <img src="{{ $c->icon_path == null ? asset('img/brand/no_img_found.png') : asset($c->icon_path) }}"
               class="card-img-top" alt="">
   
           </a>
           <div class="card-body p-0 py-2 text-center">
-            <a href="{{ route('front.industrial.productos.categoria', $c->name) }}">
+            <a href="{{ route('front.residencial.productos.categoria', $c->name) }}">
               <small class="categoryName">{{ ucfirst($c->display_name) }}</small>
             </a>
           </div>
@@ -109,7 +109,7 @@
       <div class="col p-3">
         <div class="card text-center bg3 border-0 p-2">
 
-          <a href="{{ route('front.industrial.productos' ) }}" class="">
+          <a href="{{ route('front.residencial.productos' ) }}" class="">
             <img src="{{ asset('img/brand/no_img_found.png') }}" class="card-img-top" alt="">
   
           </a>

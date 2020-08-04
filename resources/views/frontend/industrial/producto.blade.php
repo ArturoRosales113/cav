@@ -4,19 +4,36 @@
 @section('content')
 <div class="row justify-content-center align-items-start py-5 mt-5">
     <div class="col-12 col-lg-5">
-        <img src=" {{ $article->pics()->count() > 0 ? asset($a->pics->first()->path) : asset('img/brand/no_img_found.png') }}"
-            alt="" class="img-fluid w-100">
+        <div id="{{ 'carousel'.$article->id }}" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+            @foreach ($article->pics as $indicator)
+            <li data-target="#{{ 'carousel'. $article->id }}" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+            @endforeach
+            </ol>
+            <div class="carousel-inner">
+                @foreach ($article->pics as $pic)
+                <div class="carousel-item  {{ $loop->first ? 'active' : '' }}">
+                    <img src="{{ asset($pic->path) }}" class="d-block w-100" alt="{{ asset('img/brand/no_img_found.png') }}">
+    
+                  </div>
+                @endforeach                          
+            </div>
+            <a class="carousel-control-prev" href="#{{ 'carousel'.$article->id }}" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#{{ 'carousel'.$article->id }}" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
     <div class="col-12 col-lg-5">
         <h1 class="text-dark">{{ ucFirst($article->name) }}</h1>
         <p class="text-justify ">
             {{ $article -> description }}
         </p>
-        <div class="row">
-            <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="col-4 img-fluid">
-            <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="col-4 img-fluid">
-            <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="col-4 img-fluid">
-        </div>
+
     </div>
 </div>
 <div class="row justify-content-center py-5">

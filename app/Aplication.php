@@ -25,9 +25,7 @@ class Aplication extends Model
 
        public function proyects()
        {
-        return $this->belongsToMany('App\Proyect')
-                    ->withPivot('description', 'img_path')
-                    ->withTimestamps();
+        return $this->hasMany('App\Proyect');
        }
 
        public function family()

@@ -18,8 +18,6 @@ class Proyect extends Model
 
        public function aplications()
        {
-        return $this->belongsToMany('App\Aplication')
-                    ->withPivot('description', 'img_path')
-                    ->withTimestamps();
+        return $this->belongsTo('App\Aplication');
        }
 }

@@ -120,7 +120,7 @@ class ResidecialController extends Controller
 
     public function recursos()
     {
-        return view('frontend.residencial.recursos');
+        return view('frontend.residencial.recursos', ['categories' => $this->fam->categories]);
     }
 
     public function servicios()

@@ -20,6 +20,11 @@ class Category extends Model
         return $this->hasMany('App\Article');
        }
 
+       public function downloads()
+       {
+           return $this->hasManyThrough('App\Download', 'App\Article');
+       }
+
        public function family(){
         return $this->belongsTo('App\Family');
        }

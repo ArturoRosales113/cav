@@ -25,6 +25,32 @@
                 </span>
                 @endif
             </div>
+
+            <div class="form-group">
+                <label for="name">Fecha</label>
+                <input type="text" name="fecha" value="{{ old('fecha', $proyect -> date) }}" placeholder="Nombre"
+                    class="form-control">
+                @if ($errors->has('fecha'))
+                <span class="help-block">
+                    <small class="text-danger">{{ $errors->first('fecha') }}</small>
+                </span>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="family_id">Aplicación</label>
+                <select class="custom-select" name="aplication_id">
+                    <option value="0">Ninguna</option>
+                    @foreach ($aplications as $app)
+                    <option value="{{ $app->id }}"  {{ old('aplication_id', $proyect->aplication_id) == $app->id ? 'selected' : ''}}>
+                        {{ ucfirst($app->display_name) }}</option>
+                    @endforeach
+                </select>
+                @if ($errors->has('aplication_id'))
+                <span class="help-block">
+                    <small class="text-danger">{{ $errors->first('aplication_id') }}</small>
+                </span>
+                @endif
+            </div>
         </div>
         <div class="col-6">
             <div class="row align-items-center py-2">

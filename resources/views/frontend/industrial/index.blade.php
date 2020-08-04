@@ -92,7 +92,7 @@
             <img src="{{ asset('img/front/Logos_6.png') }}" class="img-fluid">
         </div>
         <div class="col-5 col-lg">
-            <img src="{{ asset('img/front/Logos_7.png') }}" class="img-fluid">
+            <img src="{{ asset('img/front/LogosLogos.png') }}" class="img-fluid">
         </div>
     </div>
 </section>

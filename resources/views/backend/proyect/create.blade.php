@@ -8,8 +8,8 @@ Crear Proyecto
 
 
 @section('dashboard_buttons')
-<a class="btn btn-sm btn-secondary" href="{{ route('aplication.index') }}">
-    <i class="fas fa-arrow-left"></i>&nbsp;Volver a listado de aplicaciones
+<a class="btn btn-sm btn-secondary" href="{{ route('proyect.index') }}">
+    <i class="fas fa-arrow-left"></i>&nbsp;Volver a listado de proyectos
 </a>
 @endsection
 
@@ -53,20 +53,18 @@ Crear Proyecto
                     </span>
                     @endif
                 </div>
-            </div>
-            <div class="row">
                 <div class="form-group col-6">
-                    <label for="family_id">Familia</label>
-                    <select class="custom-select" name="family_id">
+                    <label for="family_id">Aplicación</label>
+                    <select class="custom-select" name="aplication_id">
                         <option value="0">Ninguna</option>
-                        @foreach ($families as $fam)
-                        <option value="{{ $fam->id }}" {{ old('family_id') == $fam->id ? 'selected' : ''}}>
-                            {{ ucfirst($fam->display_name) }}</option>
+                        @foreach ($aplications as $app)
+                        <option value="{{ $app->id }}" {{ old('aplication_id') == $app->id ? 'selected' : ''}}>
+                            {{ ucfirst($app->display_name) }}</option>
                         @endforeach
                     </select>
-                    @if ($errors->has('family'))
+                    @if ($errors->has('aplication_id'))
                     <span class="help-block">
-                        <small class="text-danger">{{ $errors->first('family') }}</small>
+                        <small class="text-danger">{{ $errors->first('aplication_id') }}</small>
                     </span>
                     @endif
                 </div>

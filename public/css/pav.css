@@ -34,6 +34,9 @@ body {
     color: #919191;
     font-size: 1rem;
 }
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 #top-navbar .top-bar {
     background-color: #ad272d;
@@ -279,7 +282,6 @@ img.logo-grupo {
     background-color: #d7dadb;
     color: black;
     font-size: 13pt;
-    font-weight: 900;
     border: 1pt 0pt;
     border-style: solid;
     border-color: #fff;

@@ -25,13 +25,13 @@ class CreateProyectsTable extends Migration
             $table->text('description')
                   ->nullable();
 
-            $table->integer('family_id')
+            $table->integer('aplication_id')
                   ->unsigned()
                   ->nullable();
 
-            $table->foreign('family_id')
+            $table->foreign('aplication_id')
                   ->references('id')
-                  ->on('families')
+                  ->on('aplications')
                   ->onDelete('cascade');
                   
             $table->string('img_path')
@@ -49,35 +49,6 @@ class CreateProyectsTable extends Migration
             $table->timestamps();
       });
     
-
-      Schema::create('aplication_proyect', function (Blueprint $table) {
-
-            $table->increments('id');
-
-            $table->integer('aplication_id')
-                  ->unsigned();
-
-            $table->foreign('aplication_id')
-                        ->references('id')
-                        ->on('aplications')
-                        ->onDelete('cascade');
-                        
-            $table->integer('proyect_id')
-                  ->unsigned();
-
-            $table->foreign('proyect_id')
-                        ->references('id')
-                        ->on('proyects')
-                        ->onDelete('cascade');
-
-            $table->string('img_path')
-                  ->nullable();
-
-            $table->longText('description')
-                  ->nullable();
-
-            $table->timestamps();
-      });
    }
 
 
@@ -88,7 +59,6 @@ class CreateProyectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aplication_proyect');
         Schema::dropIfExists('proyects');
     }
 }

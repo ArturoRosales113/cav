@@ -9,6 +9,7 @@ Route::get('/politica-de-privacidad', ['uses' => 'FrontController@privacidad', '
 
 Route::post('/crear-mensaje', ['uses' => 'FrontController@createMessage', 'as' => 'front.mensaje.create']);
 Route::post('/crear-cotizacion', ['uses' => 'FrontController@createCotizacion', 'as' => 'front.cotizacion.create']);
+Route::post('/crear-distribuidor', ['uses' => 'FrontController@createDistribuidor', 'as' => 'front.distribuidor.create']);
 
 
 Route::prefix('industrial')->group(function(){
