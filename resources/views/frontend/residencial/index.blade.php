@@ -57,7 +57,9 @@
             <h6 class="bold text-white text-uppercase py-3">
                 ¿En qué producto estás interesado?
             </h6>
-            <form action="">
+            <form action="{{ route('front.cotizacion.create') }}" method="POST">
+                @csrf
+                <input type="hidden" name="interes" value="cotizacion">
                 <div class="form-row">
                     <div class="col">
                         <input type="text" class="form-control" name="nombre" placeholder="Nombre">
@@ -66,12 +68,12 @@
                         <input type="text" class="form-control" name="correo" placeholder="Correo">
                     </div>
                     <div class="col">
-                        <select name="article" class="form-control">
+                        <select name="article_id" class="form-control">
                             <option value="0">Seleccionar...</option>
                             @foreach ($categories as $c)
                             <optgroup label="{{ ucFirst($c->display_name) }}">
                                 @foreach ($c->articles as $a)
-                                <option value="{{ $a->name }}">{{ $a->name }}</option>
+                                <option value="{{ $a->id }}">{{ $a->name }}</option>
                                 @endforeach
                             </optgroup>
                             @endforeach

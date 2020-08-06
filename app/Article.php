@@ -53,6 +53,11 @@ class Article extends Model
         return $this->hasMany('App\Download');
     }
 
+    public function mensajes()
+    {
+        return $this->belongsToMany('App\Mensaje');
+    }
+
 
  //Scopes de búsqueda
 

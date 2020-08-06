@@ -3,26 +3,48 @@
 
 @section('content')
 <div class="row justify-content-center align-items-start py-5 mt-5">
-    <div class="col-12 col-lg-5">
-        <img src=" {{ $article->pics->count() > 0 ? asset($a->pics->first()->path) : asset('img/brand/no_img_found.png') }}"
-            alt="" class="img-fluid w-100">
+    <div class="col-12 col-lg-5">  
+        @if ($article->pics()->exists())
+        <div id="{{ 'carousel'.$article->id }}" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+            @foreach ($article->pics as $indicator)
+            <li data-target="#{{ 'carousel'. $article->id }}" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+            @endforeach
+            </ol>
+            <div class="carousel-inner">
+                @foreach ($article->pics as $pic)
+                <div class="carousel-item  {{ $loop->first ? 'active' : '' }}">
+                    <img src="{{ asset($pic->path) }}" class="d-block w-100" alt="{{ asset('img/brand/no_img_found.png') }}">
+    
+                  </div>
+                @endforeach                          
+            </div>
+            <a class="carousel-control-prev" href="#{{ 'carousel'.$article->id }}" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#{{ 'carousel'.$article->id }}" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
+        @else
+        <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid w-100">
+        @endif
     </div>
     <div class="col-12 col-lg-5">
         <h1 class="text-dark">{{ ucFirst($article->name) }}</h1>
         <p class="text-justify ">
             {{ $article -> description }}
         </p>
-        <div class="row">
-            <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="col-4 img-fluid">
-            <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="col-4 img-fluid">
-            <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="col-4 img-fluid">
-        </div>
+
     </div>
 </div>
 <div class="row justify-content-center py-5">
     <div class="col-10">
         <div class="accordion" id="accordionExample">
 
+            @if ($article->aplications()->exists())
             <div class="card border border-secondary my-4">
                 <div class="card-header bg-white bg-white" id="headingaplicaciones">
                     <h2 class="mb-0">
@@ -36,15 +58,23 @@
                 <div id="aplicaciones" class="collapse" aria-labelledby="headingaplicaciones"
                     data-parent="#accordionExample">
                     <div class="card-body text-dark">
-                        @foreach ($article->aplications as $aa)
-                        <a href="" class="text-dark ">
-                            {{ ucFirst($aa->display_name) }}
-                        </a>
-                        @endforeach
+                        <div class="row">
+                            @foreach ($article->aplications as $aa)
+                            <div class="col-2 text-dark text-center">
+                                <img class="img-fuid" src="{{ $aa->icon_path == null ? asset('img/brand/no_img_found.png') : asset($aa->icon_path)}}" alt="">   
+                                <a href="" class="text-dark d-block">
+                                    
+                                    {{ ucFirst($aa->display_name) }}
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
+            @endif
 
+            @if ($article->downloads()->exists())
             <div class="card border border-secondary my-4">
                 <div class="card-header bg-white" id="headingaplicaciones">
                     <h2 class="mb-0">
@@ -66,7 +96,9 @@
                     </div>
                 </div>
             </div>
+            @endif
 
+            @if ($article->specs != null)
             <div class="card border border-secondary my-4">
                 <div class="card-header bg-white" id="headingaplicaciones">
                     <h2 class="mb-0">
@@ -83,7 +115,7 @@
                     </div>
                 </div>
             </div>
-
+            @endif
 
         </div>
     </div>

@@ -10,6 +10,7 @@ use File;
 
 use App\Family;
 use App\Mensaje;
+use App\Article;
 
 class FrontController extends Controller
 {
@@ -74,13 +75,14 @@ class FrontController extends Controller
         $rules = [
             'nombre' => 'required',
             'correo' => 'required|email',
-            'interes' => 'max:150'
+            'article_id' => 'not_in:0'
         ];
 
         $messages = [
         'nombre.required' => 'El campo "Nombre" es obligatorio',
         'correo.required' => 'El campo "Coreo" es obligatorio.',
-        'correo.email' => 'El email no es válido'
+        'correo.email' => 'El email no es válido',
+        'article_id.not_in' => 'Debes seleccionar un artículo'
         ];
 
         $validator = Validator::make($input, $rules, $messages);
@@ -96,10 +98,11 @@ class FrontController extends Controller
             'nombre' => $input['nombre'],
             'correo' => $input['correo'],
             'interes' => $input['interes'],
-            'mensaje' => $input['mensaje']
             ]);
+        $article = Article::find($input['article_id']);
+        $msj->articles()->save($article);
 
-        return redirect()->back()->with('success', 'Mensaje Recibido');
+        return redirect()->back()->with('success', 'Cotización solicitada, en breve un agente se pondrá en contacto.');
         }      
     }
 

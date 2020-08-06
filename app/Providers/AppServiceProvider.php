@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 use Carbon;
 
@@ -10,6 +11,7 @@ use App\Family;
 use App\Category;
 
 class AppServiceProvider extends ServiceProvider
+
 {
     /**
      * Bootstrap any application services.
@@ -18,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
 
         view()->composer('backend.article.edit', function ($view) {
             $view->with('families' , Family::all());

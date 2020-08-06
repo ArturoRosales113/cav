@@ -3,7 +3,8 @@
 
 @section('content')
 <div class="row justify-content-center align-items-start py-5 mt-5">
-    <div class="col-12 col-lg-5">
+    <div class="col-12 col-lg-5">  
+        @if ($article->pics()->exists())
         <div id="{{ 'carousel'.$article->id }}" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
             @foreach ($article->pics as $indicator)
@@ -27,6 +28,9 @@
               <span class="sr-only">Next</span>
             </a>
         </div>
+        @else
+        <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid w-100">
+        @endif
     </div>
     <div class="col-12 col-lg-5">
         <h1 class="text-dark">{{ ucFirst($article->name) }}</h1>
@@ -40,6 +44,7 @@
     <div class="col-10">
         <div class="accordion" id="accordionExample">
 
+            @if ($article->aplications()->exists())
             <div class="card border border-secondary my-4">
                 <div class="card-header bg-white bg-white" id="headingaplicaciones">
                     <h2 class="mb-0">
@@ -53,15 +58,23 @@
                 <div id="aplicaciones" class="collapse" aria-labelledby="headingaplicaciones"
                     data-parent="#accordionExample">
                     <div class="card-body text-dark">
-                        @foreach ($article->aplications as $aa)
-                        <a href="" class="text-dark ">
-                            {{ ucFirst($aa->display_name) }}
-                        </a>
-                        @endforeach
+                        <div class="row">
+                            @foreach ($article->aplications as $aa)
+                            <div class="col-1 text-dark text-center">
+ 
+                                <a href="" class="btn btn-sm text-dark d-block">
+                                    <img class="img-fluid" src="{{ $aa->icon_path == null ? asset('img/brand/no_img_found.png') : asset($aa->icon_path)}}" alt="">   
+                                    {{ ucFirst($aa->display_name) }}
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
+            @endif
 
+            @if ($article->downloads()->exists())
             <div class="card border border-secondary my-4">
                 <div class="card-header bg-white" id="headingaplicaciones">
                     <h2 class="mb-0">
@@ -83,7 +96,9 @@
                     </div>
                 </div>
             </div>
+            @endif
 
+            @if ($article->specs != null)
             <div class="card border border-secondary my-4">
                 <div class="card-header bg-white" id="headingaplicaciones">
                     <h2 class="mb-0">
@@ -100,7 +115,7 @@
                     </div>
                 </div>
             </div>
-
+            @endif
 
         </div>
     </div>

@@ -11,4 +11,9 @@ class Mensaje extends Model
   protected $fillable = [
    'nombre','correo','mensaje','interes', 'telefono','family', 'is_new'
   ];
+
+  public function articles()
+  {
+    return $this->belongsToMany('App\Article');
+  }
 }
