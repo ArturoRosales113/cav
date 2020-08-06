@@ -13,7 +13,8 @@ class Proyect extends Model
         'img_path',
         'banner_path',
         'pdf_path',
-        'date'
+        'date',
+        'aplication_id'
        ];
 
        public function aplications()

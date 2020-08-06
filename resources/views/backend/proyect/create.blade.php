@@ -71,7 +71,7 @@ Crear Proyecto
             </div>
             <div class="row py-2">
                 <div class="col-4">
-                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formLogoPreview">
+                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formPhotoPreview">
                 </div>
                 <div class="form-group col-6">
                     <h6>Foto</h6>
@@ -83,7 +83,7 @@ Crear Proyecto
 
             <div class="row py-2">
                 <div class="col-4">
-                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="bannerPreview">
+                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formBannerPreview">
                 </div>
                 <div class="form-group col-6">
                     <h6>Foto</h6>
@@ -95,13 +95,13 @@ Crear Proyecto
 
             <div class="row py-2">
                 <div class="col-4">
-                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formPhotoPreview">
+                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formFichaPreview">
                 </div>
                 <div class="form-group col-6">
-                    <h6>PDF</h6>
+                    <h6>Ficha Técnica</h6>
                     <hr>
-                    <label for="exampleFormControlFile1">Subir PDF</label>
-                    <input type="file" class="form-control-file" id="photo" name="pdf_path">
+                    <label for="exampleFormControlFile1">Subir Ficha Técnica</label>
+                    <input type="file" class="form-control-file"  name="pdf_path">
                 </div>
             </div>
 

@@ -6,7 +6,7 @@
 
 @section('dashboard_buttons')
 <a class="btn btn-sm btn-secondary" href="{{ route('proyect.index') }}">
-    <i class="fas fa-arrow-left"></i>&nbsp;Volver a listado de aplicacione
+    <i class="fas fa-arrow-left"></i>&nbsp;Volver a listado de proyectos
 </a>
 @endsection
 

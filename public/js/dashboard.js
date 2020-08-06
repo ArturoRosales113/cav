@@ -69,15 +69,26 @@ $('input[type="file"]').change(function (e) {
 })
 
 
-$('input[name="photo"]').change(function (e) {
+$('input[name="pdf_path"]').change(function (e) {
     var reader = new FileReader();
     reader.onload = function (e) {
 
-        $('#formPhotoPreview').prop('src', e.target.result)
+        $('#formFichaPreview').prop('src', e.target.result)
     };
     // read the image file as a data URL.
     reader.readAsDataURL(this.files[0]);
 })
+
+$('input[name="banner_path"]').change(function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+
+        $('#formBannerPreview').prop('src', e.target.result)
+    };
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+})
+
 $('input[name="article_img_path"]').change(function (e) {
     var reader = new FileReader();
     reader.onload = function (e) {

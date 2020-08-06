@@ -56,12 +56,12 @@
             <div class="row align-items-center py-2">
                 <div class="col-4 text-center">
                     @if( $proyect ->img_path != null )
-                    <img src="{{ asset($proyect ->img_path) }}" alt="" class="img-fluid" id="formLogoPreview">
+                    <img src="{{ asset($proyect ->img_path) }}" alt="" class="img-fluid" id="formPhotoPreview">
                     <hr>
                     <a class="btn btn-danger" href="{{ route('proyect.delete', $proyect ->id) }}"><i
                             class="fas fa-trash"></i></a>
                     @else
-                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formLogoPreview">
+                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formPhotoPreview">
                     @endif
                 </div>
                 <div class="form-group col-6">
@@ -74,12 +74,12 @@
             <div class="row py-2">
                 <div class="col-4 text-center">
                     @if ( $proyect -> banner_path != null)
-                    <img src="{{ asset($proyect -> banner_path) }}" alt="" class="img-fluid" id="formLogoPreview">
+                    <img src="{{ asset($proyect -> banner_path) }}" alt="" class="img-fluid" id="formBannerPreview">
                     <hr>
                     <a class="btn btn-danger" href="{{ route('proyect.delete', $proyect ->id) }}"><i
                             class="fas fa-trash"></i></a>
                     @else
-                    <img src="{{asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formLogoPreview">
+                    <img src="{{asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formBannerPreview">
                     @endif
                 </div>
                 <div class="form-group col-6">
@@ -92,18 +92,17 @@
             <div class="row align-items-center py-2">
                 <div class="col-4 text-center">
                     @if ( $proyect ->pdf_path != null)
-                    <a href="{{ asset($proyect ->pdf_path) }}" class="btn btn-outline-dark">
-                        <i class="far fa-file-pdf fa-3x"></i>
-                    </a>
+                    <img src="{{ asset($proyect -> pdf_path) }}" alt="" class="img-fluid" id="formFichaPreview">
+                    <hr>
                     <a class="btn btn-danger" href="{{ route('proyect.pdf.delete', $proyect ->id) }}"><i
                             class="fas fa-trash"></i></a>
                     @else
-                    <img src="{{asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formLogoPreview">
+                    <img src="{{asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formFichaPreview">
                     @endif
                 </div>
                 <div class="form-group col-6">
-                    <h6>PDF</h6>
-                    <label for="exampleFormControlFile1">Subir PDF</label>
+                    <h6>Ficha Técnica</h6>
+                    <label for="exampleFormControlFile1">Subir Ficha Técnica</label>
                     <input type="file" class="form-control-file" id="photo" name="pdf_path">
                 </div>
             </div>

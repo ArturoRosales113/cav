@@ -7,6 +7,7 @@ use App\Family;
 use App\Aplication;
 
 use Validator;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -47,7 +48,7 @@ class ProyectController extends Controller
             'date' => 'required',
             'img_path' => 'mimes:jpg,jpeg,png|max:950',
             'aplication_id' => 'not_in:0',
-            'pdf_path' => 'mimes:pdf'
+            'pdf_path' => 'mimes:jpg,jpeg,png|max:950'
         ];
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) {
@@ -59,7 +60,7 @@ class ProyectController extends Controller
             $proyect = Proyect::create([
                 'name' => $input['name'],
                 'slug' => str_replace(' ', '-', strtolower($input['name'])),
-                'date' => $input['fecha'],
+                'date' => $input['date'],
                 'aplication_id' => $input['aplication_id'],
                 'description' => $input['description']
             ]);
@@ -134,7 +135,7 @@ class ProyectController extends Controller
              'description' => 'required',
              'img_path' => 'mimes:jpg,jpeg,png|max:950',
              'banner_path' => 'mimes:jpg,jpeg,png|max:950',
-             'pdf_path' => 'mimes:pdf'
+             'pdf_path' => 'mimes:jpg,jpeg,png|max:950'
          ];
  
          $messages = [
@@ -222,12 +223,45 @@ class ProyectController extends Controller
             File::delete($filename);
         }
 
-        if ($proyect->icon_path != null) {
-            $dfile = $proyect->icon_path;
+        if ($proyect->pdf_path != null) {
+            $dfile = $proyect->pdf_path;
             $filename = public_path($dfile);
             File::delete($filename);
         }
 
         $proyect->delete();
+        return redirect()->back()->with('success', 'Información actualizada');
+    }
+    public function pdfDelete(Proyect $proyect)
+    {
+
+
+        if ($proyect->pdf_path != null) {
+            $dfile = $proyect->icon_path;
+            $filename = public_path($dfile);
+            File::delete($filename);
+            $proyect->pdf_path = null;
+            $proyect->save();
+        }
+        return redirect()->back()->with('success', 'Información actualizada');
+
+
+
+    }
+    public function delete(Proyect $proyect)
+    {
+
+
+        if ($proyect->img_path != null) {
+            $dfile = $proyect->icon_path;
+            $filename = public_path($dfile);
+            File::delete($filename);
+            $proyect->img_path = null;
+            $proyect->save();
+        }
+        return redirect()->back()->with('success', 'Información actualizada');
+
+
+
     }
 }
