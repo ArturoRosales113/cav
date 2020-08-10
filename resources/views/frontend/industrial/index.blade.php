@@ -30,14 +30,14 @@
 
 
 @section('content')
-<section class="">
+<section class=""> 
+    @if ($destacados->articles()->exists()  ||  $destacados->articles->count() > 3 )
     <div class="row justify-content-center py-5">
         <div class="col-10">
             <h3 class="bold text-dark text-center">
                 Productos Destacados
             </h3>
             <div class="row py-2">
-            @if ($destacados->articles()->exists())
                 @foreach ($destacados->articles->take(4) as $aa)
                 <div class="col-6 col-lg-3 text-center">
                     <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
@@ -49,11 +49,11 @@
                     </a>
                 </div>
                 @endforeach
-            @endif
+       
             </div>
         </div>
     </div>
-
+    @endif
     <div class="row py-5 productos-text justify-content-center align-items-center">
         <div class="col-10 col-lg-8 p-0 text-dark py-3 text-center">
             <h5 class="bold">OFRECEMOS AYUDA CON EXPERIENCIA INTEGRAL PARA UNA AMPLIA GAMA DE NECESIDADES DE NEGOCIO

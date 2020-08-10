@@ -58,7 +58,7 @@
             </div>
             <div class=" row bg1 py-2">
                 <div class="col text-center">
-                    <a href="" class="btn btn-link text-white">
+                    <a href="{{ route('privacidad') }}" class="btn btn-link text-white">
                         <small class="text-">Aviso de Privacidad Puertas Automáticas de veracruz</small>
                     </a>
                 </div>

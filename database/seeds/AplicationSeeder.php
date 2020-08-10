@@ -66,15 +66,15 @@ class AplicationSeeder extends Seeder
 
 
         // Poblar la tabla pivote
-        App\Family::find(1)->aplications()->each(function ($aplication) { 
-            $articles = App\Family::find(1)->articles()->get()->random(mt_rand(1,12))->pluck('id')->toArray();
-            $aplication->articles()->attach( $articles); 
-        });
+        // App\Family::find(1)->aplications()->each(function ($aplication) { 
+        //     $articles = App\Family::find(1)->articles()->get()->random(mt_rand(1,12))->pluck('id')->toArray();
+        //     $aplication->articles()->attach( $articles); 
+        // });
         // Poblar la tabla pivote
-        App\Family::find(2)->aplications()->each(function ($aplication) { 
-            $articles = App\Family::find(2)->articles()->get()->random(mt_rand(1,12))->pluck('id')->toArray();
-            $aplication->articles()->attach( $articles); 
-        });
+        // App\Family::find(2)->aplications()->each(function ($aplication) { 
+        //     $articles = App\Family::find(2)->articles()->get()->random(mt_rand(1,12))->pluck('id')->toArray();
+        //     $aplication->articles()->attach( $articles); 
+        // });
 
     }
 }
