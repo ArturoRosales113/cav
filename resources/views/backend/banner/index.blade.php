@@ -12,10 +12,23 @@ Banners
 @endsection
 
 @section('content')
-<div class="row justify-content-center p-4">
-    <div class="col-10 col-lg-10">
-        <div class="list-group-flush">
-            @foreach ($banners as $c)
+<div class="row my-5 justify-content-center">
+    <div class="col-12 col-lg-10">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            @foreach ($families as $fam)
+            <li class="nav-item">
+                <a class="nav-link {{ $loop->first ? 'active' : '' }}" id="{{ $fam->name.'-tab' }}" data-toggle="tab" href="#{{ $fam->name }}" role="tab" aria-controls="{{ $fam->name }}" aria-selected="true">
+                    {{ ucfirst($fam->display_name) }}
+                </a>
+            </li>
+            @endforeach
+          </ul>
+          <div class="tab-content pt-5" id="myTabContent">
+            @foreach ($families as $fam)
+            <div class="tab-pane fade show {{ $loop->first ? 'active' : '' }}" id="{{ $fam->name }}" role="tabpanel" aria-labelledby="{{ $fam->name.'-tab' }}">
+              <div class="accordion" id="{{ $fam->name.'accordion' }}"> 
+               
+                @foreach ($fam->banners as $c)
             <li class="list-group-item d-block justify-content-between align-items-center">
                 <div class="row">
                     <div class="col-3">
@@ -41,8 +54,14 @@ Banners
                 </div>
             </li>
             @endforeach
-        </div>
+           
+              </div>
+  
+  
+            </div>
+            @endforeach           
+          </div>
     </div>
-</div>
+  </div>
 
 @endsection

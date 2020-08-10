@@ -24,7 +24,7 @@ Familias
                             class="img-fluid" alt="">
                     </div>
                     <div class="col-9">
-                        <h5>{{ $f->display_name }}</h5>
+                        <h5>{{ ucwords($f->display_name) }}</h5>
                         <p>
                             {{$f->description}}
                         </p>

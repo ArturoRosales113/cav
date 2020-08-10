@@ -20,7 +20,10 @@ class BannerController extends Controller
      */
     public function index()
     {
-        return view('backend.banner.index', ['banners' => Banner::all() ]);
+        return view('backend.banner.index', [
+            'banners' => Banner::all(),
+            'families' => Family::all() 
+            ]);
     }
 
     /**

@@ -23,6 +23,11 @@ class Family extends Model
        {
         return $this->hasManyThrough('App\Article', 'App\Category');
        }
+       
+       public function banners()
+       {
+           return $this->hasMany('App\Banner');
+       }
 
        public function categories()
        {
@@ -39,8 +44,4 @@ class Family extends Model
            return $this->hasMany('App\Proyect');
        }
 
-       public function banners()
-       {
-           return $this->hasMany('App\Banner');
-       }
 }

@@ -1,12 +1,12 @@
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
   <div class="sidebar-sticky">
     <ul class="nav flex-column">
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="{{ route('dashboard.index') }}">
           <i class="fas fa-tachometer-alt feather"></i>
           Dashboard
         </a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link" href="{{ route('mensaje.index') }}">
           <i class="fas fa-envelope feather"></i>
@@ -14,7 +14,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('mensaje.index') }}">
+        <a class="nav-link" href="{{ route('cotizaciones.index') }}">
           <i class="fas fa-envelope feather"></i>
           Cotizaciones
         </a>
@@ -28,12 +28,12 @@
           Noticias
         </a>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="{{ route('app.pages') }}">
           <i class="fas fa-file-alt feather"></i>
           Páginas
         </a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link" href="{{ route('banner.index') }}">
           <i class="fas fa-images feather"></i>
@@ -64,7 +64,7 @@
 
 
 
-      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+      {{-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
         <span>Sucursales</span>
       </h6>
       <li class="nav-item">
@@ -72,7 +72,7 @@
           <i class="fas fa-store-alt feather"></i>
           Sucursales
         </a>
-      </li>
+      </li> --}}
     </ul>
 
 

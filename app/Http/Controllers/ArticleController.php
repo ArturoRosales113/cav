@@ -28,7 +28,8 @@ class ArticleController extends Controller
     public function index()
     {
         return view('backend.article.index', [
-         'articles' => Article::paginate(15)
+          'categories' => Category::all(),
+          'families' => Family::all()
          ]);
     }
 
@@ -183,7 +184,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-       if ($article->pics()->count() > 0) {
+       if ($article->pics()->exists()) {
          foreach ($article->pics() as $ap) {
            $p = Pic::find($ap->id);
            $file = $p->path;
@@ -193,7 +194,7 @@ class ArticleController extends Controller
          }
        }
        $article->delete();
-       return redirect()->route('article.index');
+       return redirect()->route('article.index')->with('success', 'Artículo Eliminado');
     }
 
 

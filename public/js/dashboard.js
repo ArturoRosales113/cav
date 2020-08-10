@@ -9,6 +9,7 @@ $('#destroyModal').on('show.bs.modal', function (event) {
     modal.find('#destroyTitle').text(title)
     modal.find('#destroyModalFormSelect option[value="' + id + '"]').attr("disabled", true)
 })
+
 $('#destroyModal').on('hidden.bs.modal', function (event) {
     var modal = $(this)
     modal.find('#destroyModalForm').attr('action', '')
@@ -16,6 +17,7 @@ $('#destroyModal').on('hidden.bs.modal', function (event) {
     modal.find('#destroyTitle').text('')
     modal.find('#destroyModalFormSelect option').prop('selected', false).attr('disabled', false)
 })
+
 $('#destroyModal input[name="transfer"]').on('click', function () {
     var radio = $(this)
     if (radio.prop('value') == 'false') {
@@ -26,6 +28,20 @@ $('#destroyModal input[name="transfer"]').on('click', function () {
         $('#destroyModalFormSelect').attr('disabled', false)
         console.log('verdadero')
     }
+})
+
+$('#eraseModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var route = button.data('route')
+    var title = button.data('title')
+    var id = button.data('id')
+    var modal = $(this)
+    modal.find('#destroyModalForm').attr('action', route)
+})
+
+$('#eraseModal').on('hidden.bs.modal', function (event) {
+    var modal = $(this)
+    modal.find('#destroyModalForm').attr('action', '')
 })
 
 //Preview thumbnail de logo y de imagen en formularios de creacion y edicion de todos los modelos

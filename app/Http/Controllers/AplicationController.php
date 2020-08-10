@@ -27,7 +27,10 @@ class AplicationController extends Controller
      */
     public function index()
     {
-        return view('backend.aplication.index', ['aplications' => Aplication::all()]);
+        return view('backend.aplication.index', [
+            'aplications' => Aplication::all(),
+            'families' => Family::all()
+        ]);
     }
 
     /**

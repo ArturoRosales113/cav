@@ -1,23 +1,3 @@
-@extends('backend.layouts.app')
-
-
-@section('page_title')
-Editar {{$category->display_name}}
-@endsection
-
-
-
-@section('dashboard_buttons')
-<a class="btn btn-sm btn-secondary" href="{{ route('category.index') }}">
-    <i class="fas fa-arrow-left"></i>&nbsp;Volver a listado de categorias
-</a>
-@endsection
-
-
-
-@section('content')
-<div class="row justify-content-center pt-5">
-    <div class="col-12 col-lg-8">
         <form action="{{route('category.update', $category->id) }}" method="POST" enctype="multipart/form-data">
             <div class="row justify-content-center">
                 {{ csrf_field() }}
@@ -96,6 +76,3 @@ Editar {{$category->display_name}}
                 </div>
             </div>
         </form>
-    </div>
-</div>
-@endsection

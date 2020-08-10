@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mensaje;
+use App\Family;
 use Illuminate\Http\Request;
 
 class MensajeController extends Controller
@@ -15,7 +16,7 @@ class MensajeController extends Controller
     public function index()
     {
      return view('backend.mensajes.index', [
-      'mensajes' => Mensaje::all();
+      'mensajes' => Mensaje::where('interes','!=','cotizacion')->paginate(15)
       ]);
     }
 
@@ -26,7 +27,7 @@ class MensajeController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -83,5 +84,12 @@ class MensajeController extends Controller
     public function destroy(Mensaje $mensaje)
     {
         //
+    }
+
+    public function cotizaciones()
+    {
+        return view('backend.mensajes.index', [
+            'mensajes' => Mensaje::where('interes','=','cotizacion')->paginate(15)
+        ]);
     }
 }

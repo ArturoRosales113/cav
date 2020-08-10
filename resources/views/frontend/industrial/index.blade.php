@@ -37,6 +37,7 @@
                 Productos Destacados
             </h3>
             <div class="row py-2">
+            @if ($destacados->articles()->exists())
                 @foreach ($destacados->articles->take(4) as $aa)
                 <div class="col-6 col-lg-3 text-center">
                     <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
@@ -48,6 +49,7 @@
                     </a>
                 </div>
                 @endforeach
+            @endif
             </div>
         </div>
     </div>

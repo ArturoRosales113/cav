@@ -16,7 +16,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('backend.post.index', ['posts' => Post::paginate(5) ]);
+        return view('backend.post.index', [
+            'posts' => Post::paginate(5),
+            'families' => Family::all() 
+            ]);
     }
 
     /**

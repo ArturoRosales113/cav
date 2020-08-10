@@ -112,6 +112,8 @@ Route::prefix('admin')->group(function () {
             'zone' => 'ZoneController'
         ]);
 
+        Route::get('cotizaciones', ['uses' => 'MensajeController@cotizaciones', 'as' => 'cotizaciones.index']);
+
         Route::post('/aplication/{aplication}/addArticle',['uses' => 'AplicationController@addArticle', 'as' => 'aplication.article.add']);
         Route::post('/aplication/{aplication}/remove',['uses' => 'AplicationController@removeArticle', 'as' => 'aplication.article.remove']);
 
