@@ -11,7 +11,7 @@ class CategorySeeder extends Seeder
         //Residenciales
 
         DB::table('categories')->insert([
-            'name' => 'motore_de_cortina',
+            'name' => 'motores_de_cortina',
             'display_name' => 'motores de cortina',
             'family_id' => 1
         ]);
@@ -107,8 +107,8 @@ class CategorySeeder extends Seeder
 
 
         DB::table('categories')->insert([
-            'name' => 'puertas_de_acero',
-            'display_name' => 'puertas de acero',
+            'name' => 'puertas_de_acero_y_madera',
+            'display_name' => 'puertas de acero y madera',
             'family_id' => 2
         ]);
         
@@ -127,8 +127,8 @@ class CategorySeeder extends Seeder
 
 
         DB::table('categories')->insert([
-            'name' => 'puertas_seccionales',
-            'display_name' => 'puertas seccionles',
+            'name' => 'puertas_de_impacto',
+            'display_name' => 'puertas de impacto',
             'family_id' => 2
         ]);
       }
