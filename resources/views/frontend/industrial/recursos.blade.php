@@ -30,7 +30,7 @@ Recursos
                                    
                                     @foreach ($art->downloads as $ad)
                                     <li class="list-group-item">
-                                        <a href="{{$ad->path}}" class="btn btn-sm text-white bg1">Descarga {{$loop->iteration}}</a>
+                                        <a href="{{asset($ad->path)}}" class="btn btn-sm text-white bg1">{{str_replace('article_downloads/','',$ad->path)}}</a>
                                     </li>
                                     @endforeach
                                   </ul>

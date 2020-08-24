@@ -59,8 +59,13 @@
                             <div class="card">
                                 <img class="card-img-top" src="{{ asset($ap->path) }}" alt="">
                                 <div class="card-body text-center">
-                                    <a href="{{ route('pic.delete', $ap->id) }}" class="btn btn-danger"><i
-                                            class="fa fa-trash"></i>&nbsp;Borrar </a>
+                                    <form action="{{ route('pic.destroy', $ap->id) }}" method="POST">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="_method" value="delete" />
+                                        <button class="btn btn-danger"><i
+                                            class="fa fa-trash"></i>&nbsp;Borrar </button>
+                                    </form>
+                                  
                                 </div>
                             </div>
                             @endforeach

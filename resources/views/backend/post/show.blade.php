@@ -13,6 +13,13 @@
 @endsection
 
 @section('content')
-
+<div class="row">
+    <div class="col-10">
+        @include('backend.post.edit', [
+            'post' => $post,
+            'families' => $families
+            ])
+    </div>
+</div>
 
 @endsection

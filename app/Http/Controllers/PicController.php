@@ -119,13 +119,13 @@ class PicController extends Controller
      */
     public function destroy($id)
     {
-        dd('todo funciona bien');
+        //dd('todo funciona bien');
       $p = Pic::find($id);
       $file = $p->path;
       $filename = public_path($file);
       File::delete($filename);
       $p->delete();
-      return redirect()->back();
+      return redirect()->back()->with('success', 'Imagen Eliminada');
     }
 
     public function delete(Pic $pic)

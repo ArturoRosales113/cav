@@ -96,8 +96,11 @@ class BannerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        return view('backend.banner.edit', [
+            'banner' => Banner::find($id),
+            'families' => Family::all()
+            ]);
     }
 
     /**
@@ -109,7 +112,45 @@ class BannerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        //dd($input);
+        $rules = [
+            'titulo' => 'required',
+            'family_id' => 'not_in:0',
+            'descripcion' => 'max:256',
+            'url' => 'url',
+            'img_path' => 'image|max:200'
+        ];
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {
+            //dd($validator);
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+
+            $banner = Banner::find($id);
+            $banner->titulo = $input['titulo'];
+            $banner->url = $input['url'];
+            $banner->descripcion = $input['descripcion'];
+            $banner->family_id = $input['family_id'];
+
+            if (array_key_exists('img_path', $input) && $input['img_path'] != null) {
+                //Borrar Archivo
+                if ($banner->img_path != null) {
+                    $dfile = $banner->img_path;
+                    $filename = public_path($dfile);
+                    File::delete($filename);
+                }
+                $file = Input::file('img_path');
+                $file_name =  'banner' . $banner->id . '.' . $file->getClientOriginalExtension();
+                $file->move('img/brand/', $file_name);
+                $banner->img_path = 'img/brand/' . $file_name;
+            }
+
+            $banner->save();
+            return redirect()->route('banner.index')->with('success','Banner actualizado');
+        }
     }
 
     /**

@@ -59,7 +59,7 @@ class ArticleController extends Controller
      
        $rules = [
            'name' => 'required',
-           'description' => 'max:150',
+           'description' => 'max:2000',
            'specs' => 'required',
            'category_id' => 'required|not_in:0'
        ];
@@ -140,7 +140,7 @@ class ArticleController extends Controller
        //dd($input);
        $rules = [
         'name' => 'required',
-        'description' => 'max:150',
+        'description' => 'max:20000',
         'category_id' => 'required|not_in:0'
        ];
        $messages = [

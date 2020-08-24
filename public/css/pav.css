@@ -220,10 +220,10 @@ footer .list-group .list-group-item {
 
 /* home */
 #pav-welcome {
-    background-image: url("../img/as.jpg");
+    /* background-image: url("../img/as.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
     min-height: calc(100vh - 115px);
 }
 #pav-welcome h1 {
@@ -304,7 +304,7 @@ img.logo-grupo {
     }
 
     #pav-welcome {
-        background-image: url("../img/home_background.jpg");
+        background-image: url("../img/welcome_background.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

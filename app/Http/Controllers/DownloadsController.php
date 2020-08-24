@@ -65,10 +65,9 @@ class DownloadsController extends Controller
             $file = Input::file('files');
             //dd($image);
              $ar= Article::find($request->id);
-             $name = str_replace(' ', '', strtolower($ar->name));
              $total =count($file);
              for ($i=0; $i < $total; $i++) {
-                $file_name =$name.str_random(6).'.'.$file[$i]->getClientOriginalExtension();
+                $file_name = str_replace(' ', '-', strtolower($file[$i]->getClientOriginalName()));
                 $newFile = Download::create([
                     'path' => 'article_downloads/'.$file_name,
                     'article_id' => $input['id'],

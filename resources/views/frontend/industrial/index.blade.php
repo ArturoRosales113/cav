@@ -21,7 +21,7 @@
 
 <div class="row justify-content-center color1 py-4">
     @foreach ($banners as $b)
-    <a href="" class="btn btn-sm color3">
+    <a data-target="#carouselExampleSlidesOnly" data-slide-to="{{ $loop->index }}" class="btn btn-sm color3 {{ $loop->first ? 'active' : '' }}">
         <i class="fas fa-circle fa-lg"></i>
     </a>
     @endforeach
@@ -38,7 +38,7 @@
                 Productos Destacados
             </h3>
             <div class="row py-2">
-                @foreach ($destacados->articles->take(4) as $aa)
+                @foreach ($destacados->articles->where('is_trend','==', 1) as $aa)
                 <div class="col-6 col-lg-3 text-center">
                     <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
                         <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
@@ -73,28 +73,31 @@
     </div>
     <div class="row justify-content-around align-items-center py-lg-3">
         <div class="col-5 col-lg">
-            <img src="{{ asset('img/front/Logos.png') }}" class="img-fluid">
+            <img src="{{ asset('img/partners/part1.png') }}" class="img-fluid">
         </div>
         <div class="col-5 col-lg">
-            <img src="{{ asset('img/front/Logos_1.png') }}" class="img-fluid">
+            <img src="{{ asset('img/partners/part2.png') }}" class="img-fluid">
         </div>
         <div class="col-5 col-lg">
-            <img src="{{ asset('img/front/Logos_2.png') }}" class="img-fluid">
+            <img src="{{ asset('img/partners/part3.png') }}" class="img-fluid">
         </div>
         <div class="col-5 col-lg">
-            <img src="{{ asset('img/front/Logos_3.png') }}" class="img-fluid">
+            <img src="{{ asset('img/partners/part4.png') }}" class="img-fluid">
         </div>
         <div class="col-5 col-lg">
-            <img src="{{ asset('img/front/Logos_4.png') }}" class="img-fluid">
+            <img src="{{ asset('img/partners/part5.png') }}" class="img-fluid">
         </div>
         <div class="col-5 col-lg">
-            <img src="{{ asset('img/front/Logos_5.png') }}" class="img-fluid">
+            <img src="{{ asset('img/partners/part6.png') }}" class="img-fluid">
         </div>
         <div class="col-5 col-lg">
-            <img src="{{ asset('img/front/Logos_6.png') }}" class="img-fluid">
+            <img src="{{ asset('img/partners/part7.png') }}" class="img-fluid">
         </div>
         <div class="col-5 col-lg">
-            <img src="{{ asset('img/front/LogosLogos.png') }}" class="img-fluid">
+            <img src="{{ asset('img/partners/part8.png') }}" class="img-fluid">
+        </div>
+        <div class="col-5 col-lg">
+            <img src="{{ asset('img/partners/part9.png') }}" class="img-fluid">
         </div>
     </div>
 </section>

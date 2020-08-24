@@ -89,8 +89,8 @@
                     data-parent="#accordionExample">
                     <div class="card-body text-dark">
                         @foreach ($article->downloads as $ad)
-                        <a href="" class="text-dark ">
-                            {{ ucFirst($ad->pdf_path) }}
+                        <a href="{{ asset($ad->path) }}" class="text-white btn bg1" target="_blank">
+                            {{str_replace('article_downloads/','',$ad->path)}}
                         </a>
                         @endforeach
                     </div>

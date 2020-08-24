@@ -40,9 +40,9 @@ Noticias
                                     <h6>
                                         {{$p -> title }}
                                     </h6>
-                                    <p class="text-justify d-block">
-                                        {{ preg_replace('/\s+?(\S+)?$/', '', substr($p->body, 0, 70)) }}
-                                    </p>
+                                    
+                                        {!! preg_replace('/\s+?(\S+)?$/', '', substr($p->body, 0, 70)) !!}
+                                    
 
                                     <div class="row">
 
@@ -67,5 +67,28 @@ Noticias
     </div>
   </div>
 
+
+  <div class="modal fade" id="eraseModal" tabindex="-1" role="dialog" aria-labelledby="destroyModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="destroyModalLabel">Eliminar </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <h5>¿Seguro que deseas eliminar esta noticia?</h5>
+        <form id="destroyModalForm" action="" method="POST">
+          {{ csrf_field() }}
+          <input type="hidden" name="_method" value="delete" />
+        
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 @endsection

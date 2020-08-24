@@ -67,6 +67,11 @@ class Article extends Model
         return $query->where('family_id', $family_id);
     }
 
+    public function scopeDestacado($query)
+    {
+        return $query->where('is_trend', '==', '1');
+    }
+
     public function scopeCategory($query, $category_id)
     {
         return $query->where('category_id', $category_id);

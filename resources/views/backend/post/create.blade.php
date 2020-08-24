@@ -19,52 +19,53 @@ Crear Noticia
         <form action="{{ route('post.store') }}" class="form" method="POST" enctype="multipart/form-data">
             <div class="row">
                 {{ csrf_field() }}
-                <div class="form-group col-6">
-                    <label for="name">Nombre del producto</label>
-                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Nombre" class="form-control">
-                    @if ($errors->has('name'))
-                    <span class="help-block">
-                        <small class="text-danger">{{ $errors->first('name') }}</small>
-                    </span>
-                    @endif
-                </div>
-                <div class="form-group col-6">
-                    <label for="code">Código de identificación</label>
-                    <input type="text" name="code" value="{{ old('code') }}" placeholder="Codigo (opcional)"
-                        class="form-control">
-                    @if ($errors->has('code'))
-                    <span class="help-block">
-                        <small class="text-danger">{{ $errors->first('code') }}</small>
-                    </span>
-                    @endif
-                </div>
                 <div class="form-group col-12">
-                    <label for="description">Descripción</label>
-                    <textarea name="description" id="" class="form-control" cols="30" placeholder="Descripción"
-                        rows="2">{{ old('description') }}</textarea>
-                    @if ($errors->has('description'))
+                    <label for="name">Título</label>
+                    <input type="text" name="title" value="{{ old('title') }}" placeholder="Nombre" class="form-control">
+                    @if ($errors->has('title'))
                     <span class="help-block">
-                        <small class="text-danger">{{ $errors->first('description') }}</small>
+                        <small class="text-danger">{{ $errors->first('title') }}</small>
                     </span>
                     @endif
                 </div>
+
                 <div class="form-group col-12">
-                    <label for="description">Especificaciones</label>
-                    <textarea name="specs" id="" class="form-control" cols="30"
-                        placeholder="Especificiones (separadas por coma)" rows="2">{{ old('specs') }}</textarea>
-                    @if ($errors->has('specs'))
+                    <label for="family_id">Familia</label>
+                    <select class="custom-select" name="family_id">
+                        <option value="0">Ninguna</option>
+                        @foreach ($families as $fam)
+                        <option value="{{ $fam->id }}" {{ old('family_id') == $fam->id ? 'selected' : ''}}>
+                            {{ ucfirst($fam->display_name) }}</option>
+                        @endforeach
+                    </select>
+                    @if ($errors->has('family'))
                     <span class="help-block">
-                        <small class="text-danger">{{ $errors->first('specs') }}</small>
+                        <small class="text-danger">{{ $errors->first('family') }}</small>
                     </span>
                     @endif
                 </div>
             </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formPhotoPreview">
+                </div>
+                <div class="form-group col-6">
+                    <h6>Imagen de portada</h6>
+                    <hr>
+                    <label for="exampleFormControlFile1">Subir fotografia 16:9</label>
+                    <input type="file" class="form-control-file" id="photo" name="img_path">
+                </div>
+            </div>
+            <div class="row py-3">
+                <div class="form-group col-12">
+                    <label for="body">Cuerpo del post</label>
+                    <textarea name="body" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
             <div class="row align-items-center">
-
-
                 <div class="custom-control custom-checkbox form-group col-12 text-center p-3">
-                    <input type="checkbox" class="custom-control-input" id="is_trend" name="is_trend">
-                    <label class="custom-control-label" for="is_trend">Marcar como destacado</label>
+                    <input type="checkbox" class="custom-control-input" id="is_draft" name="is_draft">
+                    <label class="custom-control-label" for="is_trend">Marcar como borrador</label>
                 </div>
                 <div class="form-group col-12 text-center">
                     <button class="btn btn-lg btn-secondary">Crear</button>

@@ -115,3 +115,5 @@ $('input[name="article_img_path"]').change(function (e) {
     reader.readAsDataURL(this.files[0]);
 })
 
+CKEDITOR.replace( 'body' );
+

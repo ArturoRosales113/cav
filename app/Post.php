@@ -14,7 +14,7 @@ class Post extends Model
         'is_draft',
         'img_path',
         'created_at',
-         'updated_at'
+        'updated_at'
     ];
 
     //Concepto del producto

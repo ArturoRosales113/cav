@@ -8,15 +8,56 @@ Productos
 @section('page_banner')
 <div class="row products align-items-center">
     <div class="col text-center text-white">
-        <h4 class="bold">una gama completa de sistemas automáticos</h4>
+        <h4 class="bold">Una gama completa de sistemas automáticos</h4>
     </div>
 </div>
 @endsection
 @section('content')
 <section>
     <div class="row justify-content-around aling-items-center py-5">
-        <div class=" col-12 col-lg-3">
-            <div class="accordion" id="products_collapse">
+        <div class="col-12 col-lg-3 text-center text-lg-left">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-lg bg1 text-white d-lg-none" data-toggle="modal" data-target="#menucategorias">
+                Menu de productos
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="menucategorias" tabindex="-1" role="dialog" aria-labelledby="menucategorias" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Categorías</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        @foreach ($categories as $c)
+                        <div class="row no-gutters">
+                            <div class="col-2">
+                              <a href="{{ route('front.residencial.productos.categoria', $c->name) }}" class="">
+                                <img
+                                  src="{{ $c->icon_path == null ? asset('img/brand/no_img_found.png') : asset($c->icon_path) }}"
+                                  class="card-img-top" alt="">
+          
+                              </a>
+                            </div>
+                            <div class="col-10">
+                              <div class="card-body py-2 text-left">
+                                <a href="{{ route('front.residencial.productos.categoria', $c->name) }}" class="text-dark">
+                                  <span class="categoryName">{{ ucfirst($c->display_name) }}</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        @endforeach
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- Modal Final -->
+
+            <div class="accordion d-none d-lg-block" id="products_collapse">
                 @foreach ($categories as $c)
                 <div class="card">
                     <div class="card-header" id="{{ $c -> name.'-heading' }}">
@@ -35,7 +76,7 @@ Productos
                                 <li class="list-group-item">
                                     <a href="{{ route('front.industrial.producto', $ca -> slug) }}">
                                         <small class="text-dark">
-                                            {{ $ca->name }}
+                                            {{ ucwords($ca->name) }}
                                         </small>
                                     </a>
                                 </li>
@@ -59,7 +100,7 @@ Productos
                                 class="img-fluid" alt="">
                         </div>
                         <div class="col-12 col-lg-9">
-                            <h4>{{ $a->name }}</h4>
+                            <h4>{{ ucwords($a->name) }}</h4>
                             <p> {{ preg_replace('/\s+?(\S+)?$/', '', substr($a->description, 0, 100)) }}
                             </p>
                         </div>

@@ -40,8 +40,11 @@ Banners
                         <p>
                             {{$c->url}}
                         </p>
-                        <div class="row align-items-stretch justify-content-end">
-                            <form action="{{ route('banner.destroy', $c->id) }}" method="POST">
+                        <div class="row align-items-center justify-content-end">
+                            <a class="btn btn-warning mr-3"  href="{{ route('banner.edit', $c->id) }}">
+                                Editar
+                            </a>
+                            <form action="{{ route('banner.destroy', $c->id) }}"  class="m-0" method="POST">
                                 @method('delete')
                                 {{ csrf_field() }}
                                 <input type="hidden" name="_method" value="delete" />

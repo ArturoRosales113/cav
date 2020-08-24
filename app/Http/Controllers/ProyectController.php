@@ -48,7 +48,7 @@ class ProyectController extends Controller
             'date' => 'required',
             'img_path' => 'mimes:jpg,jpeg,png|max:950',
             'aplication_id' => 'not_in:0',
-            'pdf_path' => 'mimes:jpg,jpeg,png|max:950'
+            'pdf_path' => 'mimes:jpg,jpeg,png|max:3950'
         ];
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) {
@@ -81,7 +81,7 @@ class ProyectController extends Controller
 
             if (array_key_exists('pdf_path', $input) && $input['pdf_path'] != null) {
                 $file = Input::file('pdf_path');
-                $file_name = $proyect->name . '-proyect-banner' . '.' . $file->getClientOriginalExtension();
+                $file_name = $proyect->name . '-proyect-pdf' . '.' . $file->getClientOriginalExtension();
                 $file->move('proyects/', $file_name);
                 $proyect->banner_path = 'proyects/' . $file_name;
             }
@@ -135,7 +135,7 @@ class ProyectController extends Controller
              'description' => 'required',
              'img_path' => 'mimes:jpg,jpeg,png|max:950',
              'banner_path' => 'mimes:jpg,jpeg,png|max:950',
-             'pdf_path' => 'mimes:jpg,jpeg,png|max:950'
+             'pdf_path' => 'mimes:jpg,jpeg,png|max:3950'
          ];
  
          $messages = [
@@ -144,7 +144,7 @@ class ProyectController extends Controller
              'img_path.max' => 'El tamaño del archivo debe ser menor a 400kb',
              'banner_path.mimes' => 'El formato de la imagen no es válido',
              'banner_path.max' => 'El tamaño del archivo debe ser menor a 400kb',
-             'pdf_path.mimes' => 'El formato de la del archivo debe ser un PDF',
+             'pdf_path.mimes' => 'El formato de la del archivo debe ser una imagen',
          ];
  
          $validator = Validator::make($input, $rules, $messages);

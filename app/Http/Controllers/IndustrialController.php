@@ -91,7 +91,7 @@ class IndustrialController extends Controller
                         return Carbon::parse($year->created_at)->format('Y'); // Agrupar por año
                     });
 
-            //dd($dates);
+                    
             return view('frontend.industrial.noticias', [
             'noticias' => $this->fam->posts()->notDraft()->latest('created_at')->paginate(5),
             'dates' => $dates 

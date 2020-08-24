@@ -116,7 +116,7 @@
         <div class="card text-center bg3 border-0 p-2">
 
           <a href="{{ route('front.industrial.productos' ) }}" class="">
-            <img src="{{ asset('img/brand/no_img_found.png') }}" class="card-img-top" alt="">
+            <img src="{{ asset('img/iconos/more.png') }}" class="card-img-top" alt="">
   
           </a>
           <div class="card-body p-0 py-2 text-center">

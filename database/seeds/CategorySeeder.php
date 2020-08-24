@@ -89,7 +89,7 @@ class CategorySeeder extends Seeder
         
         DB::table('categories')->insert([
             'name' => 'rampas_de_anden',
-            'display_name' => 'rampas_de_anden',
+            'display_name' => 'rampas de anden',
             'family_id' => 2
         ]);
  

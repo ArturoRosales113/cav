@@ -5,8 +5,8 @@ Dashboard
 @endsection
 
 @section('dashboard_buttons')
-<button class="btn btn-sm btn-outline-secondary">Share</button>
-<button class="btn btn-sm btn-outline-secondary">Export</button>
+{{-- <button class="btn btn-sm btn-outline-secondary">Share</button>
+<button class="btn btn-sm btn-outline-secondary">Export</button> --}}
 @endsection
 
 @section('content')
@@ -16,11 +16,11 @@ Dashboard
       <div class="col-lg-11">
         <div class="row">
           <div class="col-lg-8">
-            <h2>
+            <h1>
                 Bienvenido <br>
                 <small> {{ Auth::user()->name }}</small>
-            </h2>
-            <div class="row justify-content-start">
+            </h1>
+            <div class="row justify-content-start d-none">
                 <a href="{{ route('app.navsettings') }}" class="btn btn-link-secondary">
                   <i class="fas fa-object-group"></i>&nbsp;Menu
                 </a>

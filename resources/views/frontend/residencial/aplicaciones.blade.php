@@ -29,7 +29,7 @@
                     @endforeach
                 </div>
                 <div class="py-3">
-                    <a href="{{ route('front.industrial.contacto') }}" class="btn text-white bg1 w-100">Contactanos</a>
+                    <a href="{{ route('front.industrial.contacto') }}" class="btn text-white bg1 w-100">Contáctanos</a>
                 </div>
             </div>
             <div class="col-12 col-lg-10">
