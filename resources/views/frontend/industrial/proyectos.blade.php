@@ -33,7 +33,7 @@
             <div class="row ">
                 @foreach ($a->proyects as $pt)
                 <div class="col-10 col-lg-6">
-                    <div class="row">
+                    <div class="row py-3">
                         <div class="col-6">
                             <img src="{{ $pt->img_path == null ? asset('img/brand/no_img_found.png') : asset($pt->img_path) }}" alt="" class="img-fluid">
                         </div>

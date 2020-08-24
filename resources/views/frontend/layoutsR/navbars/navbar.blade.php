@@ -64,7 +64,7 @@
             <a class="nav-link menu-link" href="{{ route('front.residencial.aplicaciones') }}">Aplicaciones</a>
           </li>
           <li class="nav-item {{ Request::url() == route('front.residencial.servicios') ? 'active' :'' }}">
-            <a class="nav-link menu-link" href="{{ route('front.residencial.servicios') }}">Servicio</a>
+            <a class="nav-link menu-link" href="{{ route('front.residencial.servicios') }}">Servicios</a>
           </li>
           <li class="nav-item {{ Request::url() == route('front.residencial.noticias') ? 'active' :'' }}">
             <a class="nav-link menu-link" href="{{ route('front.residencial.noticias') }}">Noticias</a>

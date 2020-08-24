@@ -14,7 +14,7 @@
                 <p>
                     <small>
                         Calzada Ruiz Cortines No.505-B Entre Calle 11 y Jesus Reyes
-                        Heroles Fracc. Costa Verde Boca del Rio, Veracruz, Mexico C.P.
+                        Heroles Fracc. Costa Verde Boca del Rio, Veracruz, México C.P.
                         94294
                     </small>
                     <br>
@@ -28,7 +28,7 @@
                 <p>
                     <small>
                         Camino Real No.22 BOD. 2, 2ª, 3 Col. Ylang Ylang Boca del Rio,
-                        Veracruz, Mexico C.P. 94294
+                        Veracruz, México C.P. 94294
                     </small>
                     <br>
                     <br>
@@ -40,7 +40,7 @@
                 <p>
                     <small>
                         Calle Oaxaca No. 108 Fracc. guadalupe Villahermosa, Tabasco,
-                        Mexico. C.P. 86180
+                        México. C.P. 86180
                     </small>
                     <br>
                     <br>
@@ -60,7 +60,7 @@
                 <p>
                     <small>
                         Crispin Treviño No.3730 Col. Venustiano Carranza Monterrey,
-                        Nuevo Leon, Mexico. C.P. 64103
+                        Nuevo Leon, México. C.P. 64103
                     </small>
                     <br>
                     <br>
@@ -71,7 +71,7 @@
                 <h6>SUCURSAL CHIHUAHUA</h6>
                 <p>
                     <small>
-                        Sabino No. 1910 Col. Las Granjas Chihuahua, Chihuahua, Mexico.
+                        Sabino No. 1910 Col. Las Granjas Chihuahua, Chihuahua, México.
                         C.P. 64103
                     </small>
                     <br>
@@ -91,7 +91,7 @@
                 <h6>SUCURSAL PUEBLA</h6>
                 <p>
                     <small>
-                        13 Sur No. 2104 Col. Santiago Puebla, Puebla, Mexico. C.P. 72000
+                        13 Sur No. 2104 Col. Santiago Puebla, Puebla, México. C.P. 72000
                     </small>
                     <br>
                     <br>

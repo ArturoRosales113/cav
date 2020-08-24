@@ -17,12 +17,12 @@
                 <img src="{{ asset('img/espec.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col">
-                <h6 class="bold">ESPECIFICACIÓN</h6>
-                <small class="text-justify">
+                <h6 class="bold text-dark">ESPECIFICACIÓN</h6>
+                <small class="text-justify text-dark">
                     Ofrecemos apoyo de la mano de profesionales, quienes
                     están capacitados por plantas a nivel mundial para ayudar
                     a ofrecer soluciones para todo tipo de proyecto, cumpliendo
-                    con lo más altos estándares: americanos, y europeos
+                    con lo más altos estándares: americanos y europeos.
                 </small>
             </div>
         </div>
@@ -33,8 +33,8 @@
                 <img src="{{ asset('img/insta.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col">
-                <h6 class="bold">INSTALACIÓN</h6>
-                <small class="text-justify">
+                <h6 class="bold text-dark">INSTALACIÓN</h6>
+                <small class="text-justify text-dark">
                     Contamos con una flotilla de camiones para una logística
                     propia la cual nos permite dar un mejor servicio para nuestros
                     clientes, así mismo con un cuerpo de técnicos capacitados y
@@ -50,9 +50,9 @@
                 <img src="{{ asset('img/venta.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col">
-                <h6 class="bold">VENTA</h6>
-                <small class="text-justify">
-                    Proveemos de soluciones que se adecuan a cada cliente y
+                <h6 class="bold text-dark">VENTA</h6>
+                <small class="text-justify text-dark">
+                    Proveemos de soluciones que se adecúan a cada cliente y
                     cada tipo de acceso del cual requieran, no importando si
                     es una: residencia, hotel, hospital, hotel, industria, con
                     todo lo necesario para su correcta solución
@@ -66,8 +66,8 @@
                 <img src="{{ asset('img/poli.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col">
-                <h6 class="bold">PÓLIZAS DE MANTENIMIENTO</h6>
-                <small class="text-justify">
+                <h6 class="bold text-dark">PÓLIZAS DE MANTENIMIENTO</h6>
+                <small class="text-justify text-dark">
                     Ofrecemos la asesoría post-venta necesaria así como la mano
                     de obra para que sus puertas estén óptimas condiciones, una
                     vez después de instalado sus productos y que estos siempre

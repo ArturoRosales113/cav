@@ -69,7 +69,7 @@
             <a class="nav-link menu-link" href="{{ route('front.industrial.aplicaciones') }}">Aplicaciones</a>
           </li>
           <li class="nav-item {{ Request::url() == route('front.industrial.servicios') ? 'active' :'' }}">
-            <a class="nav-link menu-link" href="{{ route('front.industrial.servicios') }}">Servicio</a>
+            <a class="nav-link menu-link" href="{{ route('front.industrial.servicios') }}">Servicios</a>
           </li>
           <li class="nav-item {{ Request::url() == route('front.industrial.proyectos') ? 'active' :'' }}">
             <a class="nav-link menu-link" href="{{ route('front.industrial.proyectos') }}">Proyectos</a>

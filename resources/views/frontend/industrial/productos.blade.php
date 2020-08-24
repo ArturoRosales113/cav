@@ -20,7 +20,7 @@ Productos
         <div class="col-12 col-lg-3 text-center text-lg-left">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-lg bg1 text-white d-lg-none" data-toggle="modal" data-target="#menucategorias">
-                Menu de productos
+                Menú de productos
             </button>
             
             <!-- Modal -->

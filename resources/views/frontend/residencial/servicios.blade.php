@@ -34,7 +34,7 @@
                     <div class="col">
                         <h6 class="bold text'uppercase'">Asesoría Técnica</h6>
                         <small>
-                            Contamos asesoría tecnita para todos nuestros productos y
+                            Contamos asesoría técnica para todos nuestros productos y
                             servicios, por medio de nuestros medios de comunicación y
                             puntos de venta.
                         </small>
@@ -65,8 +65,8 @@
                     <div class="col">
                         <h6 class="bold text-uppercase">Cursos</h6>
                         <small>
-                            Ofrecemos cursos y capasitaciónes como la mano de obra para
-                            que sus puertas estén óptimas condiciones, una vez después de
+                            Ofrecemos cursos y capacitaciones como la mano de obra para
+                            que sus puertas estén en óptimas condiciones, una vez después de
                             instalado sus productos y que estos siempre funcionen.
                         </small>
                     </div>
