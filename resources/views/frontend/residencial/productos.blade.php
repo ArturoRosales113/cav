@@ -61,10 +61,13 @@ Productos
                 @foreach ($categories as $c)
                 <div class="card">
                     <div class="card-header" id="{{ $c -> name.'-heading' }}">
+                        <a href="{{ route('front.residencial.productos.categoria', $c->name) }}" class="btn btn-link text-left text-uppercase text-dark">
+                            {{ $c -> display_name }}
+                        </a>
                         <button class="btn btn-link text-left text-uppercase text-dark" type="button"
                             data-toggle="collapse" data-target="{{ '#'.$c -> name.'-collapse' }}"
                             aria-controls="{{ $c -> name.'-collapse' }}" aria-expanded="false">
-                            <small> {{ $c -> display_name }}</small>
+                            <small>  <i class="fas fa-chevron-down"></i></small>
                         </button>
                     </div>
 
@@ -90,7 +93,7 @@ Productos
             </div>
         </div>
         <div class="col-12 col-lg-8 py-5 py-lg-0">
-            <div class="list-group">
+            {{-- <div class="list-group">
                 @foreach ($articles as $a)
                 <a href="{{ route('front.industrial.producto', $a -> slug) }}"
                     class="list-group-item list-group-item-action">
@@ -107,7 +110,27 @@ Productos
                     </div>
                 </a>
                 @endforeach
-            </div>
+            </div> --}}
+            <div class="row row-cols-3 row-cols-md-3">
+                @foreach ($articles as $a)
+                <div class="col mb-4">
+                    <div class="card">
+                        <img src="{{ $a->pics()->count() > 0 ? asset($a->pics()->first()->path) : asset('img/brand/no_img_found.png') }}" class="card-img-top" alt="{{ ucwords($a->name) }}">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ ucwords($a->name) }}</h5>
+                          {{-- <p class="card-text">
+                            {{ preg_replace('/\s+?(\S+)?$/', '', substr($a->description, 0, 100)) }}
+                          </p> --}}
+                          <a href="{{ route('front.industrial.producto', $a -> slug) }}">
+                            Ver más
+                          </a>
+                        </div>
+                      </div>
+                </div>
+                @endforeach
+  
+              </div>
+
             <div class="row justify-content-center py-5">
 
                 {{ $articles->render() }}

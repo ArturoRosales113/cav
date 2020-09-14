@@ -18,12 +18,12 @@
         <div class="row justify-content-center bg2 pt-4">
             <div class="col-12 col-lg-8 p-0">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe src="https://www.youtube.com/embed/Wz-EBPyUwKk?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe type="text/html" src="https://www.youtube.com/embed/Wz-EBPyUwKk?autoplay=1&mute=1" autoplay frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center align-items-center pt-4" id="pav-welcome">
-            <div class="col-8 text-center mt-5">
+            <div class="col-12 col-lg-8 text-center mt-5">
                 <img src="{{ asset('img/logos/logo1.png') }}" alt="">
                 <h1 class="bold">PARA ZONAS RESIDENCIALES <br>
                     E INDUSTRIALES</h1>

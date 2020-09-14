@@ -31,15 +31,15 @@ Productos
             <div class="accordion" id="{{ $fam->name.'accordion' }}"> 
               @foreach ($fam->categories as $cat)
               <div class="card">
-                <div class="card-header" id="{{ $cat->display_name .'-head' }}">
+                <div class="card-header" id="{{ $cat->name .'-head' }}">
                   <h2 class="mb-0">
-                    <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#{{ $cat->name .'-collapse'}}" aria-expanded="{{ $loop->first ? 'true' : 'false' }}" aria-controls="{{ $cat->name .'-collapse'}}">
+                    <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#{{ $cat->name. $cat->family->name .'-collapse'}}" aria-expanded="{{ $loop->first ? 'true' : 'false' }}" aria-controls="{{ $cat->name. $cat->family->name .'-collapse'}}">
                       {{ ucwords($cat->display_name) }}
                     </button>
                   </h2>
                 </div>
             
-                <div id="{{ $cat->name .'-collapse'}}" class="collapse" aria-labelledby="{{ $cat->display_name .'-head'}}" data-parent="#{{ $fam->name.'accordion' }}">
+                <div id="{{ $cat->name . $cat->family->name.'-collapse'}}" class="collapse" aria-labelledby="{{ $cat->name .'-head'}}" data-parent="#{{ $fam->name.'accordion' }}">
                   <div class="card-body">
                     <div class="list-group-flush py-5">
                       @foreach ($cat->articles as $a)

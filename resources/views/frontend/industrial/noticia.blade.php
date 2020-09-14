@@ -12,7 +12,7 @@
         <img src="{{ $noticia->img_path == null ? asset('img/brand/no_img_found.png') : asset($noticia->img_path) }}"
             class="img-fluid w-100">
         <p class="text-justify p-5">
-            {{ $noticia->body }}
+            {!! $noticia->body !!}
         </p>
     </div>
 </div>

@@ -48,9 +48,9 @@
                                     src="{{ $at->img_path == null ? asset('img/brand/no_img_found.png') : asset($at->img_path) }}"
                                     alt="{{ $at->name }}" id="">
                                 <hr>
-                                <p class="p-3 text-justify">
+                                {{-- <p class="p-3 text-justify">
                                     {{ $at->description }}
-                                </p>
+                                </p> --}}
                             </div>
 
                             <div class="col-12 col-lg-2">

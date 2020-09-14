@@ -13,7 +13,9 @@ class Article extends Model
         'slug',
         'code',
         'is_trend',
+        'is_new',
         'description',
+        'preview',
         'specs',
         'category_id',
         'family_id'

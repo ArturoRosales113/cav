@@ -24,6 +24,16 @@
             @endif
         </div>
         <div class="form-group col-12">
+            <label for="description">Texto de previsualización</label>
+            <textarea name="preview" id="" class="form-control" cols="30" placeholder="Descripción"
+                rows="2">{{ old('preview',  $article->preview) }}</textarea>
+            @if ($errors->has('preview'))
+            <span class="help-block">
+                <small class="text-danger">{{ $errors->first('preview') }}</small>
+            </span>
+            @endif
+        </div>
+        <div class="form-group col-12">
             <label for="description">Descripción</label>
             <textarea name="description" id="" class="form-control" cols="30" placeholder="Descripción"
                 rows="2">{{ old('description', $article->description) }}</textarea>
@@ -72,6 +82,11 @@
             <input type="checkbox" class="custom-control-input" id="is_trend" name="is_trend"
                 {{ $article->is_trend ? 'checked' : '' }}>
             <label class="custom-control-label" for="is_trend">Marcar como destacado</label>
+        </div>
+        <div class="custom-control custom-checkbox form-group col-12 text-center py-2">
+            <input type="checkbox" class="custom-control-input" id="is_new" name="is_new"
+                {{ $article->is_new ? 'checked' : '' }}>
+            <label class="custom-control-label" for="is_new">Marcar como artículo nuevo</label>
         </div>
         <div class="form-group col-12 text-center">
             <button class="btn btn-lg btn-secondary">Guardar cambios</button>

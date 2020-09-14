@@ -90,8 +90,15 @@ class ArticleController extends Controller
          'category_id' => $input['category_id']
         ]);
 
+        if (array_key_exists('preview', $input) && $input['preview'] != null){
+           $art->preview = $input['preview'];
+        }
         if (array_key_exists('is_trend', $input)){
            $art->is_trend = 1;
+        }
+
+        if (array_key_exists('is_new', $input)){
+           $art->is_new = 1;
         }
 
         $art->save();
@@ -163,11 +170,17 @@ class ArticleController extends Controller
         $article->specs = $input['specs'];
         $article->code = $input['code'];
         $article->category_id = $input['category_id'];
+        $article->preview = $input['preview'];
 
         if (array_key_exists('is_trend', $input)){
             $article->is_trend = 1;
          } else {
             $article->is_trend = 0;
+         }
+         if (array_key_exists('is_new', $input)){
+            $article->is_new = 1;
+         }else {
+            $article->is_new = 0;
          }
 
     $article->save();

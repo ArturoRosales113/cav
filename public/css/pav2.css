@@ -121,9 +121,18 @@ body::-webkit-scrollbar {
 }
 #productsCollapse .categoryName {
     color: #000;
+    font-size: .65em;
+    font-weight: 900;
+    letter-spacing: 0.035rem;
+}
+#productsCollapse .productName {
+    color: #000;
+    font-size: .65em;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.035rem;
+    letter-spacing: 0.025rem;
+    padding: .5em 0;
+    display: block;
 }
 
 #aplicaiones-menu {
@@ -304,7 +313,7 @@ img.logo-grupo {
     }
 
     #pav-welcome {
-        background-image: url("../img/welcome_background.jpg");
+        /* background-image: url("../img/welcome_background.jpg"); */
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

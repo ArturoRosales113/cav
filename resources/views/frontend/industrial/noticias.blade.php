@@ -63,13 +63,13 @@ Noticias
                     class="list-group-item list-group-item-action">
                     <div class="row">
                         <div class="col-12 col-lg-3 p-0 p-lg-2">
-                            <img src="{{ $n->img_path == null ? asset('img/brand/no_img_found.png') : asset() }}"
+                            <img src="{{ $n->img_path == null ? asset('img/brand/no_img_found.png') : asset($n->img_path) }}"
                                 class="img-fluid" alt="">
                         </div>
                         <div class="col-12 col-lg-9 py-3 py-lg-0">
                             <h4>{{ preg_replace('/\s+?(\S+)?$/', '', substr($n->title, 0, 50)) }}</h4>
                             <p class="text-justify d-block">
-                                {{ preg_replace('/\s+?(\S+)?$/', '', substr($n->body, 0, 70)) }}
+                                {!! preg_replace('/\s+?(\S+)?$/', '', substr($n->body, 0, 70)) !!}
                             </p>
                         </div>
                     </div>

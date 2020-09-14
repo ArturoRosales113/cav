@@ -87,7 +87,7 @@ class ProyectController extends Controller
             }
 
             $proyect->save();
-            return redirect()->route('proyect.index')->with('success', 'Proyecto almacenado');
+            return redirect()->route('proyect.show', $proyect->id)->with('success', 'Proyecto almacenado');
         }
     }
 
