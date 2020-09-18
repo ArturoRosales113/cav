@@ -12,7 +12,8 @@
     <div class="col-6 col-md-3 col-lg-4 p-2 order-1 order-md-2">
       <div class="row justify-content-center justify-content-lg-end">
         <a href="https://www.instagram.com/grupohidalgo/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/puertas-autom%C3%A1ticas-de-veracruz/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.linkedin.com/company/puertas-autom%C3%A1ticas-de-veracruz/"><i
+            class="fab fa-linkedin-in"></i></a>
         <a href=""><i class="fab fa-whatsapp"></i></a>
         <a href="https://www.facebook.com/puertas.veracruz"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.youtube.com/channel/UCVgbjj2mbX8FmTCwIqnUB8Q"><i class="fab fa-youtube"></i></a>
@@ -54,16 +55,17 @@
       <div class="navbar-collapse d-flex justify-content-center pl-5">
         <ul class="navbar-nav d-none d-lg-flex flex-row justify-content-end align-items-center w-100">
 
-          <li class="nav-item d-flex flex-row {{ Request::url() == route('front.industrial.productos') ? 'active' :'' }}">
+          <li
+            class="nav-item d-flex flex-row {{ Request::url() == route('front.industrial.productos') ? 'active' :'' }}">
 
-            <a class="nav-link menu-link"  href="{{ route('front.residencial.productos') }}">
+            <a class="nav-link menu-link" href="{{ route('front.residencial.productos') }}">
               Productos
             </a>
             <a class="nav-link menu-link" data-toggle="collapse" data-target="#productsCollapse"
-            aria-controls="productsCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-chevron-down"></i>
-          </a>
-            
+              aria-controls="productsCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fas fa-chevron-down"></i>
+            </a>
+
           </li>
           <li class="nav-item {{ Request::url() == route('front.residencial.aplicaciones') ? 'active' :'' }}">
             <a class="nav-link menu-link" href="{{ route('front.residencial.aplicaciones') }}">Aplicaciones</a>
@@ -93,54 +95,49 @@
     <div class="row row-cols-md-6 bg3">
       @foreach ($categories as $c)
       <div class="col p-2 {{ $loop->last ? '' : 'border-right' }}">
- 
+
         {{-- <div class="card bg3 border-0">
   
           <a href="{{ route('front.residencial.productos.categoria', $c->name) }}" class="">
-            <img src="{{ $c->icon_path == null ? asset('img/brand/no_img_found.png') : asset($c->icon_path) }}"
-              class="card-img-top" alt="">
-  
-          </a>
-          <div class="card-body p-0 py-2">
-            <a href="{{ route('front.residencial.productos.categoria', $c->name) }}">
-              <small class="categoryName">{{ ucfirst($c->display_name) }}</small>
-            </a>
-            <hr>
-            @foreach ($c->articles->take(3) as $art)
-              <a href="" class="text-dark productName">
-                <small>{{ ucwords($art->name) }}</small>
-              </a> 
-              <br>
-             
-            @endforeach
-          </div>
-  
-        </div> --}}
-        <div class="card bg3 text-dark">
-          <img src="{{ $c->icon_path == null ? asset('img/brand/no_img_found.png') : asset($c->icon_path) }}" class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">{{ ucfirst($c->display_name) }}</h5>
-          </div>
-        </div>
- 
-      </div>
-      @endforeach
-      {{-- <div class="col p-3">
-        <div class="card text-center bg3 border-0 p-2">
+        <img src="{{ $c->icon_path == null ? asset('img/brand/no_img_found.png') : asset($c->icon_path) }}"
+          class="card-img-top" alt="">
 
-          <a href="{{ route('front.industrial.productos' ) }}" class="">
-            <img src="{{ asset('img/iconos/more.png') }}" class="card-img-top" alt="">
-  
+        </a>
+        <div class="card-body p-0 py-2">
+          <a href="{{ route('front.residencial.productos.categoria', $c->name) }}">
+            <small class="categoryName">{{ ucfirst($c->display_name) }}</small>
           </a>
-          <div class="card-body p-0 py-2 text-center">
-            <a href="{{ route('front.industrial.productos' ) }}">
-              <small class="categoryName">Ver mas</small>
-            </a>
-          </div>
-  
+          <hr>
+          @foreach ($c->articles->take(3) as $art)
+          <a href="" class="text-dark productName">
+            <small>{{ ucwords($art->name) }}</small>
+          </a>
+          <br>
+
+          @endforeach
         </div>
+
       </div> --}}
+      <div class="card bg3 text-dark">
+        <a href="{{ route('front.residencial.productos.categoria', $c->name) }}">
+          <img src="{{ $c->img_path == null ? asset('img/brand/no_img_found.png') : asset($c->img_path) }}"
+            class="card-img" alt="...">
+        </a>
+        <div class="card-img-overlay text-center p-0">
+          <div class="h-100 w-100 d-flex align-items-end">
+            <div class="h-25 w-100 d-flex align-items-center justify-content-center bg1 align-self-end py-2">
+              <a href="{{ route('front.residencial.productos.categoria', $c->name) }}" class="py-5">
+                <small class="card-title text-white text-center m-0">{{ ucfirst($c->display_name) }}</small>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+    @endforeach
+
   </div>
+</div>
 
 </div>

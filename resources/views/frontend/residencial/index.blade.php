@@ -19,7 +19,8 @@
 
 <div class="row justify-content-center color1 py-4">
     @foreach ($banners as $b)
-    <a data-target="#carouselExampleSlidesOnly" data-slide-to="{{ $loop->index }}" class="btn btn-sm color3 {{ $loop->first ? 'active' : '' }}">
+    <a data-target="#carouselExampleSlidesOnly" data-slide-to="{{ $loop->index }}"
+        class="btn btn-sm color3 {{ $loop->first ? 'active' : '' }}">
         <i class="fas fa-circle fa-lg"></i>
     </a>
     @endforeach
@@ -28,28 +29,28 @@
 
 @section('content')
 <section class="">
-    @if ($destacados->articles()->exists()  ||  $destacados->articles->count() > 3 )
+    @if ($destacados->articles()->exists() || $destacados->articles->count() > 3 )
     <div class="row justify-content-center py-5">
         <div class="col-10">
-            
+
             <h5 class="text-dark text-center">
                 Productos Más Populares
             </h5>
 
             <div class="row py-2">
-            
-                    @foreach ($destacados->articles->where('is_trend','==', 1) as $aa)
-                    <div class="col-6 col-lg-3 text-center">
-                        <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
-                            <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
-                                class="img-fluid" alt="">
-                        </a>
-                        <a href="{{ route('front.industrial.producto', $aa -> slug) }}" class="btn btn-sm">
-                            <small class="text-dark">{{ $aa->name }}</small>
-                        </a>
-                    </div>
-                    @endforeach
-               
+
+                @foreach ($destacados->articles->where('is_trend','==', 1) as $aa)
+                <div class="col-6 col-lg-3 text-center">
+                    <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
+                        <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
+                            class="img-fluid" alt="">
+                    </a>
+                    <a href="{{ route('front.industrial.producto', $aa -> slug) }}" class="btn btn-sm">
+                        <small class="text-dark">{{ $aa->name }}</small>
+                    </a>
+                </div>
+                @endforeach
+
             </div>
 
         </div>
@@ -103,43 +104,34 @@
                 </div>
                 <div class="col">
                     <p class="text-dark">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                        tincidunt ut laoreet dolore magna aliquam
-                        erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-                        lobortis nisl ut aliquip ex ea commodo consequat.
-                        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
-                        illum dolore eu feugiat nulla facilisis at
-                        vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue
-                        duis dolore te feugait nulla facilisi.
-                        Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod
-                        tincidunt ut laoreet dolore magna aliquam
-                        erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-                        lobortis nisl ut aliquip ex ea commodo consequat.
+                        Con nuestros sistemas de automatización, puedes controlar y gestionar de una forma sencilla y
+                        segura todos los automatismos, gracias a nuestra constante innovación y búsqueda en: soluciones
+                        prácticas, funcionales y con un diseño emocional.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    @if ($destacados->articles()->exists()  ||  $destacados->articles->count() > 3 )
+    @if ($destacados->articles()->exists() || $destacados->articles->count() > 3 )
     <div class="row justify-content-center py-5">
         <div class="col-10">
-            <div class="row py-2">   
-              
-                    @foreach ($destacados->articles->random(4) as $aa)
-                    <div class="col-6 col-lg-3 text-center">
-                        <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
-                            <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
-                                class="img-fluid" alt="">
-                        </a>
-                        <a href="{{ route('front.industrial.producto', $aa -> slug) }}" class="btn btn-sm">
-                            <small class="text-dark">{{ $aa->name }}</small>
-                        </a>
-                    </div>
-                    @endforeach
-               
+            <div class="row py-2">
+
+                @foreach ($destacados->articles->random(4) as $aa)
+                <div class="col-6 col-lg-3 text-center">
+                    <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
+                        <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
+                            class="img-fluid" alt="">
+                    </a>
+                    <a href="{{ route('front.industrial.producto', $aa -> slug) }}" class="btn btn-sm">
+                        <small class="text-dark">{{ $aa->name }}</small>
+                    </a>
+                </div>
+                @endforeach
+
             </div>
         </div>
-    </div> 
+    </div>
     @endif
 </section>
 @endsection
