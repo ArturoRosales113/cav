@@ -17,8 +17,7 @@ class FrontController extends Controller
     public function index()
     {
         return view('frontend.welcome', [
-            'industrial' => Family::find(2)->categories,
-            'residencial' => Family::find(1)->categories
+                'families' => Family::all()
             ]);
     }
 

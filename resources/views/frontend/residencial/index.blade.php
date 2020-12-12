@@ -43,8 +43,9 @@
                 <div class="col-6 col-lg-3 text-center">
                     <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
                         <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
-                            class="img-fluid" alt="">
+                            class="img-fluid" style="width: 200px; height: 200px; object-fit: cover;" alt="">
                     </a>
+                    <br>
                     <a href="{{ route('front.industrial.producto', $aa -> slug) }}" class="btn btn-sm">
                         <small class="text-dark">{{ $aa->name }}</small>
                     </a>
@@ -121,8 +122,9 @@
                 <div class="col-6 col-lg-3 text-center">
                     <a href="{{ route('front.industrial.producto', $aa -> slug) }}">
                         <img src="{{ $aa->pics()->count() > 0 ? asset($aa->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
-                            class="img-fluid" alt="">
+                            class="img-fluid" style="width: 200px; height: 200px; object-fit: cover;" alt="">
                     </a>
+                    <br>
                     <a href="{{ route('front.industrial.producto', $aa -> slug) }}" class="btn btn-sm">
                         <small class="text-dark">{{ $aa->name }}</small>
                     </a>

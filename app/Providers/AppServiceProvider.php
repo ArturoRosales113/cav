@@ -31,20 +31,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('frontend.layouts.app', function ($view) {
-          $view->with('mainFamily' , Family::find(2));
+          $view->with('families' , Family::all());
         });
 
-        view()->composer('frontend.layoutsR.app', function ($view) {
-          $view->with('mainFamily' , Family::find(1));
-        });
-
-        view()->composer('frontend.industrial.productos', function ($view) {
-            $view->with('categories' ,  Family::find(2)->categories);
-        });
-
-        view()->composer('frontend.residencial.productos', function ($view) {
-            $view->with('categories' , Family::find(1)->categories);
-        });
     }
 
     /**

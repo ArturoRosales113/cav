@@ -62,6 +62,24 @@
                     <input type="file" class="form-control-file" name="img_path">
                 </div>
             </div>
+            <div class="row">
+                <div class="col-4 text-center">
+                    @if( $aplication->icon_path != null )
+                    <img src="{{ asset($aplication->icon_path) }}" alt="" class="img-fluid" id="formLogoPreview">
+                    <hr>
+                    <a class="btn btn-danger" href="{{ route('aplication.icon.delete', $aplication->id) }}"><i
+                            class="fas fa-trash"></i></a>
+                    @else
+                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formLogoPreview">
+                    @endif
+                </div>
+                <div class="form-group col-6">
+                    <h6>Icono</h6>
+                    <hr>
+                    <label for="exampleFormControlFile1">Subir imagen</label>
+                    <input type="file" class="form-control-file" name="icon_path">
+                </div>
+            </div>
             <div class="row align-items-center py-2">
                 <div class="col-4 text-center">
                     @if ( $aplication->pdf_path != null)

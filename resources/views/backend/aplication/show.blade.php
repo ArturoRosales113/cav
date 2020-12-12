@@ -63,16 +63,16 @@
                     </div>
                     <div class="row">
                         <div class="col-12 text-center bg-light">
-                            <img src="{{ $aplication->img_path == null ? asset('img/brand/no_img_found.png') : asset($aplication->img_path) }}"
-                                class="img-fluid mb-2" id="aplication_articlePhotoPreview" alt="">
+                            {{-- <img src="{{ $aplication->img_path == null ? asset('img/brand/no_img_found.png') : asset($aplication->img_path) }}"
+                                class="img-fluid mb-2" id="aplication_articlePhotoPreview" alt=""> --}}
 
                         </div>
-                        <div class="form-group col-12 py-2">
+                        {{-- <div class="form-group col-12 py-2">
                             <h6>Imagen</h6>
                             <hr>
                             <label for="exampleFormControlFile1">Subir fotografia 16:9</label>
                             <input type="file" class="form-control-file" id="photo" name="article_img_path">
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="row py-2">
                         <div class="col-12 text-center">
@@ -94,7 +94,7 @@
                 <ul class="list-unstyled">
                     @foreach ($aplication->articles as $aa)
                     <li class="media py-2">
-                        <img src="{{ asset($aa->pivot->img_path) }}" class="mr-3" alt="..." height="90px">
+                        {{-- <img src="{{ asset($aa->pivot->img_path) }}" class="mr-3" alt="..." height="90px"> --}}
                         <div class="media-body">
                             <h5 class="mt-0 mb-1"> {{$aa->name}}</h5>
                             <p> {{ $aa->pivot->description }}</p>

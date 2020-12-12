@@ -77,6 +77,18 @@ Crear Aplicación
 
             <div class="row">
                 <div class="col-4">
+                    <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formIconPreview">
+                </div>
+                <div class="form-group col-6">
+                    <h6>Icono</h6>
+                    <hr>
+                    <label for="exampleFormControlFile1">Subir imagen</label>
+                    <input type="file" class="form-control-file" name="icon_path">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
                     <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid" id="formPhotoPreview">
                 </div>
                 <div class="form-group col-6">

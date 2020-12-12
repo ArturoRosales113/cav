@@ -58,11 +58,11 @@
           <li
             class="nav-item d-flex flex-row {{ Request::url() == route('front.industrial.productos') ? 'active' :'' }}">
 
-            <a class="nav-link menu-link" href="{{ route('front.residencial.productos') }}">
+            <a class="nav-link menu-link" href="{{ route('front.residencial.productos') }}" style="cursor: pointer">
               Productos
             </a>
             <a class="nav-link menu-link" data-toggle="collapse" data-target="#productsCollapse"
-              aria-controls="productsCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              aria-controls="productsCollapse" aria-expanded="false" aria-label="Toggle navigation" style="cursor: pointer">
               <i class="fas fa-chevron-down"></i>
             </a>
 

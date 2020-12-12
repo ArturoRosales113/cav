@@ -7,7 +7,7 @@
         <div class="row justify-content-center py-5">
             <div class="col-10">
                 <h4 class="bold">
-                    Zona zur
+                    Zona sur
                 </h4>
                 <br>
                 <h6>Matriz</h6>

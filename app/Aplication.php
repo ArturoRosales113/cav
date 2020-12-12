@@ -11,6 +11,7 @@ class Aplication extends Model
         'display_name',
         'description',
         'img_path',
+        'icon_path',
         'pdf_path',
         'family_id',
         'svg_path'

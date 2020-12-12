@@ -10,71 +10,32 @@ Route::get('/politica-de-privacidad', ['uses' => 'FrontController@privacidad', '
 Route::post('/crear-mensaje', ['uses' => 'FrontController@createMessage', 'as' => 'front.mensaje.create']);
 Route::post('/crear-cotizacion', ['uses' => 'FrontController@createCotizacion', 'as' => 'front.cotizacion.create']);
 Route::post('/crear-distribuidor', ['uses' => 'FrontController@createDistribuidor', 'as' => 'front.distribuidor.create']);
+Route::post('/crear-suscriptor', ['uses' => 'FrontController@createSuscriptor', 'as' => 'front.create_suscription']);
+Route::get('/busqueda', ['uses' => 'PavController@busqueda', 'as' => 'front.busqueda' ]);
+Route::get('/contacto', ['uses' => 'PavController@contacto', 'as' => 'front.contacto']);
+Route::get('/distribuidores', ['uses' => 'PavController@distribuidores', 'as' => 'front.distribuidores']);
+Route::get('/certificados', ['uses' => 'PavController@certificados', 'as' => 'front.certificados']);
+Route::get('/nosotros', ['uses' => 'PavController@nosotros', 'as' => 'front.nosotros']);
 
+Route::get('/{family}', ['uses' => 'PavController@index', 'as' => 'front.index']);
 
-Route::prefix('industrial')->group(function(){
-    //Aplicaciones
-    Route::get('/', ['uses' => 'IndustrialController@index', 'as' => 'front.industrial.index']);
+Route::get('/{family}/aplicaciones', ['uses' => 'PavController@aplicaciones', 'as' => 'front.aplicaciones']);
+ 
+Route::get('/{family}/noticias', ['uses' => 'PavController@noticias', 'as' => 'front.noticias']);
 
-    Route::get('/aplicaciones', ['uses' => 'IndustrialController@aplicaciones', 'as' => 'front.industrial.aplicaciones']);
+Route::get('/{family}/noticias/{slug}', ['uses' => 'PavController@noticia', 'as' => 'front.noticia']);
 
-    Route::get('/busqueda', ['uses' => 'IndustrialController@busqueda', 'as' => 'front.industrial.busqueda' ]);
-    
-    Route::get('/certificados', ['uses' => 'IndustrialController@certificados', 'as' => 'front.industrial.certificados']);
+Route::get('/{family}/productos', ['uses' => 'PavController@productos', 'as' => 'front.productos']);
 
-    Route::get('/contacto', ['uses' => 'IndustrialController@contacto', 'as' => 'front.industrial.contacto']);
+Route::get('/{family}/productos/categorias/{categoryName}', ['uses' => 'PavController@categoria', 'as' => 'front.productos.categoria']);
 
-    Route::get('/distribuidores', ['uses' => 'IndustrialController@distribuidores', 'as' => 'front.industrial.distribuidores']);
+Route::get('/{family}/producto/{slug}', ['uses' => 'PavController@producto', 'as' => 'front.producto']);
 
-    Route::get('/noticias', ['uses' => 'IndustrialController@noticias', 'as' => 'front.industrial.noticias']);
+Route::get('/{family}/proyectos', ['uses' => 'PavController@proyectos', 'as' => 'front.proyectos']);
 
-    Route::get('/noticias/{slug}', ['uses' => 'IndustrialController@noticia', 'as' => 'front.industrial.noticia']);
+Route::get('/{family}/recursos', ['uses' => 'PavController@recursos', 'as' => 'front.recursos']);
 
-    Route::get('/productos', ['uses' => 'IndustrialController@productos', 'as' => 'front.industrial.productos']);
-
-    Route::get('/productos/categorias/{categoryName}', ['uses' => 'IndustrialController@categoria', 'as' => 'front.industrial.productos.categoria']);
-
-    Route::get('/producto/{slug}', ['uses' => 'IndustrialController@producto', 'as' => 'front.industrial.producto']);
-
-    Route::get('/proyectos', ['uses' => 'IndustrialController@proyectos', 'as' => 'front.industrial.proyectos']);
-
-    Route::get('/recursos', ['uses' => 'IndustrialController@recursos', 'as' => 'front.industrial.recursos']);
-
-    Route::get('/servicios', ['uses' => 'IndustrialController@servicios', 'as' => 'front.industrial.servicios']);
-
-});
-
-Route::prefix('residencial')->group(function(){
-
-    Route::get('/', ['uses' => 'ResidecialController@index', 'as' => 'front.residencial.index']);
-    //Aplicaciones
-    Route::get('/aplicaciones', ['uses' => 'ResidecialController@aplicaciones', 'as' => 'front.residencial.aplicaciones']);
-
-    Route::get('/busqueda', ['uses' => 'ResidecialController@busqueda', 'as' => 'front.residencial.busqueda' ]);
-
-    Route::get('/certificados', ['uses' => 'ResidecialController@certificados', 'as' => 'front.residencial.certificados']);
-    
-    Route::get('/contacto', ['uses' => 'ResidecialController@contacto', 'as' => 'front.residencial.contacto']);
-
-    Route::get('/distribuidores', ['uses' => 'ResidecialController@distribuidores', 'as' => 'front.residencial.distribuidores']);
-
-    Route::get('/noticias', ['uses' => 'ResidecialController@noticias', 'as' => 'front.residencial.noticias']);
-
-    Route::get('/noticia/{slug}', ['uses' => 'ResidecialController@noticia', 'as' => 'front.residencial.noticia']);
-
-    Route::get('/productos', ['uses' => 'ResidecialController@productos', 'as' => 'front.residencial.productos']);
-
-    Route::get('/productos/categorias/{categoryName}', ['uses' => 'ResidecialController@categoria', 'as' => 'front.residencial.productos.categoria']);
-
-    Route::get('/producto/{slug}', ['uses' => 'ResidecialController@producto', 'as' => 'front.residencial.producto']);
-
-    Route::get('/proyectos', ['uses' => 'ResidecialController@proyectos', 'as' => 'front.residencial.proyectos']);
-
-    Route::get('/recursos', ['uses' => 'ResidecialController@recursos', 'as' => 'front.residencial.recursos']);
-
-    Route::get('/servicios', ['uses' => 'ResidecialController@servicios', 'as' => 'front.residencial.servicios']);
-
-});
+Route::get('/{family}/servicios', ['uses' => 'PavController@servicios', 'as' => 'front.servicios']);
 
 #########################  Panel de adiministrador #########################
 Route::prefix('admin')->group(function () {
@@ -127,6 +88,10 @@ Route::prefix('admin')->group(function () {
         Route::prefix('/delete/icon')->group(function () {
             Route::get('/family/{family}', ['uses' => 'FamilyController@iconDelete', 'as' => 'family.icon.delete']);
             Route::get('/category/{category}', ['uses' => 'CategoryController@iconDelete', 'as' => 'category.icon.delete']);
+             
+
+Route::get('/aplication/{aplication}', ['uses' => '
+            Controller@iconDelete', 'as' => 'aplication.icon.delete']);
         });
         Route::prefix('/delete/pdf')->group(function () {
             Route::get('/download/{download}', ['uses' => 'DownloadsController@delete', 'as' => 'download.delete']);

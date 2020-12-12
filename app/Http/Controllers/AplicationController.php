@@ -80,6 +80,14 @@ class AplicationController extends Controller
                 $file->move('img/brand/', $file_name);
                 $aplication->img_path = 'img/brand/' . $file_name;
             }
+
+            if (array_key_exists('icon_path', $input) && $input['icon_path'] != null) {
+                $file = Input::file('icon_path');
+                $file_name = $aplication->name . '-aplication-icon' . '.' . $file->getClientOriginalExtension();
+                $file->move('img/brand/', $file_name);
+                $aplication->icon_path = 'img/brand/' . $file_name;
+            }
+
             if (array_key_exists('pdf_path', $input) && $input['pdf_path'] != null) {
                 $file = Input::file('pdf_path');
                 $file_name = $aplication->name . '-aplication' . '.' . $file->getClientOriginalExtension();
@@ -167,6 +175,19 @@ class AplicationController extends Controller
                 $aplication->img_path = 'img/brand/' . $file_name;
             }
 
+            if (array_key_exists('icon_path', $input) && $input['icon_path'] != null) {
+                //Borrar Archivo
+                if ($aplication->icon_path != null) {
+                    $dfile = $aplication->icon_path;
+                    $filename = public_path($dfile);
+                    File::delete($filename);
+                }
+                $file = Input::file('icon_path');
+                $file_name = $aplication->name . '-aplication-icon' . '.' . $file->getClientOriginalExtension();
+                $file->move('img/brand/', $file_name);
+                $aplication->icon_path = 'img/brand/' . $file_name;
+            }
+
             if (array_key_exists('pdf_path', $input) && $input['pdf_path'] != null) {
                 //Borrar Archivo
                 if ($aplication->icon_path != null) {
@@ -239,6 +260,16 @@ class AplicationController extends Controller
         return redirect()->back()->with('success', 'Archivo Eliminado');
     }
 
+    public function iconDelete(Aplication $aplication)
+    {
+        $dfile = $aplication->icon_path;
+        $filename = public_path($dfile);
+        File::delete($filename);
+        $aplication->icon_path = null;
+        $aplication->save();
+        return redirect()->back()->with('success', 'Archivo Eliminado');
+    }
+
         /* Remover pdf adjunto del la aplicación
     *
     * @param  \App\Aplication  $aplication
@@ -266,13 +297,12 @@ class AplicationController extends Controller
         $input = $request->all();
         $rules = [
              'article_id' => 'not_in:0',
-             'article_img_path' => 'mimes:jpg,jpeg,png|max:2048|required',
+             'article_img_path' => 'mimes:jpg,jpeg,png|max:2048',
         ];
  
         $messages = [
             'article_id.not_in' => 'Selecciona un producto',
-            'article_img_path.mimes' => 'El formato de la imagen no es válido. ( jpg, jpeg, png )',
-            'article_img_path.required' => 'Necesitas una imagen para enlazar un producto.'
+            'article_img_path.mimes' => 'El formato de la imagen no es válido. ( jpg, jpeg, png )'
         ];
  
         $validator = Validator::make($input, $rules, $messages);
@@ -283,22 +313,17 @@ class AplicationController extends Controller
                  ->withInput();
          } else {
             $article = Article::find($input['article_id']);
-            $file = Input::file('article_img_path');
-            $file_name ='article_'. $article->id . '-aplication_' . $aplication->id . '.' . $file->getClientOriginalExtension();
-            $file_path = 'article_aplications/' . $file_name;
-            $file->move('article_aplications/', $file_name);
-            
-
-            $aplication->articles()->attach([$input['article_id'] => ['img_path' => $file_path]]);
+            // $file = Input::file('article_img_path');
+            // $file_name ='article_'. $article->id . '-aplication_' . $aplication->id . '.' . $file->getClientOriginalExtension();
+            // $file_path = 'article_aplications/' . $file_name;
+            // $file->move('article_aplications/', $file_name);
+            $aplication->articles()->attach([$input['article_id']]);
             if($input['article_description'] != null)
             {
                 $aplication->articles()->updateExistingPivot($input['article_id'], ['description' => $input['article_description']]);
-
             }
-
-        
+       
             return redirect()->route('aplication.show', $aplication->id)->with('success', 'El producto ahora esta relacionado con '.$aplication->display_name);
-
          } 
     }
 
@@ -310,8 +335,6 @@ class AplicationController extends Controller
 
     public function removeArticle(Request $request, Aplication $aplication)
     {
-
-        //dd($request);
         $dfile = $request->delete_path;
         $filename = public_path($dfile);
         File::delete($filename);

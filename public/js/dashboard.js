@@ -55,6 +55,17 @@ $('input[name="logo"]').change(function (e) {
     reader.readAsDataURL(this.files[0]);
 })
 
+//Preview thumbnail de logo y de imagen en formularios de creacion y edicion de todos los modelos
+$('input[name="icon_path"]').change(function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+
+        $('#formIconPreview').prop('src', e.target.result)
+    };
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+})
+
 
 //Preview thumbnail de logo y de imagen en formularios de creacion y edicion de todos los modelos
 $('input[name="photo"]').change(function (e) {

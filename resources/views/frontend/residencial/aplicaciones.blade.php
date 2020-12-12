@@ -40,7 +40,7 @@
                         aria-labelledby="{{ '#pill-'. $at -> display_name }}">
                         <div class="row">
 
-                            <div class="col-12 col-lg-10">
+                            <div class="col-12 col-lg-12">
                                 <h4 class="bold text-dark text-center text-lg-left">
                                     {{ ucFirst($at->name)}}
                                 </h4>
@@ -51,21 +51,22 @@
                                 {{-- <p class="p-3 text-justify">
                                     {{ $at->description }}
                                 </p> --}}
-                            </div>
-
-                            <div class="col-12 col-lg-2">
-                                <ul class="list-unstyled">
-                                    <li class="text-dark">
-                                        <h5 class="bold text-dark">Productos</h5>
-                                    </li>
-                                    @foreach ($at->articles as $atA)
-                                    <li class="text-dark">
-                                        <button class="btn btn-link text-dark text-left w-100">
-                                            <i class="fas fa-chevron-right color1"></i> {{ $atA -> name }}
-                                        </button>
-                                    </li>
-                                    @endforeach
-                                </ul>
+                                <div class="row py-3">
+                                    <div class="col">
+                                        <ul class="list-unstyled">
+                                            <li class="text-dark">
+                                                <h5 class="bold text-dark">Productos</h5>
+                                            </li>
+                                            @foreach ($at->articles as $atA)
+                                            <li class="text-dark">
+                                                <a href="{{ route('front.residencial.producto', $atA -> slug) }}" class="btn btn-link text-dark text-left w-100">
+                                                    <i class="fas fa-chevron-right color1"></i> {{ $atA -> name }}
+                                                </a>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

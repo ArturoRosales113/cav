@@ -5,13 +5,16 @@
 .bold {
     font-weight: 900;
 }
+.sp2{
+    letter-spacing: .1em;
+}
 /* Colores */
 .bg1 {
     background-color: #ad272d !important;
 }
 
 .bg2 {
-    background-color: #333333 !important;
+    background-color: #1D1D1B  !important;
 }
 
 .bg3 {
@@ -34,9 +37,32 @@ body {
     color: #919191;
     font-size: 1rem;
 }
-body::-webkit-scrollbar {
+
+
+.video-container {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+    max-height: 85vh;
+}
+
+.video-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* body::-webkit-scrollbar {
     display: none;
-  }
+  } */
 
 #top-navbar .top-bar {
     background-color: #ad272d;
@@ -84,12 +110,12 @@ body::-webkit-scrollbar {
     padding: 10px 10px 5px 10px;
     height: 30px;
     cursor: default;
-    margin: 0 10px;
     text-transform: uppercase;
+    padding: 0 1em;
 }
 
 #nav-logo {
-    height: 25px;
+    height: 3em;
 }
 
 .nav_contact {
@@ -99,41 +125,21 @@ body::-webkit-scrollbar {
 
 #menu_navbar .nav-item.active a,
 #menu_navbar .nav-item:hover a.nav-link {
-    color: #fff;
+    color: #ad272d;
 }
 #menu_navbar .nav-item.active,
 #menu_navbar .nav-item:hover {
-    color: #fff;
-    background-color: #ad272d;
-    padding-bottom: 0.5em;
+    color: #ad272d;
+    /* background-color: #ad272d; */
 }
 
-#productsCollapse a.btnCategory {
-    background-color: #fff;
-    display: flex;
+.menu-product-foto{
+    height: 5em;
+    width: 100%;
+    object-fit: cover;
+    border: 5px solid #fff;
 }
 
-#productsCollapse .categoryIcon {
-    width: 60px;
-    display: block;
-    margin: auto;
-    padding-bottom: 2em;
-}
-#productsCollapse .categoryName {
-    color: #000;
-    font-size: .65em;
-    font-weight: 900;
-    letter-spacing: 0.035rem;
-}
-#productsCollapse .productName {
-    color: #000;
-    font-size: .65em;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.025rem;
-    padding: .5em 0;
-    display: block;
-}
 
 #aplicaiones-menu {
     border-top: #ad272d 1em;
@@ -151,6 +157,28 @@ body::-webkit-scrollbar {
 #menuModal a.menu-link {
     color: #000;
     font-weight: 900;
+}
+
+.pav-pill{
+    padding: .5em 1em;
+    border: none;
+    border-radius: 1.5em;
+    font-size: 1em;
+}
+.pav-pill.red,
+.pav-pill.white.active,
+.pav-pill.white:hover{
+    background-color: #ad272d;
+    color: #fff;
+}
+
+.pav-pill.white{
+    color: #000;
+    background-color: #fff;
+}
+.pav-pill.gray{
+    color: #fff;
+    background-color: #4D4D4D;
 }
 
 footer .menu {
@@ -228,17 +256,18 @@ footer .list-group .list-group-item {
 }
 
 /* home */
-#pav-welcome {
-    /* background-image: url("../img/as.jpg");
+/* #pav-welcome {
+    background-image: url("../img/as.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; */
+    background-position: center; 
     min-height: calc(100vh - 115px);
-}
+} */
 #pav-welcome h1 {
     font-size: 1.2em;
     color: #000;
     margin-top: 1em;
+    letter-spacing: .1em;
 }
 
 #pav-welcome a.btn {
@@ -282,6 +311,19 @@ img.logo-grupo {
     margin: 0em 0.5em;
 }
 
+.welcome-img-link{
+
+}
+
+.welcome-img-link img{
+    max-width: 250px;
+    border: 5px solid #fff;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, .4);
+    margin:auto;
+    margin-bottom: 2em;
+}
+
+
 #v-proyects-tab {
     background-color: #fff;
     padding: 0;
@@ -299,28 +341,18 @@ img.logo-grupo {
 }
 
 /* Media Queries */
-@media only screen and (min-width: 764px) {
-    #index-carousel .carousel-item {
-        height: calc(100vh - 100px);
-        width: 100%;
-        margin: auto;
-        margin-top: 2em;
-        background: no-repeat top center;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
+@media only screen and (max-width: 764px) {
 
-    #pav-welcome {
-        /* background-image: url("../img/welcome_background.jpg"); */
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        min-height: calc(100vh - 113px);
+
+    .welcome-img-link img{
+        max-width: 150px;
+        border: 5px solid #fff;
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, .4);
+        margin:auto;
+        margin-bottom: 2em;
     }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 1024px) {
     #top-navbar .top-bar i {
         color: #fff;
         margin-right: 1.25em;
@@ -329,5 +361,5 @@ img.logo-grupo {
         height: 60px;
     }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (max-width: 1440px) {
 }

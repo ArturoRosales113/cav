@@ -86,46 +86,37 @@
         <div class="col-10 col-md-5 col-lg-3 order-1 order-lg-2 text-left">
             <h5>Productos</h5>
             <ul class="list-group pb-5 pb-lg-0">
-                @foreach ($mainFamily->categories as $cat)
+          
                 <li class="list-group-item text-uppercase">
-                    <a href="{{ route('front.industrial.productos.categoria', $cat->name) }}"
-                        class="text-white">{{ $cat->display_name }}</a>
+                    {{-- <a href="{{ route('front.industrial.productos.categoria', $cat->name) }}"
+                        class="text-white">{{ $cat->display_name }}</a> --}}
                 </li>
-                @endforeach
+               
             </ul>
         </div>
         <div class="col-10 col-md-5 col-lg-3 order-2 order-lg-3 text-left">
             <h5>Aplicaciones</h5>
             <ul class="list-group pb-5 pb-lg-2">
-                @foreach ($mainFamily->aplications as $apt)
+              
                 <li class="list-group-item text-uppercase">
-                    <a href="{{ route('front.industrial.aplicaciones') }}"
-                        class="text-white">{{ $apt->display_name }}</a>
+                    {{-- <a href="{{ route('front.industrial.aplicaciones') }}"
+                        class="text-white">{{ $apt->display_name }}</a> --}}
                 </li>
-                @endforeach
+ 
             </ul>
             <h5>Servicios</h5>
             <ul class="list-group">
-                <li class="list-group-item text-uppercase">
+                {{-- <li class="list-group-item text-uppercase">
                     <a href="{{ route('front.industrial.servicios') }}" class="text-white">Especificiación</a>
-                </li>
-                <li class="list-group-item text-uppercase">
-                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Instalación</a>
-                </li>
-                <li class="list-group-item text-uppercase">
-                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Venta</a>
-                </li>
-                <li class="list-group-item text-uppercase">
-                    <a href="{{ route('front.industrial.servicios') }}" class="text-white">Pólizas de Mantenimiento</a>
-                </li>
-            </ul>
+                </li> --}}
+
         </div>
     </div>
     <div class="row justify-content-around align-items-center py-3">
         <div class="col-12 col-md-6 col-lg-3 order-1 text-center">
-            <a href="{{ route('front.industrial.certificados') }}" class="btn btn-link text-dark">
+            {{-- <a href="{{ route('front.industrial.certificados') }}" class="btn btn-link text-dark">
                 <small>Afiliaciones y certificaciones</small>
-            </a>
+            </a> --}}
         </div>
         <div class="col col-md order-3 order-lg-2">
             <div class="row justify-content-center pt-3 pt-lgp-0 align-items-center">
