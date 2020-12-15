@@ -10,7 +10,7 @@ Recursos
         <h1 class="text-dark bold">Recursos</h1>
     </div>
 </div>
-    @foreach ($categories as $c)
+    @foreach ($fam->categories as $c)
         @if ($c->downloads()->exists())
         <div class="row justify-content-center">
             <div class="col-10">

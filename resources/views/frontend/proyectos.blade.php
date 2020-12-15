@@ -29,15 +29,18 @@
                         @foreach ($a->proyects as $pt)
                         <div class="col-10 col-lg-6">
                             <div class="row justify-content-center py-3">
-                                <div class="col-5">
+                                <div class="col-6">
                                     <img src="{{ $pt->img_path == null ? asset('img/brand/no_img_found.png') : asset($pt->img_path) }}" alt="" class="img-fluid">
                                 </div>
-                                <div class="col-7">
+                                <div class="col-6">
                                    
-                                    <h5 class="bold">
+                                    <h6 class="bold">
                                         <small>{{ ucfirst($pt->date) }}</small> <br>
-                                        {{ $pt->name }}</h5>
-                                        <button type="button" class="pav-pill gray shadow" data-toggle="modal" data-target="#pyctModal" data-whatever="{{ asset($pt->pdf_path) }}">Ficha Técnica</button>
+                                        {{ $pt->name }}
+                                    </h6>
+                                    <button type="button" class="pav-pill gray shadow" data-toggle="modal" data-target="#pyctModal" data-whatever="{{ asset($pt->pdf_path) }}">
+                                        Ficha Técnica
+                                    </button>
                                 </div>
                             </div>
                         </div>

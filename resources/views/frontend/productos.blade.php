@@ -37,7 +37,7 @@ Productos
                         @foreach ($categories as $c)
                         <div class="row no-gutters">
                             <div class="col-2">
-                              <a href="{{ route('front.industrial.productos.categoria', $c->name) }}" class="">
+                              <a href="{{ route('front.productos.categoria', ['family' => $fam->name, 'categoryName' => $c->name]) }}" class="">
                                 <img
                                   src="{{ $c->icon_path == null ? asset('img/brand/no_img_found.png') : asset($c->icon_path) }}"
                                   class="card-img-top" alt="">
@@ -46,7 +46,7 @@ Productos
                             </div>
                             <div class="col-10">
                               <div class="card-body py-2 text-left">
-                                <a href="{{ route('front.industrial.productos.categoria', $c->name) }}" class="text-dark">
+                                <a href="{{ route('front.productos.categoria',  ['family' => $fam->name, 'categoryName' => $c->name]) }}" class="text-dark">
                                   <span class="categoryName">{{ ucfirst($c->display_name) }}</span>
                                 </a>
                               </div>
@@ -63,7 +63,7 @@ Productos
                 @foreach ($categories as $c)
                 <div class="card">
                     <div class="card-header bg-white" id="{{ $c -> name.'-heading' }}">
-                        <a href="{{ route('front.industrial.productos.categoria', $c->name) }}" class="btn btn-link text-left text-uppercase text-dark">
+                        <a href="{{ route('front.productos.categoria', ['family' => $fam->name, 'categoryName' => $c->name]) }}" class="btn btn-link text-left text-uppercase text-dark">
                             {{ $c -> display_name }}
                         </a>
                         <button class="btn btn-link text-left text-uppercase text-dark" type="button"
@@ -80,7 +80,7 @@ Productos
                             <ul class="list-group list-group-flush">
                                 @foreach ($c->articles as $ca)
                                 <li class="list-group-item">
-                                    <a href="{{ route('front.industrial.producto', $ca -> slug) }}">
+                                    <a href="{{ route('front.producto',  ['family' => $fam->name, 'slug' => $ca->slug]) }}">
                                         <small class="text-dark">
                                             {{ ucwords($ca->name) }}
                                         </small>
@@ -98,7 +98,7 @@ Productos
         <div class="col-12 col-lg-8 py-5 py-lg-0">
             <div class="list-group">
                 @foreach ($articles as $a)
-                <a href="{{ route('front.industrial.producto', $a -> slug) }}"
+                <a href="{{ route('front.producto', ['family' => $fam->name, 'slug' => $ca->slug]) }}"
                     class="list-group-item list-group-item-action">
                     <div class="row">
                         <div class="col-12 col-md-3 mb-2 mb-lg-0">

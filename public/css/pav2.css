@@ -1,9 +1,9 @@
 /* Fuentes */
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 .bold {
-    font-weight: 900;
+    font-weight: 700;
 }
 .sp2{
     letter-spacing: .1em;
@@ -33,7 +33,7 @@
 /* Personalizacion */
 
 body {
-    font-family: "Raleway", sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #919191;
     font-size: 1rem;
 }
@@ -66,6 +66,7 @@ body {
 
 #top-navbar .top-bar {
     background-color: #ad272d;
+  
 }
 #top-navbar .top-bar i {
     color: #fff;
@@ -107,11 +108,9 @@ body {
     color: #000;
     border-bottom: none;
     transition: all 0.5s ease;
-    padding: 10px 10px 5px 10px;
     height: 30px;
     cursor: default;
     text-transform: uppercase;
-    padding: 0 1em;
 }
 
 #nav-logo {
@@ -214,13 +213,7 @@ footer .list-group .list-group-item {
     background-position: bottom center;
 }
 
-.row.proyects {
-    background-image: url("../img/proyecto.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50vh;
-}
+
 .row.products {
     background-image: url("../img/productos_banner.jpg");
     background-position: center;
@@ -244,6 +237,13 @@ footer .list-group .list-group-item {
     height: 50vh;
 }
 
+.product-pic-carousel{
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1em;
+}
+
 .pagination li a {
     color: #000;
 }
@@ -255,14 +255,16 @@ footer .list-group .list-group-item {
     border-color: #ad272d;
 }
 
+/* nosotros */
+.nosotros-title{
+    margin-top: -150px;
+}
+.nosotros-title h2{
+    font-size: 2em;
+}
+
 /* home */
-/* #pav-welcome {
-    background-image: url("../img/as.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; 
-    min-height: calc(100vh - 115px);
-} */
+
 #pav-welcome h1 {
     font-size: 1.2em;
     color: #000;
