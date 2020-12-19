@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('page_banner')
-<div class="row mt-lg-5 py-lg-5 justify-content-center align-items-center subtitle">
+<div class="row py-lg-5 justify-content-center align-items-center subtitle">
     <div class="col col-lg-10 text-center text-white py-5">
         <h5 class="bold text-uppercase">Nuestros servicios</h5>
         <h6>OFRECEMOS AYUDA CON EXPERIENCIA INTEGRAL PARA UNA AMPLIA GAA DE NECESIDADES DE NEGOCIO</h6>

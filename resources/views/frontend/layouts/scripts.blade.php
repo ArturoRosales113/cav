@@ -12,4 +12,30 @@
 integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
 crossorigin="anonymous"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
 <script src="{{ asset('js/front.js') }}"></script>
+
+<script>
+      $(document).ready(function () {
+        // $("#sidebar").mCustomScrollbar({
+        //     theme: "minimal"
+        // });
+
+        $('#dismiss, .overlay').on('click', function () {
+            // hide sidebar
+            $('#sidebar').removeClass('active');
+            // hide overlay
+            $('.overlay').removeClass('active');
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+            // open sidebar
+            $('#sidebar').addClass('active');
+            // fade in the overlay
+            $('.overlay').addClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+    });
+</script>

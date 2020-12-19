@@ -14,7 +14,7 @@
 }
 
 .bg2 {
-    background-color: #1D1D1B  !important;
+    background-color: #4D4D4D  !important;
 }
 
 .bg3 {
@@ -60,13 +60,102 @@ body {
     height: 100%;
 }
 
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 1055;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #7386D5;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#dismiss:hover {
+    background: #fff;
+    color: #7386D5;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1054;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+#main-container{
+    padding-top: 7rem!important;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+
 /* body::-webkit-scrollbar {
     display: none;
   } */
 
 #top-navbar .top-bar {
     background-color: #ad272d;
-  
+
 }
 #top-navbar .top-bar i {
     color: #fff;
@@ -175,6 +264,10 @@ body {
     color: #000;
     background-color: #fff;
 }
+.pav-pill.distribuidores{
+    color: #000;
+    background-color: #fff;
+}
 .pav-pill.gray{
     color: #fff;
     background-color: #4D4D4D;
@@ -188,14 +281,15 @@ footer .menu {
     background-size: cover;
     color: #fff;
 }
-footer {
-    font-size: 0.85em;
-}
 
 footer .list-group .list-group-item {
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    padding: 0.3rem 1.25rem;
+    padding: 0.3rem 0;
+}
+
+.menu-sociales-footer a{
+    margin-right: 1.5em;
 }
 
 .row.subtitle {
@@ -262,7 +356,9 @@ footer .list-group .list-group-item {
 .nosotros-title h2{
     font-size: 2em;
 }
-
+.sucursal{
+    font-size: .8em;
+}
 /* home */
 
 #pav-welcome h1 {
@@ -294,12 +390,7 @@ h3.indicator::before,
 h4.indicator::before,
 h5.indicator::before,
 h6.indicator::before,
-footer h1::before,
-footer h2::before,
-footer h3::before,
-footer h4::before,
-footer h5::before,
-footer h6::before {
+{
     content: ">";
     color: red;
     display: inline-block;

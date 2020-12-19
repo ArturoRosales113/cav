@@ -13,9 +13,9 @@ Nosotros
         </div>
     </div>
     <div class="row justify-content-center pb-5">
-        <div class="col-10">
+        <div class="col-12 col-lg-10">
             <div class="row">
-                <div class="col-7 bg1 nosotros-title">
+                <div class="col-lg-7 bg1 nosotros-title">
                     <div class="row justify-content-center py-5">
                         <div class="col-10 py-3">
                             <h1 class="text-white">30 años abriendo <br> puertas</h1>
@@ -26,8 +26,8 @@ Nosotros
         </div>
     </div>
 
-    <div class="row justify-content-end py-5">
-        <div class="col-5">
+    <div class="row justify-content-center justify-content-lg-end align-items-lg-center py-5">
+        <div class="col-10 col-lg-5 pb-4 pb-lg-0">
             <h2 class="color1 mb-3">
                 Nuestro Compromiso
             </h2>
@@ -40,18 +40,18 @@ Nosotros
                 <li>Risus commodo viverra maecenas accumsan lacus vel facilisis. </li>
             </ul>
         </div>
-        <div class="col-1"></div>
-        <div class="col-5 p-0">
+        <div class="col-1 d-none d-lg-flex"></div>
+        <div class="col-12 col-lg-5 p-0">
             <img src="{{ asset('img/nosotros2.jpg') }}" class="img-fluid" alt="">
         </div>
     </div>
 
-    <div class="row justify-content-start py-5">
-        <div class="col-5 p-0">
+    <div class="row justify-content-center justify-content-lg-start align-items-lg-center py-5">
+        <div class="col-12 col-lg-5 p-0 order-3 order-lg-1">
             <img src="{{ asset('img/nosotros2.jpg') }}" class="img-fluid" alt="">
         </div>
-        <div class="col-1"></div>
-        <div class="col-5">
+        <div class="col-1 d-none d-lg-flex order-2"></div>
+        <div class="col-10 col-lg-5 pb-4 pb-lg-0 order-1 order-lg-3">
             <h2 class="color1 mb-3">
                 Misión y Visión
             </h2>
@@ -68,8 +68,8 @@ Nosotros
 
     </div>
 
-    <div class="row justify-content-end py-5">
-        <div class="col-5">
+    <div class="row justify-content-center justify-content-lg-end align-items-lg-center py-5">
+        <div class="col-10 col-lg-5 pb-4 pb-lg-0">
             <h2 class="color1 mb-3">
                 Valores
             </h2>
@@ -82,16 +82,18 @@ Nosotros
                 <li>Risus commodo viverra maecenas accumsan lacus vel facilisis. </li>
             </ul>
         </div>
-        <div class="col-1"></div>
-        <div class="col-5 p-0">
+        <div class="col-1 d-none d-lg-flex"></div>
+        <div class="col-12 col-lg-5 p-0">
             <img src="{{ asset('img/nosotros2.jpg') }}" class="img-fluid" alt="">
         </div>
     </div>
 
+
+
     <div class="row justify-content-center">
         <div class="col-10">
-            <div class="row">
-                <div class="col-3">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-3">
                     <h6 class="bold text-dark">Zona sur</h6>
                     <div class="sucursal text-dark">
                         <strong class="color1">Matriz</strong>
@@ -106,7 +108,7 @@ Nosotros
                             01 (229) 922 0085
                         </p>
                         <p>
-                            <strong>Correo:</strong>
+                            <strong>Correo:</strong> <br>   
                             contacto@puertasveracruz.com
                         </p>
                     </div>
@@ -121,9 +123,95 @@ Nosotros
                         </p>
                     </div>
                 </div>
-                <div class="col-3"></div>
-                <div class="col-3"></div>
-                <div class="col-3"></div>
+                <div class="col-12 col-lg-3">
+                    <h6 class="bold text-dark">&nbsp;</h6>
+                    <div class="sucursal text-dark">
+                        <strong class="color1">SUCURSAL VILLAHERMOSA</strong>
+                        <p>
+                            Calle Oaxaca No. 108 Fracc. guadalupe Villahermosa, Tabasco, México. C.P. 86180
+                        </p>
+                        <p>
+                            <strong>Tel:</strong>01 (993) 352 2021,  <br>
+                            01 (993) 352 1821                           
+                        </p>
+                        <p>
+                            <strong>Correo:</strong> <br>
+                            villahermosa@puertasveracruz.com
+                        </p>
+                    </div> 
+                    <div class="sucursal text-dark">
+                        <strong class="color1">SUCURSAL MÉRIDA</strong>
+                        <p>
+                            Calle Oaxaca No. 108 Fracc. guadalupe Villahermosa, Tabasco, México. C.P. 86180
+                        <p>
+                            <strong>Tel:</strong> 01 (993) 352 2021, <br>
+                            01 (993) 352 1821                     
+                        </p>
+                    </div> 
+                    <div class="sucursal text-dark">
+                        <strong class="color1">SUCURSAL CANCÚN</strong>
+                        <p>
+                            13 Sur No. 2104 Col. Santiago Puebla, Puebla, México. C.P. 72000
+                        <p>
+                            <strong>Tel:</strong> 01 (222) 404 6616 al 181            
+                        </p>
+                    </div> 
+                </div>
+                <div class="col-12 col-lg-3 border-right border-left">
+                    <h6 class="bold text-dark">Zona Norte</h6>
+                    <div class="sucursal text-dark">
+                        <strong class="color1">SUCURSAL MONTERREY</strong>
+                        <p>
+                            Crispin Treviño No.3730 Col. Venustiano Carranza Monterrey, Nuevo Leon, México. C.P. 64103
+                        </p>
+                        <p>
+                            <strong>Tel:</strong> 01 (81) 8355 9411, <br>
+                            01 (81) 8355 6591
+                            
+                        </p>
+                        <p>
+                            <strong>Correo:</strong> <br>   
+                            monterrey@puertasveracruz.com
+                        </p>
+                    </div>
+                    <div class="sucursal text-dark">
+                        <strong class="color1">SUCURSAL CHIHUAHUA</strong>
+                        <p>
+                            Sabino No. 1910 Col. Las Granjas Chihuahua, Chihuahua, México. C.P. 64103
+                        </p>
+                        <p>
+                            <strong>Tel:</strong> 01 (614) 414 7225
+                            
+                        </p>
+                        <p>
+                            <strong>Correo:</strong> <br>   
+                            chihuahua@puertasveracruz.com
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <h6 class="bold text-dark">Zona Centro</h6>
+                    <div class="sucursal text-dark">
+                        <strong class="color1">SUCURSAL PUEBLA </strong>
+                        <p>
+                            13 Sur No. 2104 Col. Santiago Puebla, Puebla, México. C.P. 72000
+                        </p>
+                        <p>
+                            <strong>Tel/Fax:</strong> 01 (222) 404 6616 al 181
+                            
+                        </p>
+                    </div>
+                    <div class="sucursal text-dark">
+                        <strong class="color1">SUCURSAL QUERÉTARO </strong>
+                        <p>
+                            13 Sur No. 2104 Col. Santiago Puebla, Puebla, México. C.P. 72000
+                        </p>
+                        <p>
+                            <strong>Tel/Fax:</strong> 01 (222) 404 6616 al 181
+                            
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

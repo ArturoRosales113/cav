@@ -2,7 +2,7 @@
 
 
 @section('content')
-<div class="row pt-lg-5">
+<div class="row">
     <div class="col-12 col-lg-4 bg3 text-dark order-2 order-lg-1">
         <div class="row justify-content-center py-5">
             <div class="col-10">
