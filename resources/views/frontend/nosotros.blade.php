@@ -6,7 +6,7 @@ Nosotros
 
 
 @section('content')
-<section class="py-5">
+<section class="pb-5">
     <div class="row pb-5">
         <div class="col-12 p-0">
             <img src="{{ asset('img/nosotros.jpg') }}" alt="" class="img-fluid">
@@ -32,10 +32,13 @@ Nosotros
                 Nuestro Compromiso
             </h2>
             <p class="text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.     
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                lacus vel facilisis.
             </p>
             <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. </li>
                 <li>Quis ipsum suspendisse ultrices gravida.</li>
                 <li>Risus commodo viverra maecenas accumsan lacus vel facilisis. </li>
             </ul>
@@ -56,15 +59,18 @@ Nosotros
                 Misión y Visión
             </h2>
             <p class="text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.     
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                lacus vel facilisis.
             </p>
             <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. </li>
                 <li>Quis ipsum suspendisse ultrices gravida.</li>
                 <li>Risus commodo viverra maecenas accumsan lacus vel facilisis. </li>
             </ul>
         </div>
-     
+
 
     </div>
 
@@ -74,10 +80,13 @@ Nosotros
                 Valores
             </h2>
             <p class="text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.     
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                lacus vel facilisis.
             </p>
             <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. </li>
                 <li>Quis ipsum suspendisse ultrices gravida.</li>
                 <li>Risus commodo viverra maecenas accumsan lacus vel facilisis. </li>
             </ul>
@@ -98,17 +107,18 @@ Nosotros
                     <div class="sucursal text-dark">
                         <strong class="color1">Matriz</strong>
                         <p>
-                            Calzada Ruiz Cortines No.505-B Entre Calle 11 y Jesus Reyes Heroles Fracc. Costa Verde Boca del Rio, Veracruz, México C.P. 94294
+                            Calzada Ruiz Cortines No.505-B Entre Calle 11 y Jesus Reyes Heroles Fracc. Costa Verde Boca
+                            del Rio, Veracruz, México C.P. 94294
                         </p>
                         <p>
-                            <strong>Tel:</strong> 01 800 215 260601,  <br>
-                            01 (229) 921 903601,  <br>
-                            01 (229) 921 929401,  <br>
+                            <strong>Tel:</strong> 01 800 215 260601, <br>
+                            01 (229) 921 903601, <br>
+                            01 (229) 921 929401, <br>
                             01 (229) 922 008401 ó <br>
                             01 (229) 922 0085
                         </p>
                         <p>
-                            <strong>Correo:</strong> <br>   
+                            <strong>Correo:</strong> <br>
                             contacto@puertasveracruz.com
                         </p>
                     </div>
@@ -131,31 +141,31 @@ Nosotros
                             Calle Oaxaca No. 108 Fracc. guadalupe Villahermosa, Tabasco, México. C.P. 86180
                         </p>
                         <p>
-                            <strong>Tel:</strong>01 (993) 352 2021,  <br>
-                            01 (993) 352 1821                           
+                            <strong>Tel:</strong>01 (993) 352 2021, <br>
+                            01 (993) 352 1821
                         </p>
                         <p>
                             <strong>Correo:</strong> <br>
                             villahermosa@puertasveracruz.com
                         </p>
-                    </div> 
+                    </div>
                     <div class="sucursal text-dark">
                         <strong class="color1">SUCURSAL MÉRIDA</strong>
                         <p>
                             Calle Oaxaca No. 108 Fracc. guadalupe Villahermosa, Tabasco, México. C.P. 86180
-                        <p>
-                            <strong>Tel:</strong> 01 (993) 352 2021, <br>
-                            01 (993) 352 1821                     
-                        </p>
-                    </div> 
+                            <p>
+                                <strong>Tel:</strong> 01 (993) 352 2021, <br>
+                                01 (993) 352 1821
+                            </p>
+                    </div>
                     <div class="sucursal text-dark">
                         <strong class="color1">SUCURSAL CANCÚN</strong>
                         <p>
                             13 Sur No. 2104 Col. Santiago Puebla, Puebla, México. C.P. 72000
-                        <p>
-                            <strong>Tel:</strong> 01 (222) 404 6616 al 181            
-                        </p>
-                    </div> 
+                            <p>
+                                <strong>Tel:</strong> 01 (222) 404 6616 al 181
+                            </p>
+                    </div>
                 </div>
                 <div class="col-12 col-lg-3 border-right border-left">
                     <h6 class="bold text-dark">Zona Norte</h6>
@@ -167,10 +177,10 @@ Nosotros
                         <p>
                             <strong>Tel:</strong> 01 (81) 8355 9411, <br>
                             01 (81) 8355 6591
-                            
+
                         </p>
                         <p>
-                            <strong>Correo:</strong> <br>   
+                            <strong>Correo:</strong> <br>
                             monterrey@puertasveracruz.com
                         </p>
                     </div>
@@ -181,10 +191,10 @@ Nosotros
                         </p>
                         <p>
                             <strong>Tel:</strong> 01 (614) 414 7225
-                            
+
                         </p>
                         <p>
-                            <strong>Correo:</strong> <br>   
+                            <strong>Correo:</strong> <br>
                             chihuahua@puertasveracruz.com
                         </p>
                     </div>
@@ -198,7 +208,7 @@ Nosotros
                         </p>
                         <p>
                             <strong>Tel/Fax:</strong> 01 (222) 404 6616 al 181
-                            
+
                         </p>
                     </div>
                     <div class="sucursal text-dark">
@@ -208,7 +218,7 @@ Nosotros
                         </p>
                         <p>
                             <strong>Tel/Fax:</strong> 01 (222) 404 6616 al 181
-                            
+
                         </p>
                     </div>
                 </div>
