@@ -197,13 +197,24 @@ body {
     border: 5px solid #fff;
 }
 
-#aplicaiones-menu {
-    border-top: #ad272d 1em;
+#v-menu-tab a small,
+#v-menu-tab a span {
+    color: #000;
+}
+#v-menu-tab a:hover small,
+#v-menu-tab a:hover span,
+#v-menu-tab a.active small,
+#v-menu-tab a.active span {
+    color: #ad272d;
+    background-color: #fff;
 }
 
-#product-dropdown-area {
-    width: 100vw;
+#v-menu-tab a.active,
+#v-menu-tab a.active {
+    color: #ad272d;
+    background-color: #fff;
 }
+
 #contact_group {
     position: fixed;
     right: 0;

@@ -42,7 +42,7 @@
             <div class="col-12 col-lg-11 text-center pt-5">
                 @foreach ($families as $fam)
                 <a href="{{ route('front.index', $fam->name) }}"
-                    class="pav-pill red bold sp2">{{ $fam->display_name }}</a>
+                    class="pav-pill red bold sp2">{{ ucfirst($fam->display_name) }}</a>
                 <div class="row py-5">
                     <div class="col-12">
                         <div class="owl-carousel">

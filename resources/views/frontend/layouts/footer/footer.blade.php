@@ -79,7 +79,7 @@
                     <ul class="list-group">
 
                         @foreach ($fam->categories as $cat)
-                        <li class="list-group-item text-uppercase">
+                        <li class="list-group-item">
                             <a href="{{ route('front.productos.categoria', ['family' => $fam->name,'categoryName' => $cat->name]) }}"
                                 class="text-white">
                                 {{ $cat->display_name }}
@@ -93,7 +93,7 @@
                     <h5 class="color1">Aplicaciones</h5>
                     <ul class="list-group">
 
-                        <li class="list-group-item text-uppercase">
+                        <li class="list-group-item">
                             @foreach ($fam->aplications as $apt)
                             <a href="{{ route('front.aplicaciones', $fam->name) }}"
                                 class="text-white">{{ $apt->display_name }}</a>
@@ -108,24 +108,24 @@
                     <h5 class="color1">Servicios</h5>
                     <ul class="list-group">
 
-                        <li class="list-group-item text-uppercase">
-                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white text-uppercase">
+                        <li class="list-group-item ">
+                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white ">
                                 Especificación
                             </a>
                         </li>
-                        <li class="list-group-item text-uppercase">
-                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white text-uppercase">
+                        <li class="list-group-item ">
+                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white ">
                                 Instalación
                             </a>
                         </li>
-                        <li class="list-group-item text-uppercase">
-                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white text-uppercase">
+                        <li class="list-group-item ">
+                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white ">
                                 Venta
                             </a>
                         </li>
-                        <li class="list-group-item text-uppercase">
-                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white text-uppercase">
-                                Polizas de mantenimiento
+                        <li class="list-group-item ">
+                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white ">
+                                Pólizas de mantenimiento
                             </a>
                         </li>
 

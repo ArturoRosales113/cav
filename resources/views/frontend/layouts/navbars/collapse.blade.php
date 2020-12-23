@@ -11,8 +11,8 @@
                     aria-selected="{{ $loop->first ? 'true' : '' }}">
                     <img src="{{ $c->icon_path }}" height="30px" class="d-inline-block" alt="">
                     &nbsp;
-                    <small class="d-inline-block text-dark text-uppercase">{{ $c->display_name }}</small>
-                    <span class="d-inline-block text-dark float-right">></span>
+                    <small class="d-inline-block text-uppercase">{{ $c->display_name }}</small>
+                    <span class="d-inline-block float-right">></span>
                 </a>
                 @endforeach
             </div>
