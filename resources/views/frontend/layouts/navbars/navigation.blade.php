@@ -23,7 +23,7 @@
         </div>
         <div class="row bg2 justify-content-center w-100 d-lg-none m-0">
             <div class="col-10">
-                <form class="form-navbar " action="{{ route('front.busqueda') }}" method="GET">
+                <form class="form form-navbar" action="{{ route('front.busqueda') }}" method="GET">
                     <div class="input-group">
                         <input type="text" class="form-control" name="busqueda" aria-label="Recipient's username"
                             aria-describedby="basic-addon2">

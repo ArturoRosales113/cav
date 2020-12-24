@@ -20,7 +20,7 @@ Recursos
         <div class="row row-cols-sm-2 row-cols-md-4">
             @foreach ($c->articles as $art)
             @if ($art->downloads()->exists() )
-            <div class="col mb-4">
+            <div class="col-6 col-lg-4 mb-4">
                 <div class="card">
                     <img src="{{ $art->pics()->count() > 0 ? asset($art->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
                         class="card-img-top recursos-img" alt="">
@@ -31,7 +31,9 @@ Recursos
                             @foreach ($art->downloads as $ad)
                             <li class="list-group-item">
                                 <a href="{{asset($ad->path)}}"
-                                    class="btn text-white bg1 rounded-pill">{{str_replace('article_downloads/','',$ad->path)}}</a>
+                                    class="btn btn-link rounded-pill text-dark text-capitalize">
+                                    <small>{{str_replace('article_downloads/','',$ad->path)}}</small>
+                                </a>
                             </li>
                             @endforeach
                         </ul>

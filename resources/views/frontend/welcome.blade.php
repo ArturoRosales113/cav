@@ -51,7 +51,7 @@
                                 <a
                                     href="{{ route('front.productos.categoria',['family' => $fam->name,'categoryName' => $cat->name]) }}">
                                     <img src="{{ asset($cat->img_path) }}" alt="">
-                                    <span>{{ $cat->display_name }}</span>
+                                    <span class="text-dark">{{ $cat->display_name }}</span>
                                 </a>
                             </div>
                             @endforeach

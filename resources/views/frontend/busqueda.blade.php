@@ -5,13 +5,13 @@
 
 
 @section('content')
-<div class="row justify-content-center align-items-center py-5 min-vh-100">
+<div class="row justify-content-center align-items-center py-5 mt-2 min-vh-100">
     <div class="col-10">
         @if ($articles->count() > 0)
         <h3>Productos</h3>
         <div class="list-group">
             @foreach ($articles as $a)
-            <a href="{{ route('front.industrial.producto', $a -> slug) }}"
+            <a href="{{ route('front.producto',['family' => $fam->name, 'slug'=> $a->slug]) }}"
                 class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-12 col-lg-3 mb-2 mb-lg-0">
@@ -33,11 +33,11 @@
         <h3>Noticias:</h3>
         <div class="list-group">
             @foreach ($posts as $n)
-            <a href="{{ route('front.industrial.noticia', $n -> slug) }}"
+            <a href="{{ route('front.noticia', ['famliy' => $fam->name, 'slug' => $n -> slug]) }}"
                 class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-12 col-lg-3 p-0 p-lg-2">
-                        <img src="{{ $n->img_path == null ? asset('img/brand/no_img_found.png') : asset() }}"
+                        <img src="{{ $n->img_path == null ? asset('img/brand/no_img_found.png') : asset($n->img_path) }}"
                             class="img-fluid" alt="">
                     </div>
                     <div class="col-12 col-lg-9 py-3 py-lg-0">
@@ -48,12 +48,12 @@
                     </div>
                 </div>
             </a>
-            @endforeach 
+            @endforeach
         </div>
         @endif
 
         @if($articles->count() == 0 && $posts->count() == 0)
-        <h1> 
+        <h1>
             <small>Lo sentimos,</small> <br>
             La búsqueda no tuvo resultados
         </h1>

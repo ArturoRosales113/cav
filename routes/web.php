@@ -17,7 +17,7 @@ Route::get('/distribuidores', ['uses' => 'PavController@distribuidores', 'as' =>
 Route::get('/certificados', ['uses' => 'PavController@certificados', 'as' => 'front.certificados']);
 Route::get('/nosotros', ['uses' => 'PavController@nosotros', 'as' => 'front.nosotros']);
 
-Route::get('/{family}', ['uses' => 'PavController@index', 'as' => 'front.index']);
+Route::get('/familia/{family}', ['uses' => 'PavController@index', 'as' => 'front.index']);
 
 Route::get('/{family}/aplicaciones', ['uses' => 'PavController@aplicaciones', 'as' => 'front.aplicaciones']);
  

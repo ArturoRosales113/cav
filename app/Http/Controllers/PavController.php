@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Family;
 use App\Article;
 use App\Category;
+use App\Post;
 
 class PavController extends Controller
 {
@@ -24,6 +25,14 @@ class PavController extends Controller
     public function noticias($family){
         $fam = Family::where('name', '=', $family)->first();
         return view('frontend.noticias',['fam' => $fam]);
+    }
+    public function noticia($family, $slug){
+        $fam = Family::where('name', '=', $family)->first();
+        $noticia = Post::where('slug', '=', $slug)->first();
+        return view('frontend.noticia',[
+            'fam' => $fam,
+            'noticia' => $noticia
+            ]);
     }
 
     public function proyectos($family)

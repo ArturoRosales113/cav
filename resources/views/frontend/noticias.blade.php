@@ -8,40 +8,41 @@ Noticias
 @section('content')
 <div class="row justify-content-center py-5">
     <div class="col-11 col-lg-9">
-        <div class="row py-3">
-            <div class="col-12 col-lg-3 text-center">
+        <div class="row py-5 no-gutters">
+            @foreach ($fam->posts as $n)
+            <div class="col-12 col-lg-6 mb-2 mb-lg-0">
+                <div class="card bg-dark text-white">
+                    <img src="{{ $n->img_path == null ? asset('img/brand/no_img_found.png') : asset($n->img_path) }}"
+                        class="card-img" alt="...">
+                    <div
+                        class="card-img-overlay w-100 h-100 d-flex align-items-end p-0  {{ $loop->iteration%2 == 0 ? 'justify-content-end' : 'justify-content-start'  }}">
+                        <div class="bg1 p-3" style="min-height: 50%;width:60%;">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="card-title">
+                                        {{ preg_replace('/\s+?(\S+)?$/', '', substr($n->title, 0, 50)) }}
+                                    </h5>
+                                    <small class="card-text">
+                                        {!! preg_replace('/\s+?(\S+)?$/', '', substr($n->body, 0, 70)) !!}
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
 
-                <div class="accordion" id="accordionNoticias">
-
-
-
+                                </div>
+                                <div class="col text-right">
+                                    <a href="{{ route('front.noticia', ['family' => $fam->name, 'slug' => $n -> slug]) }}"
+                                        class="btn btn-link text-white bold">
+                                        Ver más
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-            <div class="col-12 col-lg-9 pt-5 pt-lg-0">
-                @foreach ($fam->posts as $n)
-                <a href="{{ route('front.noticia', ['family' => $fam->name, 'slug' => $n -> slug]) }}"
-                    class="list-group-item list-group-item-action">
-                    <div class="row">
-                        <div class="col-12 col-lg-3 p-0 p-lg-2">
-                            <img src="{{ $n->img_path == null ? asset('img/brand/no_img_found.png') : asset($n->img_path) }}"
-                                class="img-fluid" alt="">
-                        </div>
-                        <div class="col-12 col-lg-9 py-3 py-lg-0">
-                            <h4>{{ preg_replace('/\s+?(\S+)?$/', '', substr($n->title, 0, 50)) }}</h4>
-                            <p class="text-justify d-block">
-                                {!! preg_replace('/\s+?(\S+)?$/', '', substr($n->body, 0, 70)) !!}
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                @endforeach
-                {{-- <div class="row py-3">
-                    <div class="col">
-                        {{ $noticias->render() }}
-                    </div>
-                </div> --}}
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
