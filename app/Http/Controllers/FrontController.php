@@ -29,7 +29,6 @@ class FrontController extends Controller
     public function createMessage(Request $request)
     {
        $input = $request->all();
-
        $rules = [
            'nombre' => 'required',
            'correo' => 'required|email',
@@ -66,6 +65,40 @@ class FrontController extends Controller
         return redirect()->back()->with('success', 'Pronto un agente se podrá en contacto contigo');
     }
  }
+
+ public function createDistribuidor(Request $request)
+ {
+    $input = $request->all();
+    $rules = [
+        'nombre' => 'required',
+        'correo' => 'required|email',
+        'interes' => 'max:150'
+    ];
+
+    $messages = [
+     'nombre.required' => 'El campo "Nombre" es obligatorio',
+     'correo.required' => 'El campo "Coreo" es obligatorio.',
+     'correo.email' => 'El email no es válido'
+    ];
+
+
+    $validator = Validator::make($input, $rules, $messages);
+
+    if ($validator->fails()) {
+       return redirect()
+            ->back()
+            ->withErrors($validator)
+            ->withInput();
+
+    } else {
+     $msj = Mensaje::create([
+         'nombre' => $input['nombre'],
+         'correo' => $input['correo'],
+         'interes' => $input['interes'],
+        ]);
+     return redirect()->back()->with('success', 'Pronto un agente se podrá en contacto contigo');
+ }
+}
 
  public function createCotizacion(Request $request)
     {

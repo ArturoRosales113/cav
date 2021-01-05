@@ -17,12 +17,11 @@
                 <img src="{{ asset('img/espec.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col">
-                <h6 class="bold text-dark">ESPECIFICACIÓN</h6>
+                <h6 class="bold text-dark">Asesoría</h6>
                 <small class="text-justify text-dark">
-                    Ofrecemos apoyo de la mano de profesionales, quienes
-                    están capacitados por plantas a nivel mundial para ayudar
-                    a ofrecer soluciones para todo tipo de proyecto, cumpliendo
-                    con lo más altos estándares: americanos y europeos.
+                    Ofrecemos apoyo de la mano de profesionales, quienes están capacitados por plantas a nivel mundial
+                    para ayudar a ofrecer soluciones para todo tipo de proyecto, cumpliendo con lo más altos estándares:
+                    americanos, y europeos
                 </small>
             </div>
         </div>
@@ -33,13 +32,10 @@
                 <img src="{{ asset('img/insta.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col">
-                <h6 class="bold text-dark">INSTALACIÓN</h6>
+                <h6 class="bold text-dark">Asesoría Técnica</h6>
                 <small class="text-justify text-dark">
-                    Contamos con una flotilla de camiones para una logística
-                    propia la cual nos permite dar un mejor servicio para nuestros
-                    clientes, así mismo con un cuerpo de técnicos capacitados y
-                    que están de base todo el año, evitando así temas como
-                    SATIC.
+                    Contamos asesoría técnica para todos nuestros productos y servicios, por medio de nuestros medios de
+                    comunicación y puntos de venta.
                 </small>
             </div>
         </div>
@@ -50,12 +46,11 @@
                 <img src="{{ asset('img/venta.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col">
-                <h6 class="bold text-dark">VENTA</h6>
+                <h6 class="bold text-dark">Venta</h6>
                 <small class="text-justify text-dark">
-                    Proveemos de soluciones que se adecúan a cada cliente y
-                    cada tipo de acceso del cual requieran, no importando si
-                    es una: residencia, hotel, hospital, hotel, industria, con
-                    todo lo necesario para su correcta solución
+                    Proveemos de soluciones que se adecuan a cada cliente y cada tipo de acceso del cual requieran, no
+                    importando si es una: residencia, hotel, hospital, hotel, industria, con todo lo necesario para su
+                    correcta solución.
                 </small>
             </div>
         </div>
@@ -66,12 +61,10 @@
                 <img src="{{ asset('img/poli.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col">
-                <h6 class="bold text-dark">PÓLIZAS DE MANTENIMIENTO</h6>
+                <h6 class="bold text-dark">Cursos</h6>
                 <small class="text-justify text-dark">
-                    Ofrecemos la asesoría post-venta necesaria así como la mano
-                    de obra para que sus puertas estén óptimas condiciones, una
-                    vez después de instalado sus productos y que estos siempre
-                    funcionen.
+                    Ofrecemos cursos y capacitaciones como la mano de obra para que sus puertas estén en óptimas
+                    condiciones, una vez después de instalado sus productos y que estos siempre funcionen.
                 </small>
             </div>
         </div>

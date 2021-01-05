@@ -9,7 +9,7 @@ class Mensaje extends Model
   protected $connection = 'mysql';
   protected $table = 'mensajes';
   protected $fillable = [
-   'nombre','correo','mensaje','interes', 'telefono','family', 'is_new'
+   'nombre','correo','mensaje','interes', 'telefono','family', 'is_new','direccion_fiscal'
   ];
 
   public function articles()

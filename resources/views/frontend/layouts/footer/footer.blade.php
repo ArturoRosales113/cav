@@ -109,22 +109,22 @@
                     <ul class="list-group">
 
                         <li class="list-group-item ">
-                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white ">
+                            <a href="{{ route('front.servicios', $fam->name) }}" class="text-white ">
                                 Especificación
                             </a>
                         </li>
                         <li class="list-group-item ">
-                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white ">
+                            <a href="{{ route('front.servicios', $fam->name) }}" class="text-white ">
                                 Instalación
                             </a>
                         </li>
                         <li class="list-group-item ">
-                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white ">
+                            <a href="{{ route('front.servicios', $fam->name) }}" class="text-white ">
                                 Venta
                             </a>
                         </li>
                         <li class="list-group-item ">
-                            <a href="{{ route('front.servicios', $fam->name,) }}" class="text-white ">
+                            <a href="{{ route('front.servicios', $fam->name) }}" class="text-white ">
                                 Pólizas de mantenimiento
                             </a>
                         </li>
@@ -134,7 +134,7 @@
 
                 </div>
             </div>
-            <div class="row pb-2 justify-content-center">
+            <div class="row pb-3 justify-content-center">
                 <div class="col">
                     <div class="d-flex flex-row justify-content-center justify-content-lg-start menu-sociales-footer">
                         @include('frontend.layouts.slices.menuSociales')
@@ -144,10 +144,23 @@
         </div>
     </div>
 
-    <div class="row bg2">
-        <div class="col-10">
-            <div class="row">
+    <div class="row justify-content-center bg2 py-3">
+        <div class="col-12 col-lg-7 p-0">
+            <ul class="nav flex-column flex-lg-row">
+                @include('frontend.layouts.slices.menuFooter')
+            </ul>
+        </div>
+        <div class="col-12 col-lg-3">
+            <div class="row justify-content-around">
+                <a class="btn btn-link color3 col-12 col-lg-6" href="{{ route('front.certificados') }}"
+                    onclick="event.preventDefault();document.getElementById('certificados-form-get').submit();">
 
+                    Certificados
+                </a>
+
+                <a href="{{ route('front.noticias',$fam->display_name) }}" class="btn btn-link color3 col-12 col-lg-6">
+                    Noticias
+                </a>
             </div>
         </div>
     </div>

@@ -29,19 +29,16 @@ Nosotros
     <div class="row justify-content-center justify-content-lg-end align-items-lg-center py-5">
         <div class="col-10 col-lg-5 pb-4 pb-lg-0">
             <h2 class="color1 mb-3">
-                Nuestro Compromiso
+                Sobre nosotros
             </h2>
             <p class="text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-                lacus vel facilisis.
+                Somos una empresa sólida con 36 años de experiencia en los mercados: Residencial, Indsutrial, Comercial,
+                Aeropuertario, que cuenta con productos y procesos de calidad en la elaboración, instalación,
+                suministro y mantenimiento de accesos en el sector residencial, comercial, industrial y hotelero
+                conformado por un gran equipo de gente comprometida y profesional, logrando un objetivo
+                común: la satisfacción de nuestros clientes.
             </p>
-            <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. </li>
-                <li>Quis ipsum suspendisse ultrices gravida.</li>
-                <li>Risus commodo viverra maecenas accumsan lacus vel facilisis. </li>
-            </ul>
+
         </div>
         <div class="col-1 d-none d-lg-flex"></div>
         <div class="col-12 col-lg-5 p-0">
@@ -56,19 +53,13 @@ Nosotros
         <div class="col-1 d-none d-lg-flex order-2"></div>
         <div class="col-10 col-lg-5 pb-4 pb-lg-0 order-1 order-lg-3">
             <h2 class="color1 mb-3">
-                Misión y Visión
+                Oferta de valor
             </h2>
             <p class="text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-                lacus vel facilisis.
+                Diseñamos productos a medida de cada proyecto en el que participamos, cumpliendo con los estándares más
+                altos del mercado, traduciéndose en algo práctico para el usuario final
             </p>
-            <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. </li>
-                <li>Quis ipsum suspendisse ultrices gravida.</li>
-                <li>Risus commodo viverra maecenas accumsan lacus vel facilisis. </li>
-            </ul>
+
         </div>
 
 
@@ -77,13 +68,16 @@ Nosotros
     <div class="row justify-content-center justify-content-lg-end align-items-lg-center py-5">
         <div class="col-10 col-lg-5 pb-4 pb-lg-0">
             <h2 class="color1 mb-3">
-                Valores
+                Misión
             </h2>
             <p class="text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-                lacus vel facilisis.
+                Ser una empresa sólida con productos y procesos de calidad en la elaboración, instalación suministro y
+                mantenimiento de puertas para los sectores:Residencial, Comercial e Industrial, conformado por un equipo
+                de profesionales comprometidos a satisfacer las necesidades de nuestros clientes
             </p>
+            <h2 class="color1 mb-3">
+                Visión
+            </h2>
             <ul>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. </li>

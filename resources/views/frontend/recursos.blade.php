@@ -30,8 +30,7 @@ Recursos
 
                             @foreach ($art->downloads as $ad)
                             <li class="list-group-item">
-                                <a href="{{asset($ad->path)}}"
-                                    class="btn btn-link rounded-pill text-dark text-capitalize">
+                                <a href="{{asset($ad->path)}}" class="btn btn-link text-dark text-capitalize">
                                     <small>{{str_replace('article_downloads/','',$ad->path)}}</small>
                                 </a>
                             </li>

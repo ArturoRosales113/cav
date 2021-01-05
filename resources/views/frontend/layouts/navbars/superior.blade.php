@@ -1,8 +1,8 @@
 <!-- barra superior -->
 <div class="row justify-content-center align-items-stretch top-bar py-2 py-lg-0">
 
-    <div class="col-12 col-md-3 col-lg-2 offset-lg-1 order-2 order-md-1">
-        <div class="row justify-content-center justify-content-lg-start align-items-center">
+    <div class="col-12 col-md-3 col-lg-4 offset-lg-1 order-2 order-md-1">
+        <div class="row justify-content-center justify-content-lg-start align-items-center h-100">
             @foreach ($families as $f)
             <a href="{{ route('front.index', $f->display_name) }}" class="text-white btn btn-sm btn-link">
                 {{ ucFirst($f -> display_name) }}
@@ -12,13 +12,13 @@
         </div>
     </div>
 
-    <div class="col-6 col-md-3 col-lg-3 p-2 order-1 order-md-2 d-none d-lg-flex">
+    <div class="col-6 col-md-3 col-lg-2 p-2 order-1 order-md-2 d-none d-lg-flex">
         <div class="row w-100 justify-content-center justify-content-lg-end">
             @include('frontend.layouts.slices.menuSociales')
         </div>
     </div>
 
-    <div class="col col-md-5 col-lg-6 d-none d-lg-flex order-3" id="top-search">
+    <div class="col col-md-5 col-lg-5 d-none d-lg-flex order-3" id="top-search">
         <div class="row align-items-center">
             <div class="col-6 col-md-3 text-center">
                 <a class="btn btn-link text-white" href="{{ route('front.certificados') }}"

@@ -2,7 +2,7 @@
 
 
 @section('content')
-<div class="row justify-content-center pb-5">
+<div class="row justify-content-center py-5 py-lg-5 pb-5">
   <div class="col-10">
     <div class="row">
       <div class="col p-0">
@@ -100,7 +100,7 @@
 <div class="row justify-content-center pb-5">
   <div class="col-10">
     <div class="row bg1 form-distribuidores-container">
-      <div class="col p-5">
+      <div class="col p-3 p-lg-5">
         <h2 class="text-white bold">
           Pre-registro para Distribución
         </h2>
@@ -117,21 +117,23 @@
         </div>
         <div class="row">
           <div class="col">
-            <form action="" class="form distribuidores">
+            <form action="{{ route('front.distribuidor.create') }}" method="POST" class="form distribuidores">
+              {{ csrf_field() }}
+              <input type="hidden" name="interes" value="distribuidor">
               <div class="row justify-content-center">
                 <div class="col-12 col-md-6 form-group">
                   <input type="text" class="form-control rounded-pill py-4" name="razonSocial"
                     placeholder="Razón Social">
                 </div>
                 <div class="col-12 col-md-6 form-group">
-                  <input type="text" class="form-control rounded-pill py-4" name="nombreNegocio"
+                  <input type="text" class="form-control rounded-pill py-4" name="nombre"
                     placeholder="Nombre Comercial del Negocio">
                 </div>
                 <div class="col-12 col-md-6 form-group">
                   <input type="text" class="form-control rounded-pill py-4" name="paginaWeb" placeholder="Página Web">
                 </div>
                 <div class="col-12 col-md-6 form-group">
-                  <input type="text" class="form-control rounded-pill py-4" name="correoElectronico"
+                  <input type="text" class="form-control rounded-pill py-4" name="correo"
                     placeholder="Correo Electrónico">
                 </div>
                 <div class="col-12 col-md-6 form-group">
@@ -145,7 +147,7 @@
               </div>
               <div class="row">
                 <div class="col-12 py-5">
-                  <h2 class="text-white">Direcciòn Fiscal</h2>
+                  <h2 class="text-white">Dirección fiscal</h2>
                 </div>
                 <div class="col-12 col-md-6 form-group">
                   <input type="text" class="form-control rounded-pill py-4" name="pais" placeholder="País">
@@ -173,7 +175,7 @@
                 </div>
                 <div class="col-12 text-center">
                   <div class="form-check py-3">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <input class="form-check-input" type="checkbox" name="check" reuired id="defaultCheck1">
                     <label class="form-check-label text-white" for="defaultCheck1">
                       He leído y estoy de acuerdo con el: Aviso de Privacidad
                     </label>
