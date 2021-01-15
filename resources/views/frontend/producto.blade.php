@@ -13,8 +13,8 @@
 @section('content')
 <div class="row justify-content-center">
     <div class="col-12 col-lg-11">
-        <div class="row justify-content-center align-items-start py-5 mt-5">
-            <div class="col-12 col-lg-4">
+        <div class="row justify-content-around align-items-start py-5 mt-5">
+            <div class="col-12 col-lg-5">
                 @if ($article->pics()->exists())
                 <div id="{{ 'carousel'.$article->id }}" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -47,9 +47,10 @@
                 <img src="{{ asset('img/brand/no_img_found.png') }}" alt="" class="img-fluid w-100">
                 @endif
             </div>
-            <div class="col-1 d-none d-lg-flex"></div>
-            <div class="col-10 col-lg-4 pt-4 pt-lg-0">
-                <h1 class="text-dark">{{ ucFirst($article->name) }}</h1>
+            <div class="col-10 col-lg-6 pt-4 pt-lg-0">
+                <h1 class="text-dark">
+                    <small>{{ ucFirst($article->name) }}</small>
+                </h1>
                 <p class="text-justify ">
                     {{ $article -> description }}
                 </p>
@@ -59,14 +60,13 @@
 
                             @if ($article->aplications()->exists())
                             <div class="card border border-secondary my-4 pav-pill shadow p-0 py-1">
-                                <div class="card-header p-0 bg-white bg-white" id="headingaplicaciones">
-                                    <h2 class="mb-0">
+                                <div class="card-header p-0 bg-white border-0 bg-white" id="headingaplicaciones"> 
+                                    <h5 class="mb-0">
                                         <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
                                             data-target="#aplicaciones" aria-expanded="true"
                                             aria-controls="aplicaciones">
-                                            <h5 class="">+&nbsp;Aplicaciones</h5>
+                                            <h6 class="">&nbsp;+&nbsp;Aplicaciones</h6>
                                         </button>
-                                    </h2>
                                 </div>
 
                                 <div id="aplicaciones" class="collapse" aria-labelledby="headingaplicaciones"
@@ -74,7 +74,7 @@
                                     <div class="card-body text-dark">
                                         <div class="row">
                                             @foreach ($article->aplications as $aa)
-                                            <div class="col-1 text-dark text-center">
+                                            <div class="col text-dark text-center">
 
                                                 <a href="" class="btn btn-sm text-dark d-block">
                                                     <img class="img-fluid"
@@ -92,13 +92,13 @@
 
                             @if ($article->downloads()->exists())
                             <div class="card border border-secondary my-4 pav-pill shadow p-0 py-1">
-                                <div class="card-header p-0 bg-white" id="headingaplicaciones">
-                                    <h2 class="mb-0">
+                                <div class="card-header p-0 bg-white border-0" id="headingaplicaciones">
+                       
                                         <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
                                             data-target="#descargas" aria-expanded="true" aria-controls="descargas">
-                                            <h5 class="">+&nbsp;Descargas</h5>
+                                            <h6 class="">&nbsp;+&nbsp;Descargas</h6>
                                         </button>
-                                    </h2>
+                         
                                 </div>
 
                                 <div id="descargas" class="collapse" aria-labelledby="headingaplicaciones"
@@ -116,13 +116,13 @@
 
                             @if ($article->specs != null)
                             <div class="card border border-secondary my-4 pav-pill shadow p-0 py-1">
-                                <div class="card-header p-0 bg-white" id="headingaplicaciones">
-                                    <h2 class="mb-0">
+                                <div class="card-header p-0 bg-white border-0" id="headingaplicaciones">
+                        
                                         <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
                                             data-target="#specs" aria-expanded="true" aria-controls="specs">
-                                            <h5 class="">+&nbsp;Especificaciones</h5>
+                                            <h6 class="">&nbsp;+&nbsp;Especificaciones</h6>
                                         </button>
-                                    </h2>
+                
                                 </div>
 
                                 <div id="specs" class="collapse" aria-labelledby="headingaplicaciones"
@@ -135,6 +135,11 @@
                             @endif
 
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span>¿Te interesa este producto?</span> <a href="" class="btn btn-link color1 bold">Cotizalo</a>
                     </div>
                 </div>
             </div>

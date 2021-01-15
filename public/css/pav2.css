@@ -192,6 +192,27 @@ body {
     /* background-color: #ad272d; */
 }
 
+#productsCollapse{
+    background-color: #F8F8F8;
+}
+
+#productsCollapse .category-title{
+   font-size: .55em;
+   color: #000;
+   font-weight: bold;
+}
+
+#productsCollapse .collapse-product-name{
+    font-size: .7em;
+    color: #000;
+}
+
+
+#v-menu-tabContent .row{
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
 .menu-product-foto {
     height: 5em;
     width: 100%;
@@ -203,18 +224,27 @@ body {
 #v-menu-tab a span {
     color: #000;
 }
+
+
+#v-menu-tab a span svg{
+    fill: #000;
+}
 #v-menu-tab a:hover small,
 #v-menu-tab a:hover span,
 #v-menu-tab a.active small,
 #v-menu-tab a.active span {
     color: #ad272d;
-    background-color: #fff;
+    background-color: #F8F8F8;
+}
+
+#v-menu-tab a.active span svg{
+    fill: #ad272d;
 }
 
 #v-menu-tab a.active,
 #v-menu-tab a.active {
     color: #ad272d;
-    background-color: #fff;
+    background-color: #F8F8F8;
 }
 
 #contact_group {
@@ -414,17 +444,15 @@ img.logo-grupo {
 }
 
 .welcome-img-link img {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     border: 5px solid #fff;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-    margin: auto;
-    margin-bottom: 2em;
+    margin: 0 10px 2em 10px;
     object-fit: cover;
 }
 
 .index-product-image {
-    max-width: 250px;
     border: 5px solid #fff;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.4);
     margin-right: 2em;

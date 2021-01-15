@@ -17,15 +17,27 @@
 @section('content')
 <section class="">
     @if ($fam->articles()->exists() || $fam->articles->count() > 3 )
-    <div class="row justify-content-center py-5">
-        <div class="col-10">
-            <h3 class="bold text-dark text-center">
-                Productos destacados
-            </h3>
+    <div class="row py-3">
+        <div class="col-12">
+            <div class="col-12">
+                <h3 class="bold text-dark text-center">
+                    Productos destacados
+                </h3>
+            </div>
         </div>
-        <div class="col-lg-10">
-            <div class="row">
-                <div class="owl-carousel">
+    </div>
+    <div class="row justify-content-center align-items-center pb-5">
+        <div class="col-9 col-lg-10">
+            <div class="row pt-3">
+                <button class="btn btn-link" id="destacadosNextBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 39.904 39.903">
+                        <g id="Flecha" transform="translate(39.904 39.903) rotate(180)">
+                          <path id="Trazado_22" data-name="Trazado 22" d="M620.986,945.293l-9.976-9.976-9.976-9.975H581.082l9.975,9.976,9.976,9.975h0l-9.974,9.975-9.976,9.976h19.951l9.977-9.976,9.975-9.976h0" transform="translate(-581.082 -925.342)" fill="#e40e20"/>
+                        </g>
+                      </svg>
+                      
+                    </button>
+                <div class="owl-carousel" id="owl-carousel">
                     @foreach ($fam->articles->where('is_trend','==', 1) as $aa)
 
                     <div class="welcome-img-link text-center">
@@ -38,8 +50,15 @@
 
                     @endforeach
                 </div>
+                <button class="btn btn-link" id="destacadosPrevBtn">
+                    <svg id="Flecha" xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 39.904 39.903">
+                        <path id="Trazado_22" data-name="Trazado 22" d="M620.986,945.293l-9.976-9.976-9.976-9.975H581.082l9.975,9.976,9.976,9.975h0l-9.974,9.975-9.976,9.976h19.951l9.977-9.976,9.975-9.976h0" transform="translate(-581.082 -925.342)" fill="#e40e20"/>
+                      </svg>
+                      
+                </button>
             </div>
         </div>
+
     </div>
 
     @endif
@@ -55,17 +74,27 @@
         </div>
     </div>
 
-    <div class="row justify-content-center py-5">
+    <div class="row justify-content-center pt-4">
         <div class="col-12 col-lg-10 text-center p-0">
             <h5 class="bold py-3 text-dark text-uppercase">
                 Nuestros Socios Comerciales
             </h5>
         </div>
     </div>
-    <div class="row justify-content-around align-items-center py-lg-3">
-        <div class="col-lg-10">
+    <div class="row justify-content-around align-items-center py-lg-1">
+        <div class="col-1 text-center">
+            <button class="btn btn-link" id="destacadosNextBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 39.904 39.903">
+                    <g id="Flecha" transform="translate(39.904 39.903) rotate(180)">
+                      <path id="Trazado_22" data-name="Trazado 22" d="M620.986,945.293l-9.976-9.976-9.976-9.975H581.082l9.975,9.976,9.976,9.975h0l-9.974,9.975-9.976,9.976h19.951l9.977-9.976,9.975-9.976h0" transform="translate(-581.082 -925.342)" fill="#e40e20"/>
+                    </g>
+                  </svg>
+                  
+                </button>
+        </div>
+        <div class="col-lg-9">
             <div class="row">
-                <div class="owl-carousel">
+                <div class="owl-carousel" id="owl-carousel-2">
                     <img src="{{ asset('img/partners/part1.png') }}" class="img-fluid">
                     <img src="{{ asset('img/partners/part2.png') }}" class="img-fluid">
                     <img src="{{ asset('img/partners/part3.png') }}" class="img-fluid">
@@ -84,8 +113,8 @@
 @section('page_scripts')
 <script>
     $(document).ready(function() {
-            var owl = $('.owl-carousel');
-            owl.owlCarousel({
+            var destacado = $('#owl-carousel');
+            destacado.owlCarousel({
                 loop: true,
                 touchDrag: true,
                 autoplay:true,
@@ -94,7 +123,7 @@
                 responsive: {
                     // breakpoint from 768 up
                     0: {
-                        items: 2
+                        items: 1
                     },
                     768: {
                         items: 2
@@ -104,9 +133,20 @@
                     }
                 }
             });
+
+            $('#destacadosNextBtn').click(function() {
+                destacado.trigger('next.owl.carousel');
+            });
+
+            // Go to the previous item
+            $('#destacadosPrevBtn').click(function() {
+                // With optional speed parameter
+                // Parameters has to be in square bracket '[]'
+                destacado.trigger('prev.owl.carousel', [300]);
+            });
         });
     $(document).ready(function() {
-            var owl = $('.owl-carousel-2');
+            var owl = $('#owl-carousel-2');
             owl.owlCarousel({
                 loop: true,
                 touchDrag: true,
