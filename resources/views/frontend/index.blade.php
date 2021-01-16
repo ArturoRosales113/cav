@@ -26,17 +26,19 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center align-items-center pb-5">
-        <div class="col-9 col-lg-10">
+    <div class="row justify-content-center align-items-center py-5">
+        <div class="col-2 text-center">
+            <button class="btn btn-link" id="destacadosNextBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 39.904 39.903">
+                    <g id="Flecha" transform="translate(39.904 39.903) rotate(180)">
+                      <path id="Trazado_22" data-name="Trazado 22" d="M620.986,945.293l-9.976-9.976-9.976-9.975H581.082l9.975,9.976,9.976,9.975h0l-9.974,9.975-9.976,9.976h19.951l9.977-9.976,9.975-9.976h0" transform="translate(-581.082 -925.342)" fill="#e40e20"/>
+                    </g>
+                  </svg>
+                  
+                </button>
+        </div>
+        <div class="col-8">
             <div class="row pt-3">
-                <button class="btn btn-link" id="destacadosNextBtn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 39.904 39.903">
-                        <g id="Flecha" transform="translate(39.904 39.903) rotate(180)">
-                          <path id="Trazado_22" data-name="Trazado 22" d="M620.986,945.293l-9.976-9.976-9.976-9.975H581.082l9.975,9.976,9.976,9.975h0l-9.974,9.975-9.976,9.976h19.951l9.977-9.976,9.975-9.976h0" transform="translate(-581.082 -925.342)" fill="#e40e20"/>
-                        </g>
-                      </svg>
-                      
-                    </button>
                 <div class="owl-carousel" id="owl-carousel">
                     @foreach ($fam->articles->where('is_trend','==', 1) as $aa)
 
@@ -50,15 +52,16 @@
 
                     @endforeach
                 </div>
-                <button class="btn btn-link" id="destacadosPrevBtn">
-                    <svg id="Flecha" xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 39.904 39.903">
-                        <path id="Trazado_22" data-name="Trazado 22" d="M620.986,945.293l-9.976-9.976-9.976-9.975H581.082l9.975,9.976,9.976,9.975h0l-9.974,9.975-9.976,9.976h19.951l9.977-9.976,9.975-9.976h0" transform="translate(-581.082 -925.342)" fill="#e40e20"/>
-                      </svg>
-                      
-                </button>
             </div>
         </div>
-
+        <div class="col-2 text-center">
+            <button class="btn btn-link" id="destacadosPrevBtn">
+                <svg id="Flecha" xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 39.904 39.903">
+                    <path id="Trazado_22" data-name="Trazado 22" d="M620.986,945.293l-9.976-9.976-9.976-9.975H581.082l9.975,9.976,9.976,9.975h0l-9.974,9.975-9.976,9.976h19.951l9.977-9.976,9.975-9.976h0" transform="translate(-581.082 -925.342)" fill="#e40e20"/>
+                  </svg>
+                  
+            </button>
+        </div>
     </div>
 
     @endif
@@ -82,8 +85,8 @@
         </div>
     </div>
     <div class="row justify-content-around align-items-center py-lg-1">
-        <div class="col-1 text-center">
-            <button class="btn btn-link" id="destacadosNextBtn">
+        <div class="col-2 col-lg-1 text-center">
+            <button class="btn btn-link" id="sociosNextBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 39.904 39.903">
                     <g id="Flecha" transform="translate(39.904 39.903) rotate(180)">
                       <path id="Trazado_22" data-name="Trazado 22" d="M620.986,945.293l-9.976-9.976-9.976-9.975H581.082l9.975,9.976,9.976,9.975h0l-9.974,9.975-9.976,9.976h19.951l9.977-9.976,9.975-9.976h0" transform="translate(-581.082 -925.342)" fill="#e40e20"/>
@@ -92,7 +95,7 @@
                   
                 </button>
         </div>
-        <div class="col-lg-9">
+        <div class="col-8">
             <div class="row">
                 <div class="owl-carousel" id="owl-carousel-2">
                     <img src="{{ asset('img/partners/part1.png') }}" class="img-fluid">
@@ -106,6 +109,14 @@
                     <img src="{{ asset('img/partners/part9.png') }}" class="img-fluid">
                 </div>
             </div>
+        </div>
+        <div class="col-2 col-lg-1 text-center">
+            <button class="btn btn-link" id="sociosPrevBtn">
+                <svg id="Flecha" xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 39.904 39.903">
+                    <path id="Trazado_22" data-name="Trazado 22" d="M620.986,945.293l-9.976-9.976-9.976-9.975H581.082l9.975,9.976,9.976,9.975h0l-9.974,9.975-9.976,9.976h19.951l9.977-9.976,9.975-9.976h0" transform="translate(-581.082 -925.342)" fill="#e40e20"/>
+                  </svg>
+                  
+            </button>
         </div>
     </div>
 </section>
@@ -146,8 +157,8 @@
             });
         });
     $(document).ready(function() {
-            var owl = $('#owl-carousel-2');
-            owl.owlCarousel({
+            var socios = $('#owl-carousel-2');
+            socios.owlCarousel({
                 loop: true,
                 touchDrag: true,
                 autoplay:true,
@@ -156,7 +167,7 @@
                 responsive: {
                     // breakpoint from 768 up
                     0: {
-                        items: 2
+                        items: 1
                     },
                     768: {
                         items: 2
@@ -165,6 +176,17 @@
                         items: 5
                     }
                 }
+            });
+
+            $('#sociosNextBtn').click(function() {
+                socios.trigger('next.owl.carousel');
+            });
+
+            // Go to the previous item
+            $('#sociosPrevBtn').click(function() {
+                // With optional speed parameter
+                // Parameters has to be in square bracket '[]'
+                socios.trigger('prev.owl.carousel', [300]);
             });
         });
 </script>

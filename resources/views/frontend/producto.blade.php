@@ -128,7 +128,9 @@
                                 <div id="specs" class="collapse" aria-labelledby="headingaplicaciones"
                                     data-parent="#accordionExample">
                                     <div class="card-body text-dark">
-                                        {{ $article -> specs }}
+                                        @foreach (explode(',' , $article -> specs) as $esp)
+                                            {{ $esp }} <br>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
