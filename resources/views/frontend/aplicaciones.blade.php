@@ -40,11 +40,11 @@
                                            
                                             @foreach ($at->articles as $atA)
                                             <div class="tab-pane fade show {{$loop->first ? 'active' : ''}}" id="v-pills-{{ $at->display_name }}articles-{{ $atA->id }}" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                                <div class="row">
-                                                    <div class="col-3">
+                                                <div class="row align-items-center justify-content-center">
+                                                    <div class="col-8 col-lg-3">
                                                         <img src="{{ $atA->pics()->count() > 0 ? asset($atA->pics()->first()->path) : asset('img/brand/no_img_found.png') }}" alt="" class="aplications-article">
                                                     </div>
-                                                    <div class="col-9 text-center">
+                                                    <div class="col-12 col-lg-9 text-center">
                                                         <p class="text-justify">
                                                             <span class="bold text-dark">
                                                                 {{ $atA->name }}

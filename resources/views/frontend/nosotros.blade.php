@@ -6,7 +6,7 @@ Nosotros
 
 
 @section('content')
-<section class="pb-5">
+<section class="pt-5 pt-lg-0 pb-5">
     <div class="row pb-5">
         <div class="col-12 p-0">
             <img src="{{ asset('img/nosotros.jpg') }}" alt="" class="img-fluid">
@@ -78,17 +78,39 @@ Nosotros
             <h2 class="color1 mb-3">
                 Visión
             </h2>
-            <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. </li>
-                <li>Quis ipsum suspendisse ultrices gravida.</li>
-                <li>Risus commodo viverra maecenas accumsan lacus vel facilisis. </li>
-            </ul>
+            <p class="text-justify">
+                Ser la empresa líder en el mercado Nacional con productos de alta calidad y cumpliendo las espectativas de neustros clientes
+            </p>
         </div>
         <div class="col-1 d-none d-lg-flex"></div>
         <div class="col-12 col-lg-5 p-0">
             <img src="{{ asset('img/nosotros2.jpg') }}" class="img-fluid" alt="">
         </div>
+    </div>
+
+    <div class="row justify-content-center justify-content-lg-start align-items-lg-center py-5">
+        <div class="col-12 col-lg-5 p-0 order-3 order-lg-1">
+            <img src="{{ asset('img/nosotros2.jpg') }}" class="img-fluid" alt="">
+        </div>
+        <div class="col-1 d-none d-lg-flex order-2"></div>
+        <div class="col-10 col-lg-5 pb-4 pb-lg-0 order-1 order-lg-3">
+            <h2 class="color1 mb-3">
+               Valores
+            </h2>
+            <ul class="list-group">
+                <li class="list-group-item p-0 py-1 border-0">Respeto</li>
+                <li class="list-group-item p-0 py-1 border-0">Actitud</li>
+                <li class="list-group-item p-0 py-1 border-0">Compromiso</li>
+                <li class="list-group-item p-0 py-1 border-0">Confianza</li>
+                <li class="list-group-item p-0 py-1 border-0">Trabajo en equipo</li>
+                <li class="list-group-item p-0 py-1 border-0">Liderazgo</li>
+                <li class="list-group-item p-0 py-1 border-0">Responsabilidad</li>
+                <li class="list-group-item p-0 py-1 border-0">Disciplina</li>
+              </ul>
+
+        </div>
+
+
     </div>
 
 
