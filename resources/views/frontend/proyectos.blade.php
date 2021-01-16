@@ -2,11 +2,11 @@
 
 
 @section('content')
-<div class="row justify-content-center py-5">
-    <div class="col-10">
-        <div class="row justify-content-between">
+<div class="row justify-content-center py-5 mt-5 mt-lg-0">
+    <div class="col-11 col-lg-10">
+        <div class="row justify-content-center">
 
-            <div class="nav flex-column nav-pills col-10 col-lg-2 text-center" id="v-proyects-tab" role="tablist"
+            <div class="nav flex-row flex-lg-column  nav-pills col-10 col-lg-2 text-center" id="v-proyects-tab" role="tablist"
                 aria-orientation="vertical">
                 @foreach ($fam->aplications as $a)
                 <a class="pav-pill white mb-3 shadow {{ $loop->first ? 'active' : '' }} border-0"
@@ -17,26 +17,26 @@
 
                 <a href="{{ route('front.contacto') }}"
                     onclick="event.preventDefault();document.getElementById('contacto-form-get').submit();"
-                    class="pav-pill gray shadow mt-4">
+                    class="pav-pill gray shadow mt-4 d-none d-lg-flex">
                     Contáctanos
                 </a>
 
             </div>
 
-            <div class="tab-content col-9 bg-white" id="v-pills-tabContent">
+            <div class="tab-content col-11 col-lg-9 bg-white" id="v-pills-tabContent">
                 @foreach ($fam->aplications as $a)
                 <div class="tab-pane fade show {{ $loop->first ? 'active' : '' }}" id="{{ 'v-pills-'.$a->name }}" role="
                     tabpanel" aria-labelledby="{{ 'v-pills-home-tab'.$a->name  }}">
 
-                    <div class="row ">
+                    <div class="row justify-content-between">
                         @foreach ($a->proyects as $pt)
-                        <div class="col-10 col-lg-6">
+                        <div class="col-12 col-lg-6">
                             <div class="row justify-content-center py-3">
-                                <div class="col-6">
+                                <div class="col-12 col-lg-6">
                                     <img src="{{ $pt->img_path == null ? asset('img/brand/no_img_found.png') : asset($pt->img_path) }}"
                                         alt="" class="img-fluid">
                                 </div>
-                                <div class="col-6">
+                                <div class="col-12 col-lg-6">
 
                                     <h6 class="bold">
                                         <small>{{ ucfirst($pt->date) }}</small> <br>
