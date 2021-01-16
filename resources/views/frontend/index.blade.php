@@ -10,7 +10,9 @@
 @endsection
 
 @section('page_banner')
-@include('frontend.layouts.slices.banner', ['banners' => $fam->banners])
+<section class="pt-5 pt-lg-0">
+    @include('frontend.layouts.slices.banner', ['banners' => $fam->banners])
+</section>
 @endsection
 
 

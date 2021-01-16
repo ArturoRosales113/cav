@@ -478,6 +478,18 @@ img.logo-grupo {
     object-fit: cover;
 }
 
+
+.product-category-title{
+    font-size: .8em;
+    letter-spacing: .01em;
+}
+
+.product-article-pic{
+    height: 10em;
+    width: 100%;
+    object-fit: cover;
+}
+
 /* Media Queries */
 @media only screen and (max-width: 764px) {
     .welcome-img-link img {

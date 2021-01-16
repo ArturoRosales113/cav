@@ -48,7 +48,7 @@
     <div class="row py-2 justify-content-center align-items-center bg1">
         <div class="col-4">
             <h5 clas s="text-center text-white">
-                <span class="font2">Inscríbete a nuesto newsletter</span>
+                <span class="font2 text-white">Inscríbete a nuesto newsletter</span>
             </h5>
 
         </div>

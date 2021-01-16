@@ -61,9 +61,9 @@ Productos
 
             <div class="accordion d-none d-lg-block" id="products_collapse">
                 @foreach ($categories as $c)
-                <div class="card">
+                <div class="card rounded">
                     <div class="card-header bg-white" id="{{ $c -> name.'-heading' }}">
-                        <a href="{{ route('front.productos.categoria', ['family' => $fam->name, 'categoryName' => $c->name]) }}" class="btn btn-link text-left text-uppercase text-dark">
+                        <a href="{{ route('front.productos.categoria', ['family' => $fam->name, 'categoryName' => $c->name]) }}" class="btn btn-link text-left text-uppercase text-dark product-category-title">
                             {{ $c -> display_name }}
                         </a>
                         <button class="btn btn-link text-left text-uppercase text-dark" type="button"
@@ -99,11 +99,11 @@ Productos
             <div class="list-group">
                 @foreach ($articles as $a)
                 <a href="{{ route('front.producto', ['family' => $fam->name, 'slug' => $ca->slug]) }}"
-                    class="list-group-item list-group-item-action">
-                    <div class="row">
+                    class="list-group-item list-group-item-action border-0">
+                    <div class="row py-2">
                         <div class="col-12 col-md-3 mb-2 mb-lg-0">
                             <img src="{{ $a->pics()->count() > 0 ? asset($a->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
-                                class="img-fluid" alt="">
+                                class="img-fluid product-article-pic" alt="">
                         </div>
                         <div class="col-12 col-md-9">
                             <h4>{{ ucwords($a->name )}}</h4>
