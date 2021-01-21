@@ -43,20 +43,46 @@
                 @foreach ($families as $fam)
                 <a href="{{ route('front.index', $fam->name) }}"
                     class="pav-pill red bold sp2">{{ ucfirst($fam->display_name) }}</a>
-                <div class="row py-5">
-                    <div class="col-12">
-                        <div class="owl-carousel">
+                <div class="row justify-content-center align-items-stretch py-5 no-gutters">
+
+                    <div class="col-2 col-lg-1 text-center shadow-sm">
+                        <div class="row justify-content-center align-items-center h-75">
+                            <button class="btn btn-link p-0 button-carousel-welcome prev" data-family="{{ $fam->name }}" id="destacadosNextBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13.904" height="13.903" viewBox="0 0 13.904 13.903">
+                                    <g id="Flecha" transform="translate(13.904 13.903) rotate(180)">
+                                      <path id="Trazado_22" data-name="Trazado 22" d="M594.986,932.294l-3.476-3.476-3.476-3.476h-6.952l3.476,3.476,3.476,3.476h0l-3.475,3.476-3.476,3.476h6.952l3.476-3.476,3.476-3.476h0" transform="translate(-581.082 -925.342)" fill="#707070"/>
+                                    </g>
+                                </svg>                              
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-8 col-lg-10">
+                        <div class="owl-carousel" id="carousel-{{ $fam->name  }}">
                             @foreach ($fam->categories as $cat)
                             <div class="welcome-img-link">
                                 <a
                                     href="{{ route('front.productos.categoria',['family' => $fam->name,'categoryName' => $cat->name]) }}">
                                     <img src="{{ asset($cat->img_path) }}" alt="">
+                                    <br>
                                     <span class="text-dark">{{ $cat->display_name }}</span>
                                 </a>
                             </div>
                             @endforeach
                         </div>
                     </div>
+
+                    <div class="col-2 col-lg-1 text-center shadow-sm">
+                        <div class="row justify-content-center align-items-center h-75">
+                            <button class="btn btn-link p-0 button-carousel-welcome next" data-family="{{ $fam->name }}" id="destacadosPrevBtn">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13.904" height="13.903" viewBox="0 0 13.904 13.903">
+                                    <path id="Trazado_22" data-name="Trazado 22" d="M594.986,932.294l-3.476-3.476-3.476-3.476h-6.952l3.476,3.476,3.476,3.476h0l-3.475,3.476-3.476,3.476h6.952l3.476-3.476,3.476-3.476h0" transform="translate(-581.082 -925.342)" fill="#707070"/>
+                                </svg>                                
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
                 @endforeach
             </div>
@@ -86,24 +112,32 @@
 
     <script>
         $(document).ready(function() {
-                var owl = $('.owl-carousel');
-                owl.owlCarousel({
-                    loop: true,
-                    touchDrag: true,
-                    responsive: {
-                        // breakpoint from 768 up
-                        0: {
-                            items: 2
-                        },
-                        768: {
-                            items: 2
-                        },
-                        1023: {
-                            items: 4
-                        }
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                loop: true,
+                touchDrag: true,
+                responsive: {
+                    // breakpoint from 768 up
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    1023: {
+                        items: 4
                     }
-                });
+                }
             });
+            $('.button-carousel-welcome.prev').click(function(e){
+                var owlsel = $('#carousel-' + $(this).attr('data-family'));
+                owlsel.trigger('next.owl.carousel');
+            });
+            $('.button-carousel-welcome.next').click(function(e){
+                var owlsel = $('#carousel-' + $(this).attr('data-family'));
+                owlsel.trigger('prev.owl.carousel', [300]);
+            });
+        });
     </script>
 </body>
 

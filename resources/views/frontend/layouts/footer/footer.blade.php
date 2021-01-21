@@ -74,7 +74,7 @@
                     </div>
 
                 </div>
-                <div class="col-12 col-lg-3 text-left mb-3 mb-lg-0">
+                <div class="col-12 col-md-6 col-lg-3 text-left mb-3 mb-lg-0">
                     <h5 class="color1">Productos</h5>
                     <ul class="list-group">
 
@@ -89,7 +89,7 @@
 
                     </ul>
                 </div>
-                <div class="col-12 col-lg-2 text-left mb-3 mb-lg-0">
+                <div class="col-12 col-md-6 col-lg-2 text-left mb-3 mb-lg-0">
                     <h5 class="color1">Aplicaciones</h5>
                     <ul class="list-group">
 
@@ -104,7 +104,7 @@
 
 
                 </div>
-                <div class="col-12 col-lg-3 text-left mb-3 mb-lg-0">
+                <div class="col-12 col-md-6 col-lg-3 text-left mb-3 mb-lg-0">
                     <h5 class="color1">Servicios</h5>
                     <ul class="list-group">
 
