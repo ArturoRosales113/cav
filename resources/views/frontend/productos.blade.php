@@ -17,7 +17,7 @@ Productos
 @section('content')
 <section>
     <div class="row justify-content-around aling-items-center py-5">
-        <div class="col-12 col-lg-3 text-center text-lg-left">
+        <div class="col-12 col-lg-4 text-center text-lg-left">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-lg bg1 text-white d-lg-none" data-toggle="modal" data-target="#menucategorias">
                 Menú de productos
@@ -66,7 +66,7 @@ Productos
                         <a href="{{ route('front.productos.categoria', ['family' => $fam->name, 'categoryName' => $c->name]) }}" class="btn btn-link text-left text-uppercase text-dark product-category-title">
                             {{ $c -> display_name }}
                         </a>
-                        <button class="btn btn-link text-left text-uppercase text-dark" type="button"
+                        <button class="btn btn-link text-left text-uppercase text-dark float-right" type="button"
                             data-toggle="collapse" data-target="{{ '#'.$c -> name.'-collapse' }}"
                             aria-controls="{{ $c -> name.'-collapse' }}" aria-expanded="false">
                             <small>  <i class="fas fa-chevron-down"></i></small>
