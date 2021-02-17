@@ -57,8 +57,9 @@ Productos
                 </div>
                 </div>
             </div>
-            <!-- Modal Final -->
+            <!-- //Modal -->
 
+            <!-- Menu Acordión -->
             <div class="accordion d-none d-lg-block" id="products_collapse">
                 @foreach ($categories as $c)
                 <div class="card rounded">
@@ -98,7 +99,7 @@ Productos
         <div class="col-12 col-lg-8 py-5 py-lg-0">
             <div class="list-group">
                 @foreach ($articles as $a)
-                <a href="{{ route('front.producto', ['family' => $fam->name, 'slug' => $ca->slug]) }}"
+                <a href="{{ route('front.producto', ['family' => $fam->name, 'slug' => $a->slug]) }}"
                     class="list-group-item list-group-item-action border-0">
                     <div class="row py-2">
                         <div class="col-12 col-md-3 mb-2 mb-lg-0">

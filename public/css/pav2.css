@@ -213,7 +213,7 @@ body {
 }
 
 .menu-product-foto {
-    height: 5em;
+    height: 10em;
     width: 90%;
     object-fit: cover;
     border: 5px solid #fff;
@@ -490,9 +490,10 @@ img.logo-grupo {
 }
 
 .product-article-pic{
-    height: 10em;
-    width: 100%;
+    height: 250px;
+    width: 250px;
     object-fit: cover;
+    margin: auto;
 }
 
 /* Media Queries */

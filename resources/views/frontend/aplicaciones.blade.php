@@ -31,9 +31,13 @@
                                 <h4 class="bold text-dark text-center py-4">
                                     {{ ucFirst($at->name)}}
                                 </h4>
-                                <img class="img-fluid w-100"
+                                <img class="rmap w-100"
                                     src="{{ $at->img_path == null ? asset('img/brand/no_img_found.png') : asset($at->img_path) }}"
-                                    alt="{{ $at->name }}" id="">
+                                    alt="{{ $at->name }}" id="{{ 'img-'.$at->name }}" usemap="{{ '#map-'.$at->name }}">
+                                    <map name="{{ 'map-'.$at->name }}">
+                                        <area shape="rect" coords="200,100,400,150" href="#v-pills-Hospitalarticles-81" aria-controls="#v-pills-Hospitalarticles-81" alt="">
+                     
+                                    </map>
                                 <div class="row py-4">
                                     <div class="col-12">
                                         <div class="tab-content" id="v-pills-tabContent">
@@ -74,8 +78,11 @@
                                     aria-orientation="vertical">
                                     @foreach ($at->articles as $atA)
                                     <a class="nav-link {{$loop->first ? 'active' : ''}}" id="v-pills-home-tab"
-                                        datA-toggle="pill" href="#v-pills-{{ $at->display_name }}articles-{{ $atA->id }}" role="tab" aria-controls="v-pills-articles-{{ $atA->id }}"
-                                        aria-selected="{{$loop->first ? 'true' : 'false'}}">
+                                        href="#v-pills-{{ $at->display_name }}articles-{{ $atA->id }}"
+                                        role="tab" aria-controls="v-pills-articles-{{ $atA->id }}"
+                                        aria-selected="{{$loop->first ? 'true' : 'false'}}"
+                                        datA-toggle="pill"
+                                        >
                                         <img src="{{ $atA->pics()->count() > 0 ? asset($atA->pics()->first()->path) : asset('img/brand/no_img_found.png') }}" alt="" class="aplications-article">
                                         <small class="text-center text-dark">{{ $atA -> name }}</small>
                                     </a>
@@ -93,4 +100,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('name')
+    <script>
+        $(document).ready(function(e) {
+            $('.rmap').rwdImageMaps();
+        });
+    </script>
 @endsection

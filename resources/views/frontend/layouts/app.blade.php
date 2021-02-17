@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="{{asset('fav.png')}}">
     <title> {{ env('APP_NAME') }} | @yield('page_title') </title>
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Playfair+Display:700i" rel="stylesheet">
+    <link href="https://mattstow.com/js/ios-orientationchange-fix.min.js"></script>
 
     <!-- Estilos -->
     @include('frontend.layouts.styles')

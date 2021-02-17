@@ -45,6 +45,7 @@ class PavController extends Controller
         $fam = Family::where('name', '=', $family)->first();
         return view('frontend.servicios',['fam' => $fam]);
     }
+    
     public function recursos($family)
     {
         $fam = Family::where('name', '=', $family)->first();
