@@ -141,7 +141,7 @@
                     placeholder="Teléfono Fijo">
                 </div>
                 <div class="col-12 col-md-6 form-group">
-                  <input type="text" class="form-control rounded-pill py-4" name="Teléfono Celular"
+                  <input type="text" class="form-control rounded-pill py-4" name="telefonoCelular"
                     placeholder="Teléfono celular">
                 </div>
               </div>
@@ -175,7 +175,7 @@
                 </div>
                 <div class="col-12 text-center">
                   <div class="form-check py-3">
-                    <input class="form-check-input" type="checkbox" name="check" reuired id="defaultCheck1">
+                    <input class="form-check-input" type="checkbox" name="check" required id="defaultCheck1">
                     <label class="form-check-label text-white" for="defaultCheck1">
                       He leído y estoy de acuerdo con el: Aviso de Privacidad
                     </label>

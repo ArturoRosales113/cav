@@ -115,7 +115,7 @@ Nosotros
 
 
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center pb-5">
         <div class="col-10">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-3">
@@ -123,14 +123,13 @@ Nosotros
                     <div class="sucursal text-dark">
                         <strong class="color1">Matriz</strong>
                         <p>
-                            Calzada Ruiz Cortines No.505-B Entre Calle 11 y Jesus Reyes Heroles Fracc. Costa Verde Boca
-                            del Rio, Veracruz, México C.P. 94294
+                            Calzada Ruiz Cortines No.505-B Entre Calle 11 y Jesus Reyes Heroles Fracc. Costa Verde Boca del Rio, Veracruz, México C.P. 94294
                         </p>
                         <p>
-                            <strong>Tel:</strong> 01 800 215 260601, <br>
+                            <strong>Tel:</strong> 01 800 215 260601,<br>
                             01 (229) 921 903601, <br>
                             01 (229) 921 929401, <br>
-                            01 (229) 922 008401 ó <br>
+                            01 (229) 922 008401, <br>
                             01 (229) 922 0085
                         </p>
                         <p>
@@ -152,20 +151,20 @@ Nosotros
                 <div class="col-12 col-lg-3">
                     <h6 class="bold text-dark">&nbsp;</h6>
                     <div class="sucursal text-dark">
-                        <strong class="color1">SUCURSAL VILLAHERMOSA</strong>
+                        <strong class="color1">Sucursal Villahermosa</strong>
                         <p>
                             Calle Oaxaca No. 108 Fracc. guadalupe Villahermosa, Tabasco, México. C.P. 86180
                         </p>
                         <p>
-                            <strong>Tel:</strong>01 (993) 352 2021, <br>
-                            01 (993) 352 1821
+                            <strong>Tel:</strong> 01 (993) 352 2021,<br>
+                             01 (993) 352 1821
                         </p>
                         <p>
                             <strong>Correo:</strong> <br>
                             villahermosa@puertasveracruz.com
                         </p>
                     </div>
-                    <div class="sucursal text-dark">
+                    {{-- <div class="sucursal text-dark">
                         <strong class="color1">SUCURSAL MÉRIDA</strong>
                         <p>
                             Calle Oaxaca No. 108 Fracc. guadalupe Villahermosa, Tabasco, México. C.P. 86180
@@ -173,20 +172,20 @@ Nosotros
                                 <strong>Tel:</strong> 01 (993) 352 2021, <br>
                                 01 (993) 352 1821
                             </p>
-                    </div>
-                    <div class="sucursal text-dark">
+                    </div> --}}
+                    {{-- <div class="sucursal text-dark">
                         <strong class="color1">SUCURSAL CANCÚN</strong>
                         <p>
                             13 Sur No. 2104 Col. Santiago Puebla, Puebla, México. C.P. 72000
                             <p>
                                 <strong>Tel:</strong> 01 (222) 404 6616 al 181
                             </p>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-12 col-lg-3 border-right border-left">
                     <h6 class="bold text-dark">Zona Norte</h6>
                     <div class="sucursal text-dark">
-                        <strong class="color1">SUCURSAL MONTERREY</strong>
+                        <strong class="color1">Sucursal Monterrey</strong>
                         <p>
                             Crispin Treviño No.3730 Col. Venustiano Carranza Monterrey, Nuevo Leon, México. C.P. 64103
                         </p>
@@ -201,7 +200,7 @@ Nosotros
                         </p>
                     </div>
                     <div class="sucursal text-dark">
-                        <strong class="color1">SUCURSAL CHIHUAHUA</strong>
+                        <strong class="color1">Sucursal Chihuahua</strong>
                         <p>
                             Sabino No. 1910 Col. Las Granjas Chihuahua, Chihuahua, México. C.P. 64103
                         </p>
@@ -218,9 +217,9 @@ Nosotros
                 <div class="col-12 col-lg-3">
                     <h6 class="bold text-dark">Zona Centro</h6>
                     <div class="sucursal text-dark">
-                        <strong class="color1">SUCURSAL PUEBLA </strong>
+                        <strong class="color1">Sucursal Puebla </strong>
                         <p>
-                            13 Sur No. 2104 Col. Santiago Puebla, Puebla, México. C.P. 72000
+                            13 Sur No. 2104 Col. Santiago Puebla, Puebla, México. C.P. 72000                            
                         </p>
                         <p>
                             <strong>Tel/Fax:</strong> 01 (222) 404 6616 al 181
@@ -228,14 +227,14 @@ Nosotros
                         </p>
                     </div>
                     <div class="sucursal text-dark">
-                        <strong class="color1">SUCURSAL QUERÉTARO </strong>
+                        <strong class="color1">SUCURSAL Querétaro</strong>
                         <p>
-                            13 Sur No. 2104 Col. Santiago Puebla, Puebla, México. C.P. 72000
+                            Calle primer Retorno Universitario No. 1B Int. 21, Unidad Condominal Terra Business Park, Condominio B, Municipio El Marqués, Querétaro                            
                         </p>
-                        <p>
-                            <strong>Tel/Fax:</strong> 01 (222) 404 6616 al 181
+                        {{-- <p>
+                            <strong>Tel/Fax:</strong> 01 (222) 404 6616 al 18
 
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
             </div>

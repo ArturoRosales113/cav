@@ -11,6 +11,7 @@ use File;
 use App\Family;
 use App\Mensaje;
 use App\Article;
+use App\Distributor;
 
 class FrontController extends Controller
 {
@@ -71,14 +72,33 @@ class FrontController extends Controller
     $input = $request->all();
     $rules = [
         'nombre' => 'required',
+        'razonSocial' => 'required',
+        'paginaWeb' => 'required',
         'correo' => 'required|email',
-        'interes' => 'max:150'
+        'telefonoFijo' => 'required',
+        'telefonoCelular' => 'required',
+        'pais' => 'required',
+        'estado' => 'required',
+        'ciudad' => 'required',
+        'calle' => 'required',
+        'numeroExterior' => 'required',
+        'codigoPostal' => 'required'
     ];
 
     $messages = [
-     'nombre.required' => 'El campo "Nombre" es obligatorio',
-     'correo.required' => 'El campo "Coreo" es obligatorio.',
-     'correo.email' => 'El email no es válido'
+        'nombre.required' => 'El campo "nombre" es obligatorio',
+        'razonSocial.required' => 'El campo "razón social" es obligatorio',
+        'paginaWeb.required' => 'El campo "página web" es obligatorio',
+        'correo.required' => 'El campo "Correo" es obligatorio',
+        'correo.email' => 'El email no es válido',
+        'telefonoFijo.required' => 'El campo "Teléfono" es obligatorio',
+        'telefonoCelular.required' => 'El campo "Celular" es obligatorio',
+        'pais.required' => 'El campo "País" es obligatorio',
+        'estado.required' => 'El campo "Estado" es obligatorio',
+        'ciudad.required' => 'El campo "Ciudad" es obligatorio',
+        'calle.required' => 'El campo "Calle" es obligatorio',
+        'numeroExterior.required' => 'El campo "Numero Exterior" es obligatorio',
+        'codigoPostal.required' => 'El campo "Código Postal" es obligatorio'
     ];
 
 
@@ -91,11 +111,7 @@ class FrontController extends Controller
             ->withInput();
 
     } else {
-     $msj = Mensaje::create([
-         'nombre' => $input['nombre'],
-         'correo' => $input['correo'],
-         'interes' => $input['interes'],
-        ]);
+     $msj = Distributor::create($request->all());
      return redirect()->back()->with('success', 'Pronto un agente se podrá en contacto contigo');
  }
 }
@@ -106,15 +122,13 @@ class FrontController extends Controller
 
         $rules = [
             'nombre' => 'required',
-            'correo' => 'required|email',
-            'article_id' => 'not_in:0'
+            'correo' => 'required|email'
         ];
 
         $messages = [
         'nombre.required' => 'El campo "Nombre" es obligatorio',
         'correo.required' => 'El campo "Coreo" es obligatorio.',
-        'correo.email' => 'El email no es válido',
-        'article_id.not_in' => 'Debes seleccionar un artículo'
+        'correo.email' => 'El email no es válido'
         ];
 
         $validator = Validator::make($input, $rules, $messages);
@@ -128,8 +142,7 @@ class FrontController extends Controller
         } else {
         $msj = Mensaje::create([
             'nombre' => $input['nombre'],
-            'correo' => $input['correo'],
-            'interes' => $input['interes'],
+            'correo' => $input['correo']
             ]);
         $article = Article::find($input['article_id']);
         $msj->articles()->save($article);

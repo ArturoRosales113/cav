@@ -30,9 +30,9 @@
                     <div class="row pt-4 pl-5">
                         @foreach ($c->articles as $a)
                         <div class="col-3 text-center p-0 px-1">
-                            <a href="{{ route('front.producto',['family' => $fam->name, 'slug'=> $a->slug]) }}">
+                            <a href="{{ route('front.producto',['family' => $fam->name, 'slug'=> $a->slug]) }}" class="zoom-container">
                                 <img src="{{ $a->pics()->count() > 0 ? asset($a->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
-                                    class="menu-product-foto mb-2 shadow" alt="">
+                                    class="menu-product-foto mb-2 zoom shadow" alt="">
                                 <small class="text-dark collapse-product-name">
                                     {{ $a->name }}
                                 </small>

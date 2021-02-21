@@ -65,7 +65,7 @@
                                         <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
                                             data-target="#aplicaciones" aria-expanded="true"
                                             aria-controls="aplicaciones">
-                                            <h6 class="">&nbsp;+&nbsp;Aplicaciones</h6>
+                                            <h6 class="">+&nbsp;Aplicaciones</h6>
                                         </button>
                                 </div>
 
@@ -74,7 +74,7 @@
                                     <div class="card-body text-dark">
                                         <div class="row">
                                             @foreach ($article->aplications as $aa)
-                                            <div class="col text-dark text-center">
+                                            <div class="col-6 col-lg-3 text-dark text-center">
 
                                                 <a href="" class="btn btn-sm text-dark d-block">
                                                     <img class="img-fluid"
@@ -96,7 +96,7 @@
                        
                                         <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
                                             data-target="#descargas" aria-expanded="true" aria-controls="descargas">
-                                            <h6 class="">&nbsp;+&nbsp;Descargas</h6>
+                                            <h6 class="">+&nbsp;Descargas</h6>
                                         </button>
                          
                                 </div>
@@ -105,8 +105,8 @@
                                     data-parent="#accordionExample">
                                     <div class="card-body text-dark">
                                         @foreach ($article->downloads as $ad)
-                                        <a href="{{ asset($ad->path) }}" class="text-white btn bg1" target="_blank">
-                                            {{str_replace('article_downloads/','',$ad->path)}}
+                                        <a href="{{ asset($ad->path) }}" class="btn btn-outline-dark" target="_blank">
+                                            <i class="fas fa-file-download"></i>  <small>{{ucwords(str_replace('article_downloads/','',$ad->path))}}</small>
                                         </a>
                                         @endforeach
                                     </div>
@@ -120,7 +120,7 @@
                         
                                         <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
                                             data-target="#specs" aria-expanded="true" aria-controls="specs">
-                                            <h6 class="">&nbsp;+&nbsp;Especificaciones</h6>
+                                            <h6 class="">+&nbsp;Especificaciones</h6>
                                         </button>
                 
                                 </div>
@@ -141,20 +141,30 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <span>¿Te interesa este producto?</span> <a href="" class="btn btn-link color1 bold">Cotizalo</a>
+                        <span>¿Te interesa este producto?</span> <button class="btn btn-link color1 bold" type="button" data-toggle="modal" data-target="#staticBackdrop">Cotízalo</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center align-items-start py-5 mt-5">
-            <div class="col-10">
+        <div class="row justify-content-center align-items-center py-5 mt-5">
+            <div class="col-2 col-lg-1 text-center">
+                <button class="btn btn-link p-0" id="prodRelNextBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 39.904 39.903">
+                        <g id="Flecha" transform="translate(39.904 39.903) rotate(180)">
+                          <path id="Trazado_22" data-name="Trazado 22" d="M620.986,945.293l-9.976-9.976-9.976-9.975H581.082l9.975,9.976,9.976,9.975h0l-9.974,9.975-9.976,9.976h19.951l9.977-9.976,9.975-9.976h0" transform="translate(-581.082 -925.342)" fill="#e40e20"/>
+                        </g>
+                      </svg>
+                      
+                    </button>
+            </div>
+            <div class="col-8">
                 <h3 class="text-center bold mb-5 text-dark">Productos Relacionados</h3>
                 <div class="owl-carousel">
                     @foreach ($article->category->articles as $a)
                     <div class="welcome-img-link text-center">
                         <a href="{{ route('front.producto',['family' => $fam->name, 'slug'=> $a->slug]) }}">
                             <img src="{{ $a->pics()->count() > 0 ? asset($a->pics()->first()->path) : asset('img/brand/no_img_found.png') }}"
-                                class="menu-product-foto mb-2 shadow" alt="">
+                                class="menu-product-foto mb-2 shadow zoom" alt="">
                             <small class="text-dark ">
                                 {{ $a->name }}
                             </small>
@@ -163,11 +173,62 @@
                     @endforeach
                 </div>
             </div>
+            <div class="col-2 col-lg-1 text-center">
+                <button class="btn btn-link p-0" id="prodRelPrevBtn">
+                    <svg id="Flecha" xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 39.904 39.903">
+                        <path id="Trazado_22" data-name="Trazado 22" d="M620.986,945.293l-9.976-9.976-9.976-9.975H581.082l9.975,9.976,9.976,9.975h0l-9.974,9.975-9.976,9.976h19.951l9.977-9.976,9.975-9.976h0" transform="translate(-581.082 -925.342)" fill="#e40e20"/>
+                      </svg>
+                      
+                </button>
+            </div>
         </div>
     </div>
 </div>
 
 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        {{-- <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> --}}
+        <div class="modal-body bg1 rounded">
+            <form class="" action="{{ route('front.cotizacion.create') }}"  class="contact_form" method="POST" id="product_cotizar_modal_form">
+                {{ csrf_field() }}
+                <div class="form-group">
+                  <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" placeholder="Nombre">
+                  @if ($errors->has('nombre'))
+                  <span class="help-block">
+                       <small class="text-white">{{ $errors->first('nombre') }}</small>
+                   </span>
+                  @endif
+                </div>
+                 <div class="form-group">
+                    <input type="email" class="form-control"  name="correo" value="{{ old('correo') }}" placeholder="correo">
+                    @if ($errors->has('correo'))
+                    <span class="help-block">
+                         <small class="text-white">{{ $errors->first('correo') }}</small>
+                     </span>
+                    @endif
+                 </div>
+                 <div class="form-group">
+                    <input type="text" id="disabledTextInput" class="form-control" disabled placeholder="{{ ucFirst($article->name) }}">
+                    <input type="hidden" name="article_id" value="{{ $article->id }}">
+                  </div>
+               </form>
+        </div>
+        <div class="modal-footer bg1">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <a href="!#" class="btn btn-light" onclick="event.preventDefault();document.getElementById('product_cotizar_modal_form').submit();">Cotizar</a>
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection
 
 @section('page_scripts')
@@ -180,7 +241,7 @@
                 responsive: {
                     // breakpoint from 768 up
                     0: {
-                        items: 2
+                        items: 1
                     },
                     768: {
                         items: 2
@@ -189,6 +250,16 @@
                         items: 5
                     }
                 }
+            });
+            $('#prodRelNextBtn').click(function() {
+                owl.trigger('next.owl.carousel');
+            });
+
+            // Go to the previous item
+            $('#prodRelPrevBtn').click(function() {
+                // With optional speed parameter
+                // Parameters has to be in square bracket '[]'
+                owl.trigger('prev.owl.carousel', [300]);
             });
         });
 </script>
