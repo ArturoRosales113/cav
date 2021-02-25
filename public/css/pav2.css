@@ -228,6 +228,21 @@ body {
     transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
+.taggd__wrapper{
+    border:2pt solid #ff272ee6;
+    border-radius: 50%;
+}
+.taggd__popup{
+    background-color: #ad272d;
+    border-radius: 10%;
+    color: #fff;
+    width: auto;
+    padding: .5em;
+    font-size: 1em;
+    white-space: nowrap;
+    z-index: +2;
+}
+
 #v-menu-tab a small,
 #v-menu-tab a span {
     color: #000;

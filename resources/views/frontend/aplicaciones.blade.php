@@ -1,5 +1,8 @@
 @extends('frontend.layouts.app')
 
+@section('page_head')
+    <link rel="stylesheet" href="{{ asset('css/taggd.css') }}">
+@endsection
 
 
 @section('content')
@@ -31,13 +34,7 @@
                                 <h4 class="bold text-dark text-center py-4">
                                     {{ ucFirst($at->name)}}
                                 </h4>
-                                <img class="rmap w-100"
-                                    src="{{ $at->img_path == null ? asset('img/brand/no_img_found.png') : asset($at->img_path) }}"
-                                    alt="{{ $at->name }}" id="{{ 'img-'.$at->name }}" usemap="{{ '#map-'.$at->name }}">
-                                    <map name="{{ 'map-'.$at->name }}">
-                                        <area shape="rect" coords="200,100,400,150" href="#v-pills-Hospitalarticles-81" aria-controls="#v-pills-Hospitalarticles-81" alt="">
-                     
-                                    </map>
+                                <img class="rmap w-100" src="{{ $at->img_path == null ? asset('img/brand/no_img_found.png') : asset($at->img_path) }}" alt="{{ $at->name }}" id="{{ 'img-'.$at->name }}">
                                 <div class="row py-4">
                                     <div class="col-12">
                                         <div class="tab-content" id="v-pills-tabContent">
@@ -102,10 +99,489 @@
 </div>
 @endsection
 
-@section('name')
-    <script>
-        $(document).ready(function(e) {
-            $('.rmap').rwdImageMaps();
-        });
+@section('page_scripts')
+<script src="{{ asset('js/taggd.js') }}"></script>
+<script>
+    // Hospital
+    const options = {};
+    const hospitalImg = document.getElementById('img-hospital');
+    if (hospitalImg)
+    {
+        const hospital = new Taggd(hospitalImg, options, 
+        [
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.36992,
+                "y": 0.31563
+                },
+                "text": "Puertas de madera"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.64141,
+                "y": 0.27049
+                },
+                "text": "Corta fuego"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.31328,
+                "y": 0.59688
+                },
+                "text": "Salida de emergencia"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.41484,
+                "y": 0.67674
+                },
+                "text": "Puerta antipánico"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.45195,
+                "y": 0.80174
+                },
+                "text": "Puerta giratoria automática"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.48594,
+                "y": 0.64201
+                },
+                "text": "Rayos X"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.525,
+                "y": 0.61076
+                },
+                "text": "Quirófano"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.55039,
+                "y": 0.57951
+                },
+                "text": "Batiente"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.10703,
+                "y": 0.55174
+                },
+                "text": "M3Bar"
+            })
+        ]);
+    }
+
+    // Hotel
+    const hotelImg = document.getElementById('img-hotel');
+    if(hotelImg)
+    {
+        const hotel = new Taggd(hotelImg, options, 
+        [         
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.44414,
+                "y": 0.23229
+                },
+                "text": "Emergencia"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.56719,
+                "y": 0.21146
+                },
+                "text": "Emergencia"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.44609,
+                "y": 0.52396
+                },
+                "text": "Acceso a habitaciones"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.43047,
+                "y": 0.62118
+                },
+                "text": "Cortafuego"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.46953,
+                "y": 0.61076
+                },
+                "text": "HCG10"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.59141,
+                "y": 0.57951
+                },
+                "text": "HCG10"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.4957,
+                "y": 0.72188
+                },
+                "text": "Cortinas Antihuracán"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.57188,
+                "y": 0.6941
+                },
+                "text": "Cortafuego"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.63438,
+                "y": 0.66632
+                },
+                "text": "Cortinas Antihuracán"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.33945,
+                "y": 0.88507
+                },
+                "text": "Cortina de acero"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.45664,
+                "y": 0.86771
+                },
+                "text": "Emergencia"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.57188,
+                "y": 0.80174
+                },
+                "text": "Corrediza central"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.61289,
+                "y": 0.81563
+                },
+                "text": "Giratoria"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.64414,
+                "y": 0.78785
+                },
+                "text": "Antipánico"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.7457,
+                "y": 0.74965
+                },
+                "text": "Emergencia"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.8707,
+                "y": 0.78785
+                },
+                "text": "M3Bar"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.93125,
+                "y": 0.81563
+                },
+                "text": "Widebar"
+            })
+        ]);
+    }
+
+    // Aeropuerto
+    const residenciaImg = document.getElementById('img-residencia');
+    if (residenciaImg)
+    {
+        const residencia = new Taggd(residenciaImg, options, 
+        [         
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.77422,
+                "y": 0.44757
+                },
+                "text": "GH250"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.64531,
+                "y": 0.49271
+                },
+                "text": "Raised panel"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.77813,
+                "y": 0.5934
+                },
+                "text": "Overlay"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.77422,
+                "y": 0.74618
+                },
+                "text": "Wingo"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.53984,
+                "y": 0.78785
+                },
+                "text": "Run 1800"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.01328,
+                "y": 0.71146
+                },
+                "text": "M3Bar"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.09922,
+                "y": 0.63507
+                },
+                "text": "Wide Bar"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.43125,
+                "y": 0.39201
+                },
+                "text": "Motores tubulares"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.57969,
+                "y": 0.80521
+                },
+                "text": "Rolling Center"
+            })  
+        ]);
+    }
+
+    // Aeropuerto
+    const aeropuertoImg = document.getElementById('img-aeropuertos');
+    if(aeropuertoImg)
+    {
+        const aeropuerto = new Taggd(aeropuertoImg, options, 
+        [         
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.21172,
+                "y": 0.36076
+                },
+                "text": "Antipánico"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.29375,
+                "y": 0.40938
+                },
+                "text": "Antipánico"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.39531,
+                "y": 0.45451
+                },
+                "text": "Antipánico"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.53594,
+                "y": 0.52396
+                },
+                "text": "Lateral central automática"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.46953,
+                "y": 0.5934
+                },
+                "text": "ExpressGate"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.56016,
+                "y": 0.66979
+                },
+                "text": "Lateral corrediza"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.56797,
+                "y": 0.76701
+                },
+                "text": "Gran diámetro"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.66563,
+                "y": 0.66979
+                },
+                "text": "Gran diámetro"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.76914,
+                "y": 0.53785
+                },
+                "text": "Automáticas corredizas"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.85508,
+                "y": 0.43368
+                },
+                "text": "Automáticas corredizas laterales"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.79063,
+                "y": 0.36076
+                },
+                "text": "Torán"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.87656,
+                "y": 0.23924
+                },
+                "text": "100 SR"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.63633,
+                "y": 0.22188
+                },
+                "text": "Emergencia"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.56406,
+                "y": 0.21146
+                },
+                "text": "Automáticas batientes"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.41563,
+                "y": 0.23576
+                },
+                "text": "Madera"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.47813,
+                "y": 0.26007
+                },
+                "text": "Madera"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.53281,
+                "y": 0.2809
+                },
+                "text": "Madera"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.57969,
+                "y": 0.30868
+                },
+                "text": "Madera"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.64609,
+                "y": 0.32951
+                },
+                "text": "Madera"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.69297,
+                "y": 0.34688
+                },
+                "text": "Slimgate"
+            }),
+            
+            Taggd.Tag.createFromObject({
+                "position": {
+                "x": 0.47227,
+                "y": 0.86076
+                },
+                "text": "M3Bar"
+            })  
+        ]);
+    }
+
     </script>
 @endsection

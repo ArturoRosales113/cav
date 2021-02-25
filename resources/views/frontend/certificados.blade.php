@@ -10,7 +10,7 @@ Certificados
     <div class="row justify-content-center py-5">
         <div class="col-10 col-lg-8">
             <ul class="list-unstyled text-dark">
-                <li class="row border border-dark my-3 py-4">
+                {{-- <li class="row border border-dark my-3 py-4">
                     <div class="col">
                         <img src="{{ asset('img/front/afiliaciones.png') }}" class="img-fluid" alt="...">
                     </div>
@@ -21,16 +21,14 @@ Certificados
                         volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
                         nisl ut aliquip ex ea commodo consequat.
                     </div>
-                </li>
+                </li> --}}
                 <li class="row border border-dark my-3 py-4">
                     <div class="col">
                         <img src="{{ asset('img/front/certificadosamericanos.png') }}" class="img-fluid" alt="...">
                     </div>
                     <div class="col-10">
-                        <h6 class="mb-1 bold">CERTIFICADOSAMERICANOS SOBRE PRODUCTOS</h6>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
-                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        <h6 class="mb-1 bold">CERTIFICADOS AMERICANOS SOBRE PRODUCTOS</h6>
+                        Nuestros productos cuentan con certificados de gran renombre en el mercado americano como: UL, WH, Bureau Vertias, ANSI, MHTS
                     </div>
                 </li>
                 <li class="row border border-dark my-3 py-4">
@@ -39,9 +37,7 @@ Certificados
                     </div>
                     <div class="col-10">
                         <h6 class="mb-1 bold">CERTIFICADOS EUROPEOS SOBRE PRODUCTOS</h6>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
-                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        Nuestros productos cuentan con certificados de gran renombre en el mercado europeo como: CE, TECNALIA, TUV NORD, TUV REYNAUD, APPLUS, UNE
                     </div>
                 </li>
             </ul>
