@@ -26,7 +26,6 @@ class FrontController extends Controller
     {
         return view('frontend.privacidad');
     }
-
     public function createMessage(Request $request)
     {
        $input = $request->all();
@@ -65,6 +64,7 @@ class FrontController extends Controller
 
         return redirect()->back()->with('success', 'Pronto un agente se podrá en contacto contigo');
     }
+
  }
 
  public function createDistribuidor(Request $request)

@@ -18,9 +18,11 @@
 <li class="nav-item {{ Request::url() == route('front.servicios', $fam->name) ? 'active' :'' }}">
     <a class="nav-link menu-link" href="{{ route('front.servicios', $fam->name) }}">Servicios</a>
 </li>
+@if($fam->id != 1)
 <li class="nav-item {{ Request::url() == route('front.proyectos', $fam->name) ? 'active' :'' }}">
     <a class="nav-link menu-link" href="{{ route('front.proyectos', $fam->name) }}">Proyectos</a>
 </li>
+@endif
 <li class="nav-item {{ Request::url() == route('front.distribuidores') ? 'active' :'' }}">
     <a class="nav-link" href="{{ route('front.distribuidores') }}"
     onclick="event.preventDefault();document.getElementById('distribuidores-form-get').submit();">Distribuidores</a>
